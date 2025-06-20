@@ -1,0 +1,1 @@
+console.log('critical course javascript engine loaded');

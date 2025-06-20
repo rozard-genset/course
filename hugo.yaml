@@ -1,0 +1,7 @@
+module:
+    mounts:
+    - source: "module"
+      target: "layouts/partials/module/course/default"
+    - source: "scripts"
+      target: "assets/scripts/course"
+  

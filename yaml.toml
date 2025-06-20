@@ -1,4 +1,0 @@
-module:
-    mounts:
-    - source: "default"
-      target: "layouts/partials/module/course/default"
