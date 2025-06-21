@@ -1,0 +1,127 @@
+{{ range first 1 .Pages }}
+
+{{ $ctx  := . }}
+{{ $site := $ }}
+{{- $names := ""  -}}
+{{- $cover := ""  -}}
+{{- $twitr := ""  -}}
+
+{{ with .Page.Params.Team.Tutor }}
+    {{ range . }}
+        {{- $names = partial "libs/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
+        {{- $cover = partial "libs/profile/person-image.html"   (dict  "ctx" $ctx "site" $site "name" . )  -}}
+        {{- $twitr = partial "libs/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
+    {{ end }}
+{{ end }}
+
+<div id="hero" class="feature">
+    <div class="row">
+        <div class=" col-xs-12 col-lg-7">
+            <div class="overlay">
+                <div class="box">
+                    <div class="main">
+                        <img class="rounded-2xl" src="{{ .RelPermalink }}{{ .Page.Params.Thumb }}" alt="{{ .Title }} Featured Course">
+                    </div>
+                    <div class="extra">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="meta col-xs-12 col-lg-5">
+            <div class="top">
+                <div class="title flex center-x mb-30">
+                    <div class="title">
+                        <h1>{{ .Title }}</h1>
+                    </div>
+                    <div class="like ml-a">
+                        <div class="box flex center-x rounded-full la-01">
+                            <div class="dot info feature mr-10"></div>
+                            <h3 class="text-sm mt-05 mb-05"> Feature Course</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="team" class="mb-30">
+                    <div class="list flex center-x">
+                        <div class="image rounded-xl">
+                            {{ $cover }}
+                        </div>
+                        <div class="bio ml-20">
+                            <h2 class="text-md font-bold mt-00 mb-00">{{ $names }}</h2>
+                            <h3 class="text-sm mb-00 mt-00">{{ $twitr }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="info mb-60">
+                    <p>{{ .Page.Params.Lead }} </p>
+                </div>
+            </div>
+            <div class="bot">
+                <hr class="mb-10">
+                <div class="meta mb-100">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="rounded-lg flex center-x">
+                                    <div class="icon md text-white">
+                                        {{ partial "icon/line/bar-chart-2.svg" }}
+                                    </div>
+                                    <div class="meta flex center-x">
+                                        <div class="capitalize text-sm mb-00"> Dificulty </div>
+                                        <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Info.Level }} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="rounded-lg flex center-x">
+                                    <div class="icon md text-white">
+                                        {{ partial "icon/line/award.svg" }}
+                                    </div>
+                                    <div class="meta flex center-x">
+                                        <div class="capitalize text-sm mb-00"> Certificate </div>
+                                        <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="rounded-lg flex center-x">
+                                    <div class="icon md text-white">
+                                        {{ partial "icon/line/calendar.svg" }}
+                                    </div>
+                                    <div class="meta flex center-x">
+                                        <div class="capitalize text-sm mb-00"> Duration </div>
+                                        <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Plan.Length }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-20">
+                <div class="acts flex center-x">
+                    <div class="left mr-a">
+                        <div class="price">
+                            <h3 class="text-md text-gray-400 mt-00 mb-00"> Price </h3>
+                            <h2 class="text-xl mt-00 mb-00">
+                                {{- if .Page.Params.Paid.Charge -}} {{- .Page.Params.Paid.Charge -}} {{- else -}} Free {{- end -}}
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="right flex center-x ml-a">
+                        <div class="buy mr-20">
+                            <a href="{{ .RelPermalink }}" class="button outline">
+                                {{ partial "icon/line/bookmark.svg" }}
+                                {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll Now {{- end -}}
+                            </a>
+                        </div>
+                        <div class="love">
+                            <div class="button">
+                                {{ partial "icon/line/heart.svg" }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

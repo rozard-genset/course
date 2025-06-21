@@ -1,0 +1,39 @@
+{{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Period }}{{ end }}
+{{ $pages := .Pages }}{{ range $period | uniq | sort }}{{ $session := . }}
+    <div id="plan">
+        <div class="row">
+            <div class="col-xs-12 col-md-2">
+            <h2 class="text-xl text-gray-400"> Session {{ $session }} </h2>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5">
+
+                <h3 class="text-lg"> Module </h3>
+                
+                {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
+                
+                <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
+                    <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>
+                    <div class="capitalize text-md">{{ .LinkTitle }}</div>
+                </a>
+                
+                {{ end }}{{ end }}
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-5">
+                
+                <h3 class="text-lg"> Assignment </h3>
+                
+                {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "assignment" ) }}
+
+                <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
+                    <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>
+                    <div class="meta">
+                        <div class="capitalize text-md">{{ .LinkTitle }}</div>
+                    </div>
+                </a>
+                
+                {{ end }}{{ end }}
+            </div>
+        </div>
+        <hr>
+    </div>
+{{ end }}

@@ -1,0 +1,26 @@
+{{- $names := partial "libs/profile/group-name.html"  (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
+{{- $cover := partial "libs/profile/group-cover.html" (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
+
+<div id="hero" class="mb-60">
+    <div class="">
+        <div class="mb-60">
+            <div class="cover">
+                <img class="rounded-2xl" src="{{ .RelPermalink }}{{ .Params.Thumb }}">
+            </div>
+            <div class="organon">
+                <div class="profile rounded-2xl">
+                    <div class="liner rounded-xl">
+                        {{ $cover}}
+                    </div>
+                </div>
+                <h2 class="uppercase text-lg mt-10 mb-20">
+                    <span class="capitalize text-gray-500 mr-05">Present By</span> {{ $names }}
+               </h2>
+            </div>
+        </div>
+        <div class="mb-60">
+            <h1 class="text-4xl mt-05 mb-50">{{ .Title }}</h1>
+            <p class="mb-60">{{ .Content }}</p>
+        </div>
+    </div>
+</div>

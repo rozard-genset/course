@@ -1,0 +1,31 @@
+ <div id="plan">
+
+    <h2 class="mb-50 text-3xl font-light"> Learning Path </h2>
+
+    {{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Period }}{{ end }}
+    {{ $pages := .Pages }}{{ range $period | uniq | sort }}{{ $session := . }}
+   
+    <hr class="mb-30">
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <h2 class="text-xl mt-00 text-gray-400"> Session {{ $session }} </h2>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-10">
+
+            {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
+            
+            <div href="{{ .RelPermalink }}" class="flex mb-40">
+                <div class="icon lg rounded-md la-01 mr-20">{{ partial "icon/line/folder.svg" }}</div>
+                <div class="info">
+                    <h3 class="font-bold text-sm uppercase mt-10 mb-20">{{ .LinkTitle }}</h3>
+                    <div class="desc flex align-x">
+                        <img class="ratio-square object-cover rounded-xl mr-20" src="{{ .Page.Params.Thumb }}" width="80" height="80">
+                        <div class="capitalize text-md">{{ .Page.Params.Lead }}</div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}{{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>

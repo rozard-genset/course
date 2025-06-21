@@ -1,4 +1,26 @@
-MODULE : COURSE
-FORMAT : LISTING
-MODELS : DEFAULT
-LAYOUT : DEFAULT
+{{ $path := "module/course/default/model/item/parts/" }}
+{{ $hero := printf "%s/hero.html" $path }}
+{{ $main := printf "%s/main.html" $path }}
+{{ $apps := printf "%s/apps.html" $path }}
+{{ $team := printf "%s/team.html" $path }}
+{{ $info := printf "%s/info.html" $path }}
+
+
+<main id="room" class="wrap">
+    <!-- hero -->
+    {{ partial $hero . }}
+    <div id="content" class="row between-xs pt-30">
+        <article class="col-xs-12 col-lg-7 col-xl-8">
+            <!-- main -->
+            {{ partial $main . }}
+        </article>
+         <asside class="col-xs-12 col-lg-4 col-xl-3">
+            <!-- apps -->
+            {{ partial $apps . }}
+            <!-- team -->
+            {{ partial $team . }}
+            <!-- info -->
+            {{ partial $info . }}
+        </asside>
+    </div>
+</main>

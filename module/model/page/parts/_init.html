@@ -1,34 +1,27 @@
-{{ $path := "module/course/default/model/page/parts/" }}
-{{ $main := printf "%s/main.html" $path }}
-{{ $plan := printf "%s/plan.html" $path }}
-{{ $acts := printf "%s/acts.html" $path }}
-{{ $team := printf "%s/team.html" $path }}
-{{ $apps := printf "%s/apps.html" $path }}
-
 
 
 <main id="page" class="wrap">
     <div id="content" class="row between-xs pt-30">
         <article class="col-xs-12 col-lg-8 col-xl-7">
             <div id="module" class="mb-60">
-                {{ partial $main . }}
+                {{ partial "base/course/src/core/view/page/main.html" . }}
             </div>
             <div id="plan" class="">
-                {{ partial $plan . }}
+                {{ partial "base/course/src/core/view/page/plan.html" . }}
             </div>
         </article>
         <asside class="col-xs-12 col-lg-4 col-xl-4">
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-12">
-                    {{ partial $acts . }}
+                    {{ partial "base/course/src/core/view/page/acts.html" . }}
                 </div>
                 <div class="col-xs-12 col-md-4 col-lg-12">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                            {{ partial $team . }}
+                            {{ partial "base/course/src/core/view/page/team.html" . }}
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
-                            {{ partial $apps . }}
+                            {{ partial "base/course/src/core/view/page/apps.html" . }}
                         </div>
                     </div>
                 </div>

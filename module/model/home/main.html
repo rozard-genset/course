@@ -1,0 +1,7 @@
+{{ $path := "module/course/default/model/home/parts" }}
+{{ $hero := printf "%s/hero.html" $path }}
+{{ $apps := printf "%s/apps.html" $path }}
+
+<main class="wrap">
+    {{- partial $hero . -}}
+</main>

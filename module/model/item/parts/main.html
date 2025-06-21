@@ -1,0 +1,33 @@
+{{- $path := "module/course/default/model/item/parts/" -}}
+{{- $plan := printf "%s/plan.html" $path -}}
+{{- $talk := printf "%s/talk.html" $path -}}
+{{- $book := printf "%s/book.html" $path -}}
+
+
+<div id="main" class="mb-60">
+    <div class="head row between mb-10">
+        <div id="plan-action" data-target="plan-tabs" class="col-xs-4 tab-action flex center-x open">
+            <div class="icon lg mr-10 rad-7 la-01">{{ partial "icon/line/calendar.svg" }}</div>
+            <h2 class="capitalize text-lg"> Classroom </h2>
+        </div>
+        <div id="room-action" data-target="room-tabs" class="col-xs-4 tab-action flex center-x">
+            <div class="icon lg mr-10 rad-7 la-01">{{ partial "icon/line/message-circle.svg" }}</div>
+            <h2 class="capitalize text-lg"> Open Forum </h2>
+        </div>
+        <div id="book-action" data-target="book-tabs" class="col-xs-4 tab-action flex center-x">
+            <div class="icon lg mr-10 rad-7 la-01">{{ partial "icon/line/book.svg" }}</div>
+            <h2 class="capitalize text-lg"> Library </h2>
+        </div>
+    </div>
+    <div class="tab-content">
+        <div id="plan-tabs" class="tabs-item open">
+            <hr>{{ partial $plan . }}
+        </div>
+        <div id="room-tabs" class="tabs-item">
+            <hr>{{ partial $talk . }}
+        </div>
+        <div id="book-tabs" class="tabs-item">
+            <hr>{{ partial $book . }}
+        </div>
+    </div>
+</div>
