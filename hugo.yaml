@@ -3,5 +3,5 @@ module:
     - source: "module"
       target: "layouts/partials/module/course/default"
     - source: "scripts"
-      target: "assets/scripts/course"
+      target: "assets/scripts/course/default"
   
