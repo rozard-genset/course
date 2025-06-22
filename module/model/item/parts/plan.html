@@ -10,12 +10,10 @@
                 <h3 class="text-lg"> Module </h3>
                 
                 {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
-                
                 <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
                     <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>
                     <div class="capitalize text-md">{{ .LinkTitle }}</div>
                 </a>
-                
                 {{ end }}{{ end }}
             </div>
             <div class="col-xs-12 col-sm-6 col-md-5">
