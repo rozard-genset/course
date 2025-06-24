@@ -1,5 +1,5 @@
-{{- $names := partial "libs/profile/group-name.html"  (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
-{{- $cover := partial "libs/profile/group-cover.html" (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
+{{- $names := partial "lib/profile/group-name.html"  (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
+{{- $cover := partial "lib/profile/group-cover.html" (dict  "ctx" . "site" $ "name" .Page.Params.Team.Organization )  -}}
 
 <div id="hero" class="mb-60">
     <div class="">

@@ -4,9 +4,9 @@
     {{ with .Page.Params.Team.Tutor }}
         <h3 class="text-sm uppercase mb-30"> Course Tutor </h3>
         {{ range . }}
-            {{- $names := partial "libs/profile/person-name.html"  (dict  "ctx" $ctx "site" $site "name" . )  -}}
-            {{- $cover := partial "libs/profile/person-image.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
-            {{- $twitr := partial "libs/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
+            {{- $names := partial "lib/profile/person-name.html"  (dict  "ctx" $ctx "site" $site "name" . )  -}}
+            {{- $cover := partial "lib/profile/person-image.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
+            {{- $twitr := partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
             <div class="list flex center-x">
                 <div class="image mb-30 rounded-full">
                     {{ $cover }}
