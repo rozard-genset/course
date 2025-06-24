@@ -1,9 +1,11 @@
-{{- $path := "module/course/page/main/parts" -}}
+{{ $path := "module/course/default/model/page/parts/" }}
 {{- $talk := printf "%s/talk.html" $path -}}
 
 <div id="forum" class="mb-60">
     <h3 class="mb-30 text-md font-bold uppercase"> Start Disccusion </h3>
+
     {{ partial $talk . }}
+
     <hr class="mb-20">
     <div class="flex center-x">
         <div class="">
