@@ -1,6 +1,6 @@
 module:
     mounts:
-    - source: "module"
-      target: "layouts/partials/module/course/default"
+    - source: "model"
+      target: "layouts/partials/module/course"
     - source: "scripts"
-      target: "assets/scripts/course/default"
+      target: "assets/scripts/module/course"

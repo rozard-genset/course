@@ -1,4 +1,4 @@
-console.log('deffers course javascript engine loaded');
+console.log('deffers main course javascript engine loaded');
 
 let action_open = document.querySelectorAll(".tab-action");
 let action_aray = Array.prototype.slice.call(action_open);

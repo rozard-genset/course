@@ -1,1 +1,0 @@
-console.log('critical shop course javascript module loaded');

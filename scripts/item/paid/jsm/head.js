@@ -1,0 +1,1 @@
+console.log('critical paid course javascript module loaded');
