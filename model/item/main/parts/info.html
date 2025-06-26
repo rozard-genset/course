@@ -1,4 +1,15 @@
 <div id="info">
+    <div class="mb-50">
+        <h3 class="text-sm uppercase mb-30"> material </h3>
+        {{ range .Page.Params.Info.Material }}
+        <div class="flex center-x mb-20">
+            <div class="icon md mr-20">
+                {{ partial "icon/line/package.svg" }}
+            </div>
+            <p class="text-md mb-00 mt-00">{{ . }}</p>
+        </div>
+        {{ end }}
+    </div>
     <div class="mb-60">
         <h3 class="text-sm uppercase mb-30"> Requirement </h3>
         {{ range .Page.Params.Info.Requirement }}
@@ -16,17 +27,6 @@
         <div class="flex center-x mb-20">
             <div class="icon md mr-20">
                 {{ partial "icon/line/edit.svg" }}
-            </div>
-            <p class="text-md mb-00 mt-00">{{ . }}</p>
-        </div>
-        {{ end }}
-    </div>
-    <div class="mb-50">
-        <h3 class="text-sm uppercase mb-30"> material </h3>
-        {{ range .Page.Params.Info.Material }}
-        <div class="flex center-x mb-20">
-            <div class="icon md mr-20">
-                {{ partial "icon/line/package.svg" }}
             </div>
             <p class="text-md mb-00 mt-00">{{ . }}</p>
         </div>
