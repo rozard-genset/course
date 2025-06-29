@@ -1,0 +1,1 @@
+console.log('Format library head script loaded');
