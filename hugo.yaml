@@ -1,5 +1,7 @@
 module:
     mounts:
+    - source: "format"
+      target: "layouts/partials/format/course"
     - source: "model"
       target: "layouts/partials/module/course"
     - source: "scripts"
