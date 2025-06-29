@@ -1,8 +1,10 @@
 module:
     mounts:
-    - source: "format"
+    - source: "format/model"
       target: "layouts/partials/format/course"
-    - source: "model"
+    - source: "format/script"
+      target: "assets/scripts/format/course"
+    - source: "module/model"
       target: "layouts/partials/module/course"
-    - source: "scripts"
+    - source: "module/scripts"
       target: "assets/scripts/module/course"
