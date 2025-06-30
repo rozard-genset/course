@@ -1,4 +1,24 @@
-<!-- format for general content  -->
 <article>
- {{ .Content }}
-</article>
+    <h1 class="font-2xl">{{ .Title }}</h1><hr>
+    <div class="card">
+        <p> Open  At : {{ .Page.Params.Format.Time.Start }}</p>
+        <p> Close At : {{ .Page.Params.Format.Time.Close }}</p>
+    </div>
+    <div id="quiz-class" class="hide">
+        <hr>
+        <div class="row">
+            {{ range .Page.Params.Format.Data }}
+                <a href="{{ .link }}" class="flex center-x col-xs-12 col-md-6 mb-10" target="_blank"> 
+                    <div class="icon md">
+                        {{ partial "icon/line/edit.svg" }}
+                    </div>
+                    <p class="uppercase mb-15">Kelas {{ .group }}</p>
+                </a><br>
+            {{ end }}
+        </div>
+         <hr>
+    </div>
+    <div id="quiz-data" >
+        <div id="quiz-schedule" data-open="{{ .Page.Params.Format.Time.Start }}" data-close="{{ .Page.Params.Format.Time.Close }}">
+    </div>
+ </article>
