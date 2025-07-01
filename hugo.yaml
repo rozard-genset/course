@@ -1,5 +1,7 @@
 module:
     mounts:
+    - source: "render"
+      target: "layouts/course/_markup"
     - source: "format/model"
       target: "layouts/partials/format/course"
     - source: "format/script"
