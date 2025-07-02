@@ -1,5 +1,5 @@
-module github.com/rozard-framework/course
+module github.com/rozard-module/course
 
-replace github.com/rozard-framework/course => /home/devel/project/rozard/course
+replace github.com/rozard-module/course => /home/devel/project/rozard/module/course
 
 go 1.24.4
