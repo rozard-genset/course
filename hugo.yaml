@@ -10,3 +10,7 @@ module:
       target: "layouts/partials/module/course"
     - source: "engine/scripts"
       target: "assets/scripts/module/course"
+    - source: "blocks/model"
+      target: "layouts/partials/module/course/blocks"
+    - source: "blocks/script"
+      target: "assets/scripts/module/course/blocks"

@@ -1,0 +1,1 @@
+// rename this file to head.js to activate themes override for modules
