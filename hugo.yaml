@@ -14,3 +14,5 @@ module:
       target: "layouts/partials/module/course/blocks"
     - source: "blocks/script"
       target: "assets/scripts/module/course/blocks"
+    - source: "content"
+      target: "content/course"
