@@ -1,7 +1,7 @@
 <div id="hero" class="">
     <div class="row">
         <div class="col-xs-12 col-lg-6 col-xl-7">
-            <img class="rounded-2xl" src="{{ .RelPermalink }}{{ .Params.Thumb }}">
+            <img class="rounded-2xl" fetchpriority="high" src="{{ .RelPermalink }}{{ .Params.Thumb }}" alt="{{- .Title -}} course feature image">
         </div>
         <div class="col-xs-12 col-lg-6 col-xl-5 row">
             <div class="info col-md-6 col-lg-12 mb-40">

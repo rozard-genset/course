@@ -20,7 +20,8 @@
             <div class="overlay">
                 <div class="box">
                     <div class="main">
-                        <img class="rounded-2xl" src="{{ .RelPermalink }}{{ .Page.Params.Thumb }}" alt="{{ .Title }} Featured Course">
+                        {{ $path := .Page.Resources.GetMatch .Page.Params.Thumb }}
+                        {{ partial "lib/course/image.html"  ( dict "ctx" . "link" $path "alt" "Featured Course" ) }}
                     </div>
                     <div class="extra">
                     </div>
@@ -36,14 +37,14 @@
                     <div class="like ml-a">
                         <div class="box flex center-x rounded-full la-01">
                             <div class="dot info feature mr-10"></div>
-                            <h3 class="text-sm mt-05 mb-05"> Feature Course</h3>
+                            <h2 class="text-sm mt-05 mb-05"> Feature Course</h2>
                         </div>
                     </div>
                 </div>
                 <div id="team" class="mb-30">
                     <div class="list flex center-x">
                         <div class="image rounded-xl">
-                            {{ $cover }}
+                            <img src="{{ $cover }}" fetchpriority="high" width="48" height="48" alt="course tutor image">
                         </div>
                         <div class="bio ml-20">
                             <h2 class="text-md font-bold mt-00 mb-00">{{ $names }}</h2>
