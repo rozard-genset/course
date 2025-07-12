@@ -1,9 +1,10 @@
 {{- $image := .link -}}
 
 
+
 {{- if $image -}}
         {{- $imageOriginalWidth := $image.Width -}}
-        {{- $sizes := slice 280 311 416 768 1200 -}}
+        {{- $sizes := slice 280 311 417 768 1200 -}}
         {{- $srcset := slice -}}
         {{- $sizestag := slice -}}
         {{- range $sizes -}}
