@@ -30,7 +30,7 @@
                 alt="{{ .Title }}"
                 width="{{ $thumb_start.Width }}"
                 height="{{ $thumb_start.Height }}"
-                title="{{ $.Title }}"
+                title="{{ .Title }}"
                 fetchpriority="high"
                 {{- if gt (len $srcset) 0 -}}
                     {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}

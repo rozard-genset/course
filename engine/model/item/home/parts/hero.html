@@ -14,7 +14,7 @@
     {{ end }}
 {{ end }}
 
-<div id="hero" class="feature">
+<section id="hero" class="feature">
     <div class="row">
         <div class="col-xs-12 col-lg-7">
             <div class="overlay">
@@ -60,35 +60,35 @@
                 <div class="meta mb-100">
                     <div class="box">
                         <div class="row">
-                            <div class="col-xs-4">
+                            <div class="col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
                                     <div class="icon md text-white">
                                         {{ partial "icon/line/bar-chart-2.svg" }}
                                     </div>
                                     <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00"> Dificulty </div>
+                                        <div class="capitalize text-sm mb-00 mr-10"> Dificulty </div>
                                         <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Info.Level }}</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
                                     <div class="icon md text-white">
                                         {{ partial "icon/line/award.svg" }}
                                     </div>
                                     <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00"> Certificate </div>
+                                        <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
                                         <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
                                     <div class="icon md text-white">
                                         {{ partial "icon/line/calendar.svg" }}
                                     </div>
                                     <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00"> Duration </div>
+                                        <div class="capitalize text-sm mb-00 mr-10"> Duration </div>
                                         <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Plan.Length }}</div>
                                     </div>
                                 </div>
@@ -123,5 +123,5 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 {{ end }}

@@ -1,29 +1,22 @@
-@import "../../../../../core/css/pack/form.scss";
-@import "../../../../../core/css/pack/icon.scss";
-@import "../../../../../core/css/pack/line.scss";
-@import "../../../../../core/css/head/flex.scss";
-@import "../../../../../core/css/pack/part.scss";
-@import "../../../../../core/css/pack/typo.scss";
-@import "../../../../../core/css/pack/wrap.scss";
+@import "../../../../../core/css/main/form.scss";
+@import "../../../../../core/css/main/icon.scss";
+@import "../../../../../core/css/main/part.scss";
+@import "../../../../../core/css/main/typo.scss";
+@import "../../../../../core/css/main/wrap.scss";
 
-#course #hero .organon{
-    width: 80%;
-    overflow: hidden;
-    margin: -4rem auto 0 auto;
+
+#course #hero img{
+  width: 100%;
+  object-fit: cover;
 }
 
-#course #hero .profile{
-    width: 6rem;
-    overflow: hidden;
-    border: .8rem solid var(--coln-01);
-    z-index: 2;
-    position: relative;
+@media only screen and (min-width: 768px) {
+	#course #hero img{
+		height: 100%;
+	}
 }
 
-#course #hero .liner{
-    overflow: hidden;
-}
-
+#course #team .image img,
 #course #team .image{
     width: 48px;
     height: 48px;
@@ -31,23 +24,7 @@
 }
 
 #course #team .image img{
-    width: 48px;
-    height: 48px;
     object-fit: cover;
-    overflow: hidden;
-}
-
-figure{
-	overflow: hidden;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
-#course #hero img{
-  width: 100%;
-  object-fit: cover;
 }
 
 #hero.feature .love .button svg{
@@ -62,24 +39,27 @@ figure{
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
+
 @-moz-keyframes blink {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
+
 @-o-keyframes blink {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
+
 @keyframes blink {
   0%, 100% { opacity: 0; }
   50% { opacity: 1; }
 }
 
 .dot {
-  -webkit-animation: blink 2s infinite;
-  -moz-animation: blink 2s infinite;
-  -o-animation: blink 2s infinite;
-  animation: blink 2s infinite;
+	-webkit-animation: blink 2s infinite;
+	-moz-animation: blink 2s infinite;
+	-o-animation: blink 2s infinite;
+	animation: blink 2s infinite;
 }
 
 .info.feature{
