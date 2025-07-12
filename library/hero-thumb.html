@@ -4,38 +4,30 @@
 
 {{- if $image -}}
         {{- $imageOriginalWidth := $image.Width -}}
-        {{- $sizes := slice 481 769 1025 1281 1537 -}}
+        {{- $sizes := slice 360 420 768 1024 1280 1536 -}}
         {{- $srcset := slice -}}
         {{- $sizestag := slice -}}
 
         {{- $thumb_start := $image.Resize "420x webp q100" -}}
  
         {{- range $sizes -}}
-            {{- if lt (mul . 1.2) $imageOriginalWidth -}}
-                {{- $thumb := $image.Resize (printf "%dx webp q100" .) -}}
-                {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink . ) -}}
-                {{- $sizestag = $sizestag | append (printf ("(max-width: %dpx) 100vw") . ) -}}
-            {{- end -}}
+            {{- $thumb := $image.Resize (printf "%dx webp q100" .) -}}
+            {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink . ) -}}
+            {{- $sizestag = $sizestag | append (printf ("(max-width: %dpx) ") . ) -}}
         {{- end -}}
 
-        {{- if ne (len $srcset) 3 -}}
-            {{- $thumb := $image.Resize (printf "%dx webp q100" $imageOriginalWidth) -}}
-            {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink $imageOriginalWidth ) -}}
-            {{- $sizestag = $sizestag | append (printf ("%dpx") $imageOriginalWidth ) -}}
-        {{- end -}}
 
-        <figure class="image-caption rounded-2xl">
             <img 
                 src="{{ $image.RelPermalink }}"
                 alt="{{ .Title }}"
+                class="rounded-2xl"
                 width="{{ $thumb_start.Width }}"
                 height="{{ $thumb_start.Height }}"
                 title="{{ .Title }}"
                 fetchpriority="high"
-                {{- if gt (len $srcset) 0 -}}
+                {{- if gt (len $srcset) 5 -}}
                     {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}
-                    {{- (printf " sizes=\"%s\""  (delimit $sizestag ", ")) | safeHTMLAttr -}}
                 {{- end -}}
             />
-        </figure>
+
 {{- end -}}

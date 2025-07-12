@@ -1,16 +1,16 @@
 @import "../../../../../core/css/main/form.scss";
+@import "../../../../../core/css/main/typo.scss";
 @import "../../../../../core/css/main/icon.scss";
 @import "../../../../../core/css/main/part.scss";
-@import "../../../../../core/css/main/typo.scss";
-@import "../../../../../core/css/main/wrap.scss";
-@import "../../../../../core/css/main/flex.scss";
 @import "../../../../../core/css/main/line.scss";
-@import "../../../../../core/css/main/wrap.scss";
-@import "../../../../../core/css/main/typo.scss";
+
+
+img{
+	object-fit: cover;
+}
 
 #course #hero img{
-  width: 100%;
-  object-fit: cover;
+	width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -21,14 +21,11 @@
 
 #course #team .image img,
 #course #team .image{
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     overflow: hidden;
 }
 
-#course #team .image img{
-    object-fit: cover;
-}
 
 #hero.feature .love .button svg{
 	margin-right: 0;
@@ -39,23 +36,23 @@
 } 
 
 @-webkit-keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
 @-moz-keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
 @-o-keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
 .dot {
@@ -68,7 +65,7 @@
 .info.feature{
 	width: 8px;
     height: 8px;
-    background: var(--link-01);
+    background: var(--dark-link-01);
     border-radius: 50px;
 }
 

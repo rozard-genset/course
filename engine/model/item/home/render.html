@@ -2,6 +2,8 @@
 {{ $hero := printf "%s/hero.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 
-<main class="wrap">
+<main>
+    <div class="wrap">
     {{- partial $hero . -}}
+    </div>
 </main>
