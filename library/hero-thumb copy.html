@@ -20,6 +20,7 @@
             {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink $imageOriginalWidth ) -}}
             {{- $sizestag = $sizestag | append (printf ("%dpx") $imageOriginalWidth ) -}}
         {{- end -}}
+
         <figure class="image-caption rounded-2xl">
             <img
                 src="{{ $image.RelPermalink }}"
@@ -27,11 +28,9 @@
                 title="{{ $.Title }}"
                 fetchpriority="high"
                 {{- if gt (len $srcset) 0 -}}
-                    {{- (printf " srcset=\"%s\"" (delimit $srcset ", ")) | safeHTMLAttr -}}
-                    {{- (printf " sizes=\"%s\"" (delimit $sizestag ", ")) | safeHTMLAttr -}}
+                    {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}
+                    {{- (printf " sizes=\"%s\""  (delimit $sizestag ", ")) | safeHTMLAttr -}}
                 {{- end -}}
             />
-            <figcaption>{{ with $.Title | safeHTML }}{{ . }}{{ end }}</figcaption>
         </figure>
-
 {{- end -}}

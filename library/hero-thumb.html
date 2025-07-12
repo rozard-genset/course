@@ -1,0 +1,41 @@
+{{- $image := .Page.Resources.GetMatch .Page.Params.Thumb -}}
+
+
+
+{{- if $image -}}
+        {{- $imageOriginalWidth := $image.Width -}}
+        {{- $sizes := slice 481 769 1025 1281 1537 -}}
+        {{- $srcset := slice -}}
+        {{- $sizestag := slice -}}
+
+        {{- $thumb_start := $image.Resize "420x webp q100" -}}
+ 
+        {{- range $sizes -}}
+            {{- if lt (mul . 1.2) $imageOriginalWidth -}}
+                {{- $thumb := $image.Resize (printf "%dx webp q100" .) -}}
+                {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink . ) -}}
+                {{- $sizestag = $sizestag | append (printf ("(max-width: %dpx) 100vw") . ) -}}
+            {{- end -}}
+        {{- end -}}
+
+        {{- if ne (len $srcset) 3 -}}
+            {{- $thumb := $image.Resize (printf "%dx webp q100" $imageOriginalWidth) -}}
+            {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink $imageOriginalWidth ) -}}
+            {{- $sizestag = $sizestag | append (printf ("%dpx") $imageOriginalWidth ) -}}
+        {{- end -}}
+
+        <figure class="image-caption rounded-2xl">
+            <img 
+                src="{{ $image.RelPermalink }}"
+                alt="{{ .Title }}"
+                width="{{ $thumb_start.Width }}"
+                height="{{ $thumb_start.Height }}"
+                title="{{ $.Title }}"
+                fetchpriority="high"
+                {{- if gt (len $srcset) 0 -}}
+                    {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}
+                    {{- (printf " sizes=\"%s\""  (delimit $sizestag ", ")) | safeHTMLAttr -}}
+                {{- end -}}
+            />
+        </figure>
+{{- end -}}

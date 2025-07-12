@@ -46,7 +46,8 @@ figure{
 }
 
 #course #hero img{
-	width: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 #hero.feature .love .button svg{
