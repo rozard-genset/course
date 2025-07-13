@@ -1,49 +1,4 @@
 @import "../../../../../core/css/main/form.scss";
-@import "../../../../../core/css/main/icon.scss";
-@import "../../../../../core/css/main/part.scss";
-@import "../../../../../core/css/main/line.scss";
-
-
-#course #hero .organon{
-    width: 80%;
-    overflow: hidden;
-    margin: -2.5rem auto 0 auto;
-}
-
-#course #hero .organon img{
-    width: 64px;
-    height: 64px;
-}
-
-#course #hero .profile{
-    width: 72px;
-    overflow: hidden;
-    border: .1rem solid rgba( 255,255,255, .4 );
-    z-index: 2;
-    position: relative;
-}
-
-#course #hero .liner{
-    overflow: hidden;
-}
-
-#course #team .image{
-    width: 48px;
-    height: 48px;
-    overflow: hidden;
-}
-
-#course #team .image img{
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-
-#course #hero img{
-	width: 100%;
-}
 
 
 #paid .desc img{
