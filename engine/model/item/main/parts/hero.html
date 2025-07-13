@@ -1,50 +1,54 @@
 <div id="hero" class="">
     <div class="row">
-        <div class="col-xs-12 col-lg-6 col-xl-7">
-            <img class="rounded-2xl" fetchpriority="high" src="{{ .RelPermalink }}{{ .Params.Thumb }}" alt="{{- .Title -}} course feature image">
+        <div class="col col-xl-7 col-lg-6 col-xs-12 ">
+            {{ partial "lib/course/hero-thumb.html"  . }}
         </div>
-        <div class="col-xs-12 col-lg-6 col-xl-5 row">
-            <div class="info col-md-6 col-lg-12 mb-40">
-                <h1 class="text-3xl mt-05">{{ .Title }}</h1>
-                <h2 class="uppercase text-sm mt-00 mb-05 mb-50"><span class="text-gray-400 capitalize">Provide By</span> {{ .Page.Params.Team.Organization }}</h2>
-                <p>{{ .Page.Params.Lead }}</p>
-                <hr class="">
-            </div>
-            <div class="row between-xs col-md-6 col-lg-12">
-                 <div class="card flex center-x col-xs-6 col-sm-3 col-md-6 mb-40">
-                    <div class="count font-md text-3xl mr-20">
-                        {{ .Page.Params.Plan.Module }}
-                    </div>
-                    <div class="text">
-                        <div class="uppercase font-bold text-xs text-gray-500"> Learning </div>
-                        <div class="text-md"> Material </div> 
-                    </div>
+        <div class="col col-xl-5 col-lg-6 col-xs-12">
+            <div class="row">
+                <div class="col col-md-6 col-lg-12 col-xs-12 mb-40">
+                    <h1 class="mt-05">{{ .Title }}</h1>
+                    <p class="capitalize mb-05 mb-50">Provide By<span class="font-bold uppercase ml-10">{{ .Page.Params.Team.Organization }}</span></p>
+                    <p>{{ .Page.Params.Lead }}</p>
+                    <hr class="">
                 </div>
-                 <div class="card flex center-x col-xs-6 col-sm-3 col-md-6 mb-40">
-                    <div class="count font-md text-3xl mr-20">
-                        {{ .Page.Params.Plan.Assignment }}
-                    </div>
-                    <div class="text">
-                        <div class="uppercase font-bold text-xs text-gray-500"> Active </div>
-                        <div class="text-md"> Assigment </div> 
-                    </div>
-                </div>
-                <div class="card flex center-x col-xs-6 col-sm-3 col-md-6 mb-40">
-                     <div class="count font-md text-3xl mr-20">
-                        {{ .Page.Params.Plan.Period }}
-                    </div>
-                    <div class="text">
-                        <div class="uppercase font-bold text-xs text-gray-500"> Total </div>
-                        <div class="text-md"> Session </div> 
-                    </div>
-                </div>
-                 <div class="card flex center-x col-xs-6 col-sm-3 col-md-6 mb-40">
-                    <div class="count font-md text-3xl mr-20">
-                        {{ .Page.Params.Plan.Length }}
-                    </div>
-                    <div class="text">
-                        <div class="uppercase font-bold text-xs text-gray-500"> Hours </div>
-                        <div class="text-md"> Duration </div> 
+                <div class="col col-md-6 col-lg-12 col-xs-12 ">
+                    <div class="row">
+                        <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6  mb-40">
+                            <div class="count font-md text-3xl mr-20">
+                                {{ .Page.Params.Plan.Module }}
+                            </div>
+                            <div class="text">
+                                <div class="uppercase font-bold text-xs text-gray-500"> Learning </div>
+                                <div class="text-md"> Material </div> 
+                            </div>
+                        </div>
+                        <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                            <div class="count font-md text-3xl mr-20">
+                                {{ .Page.Params.Plan.Assignment }}
+                            </div>
+                            <div class="text">
+                                <div class="uppercase font-bold text-xs text-gray-500"> Active </div>
+                                <div class="text-md"> Assigment </div> 
+                            </div>
+                        </div>
+                        <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                            <div class="count font-md text-3xl mr-20">
+                                {{ .Page.Params.Plan.Period }}
+                            </div>
+                            <div class="text">
+                                <div class="uppercase font-bold text-xs text-gray-500"> Total </div>
+                                <div class="text-md"> Session </div> 
+                            </div>
+                        </div>
+                        <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                            <div class="count font-md text-3xl mr-20">
+                                {{ .Page.Params.Plan.Length }}
+                            </div>
+                            <div class="text">
+                                <div class="uppercase font-bold text-xs text-gray-500"> Hours </div>
+                                <div class="text-md"> Duration </div> 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

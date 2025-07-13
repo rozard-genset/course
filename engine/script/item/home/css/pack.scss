@@ -6,11 +6,9 @@
 
 
 img{
-	object-fit: cover;
-}
-
-#course #hero img{
 	width: 100%;
+	object-fit: cover;
+	overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {
@@ -19,21 +17,25 @@ img{
 	}
 }
 
-#course #team .image img,
-#course #team .image{
-    width: 42px;
-    height: 42px;
-    overflow: hidden;
+@keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
-
-#hero.feature .love .button svg{
-	margin-right: 0;
-}
-
-#hero.feature .top .box{
+#hero .like .box{
 	padding: 2px 15px;
 } 
+
+#hero .dot {
+	width: 8px;
+    height: 8px;
+    background: var(--dark-link-01);
+    border-radius: 50px;
+	-webkit-animation: blink 2s infinite;
+	-moz-animation: blink 2s infinite;
+	-o-animation: blink 2s infinite;
+	animation: blink 2s infinite;
+}
 
 @-webkit-keyframes blink {
 	0%, 100% { opacity: 0; }
@@ -50,22 +52,11 @@ img{
 	50% { opacity: 1; }
 }
 
-@keyframes blink {
-	0%, 100% { opacity: 0; }
-	50% { opacity: 1; }
+#hero #team .image img {
+    width: 42px;
+    height: 42px;
 }
 
-.dot {
-	-webkit-animation: blink 2s infinite;
-	-moz-animation: blink 2s infinite;
-	-o-animation: blink 2s infinite;
-	animation: blink 2s infinite;
+#hero .action svg{
+	margin-right: 0;
 }
-
-.info.feature{
-	width: 8px;
-    height: 8px;
-    background: var(--dark-link-01);
-    border-radius: 50px;
-}
-

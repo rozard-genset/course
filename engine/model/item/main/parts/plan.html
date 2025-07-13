@@ -2,10 +2,10 @@
 {{ $pages := .Pages }}{{ range $period | uniq | sort }}{{ $session := . }}
     <div id="plan">
         <div class="row">
-            <div class="col-xs-12 col-md-2">
+            <div class="col col-xs-12 col-md-2">
             <h2 class="text-xl text-gray-400"> Session {{ $session }} </h2>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-5">
+            <div class="col col-xs-12 col-sm-6 col-md-5">
 
                 <h3 class="text-lg"> Module </h3>
                 
@@ -16,7 +16,7 @@
                 </a>
                 {{ end }}{{ end }}
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-5">
+            <div class="col col-xs-12 col-sm-6 col-md-5">
                 
                 <h3 class="text-lg"> Assignment </h3>
                 

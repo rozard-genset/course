@@ -36,13 +36,13 @@
                     <div class="like ml-a">
                         <div class="box flex center-x rounded-full border-all">
                             <div class="dot info feature mr-10"></div>
-                            <div class="text-sm mt-05 mb-05">Feature Course</div>
+                            <div class="text-sm mt-05 mb-05">Feature <span class="desktop">Course</span></div>
                         </div>
                     </div>
                 </div>
                 <div id="team" class="mb-30">
                     <div class="list flex center-x">
-                        <div class="image rounded-xl">
+                        <div class="image">
                             {{ $cover }}
                         </div>
                         <div class="bio ml-20">
@@ -96,24 +96,18 @@
                         </div>
                     </div>
                 </div>
-                <hr class="mb-20">
+                <hr class="mb-30">
                 <div class="acts flex center-x">
                     <div class="left mr-a">
-                        <div class="price">
-                            <div class="text-md text-gray-400 mt-00 mb-00"> Price </div>
-                            <div class="text-xl mt-00 mb-00">
-                                {{- if .Page.Params.Paid.Charge -}} {{- .Page.Params.Paid.Charge -}} {{- else -}} Free {{- end -}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right flex center-x ml-a">
-                        <div class="buy mr-20">
+                        <div class="enroll">
                             <a href="{{ .RelPermalink }}" class="button outline">
                                 {{ partial "icon/line/bookmark.svg" }}
                                 {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll Now {{- end -}}
                             </a>
                         </div>
-                        <div class="love">
+                    </div>
+                    <div class="right flex center-x ml-a">
+                        <div class="action">
                             <div class="button">
                                 {{ partial "icon/line/heart.svg" }}
                             </div>

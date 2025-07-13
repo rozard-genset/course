@@ -12,7 +12,7 @@
         {{ $link = .Page.Resources.GetMatch .Page.Params.Thumb }}
         {{ $link = $link.Resize "42x42" }}
         {{ $link = $link.Process "webp" }}
-        <img src="{{ $link.RelPermalink }}" fetchpriority="high" width="42" height="42" alt="course tutor image">
+        <img src="{{ $link.RelPermalink }}" class="rounded-xl" fetchpriority="high" width="42" height="42" alt="course tutor image">
      {{- end -}}
 {{- end -}}
 

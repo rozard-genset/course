@@ -1,3 +1,28 @@
-.module_head{
-    font-size: large;
+@import "../../../../../core/css/flexs/_init.scss";
+@import "../../../../../core/css/flexs/col-03.scss";
+@import "../../../../../core/css/flexs/col-06.scss";
+@import "../../../../../core/css/flexs/col-12.scss";
+@import "../../../../../core/css/flexs/col-08.scss";
+@import "../../../../../core/css/flexs/col-07.scss";
+@import "../../../../../core/css/flexs/col-05.scss";
+@import "../../../../../core/css/flexs/col-04.scss";
+@import "../../../../../core/css/main/typo.scss";
+
+
+img{
+	width: 100%;
+	object-fit: cover;
+	overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+	#course #hero img{
+		height: 100%;
+	}
+}
+
+#course header{
+	margin-bottom: 5rem;
+    height: 3.5rem;
+    background-color: var(--background-02);
 }

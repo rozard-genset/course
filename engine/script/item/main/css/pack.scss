@@ -1,23 +1,11 @@
 @import "../../../../../core/css/main/form.scss";
 @import "../../../../../core/css/main/icon.scss";
 @import "../../../../../core/css/main/part.scss";
-@import "../../../../../core/css/main/typo.scss";
-@import "../../../../../core/css/main/typo.scss";
-@import "../../../../../core/css/main/flex.scss";
 @import "../../../../../core/css/main/line.scss";
-
-
-#course header{
-	margin-bottom: 5rem;
-}
 
 #course footer {
 	margin-top: 5rem;
-}
-
-#course footer,
-#course header{
-	background-color: var(--coln-02);
+	background-color: var(--background-02);
 }
 
 #course .tabs-item{
@@ -41,22 +29,6 @@
 	cursor: pointer;
 }
 
-
-
-#course #hero .organon{
-    width: 80%;
-    overflow: hidden;
-    margin: -4rem auto 0 auto;
-}
-
-#course #hero .profile{
-    width: 6rem;
-    overflow: hidden;
-    border: .8rem solid var(--coln-01);
-    z-index: 2;
-    position: relative;
-}
-
 #course #hero .liner{
     overflow: hidden;
 }
@@ -65,27 +37,6 @@
     width: 48px;
     height: 48px;
     overflow: hidden;
-}
-
-#course #team .image img{
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-
-#course #hero img{
-	width: 100%;
-}
-
-#hero.feature .meta{
-	display: grid;
-	align-content: space-between;
-}
-
-#hero.feature .love .button svg{
-	margin-right: 0;
 }
 
 #hero.feature .top .box{
