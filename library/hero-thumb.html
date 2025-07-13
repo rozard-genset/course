@@ -15,19 +15,19 @@
             {{- $srcset = $srcset | append (printf ("%s %dw") $thumb.RelPermalink . ) -}}
             {{- $sizestag = $sizestag | append (printf ("(max-width: %dpx) ") . ) -}}
         {{- end -}}
+        
 
-
-            <img 
-                src="{{ $image.RelPermalink }}"
-                alt="{{ .Title }}"
-                class="rounded-2xl"
-                width="{{ $thumb_start.Width }}"
-                height="{{ $thumb_start.Height }}"
-                title="{{ .Title }}"
-                fetchpriority="high"
-                {{- if gt (len $srcset) 5 -}}
-                    {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}
-                {{- end -}}
-            />
+        <img 
+            fetchpriority="high"
+            src="{{ $image.RelPermalink }}"
+            alt="{{ .Title }}"
+            class="rounded-2xl"
+            width="{{ $thumb_start.Width }}"
+            height="{{ $thumb_start.Height }}"
+            title="{{ .Title }}"
+            {{- if gt (len $srcset) 5 -}}
+                {{- (printf " srcset=\"%s\"" (delimit $srcset ", "))   | safeHTMLAttr -}}
+            {{- end -}}
+        />
 
 {{- end -}}

@@ -1,20 +1,24 @@
 @import "../../../../../core/css/main/form.scss";
 @import "../../../../../core/css/main/icon.scss";
 @import "../../../../../core/css/main/part.scss";
-@import "../../../../../core/css/main/typo.scss";
-@import "../../../../../core/css/main/wrap.scss";
+@import "../../../../../core/css/main/line.scss";
 
 
 #course #hero .organon{
     width: 80%;
     overflow: hidden;
-    margin: -4rem auto 0 auto;
+    margin: -2.5rem auto 0 auto;
+}
+
+#course #hero .organon img{
+    width: 64px;
+    height: 64px;
 }
 
 #course #hero .profile{
-    width: 6rem;
+    width: 72px;
     overflow: hidden;
-    border: .8rem solid var(--coln-01);
+    border: .1rem solid rgba( 255,255,255, .4 );
     z-index: 2;
     position: relative;
 }
@@ -39,6 +43,14 @@
 
 #course #hero img{
 	width: 100%;
+}
+
+
+#paid .desc img{
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    object-fit: cover;
 }
 
 #hero.feature .meta{
