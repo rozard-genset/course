@@ -2,7 +2,7 @@
 {{ $site := $ }}
 <div id="team" class="tutor mb-40">
     {{ with .Page.Params.Tutor }}
-        <h3 class="mb-30 text-sm font-bold uppercase"> Contact Tutor </h3>
+        <h2 class="mb-30 text-sm font-bold uppercase"> Contact Tutor </h2>
         {{ range . }}
             {{- $names := partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
             {{- $cover := partial "lib/profile/person-image.html"   (dict  "ctx" $ctx "site" $site "name" . )  -}}

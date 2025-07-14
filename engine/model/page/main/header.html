@@ -6,7 +6,7 @@
                     {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
                 </h1>
             </div>
-            <div class="col-xs-4">
+            <div class="col-xs-4 ml-a">
             {{- if .IsPage -}}
                 <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Session</a>
             {{- else -}}

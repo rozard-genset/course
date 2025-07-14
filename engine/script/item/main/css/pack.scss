@@ -1,7 +1,6 @@
-@import "../../../../../core/css/main/form.scss";
-@import "../../../../../core/css/main/icon.scss";
-@import "../../../../../core/css/main/part.scss";
-@import "../../../../../core/css/main/line.scss";
+#plan a{
+    color: var(--color-02);
+}
 
 #course footer {
 	margin-top: 5rem;
@@ -42,3 +41,11 @@
 #hero.feature .top .box{
 	padding: 2px 15px;
 } 
+
+#plan a{
+    color: var(--color-02);
+}
+
+#plan a .icon{ 
+    color: var(--link-01-based);
+}

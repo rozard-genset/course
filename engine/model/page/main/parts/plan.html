@@ -9,7 +9,8 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-md-6">
-            <h2 class="text-md uppercase text-md text-gray-400"> Module </h2>
+            <hr class="">
+            <h2 class="text-sm uppercase text-gray-400"> Module </h2>
             <hr class="mb-20">
             {{- range .Parent.Pages -}}
             {{- if  and (   eq .Page.Params.Period $curent  ) ( eq .Page.Params.Format.Type "material" ) -}}
@@ -19,7 +20,7 @@
                 <div class="info">
                     <div class="name flex center-x">
                         <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                        <h3 class="capitalize text-lg mb-15">{{ .LinkTitle }}</h3>
+                        <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
                     </div>
                     <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
                 </div>
@@ -29,7 +30,8 @@
             {{- end -}}
         </div>
         <div class="col-xs-12 col-md-6">
-            <h2 class="text-md uppercase text-md text-gray-400"> Assignment </h2>
+            <hr class="">
+            <h2 class="text-sm uppercase text-gray-400"> Assignment </h2>
             <hr class="mb-20">
             {{- range .Parent.Pages -}}
             {{- if  and (  eq .Page.Params.Period $curent  ) ( eq .Page.Params.Format.Type "assignment" ) -}}
