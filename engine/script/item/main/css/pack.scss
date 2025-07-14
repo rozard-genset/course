@@ -2,9 +2,13 @@
     color: var(--color-02);
 }
 
-#course footer {
+footer {
 	margin-top: 5rem;
 	background-color: var(--background-02);
+
+	.wrap{
+		height: 50px;
+	}
 }
 
 #course .tabs-item{

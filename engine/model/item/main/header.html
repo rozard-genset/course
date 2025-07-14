@@ -1,12 +1,12 @@
 <header id="course" class="flx-ac lb-01">
     <div class="wrap">
-        <nav class="row flex center-x">
-            <div class="col col-xs-8">
+        <nav class="flex center-x">
+            <div class="col">
                 <div class="text-md font-bold uppercase">
                     {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
                 </div>
             </div>
-            <div class="col col-xs-4">
+            <div class="col ml-a">
             {{- if .IsPage -}}
                 <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Session</a>
             {{- else -}}

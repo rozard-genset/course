@@ -2,25 +2,28 @@
 {{ $hero := printf "%s/hero.html" $path }}
 {{ $main := printf "%s/main.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
-{{ $team := printf "%s/team.html" $path }}
 {{ $info := printf "%s/info.html" $path }}
+{{ $team := printf "%s/team.html" $path }}
+{{ $reqs := printf "%s/reqs.html" $path }}
 
 
 <main id="room" class="wrap">
     <!-- hero -->
     {{ partial $hero . }}
-    <div id="content" class="row between-xs pt-30">
-        <article class="col col-xl-8 col-lg-7 col-xs-12">
+    <div id="content" class="row">
+        <article class="col col-lg-7 col-xs-12">
             <!-- main -->
             {{ partial $main . }}
         </article>
-        <asside class="col col-xl-3 col-lg-4 col-xs-12 ml-a">
+        <asside class="col col-lg-4 col-xs-12 ml-a">
+            <!-- info -->
+            {{ partial $info . }}
             <!-- apps -->
             {{ partial $apps . }}
             <!-- team -->
             {{ partial $team . }}
-            <!-- info -->
-            {{ partial $info . }}
+            <!-- reqs -->
+            {{ partial $reqs . }}
         </asside>
     </div>
 </main>

@@ -1,3 +1,12 @@
+footer {
+	margin-top: 5rem;
+	background-color: var(--background-02);
+
+	.wrap{
+		height: 50px;
+	}
+}
+
 #team .image{
     width: 48px;
     height: 48px;
@@ -11,17 +20,13 @@
     overflow: hidden;
 }
 
-footer {
-	background-color: var(--background-02);
-}
-
 #forum .wa{
-	border-radius: 10px 0 0 10px;
-	border: 1px solid var(--link-01);
+	border-radius: 7px 0 0 7px;
+	border: 1px solid var(--link-01-based);
 }
 
 #forum .tl{
-	border-radius: 0 10px 10px 0;
+	border-radius: 0 7px 7px 0;
 }
 
 #course #plan h3{

@@ -1,8 +1,32 @@
+{{- $path := "module/course/page/main/parts" -}}
+{{- $talk := printf "%s/talk.html" $path -}}
 
-<script src="https://utteranc.es/client.js"
+<div id="forum" class="mb-60">
+    <h3 class="mb-30 text-md font-bold uppercase"> Start Disccusion </h3>
+    <script src="https://utteranc.es/client.js"
         repo="yuros-org/comment"
         issue-term="title"
         theme="dark-blue"
         crossorigin="anonymous"
         async>
-</script>
+    </script>
+    <div class="flex center-x mb-30">
+        <div class="">
+            <a href="#" class="wa button flex center-x">
+                <div class="icon sm">
+                    {{ partial "icon/logo/telegram-round.svg" }}
+                </div>
+                <div class="text-sm font-bold">Telegram</div>
+            </a>
+        </div>
+        <div class="">
+            <a href="#" class="tl button outline flex center-x">
+                <div class="icon sm">
+                    {{ partial "icon/logo/whatsapp-round.svg" }}
+                </div>
+                <div class="text-sm font-bold">Whatsapp</div>
+            </a>
+        </div>
+    </div>
+    <hr>
+</div>

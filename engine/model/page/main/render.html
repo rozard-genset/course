@@ -1,7 +1,7 @@
 {{ $path := "module/course/page/main/parts/" }}
 {{ $main := printf "%s/main.html" $path }}
 {{ $plan := printf "%s/plan.html" $path }}
-{{ $acts := printf "%s/acts.html" $path }}
+{{ $talk := printf "%s/talk.html" $path }}
 {{ $team := printf "%s/team.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 
@@ -18,21 +18,9 @@
             </div>
         </article>
         <asside class="col col-xs-12 col-lg-4 ml-a">
-            <div class="row">
-                <div class="col col-xs-12 col-lg-12 ">
-                    {{ partial $acts . }}
-                </div>
-                <div class="col col-xs-12 col-lg-12 ">
-                    <div class="row">
-                        <div class="col col-lg-12 col-xs-12">
-                            {{ partial $team . }}
-                        </div>
-                        <div class="col col-lg-12 col-xs-12">
-                            {{ partial $apps . }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{- partial $talk . -}}
+            {{- partial $team . -}}
+            {{- partial $apps . -}}
         </asside>
     </div>
 </main>

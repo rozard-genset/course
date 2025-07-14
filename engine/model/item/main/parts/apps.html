@@ -1,48 +1,23 @@
-<div id="apps" class="row">
-    <div class=" mb-60 col col-xs-12 col col-md-6  col col-lg-12">
-        {{ if or ( .Page.Params.Canal.Youtube ) ( .Page.Params.Canal.Spotify ) }}
-        <h2 class="text-sm uppercase font-bold mb-20"> Available On </h2>
-        <div class="flex center-x space-between">
-            {{ if .Page.Params.Canal.Youtube  }}
-            <a class="flex center-x" href="{{ .Page.Params.Canal.Youtube }}" target="_blank">
-                <div class="icon xl">{{ partial "icon/logo/youtube-round.svg" }}</div>
-                <div class="meta">
-                    <div class="capitalize text-md">Youtube</div>
-                </div>
-            </a>
-            {{ end }}
-            {{ if .Page.Params.Canal.Spotify  }}
-            <a class="flex center-x ml-20" href="{{ .Page.Params.Canal.Spotify }}" target="_blank">
-                <div class="icon xl">{{ partial "icon/logo/spotify-round.svg" }}</div>
-                <div class="meta">
-                    <div class="capitalize text-md">Spotify</div>
-                </div>
-            </a>
-            {{ end }}
-        </div>
+<div id="apps" class="mb-60">
+    {{ if or ( .Page.Params.Canal.Youtube ) ( .Page.Params.Canal.Spotify ) }}
+    <h2 class="text-sm uppercase font-bold mb-20 mt-00"> Available On </h2>
+    <div class="flex center-x space-between">
+        {{ if .Page.Params.Canal.Youtube  }}
+        <a class="flex center-x" href="{{ .Page.Params.Canal.Youtube }}" target="_blank">
+            <div class="icon xl">{{ partial "icon/logo/youtube-round.svg" }}</div>
+            <div class="meta">
+                <div class="capitalize text-md">Youtube</div>
+            </div>
+        </a>
         {{ end }}
-    </div> 
-    <div class="mb-50 col col-xs-12 col col-md-6 col col-lg-12">
-        <h2 class="text-sm uppercase font-bold mb-30"> Information </h2>
-        <div class="row border-all rounded-lg mb-30">
-            <div class="col col-xs-6 flex center-x py-5">
-                <div class="icon md text-white">
-                    {{ partial "icon/line/bar-chart-2.svg" }}
-                </div>
-                <div class="meta">
-                    <div class="capitalize text-sm mb-00"> Dificulty </div>
-                    <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Info.Level }} </div>
-                </div>
+        {{ if .Page.Params.Canal.Spotify  }}
+        <a class="flex center-x ml-20" href="{{ .Page.Params.Canal.Spotify }}" target="_blank">
+            <div class="icon xl">{{ partial "icon/logo/spotify-round.svg" }}</div>
+            <div class="meta">
+                <div class="capitalize text-md">Spotify</div>
             </div>
-            <div class="col col-xs-6 flex center-x border-left">
-                <div class="icon md text-white">
-                    {{ partial "icon/line/award.svg" }}
-                </div>
-                <div class="meta">
-                    <div class="capitalize text-sm mb-00"> Certificate </div>
-                    <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
-                </div>
-            </div>
-        </div>
+        </a>
+        {{ end }}
     </div>
+    {{ end }}
 </div>
