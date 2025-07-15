@@ -1,6 +1,6 @@
-{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Period -}}{{- end -}}
+{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Weight -}}{{- end -}}
 {{- $unique := .Page.Params.Title | urlize -}}
-{{- $curent := .Page.Params.Period -}}
+{{- $curent := .Page.Params.Weight -}}
 {{- $active := "" -}}
 {{- $sesion := "" -}}
   
