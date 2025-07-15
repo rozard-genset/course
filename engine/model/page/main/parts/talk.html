@@ -1,8 +1,8 @@
 {{- $path := "module/course/page/main/parts" -}}
 {{- $talk := printf "%s/talk.html" $path -}}
 
+
 <div id="forum" class="mb-60">
-    
     <div class="row">
         <div class="col col-lg-8">
             <h3 class="mb-30 text-md font-bold uppercase"> Start Disccusion </h3>
@@ -13,18 +13,18 @@
         <div class="col col-lg-4">
             <div class="rule mb-60">
                 <h3 class="mb-20 text-md font-bold uppercase">Rules</h3>
-                <p class="mb-30 text-sm"> Berikut ini adalah aturan dalam melakukan disuksi terkait dengan modul course {{ .Title }} </p>
+                <p class="mb-30 text-sm"> Berikut ini adalah aturan forum disuksi pada modul <span class="font-bold">{{ .Title }}</span></p>
                 <div class="flex mb-20">
                     <div class="icon sm mr-10">
                         {{ partial "icon/line/check-circle.svg" }}
                     </div>
-                    <p class="text-sm mb-00 mt-00">Login menggunakan akun github untuk memulai diskusi.</p>
+                    <p class="text-sm mb-00 mt-00">Login menggunakan akun <span class="font-bold">telegram</span> untuk memulai diskusi.</p>
                 </div>
                 <div class="flex mb-20">
                     <div class="icon sm mr-10">
                         {{ partial "icon/line/check-circle.svg" }}
                     </div>
-                    <p class="text-sm mb-00 mt-00">Gunakan bahasa yang baik dan benar</p>
+                    <p class="text-sm mb-00 mt-00">Gunakan bahasa yang sopan, baik dan benar</p>
                 </div>
                 <div class="flex mb-20">
                     <div class="icon sm mr-10">
