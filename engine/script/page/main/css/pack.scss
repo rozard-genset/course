@@ -47,3 +47,10 @@ footer {
 #plan a .icon{ 
     color: var(--link-01-based);
 }
+
+#bugs-action.open div,
+#bugs-action:hover div{
+	background-color: transparent;
+	color: red;
+	transition: 200ms;
+}
