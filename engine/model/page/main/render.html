@@ -1,22 +1,16 @@
 {{ $path := "module/course/page/main/parts/" }}
-{{ $main := printf "%s/main.html" $path }}
+{{ $tabs := printf "%s/tabs.html" $path }}
 {{ $plan := printf "%s/plan.html" $path }}
-{{ $talk := printf "%s/talk.html" $path }}
 {{ $team := printf "%s/team.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 
 <main id="page" class="wrap">
-    <div id="content" class="row between-xs pt-30">
-        <asside class="col col-xs-12 col-lg-3">
-             <div id="plan" class="">
-                {{ partial $plan . }}
-            </div>
-        </asside>
+    <div id="content" class="row pt-30">
         <article class="col col-xs-12 col-lg-8 ml-a">
-            <div id="module" class="mb-60">
-                {{ partial $main . }}
-            </div>
-            {{- partial $talk . -}}
+            <div id="module" class="mb-60">{{- partial $tabs . -}}</div>
         </article>
+        <asside class="col col-xs-12 col-lg-3">
+            <div id="plan" class="">{{- partial $plan . -}}</div>
+        </asside>
     </div>
 </main>

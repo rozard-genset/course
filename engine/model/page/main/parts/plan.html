@@ -1,24 +1,23 @@
 {{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Period -}}{{- end -}}
 {{- $unique := .Page.Params.Title | urlize -}}
 {{- $curent := .Page.Params.Period -}}
-{{- $active := "" }}
-{{- $sesion := "" }}
+{{- $active := "" -}}
+{{- $sesion := "" -}}
   
 
-<div class="flex center-x mb-20">
-    <h2 class="font-light text-2xl mr-10"> Session {{.Page.Params.Period }} | </h2>
-    <h1 class="font-light text-xl upper">Available Module</h1>
+<div class="mb-20">
+    <h2 class="font-light text-lg mr-10 mb-05 uppercase">Session Navigation</h2>
+    <h1 class="font-light text-md upper mt-00 mb-20">current active | <span class="font-bold">Session {{ .Page.Params.Weight }}</span></h1><hr>
 </div>
 <div class="learnplan">
     {{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
     {{- range $period -}}{{ $sesion = . -}}
-
     <div class="session">
-        <div class="open-subdiv flex center-x">
-            <h2 class="text-sm uppercase font-bold text-gray-400">Session {{$sesion }}</h2>
+        <div class="open-subdiv flex center-x" data-open="session-module-{{ $sesion }}">
+            <h2 class="text-sm uppercase font-bold text-gray-400">Session {{ $sesion }}</h2>
             <div class="icon md ml-a">{{ partial "icon/line/plus.svg" }}</div>
         </div>
-        <div id="session-module-{{ $sesion }}" class="close">
+        <div id="session-module-{{ $sesion }}" class="parted close">
             {{- range $allpage -}}{{- if  and (  eq .Page.Params.Weight $sesion  ) ( eq .Page.Params.Format.Type "material" ) -}}
             {{- if eq ( .Page.Params.Title | urlize ) $unique -}}
                 {{- $active = "active" -}}
@@ -35,8 +34,7 @@
                 </div>
             </a>
             {{- end -}}{{- end -}}
-        </div>
-        <hr>
+        </div><hr>
     </div>   
     {{- end -}}
 </div>

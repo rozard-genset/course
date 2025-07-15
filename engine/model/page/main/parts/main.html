@@ -3,6 +3,7 @@
 {{ $path := "module/course/page/main/parts/" }}
 {{ $meta := printf "%s/meta.html" $path }}
 
+
 {{ $decending := slice "youtube" "vimeo" "slide" "xterm" "wave" }}
 {{ $contexted := . }}{{ $rangelist := "acending" }}
 
@@ -13,12 +14,17 @@
 {{- end -}}
 
 {{ if eq $rangelist "decending" }}
+    <div class="mb-60">
     {{- partial "lib/format.html" . -}}
-    <h1>{{ .Title }}</h1>
+    </div>
+    <div class="mb-60">
     {{- partial $meta . -}}
-    <p>{{ .Content }}</p>
+    </div>
+    <div class="mb-60">
+        <h1>{{ .Title }}</h1>
+        {{ if .Content }}<p>{{ .Content }}</p>{{ else }}<p>{{ .Page.Params.Lead }}</p>{{ end }}
+    </div>
 {{ else }}
     <h1>{{ .Title }}</h1>
     {{- partial "lib/format.html" . -}}
-    <p>{{ .Content }}</p>
 {{ end }}
