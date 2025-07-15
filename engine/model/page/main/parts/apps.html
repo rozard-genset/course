@@ -1,25 +1,22 @@
-<div id="apps" class="">
-    <div class="">
-        {{ if or ( .Page.Params.Canal.Youtube ) ( .Page.Params.Canal.Spotify ) }}
-        <h3 class="mb-30 text-sm font-bold uppercase"> Available On </h3>
-        <div class="flex center-x space-between">
-            {{ if .Page.Params.Canal.Youtube  }}
-            <a class="flex center-x" href="{{ .Page.Params.Canal.Youtube }}" target="_blank">
-                <div class="icon xl">{{ partial "icon/logo/youtube-round.svg" }}</div>
-                <div class="meta">
-                    <div class="capitalize text-md">Youtube</div>
-                </div>
-            </a>
-            {{ end }}
-            {{ if .Page.Params.Canal.Spotify  }}
-            <a class="flex center-x ml-20" href="{{ .Page.Params.Canal.Spotify }}" target="_blank">
-                <div class="icon xl">{{ partial "icon/logo/spotify-round.svg" }}</div>
-                <div class="meta">
-                    <div class="capitalize text-md">Spotify</div>
-                </div>
-            </a>
-            {{ end }}
+{{ if or ( .Page.Params.Canal.Youtube ) ( .Page.Params.Canal.Spotify ) }}
+<div class="flex center-x float-right">
+    {{ if .Page.Params.Canal.Youtube  }}
+    <a class="flex center-x" href="{{ .Page.Params.Canal.Youtube }}" target="_blank">
+        <div class="icon xl">{{ partial "icon/logo/youtube-round.svg" }}</div>
+        <div class="meta">
+            <div class="">Watch on </div>
+            <div class="capitalize text-md">Youtube</div>
         </div>
-        {{ end }}
-    </div> 
+    </a>
+    {{ end }}
+    {{ if .Page.Params.Canal.Spotify  }}
+    <a class="flex center-x ml-20" href="{{ .Page.Params.Canal.Spotify }}" target="_blank">
+        <div class="icon xl">{{ partial "icon/logo/spotify-round.svg" }}</div>
+        <div class="meta">
+            <div class="">Listen at </div>
+            <div class="capitalize text-md">Spotify</div>
+        </div>
+    </a>
+    {{ end }}
 </div>
+{{ end }}

@@ -5,22 +5,18 @@
 {{ $team := printf "%s/team.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 
-
-
 <main id="page" class="wrap">
     <div id="content" class="row between-xs pt-30">
-        <article class="col col-xs-12 col-lg-7">
+        <asside class="col col-xs-12 col-lg-3">
+             <div id="plan" class="">
+                {{ partial $plan . }}
+            </div>
+        </asside>
+        <article class="col col-xs-12 col-lg-8 ml-a">
             <div id="module" class="mb-60">
                 {{ partial $main . }}
             </div>
-            <div id="plan" class="">
-                {{ partial $plan . }}
-            </div>
-        </article>
-        <asside class="col col-xs-12 col-lg-4 ml-a">
             {{- partial $talk . -}}
-            {{- partial $team . -}}
-            {{- partial $apps . -}}
-        </asside>
+        </article>
     </div>
 </main>

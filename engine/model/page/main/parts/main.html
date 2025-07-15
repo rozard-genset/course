@@ -1,3 +1,24 @@
-{{ $decending := slice "youtube" "vimeo" "slide" "xterm" "wave" }}
 
-{{- partial "lib/format.html" . -}}
+
+{{ $path := "module/course/page/main/parts/" }}
+{{ $meta := printf "%s/meta.html" $path }}
+
+{{ $decending := slice "youtube" "vimeo" "slide" "xterm" "wave" }}
+{{ $contexted := . }}{{ $rangelist := "acending" }}
+
+{{- range $decending -}}
+    {{ if eq $contexted.Page.Params.Format.Kind . }}
+        {{ $rangelist = "decending" }}
+    {{ end }}
+{{- end -}}
+
+{{ if eq $rangelist "decending" }}
+    {{- partial "lib/format.html" . -}}
+    <h1>{{ .Title }}</h1>
+    {{- partial $meta . -}}
+    <p>{{ .Content }}</p>
+{{ else }}
+    <h1>{{ .Title }}</h1>
+    {{- partial "lib/format.html" . -}}
+    <p>{{ .Content }}</p>
+{{ end }}

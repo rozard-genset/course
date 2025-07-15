@@ -1,0 +1,17 @@
+{{ $path := "module/course/page/main/parts/" }}
+{{ $team := printf "%s/team.html" $path }}
+{{ $apps := printf "%s/apps.html" $path }}
+
+{{ $ctx  := . }}
+{{ $site := $ }}
+
+<div id="meta">
+    <div class="row">
+        <div class="col-xs-6">
+            {{ partial $team . }}
+        </div>
+        <div class="col-xs-6">
+            {{ partial $apps . }}
+        </div>
+    </div>
+</div>

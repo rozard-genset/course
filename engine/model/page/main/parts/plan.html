@@ -1,22 +1,31 @@
-{{- $period := slice -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Period -}}{{- end -}}
-{{- $curent := .Page.Params.Period -}}
+{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Period -}}{{- end -}}
 {{- $unique := .Page.Params.Title | urlize -}}
+{{- $curent := .Page.Params.Period -}}
+{{- $active := "" }}
+{{- $sesion := "" }}
   
-<div id="plan" class="mb-60">
-    <div class="flex center-x mb-20">
-        <h2 class="font-light text-2xl mr-10"> Session {{.Page.Params.Period }} | </h2>
-        <h1 class="font-light text-xl upper">Available Module</h1>
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <hr class="">
-            <h2 class="text-sm uppercase text-gray-400">Module</h2>
-            <hr class="mb-20">
-            {{- range .Parent.Pages -}}
-            {{- if  and (   eq .Page.Params.Period $curent  ) ( eq .Page.Params.Format.Type "material" ) -}}
-            {{- if ne  ( .Title | urlize ) $unique -}}
-            
-            <a href="{{ .RelPermalink }}" class="flex center-x mb-10 active">
+
+<div class="flex center-x mb-20">
+    <h2 class="font-light text-2xl mr-10"> Session {{.Page.Params.Period }} | </h2>
+    <h1 class="font-light text-xl upper">Available Module</h1>
+</div>
+<div class="learnplan">
+    {{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
+    {{- range $period -}}{{ $sesion = . -}}
+
+    <div class="session">
+        <div class="open-subdiv flex center-x">
+            <h2 class="text-sm uppercase font-bold text-gray-400">Session {{$sesion }}</h2>
+            <div class="icon md ml-a">{{ partial "icon/line/plus.svg" }}</div>
+        </div>
+        <div id="session-module-{{ $sesion }}" class="close">
+            {{- range $allpage -}}{{- if  and (  eq .Page.Params.Weight $sesion  ) ( eq .Page.Params.Format.Type "material" ) -}}
+            {{- if eq ( .Page.Params.Title | urlize ) $unique -}}
+                {{- $active = "active" -}}
+            {{- else -}}
+                {{- $active = "" -}}
+            {{- end -}}
+            <a href="{{ .RelPermalink }}" class="flex center-x mb-10 info {{ $active }}" data-open="session-module-{{ $sesion }}">
                 <div class="info">
                     <div class="name flex center-x">
                         <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
@@ -25,30 +34,9 @@
                     <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
                 </div>
             </a>
-            {{- end -}}
-            {{- end -}}
-            {{- end -}}
+            {{- end -}}{{- end -}}
         </div>
-        <div class="col-xs-12 col-md-6">
-            <hr class="">
-            <h2 class="text-sm uppercase text-gray-400"> Assignment </h2>
-            <hr class="mb-20">
-            {{- range .Parent.Pages -}}
-            {{- if  and (  eq .Page.Params.Period $curent  ) ( eq .Page.Params.Format.Type "assignment" ) -}}
-            {{- if ne ( .Title | urlize ) $unique -}}
-                <a href="{{ .RelPermalink }}" class="flex center-x mb-10 active">
-                    <div class="info">
-                        <div class="name flex center-x">
-                            <div class="icon md">{{ partial "icon/line/edit.svg" }}</div>
-                            <h3 class="capitalize text-lg mb-15">{{ .LinkTitle }}</h3>
-                        </div>
-                        <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
-                    </div>
-                </a>
-            {{- end -}}
-            {{- end -}}
-            {{- end -}}
-        </div>
-    </div>
+        <hr>
+    </div>   
+    {{- end -}}
 </div>
-    
