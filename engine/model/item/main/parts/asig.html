@@ -1,0 +1,13 @@
+<div id="asig">
+    <div class="mb-60">
+        <h3 class="text-sm font-bold uppercase mb-30"> assignment </h3>
+        {{ range .Page.Params.Info.Assignment }}
+        <div class="flex center-x mb-20">
+            <div class="icon md mr-20">
+                {{ partial "icon/line/edit.svg" }}
+            </div>
+            <p class="text-md mb-00 mt-00">{{ . }}</p>
+        </div>
+        {{ end }}
+    </div>
+</div>

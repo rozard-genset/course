@@ -11,19 +11,17 @@
     <!-- hero -->
     {{ partial $hero . }}
     <div id="content" class="row">
-        <article class="col col-lg-7 col-xs-12">
-            <!-- main -->
-            {{ partial $main . }}
-        </article>
-        <asside class="col col-lg-4 col-xs-12 ml-a">
+         <asside class="col col-lg-4 col-xs-12">
             <!-- info -->
             {{ partial $info . }}
             <!-- apps -->
             {{ partial $apps . }}
             <!-- team -->
-            {{ partial $team . }}
-            <!-- reqs -->
             {{ partial $reqs . }}
         </asside>
+        <article class="col col-lg-7 col-xs-12 ml-a">
+            <!-- main -->
+            {{ partial $main . }}
+        </article>
     </div>
 </main>

@@ -6,13 +6,12 @@
         <div class="col col-lg-4 col-xs-12 ml-a">
             <div class="title mb-40">
                 <h1 class="mt-05">{{ .Title }}</h1>
-                <p class="capitalize mb-05 mb-50">Provide By<span class="font-bold uppercase ml-10">{{ .Page.Params.Team.Organization }}</span></p>
+                <p class="capitalize mb-05 mb-30">Provide By<span class="font-bold uppercase ml-10">{{ .Page.Params.Team.Organization }}</span></p>
                 <p>{{ .Page.Params.Lead }}</p>
-                <hr>
             </div>
             <div class="detail">
                 <div class="row">
-                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
                             {{ .Page.Params.Plan.Module }}
                         </div>
@@ -21,7 +20,7 @@
                             <div class="text-md"> Material </div> 
                         </div>
                     </div>
-                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
                             {{ .Page.Params.Plan.Assignment }}
                         </div>
@@ -30,7 +29,7 @@
                             <div class="text-md"> Assigment </div> 
                         </div>
                     </div>
-                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
                             {{ .Page.Params.Plan.Period }}
                         </div>
@@ -39,7 +38,7 @@
                             <div class="text-md"> Session </div> 
                         </div>
                     </div>
-                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-40">
+                    <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
                             {{ .Page.Params.Plan.Length }}
                         </div>
@@ -49,7 +48,24 @@
                         </div>
                     </div>
                 </div>
-                <hr class="mobile">
+            </div>
+            <hr class="mb-20 mt-40">
+            <div id="checkout" class="flex center-x">
+                <div class="">
+                    {{ range first 1 .Pages }}
+                    <a href="{{ .RelPermalink }}" class="button flex center-x">
+                        <div class="icon md">
+                            {{ partial "icon/line/edit.svg" }}
+                        </div>
+                        <div class="text-md font-bold">Enroll Class</div>
+                    </a>
+                    {{ end }}
+                </div>
+                <div id="share-course" class="ml-a">
+                    <a href="#" class="button outline flex center-x">
+                        <div class="icon md">{{ partial "icon/line/share-2.svg" }}</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
