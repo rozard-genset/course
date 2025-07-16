@@ -1,13 +1,18 @@
-{{ $path := "module/course/page/main/parts/" }}
-{{ $tabs := printf "%s/tabs.html" $path }}
-{{ $plan := printf "%s/plan.html" $path }}
-{{ $team := printf "%s/team.html" $path }}
-{{ $apps := printf "%s/apps.html" $path }}
+{{ $main := "module/course/page/main/parts/" }}
+{{ $task := "module/course/page/main/tasks/" }}
+{{ $cont := printf "%s/tabs.html" $main }}
+{{ $asig := printf "%s/main.html" $task }}
+{{ $plan := printf "%s/plan.html" $main }}
+
 
 <main id="page" class="wrap">
     <div id="content" class="row pt-30">
         <article class="col col-xs-12 col-lg-8 ml-a">
-            <div id="module" class="mb-60">{{- partial $tabs . -}}</div>
+            {{ if eq .Page.Params.Format.Type "material" }}
+                <div id="module" class="mb-60">{{- partial $cont . -}}</div>
+            {{ else }}
+                <div id="taks" class="mb-60">{{- partial $asig . -}}</div>
+            {{ end }}
         </article>
         <asside class="col col-xs-12 col-lg-3">
             <div id="plan" class="">{{- partial $plan . -}}</div>

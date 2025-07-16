@@ -1,0 +1,5 @@
+{{ $path := "module/course/page/main/tasks" }}
+{{ $text := printf "%s/text.html" $path }}
+
+<div class="mb-60">{{- partial $text . -}}</div>
+<div class="mb-60">{{- partial "lib/format.html" . -}}</div>

@@ -18,22 +18,28 @@
             <div class="icon md ml-a">{{ partial "icon/line/plus.svg" }}</div>
         </div>
         <div id="session-module-{{ $sesion }}" class="parted close">
-            {{- range $allpage -}}{{- if  and (  eq .Page.Params.Weight $sesion  ) ( eq .Page.Params.Format.Type "material" ) -}}
-            {{- if eq ( .Page.Params.Title | urlize ) $unique -}}
-                {{- $active = "active" -}}
-            {{- else -}}
-                {{- $active = "" -}}
+            {{ $populate := slice }}
+            {{- range $allpage -}}
+                {{- if  and (  eq .Page.Params.Weight $sesion  ) ( eq .Page.Params.Format.Type "material" ) -}}
+                    {{ $populate = $populate | append . -}}
+                {{- end -}}
             {{- end -}}
-            <a href="{{ .RelPermalink }}" class="flex center-x mb-10 info {{ $active }}" data-open="session-module-{{ $sesion }}">
-                <div class="info">
-                    <div class="name flex center-x">
-                        <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                        <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
+            {{- range sort $populate ".Params.parted" -}}
+                {{- if eq ( .Page.Params.Title | urlize ) $unique -}}
+                    {{- $active = "active" -}}
+                {{- else -}}
+                    {{- $active = "" -}}
+                {{- end -}}
+                <a href="{{ .RelPermalink }}" class="flex center-x mb-10 info {{ $active }}" data-open="session-module-{{ $sesion }}">
+                    <div class="info">
+                        <div class="name flex center-x">
+                            <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
+                            <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
+                        </div>
+                        <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
                     </div>
-                    <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
-                </div>
-            </a>
-            {{- end -}}{{- end -}}
+                </a>
+            {{- end -}}
         </div><hr>
     </div>   
     {{- end -}}
