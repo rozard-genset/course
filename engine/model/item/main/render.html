@@ -1,6 +1,6 @@
 {{ $path := "module/course/item/main/parts" }}
 {{ $hero := printf "%s/hero.html" $path }}
-{{ $main := printf "%s/main.html" $path }}
+{{ $tabs := printf "%s/tabs.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 {{ $info := printf "%s/info.html" $path }}
 {{ $team := printf "%s/team.html" $path }}
@@ -20,8 +20,8 @@
             {{ partial $reqs . }}
         </asside>
         <article class="col col-lg-7 col-xs-12 ml-a">
-            <!-- main -->
-            {{ partial $main . }}
+            <!-- tabs -->
+            {{ partial $tabs . }}
         </article>
     </div>
 </main>

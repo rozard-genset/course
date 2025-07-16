@@ -9,9 +9,9 @@
     <div id="content" class="row pt-30">
         <article class="col col-xs-12 col-lg-8 ml-a">
             {{ if eq .Page.Params.Format.Type "material" }}
-                <div id="module" class="mb-60">{{- partial $cont . -}}</div>
+                <div id="module">{{- partial $cont . -}}</div>
             {{ else }}
-                <div id="taks" class="mb-60">{{- partial $asig . -}}</div>
+                <div id="taks">{{- partial $asig . -}}</div>
             {{ end }}
         </article>
         <asside class="col col-xs-12 col-lg-3">
