@@ -1,9 +1,9 @@
 {{ $path := "module/course/item/home/parts" }}
-{{ $hero := printf "%s/hero.html" $path }}
+{{ $feat := printf "%s/feat.html" $path }}
 {{ $apps := printf "%s/apps.html" $path }}
 
 <main>
     <div class="wrap">
-    {{- partial $hero . -}}
+    {{- partial $feat . -}}
     </div>
 </main>

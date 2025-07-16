@@ -1,26 +1,23 @@
-{{ range first 1 .Pages }}
+{{ range first 1 ( where .Pages ".Params.promo"  true ) }}
 
-{{ $ctx  := . }}
-{{ $site := $ }}
-{{- $names := ""  -}}
-{{- $cover := ""  -}}
-{{- $twitr := ""  -}}
+{{- $ctx  := . -}}{{- $site := $ -}}
+{{- $names := "" -}}{{- $cover := "" -}}{{- $twitr := "" -}}
 
-{{ with .Page.Params.Team.Tutor }}
-    {{ range . }}
+{{- with .Page.Params.Team.Tutor -}}
+    {{- range . -}}
         {{- $names = partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
         {{- $cover = partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" . )  -}}
         {{- $twitr = partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
-    {{ end }}
-{{ end }}
+    {{- end -}}
+{{- end -}}
 
-<section id="hero" class="feature">
+<section id="feat" class="feature">
     <div class="row">
         <div class="col col-xs-12 col-lg-7">
             <div class="overlay">
                 <div class="box">
                     <div class="main">
-                        {{ partial "lib/course/hero-thumb.html"  . }}
+                        {{ partial "lib/course/hero-thumb.html" . }}
                     </div>
                     <div class="extra">
                     </div>

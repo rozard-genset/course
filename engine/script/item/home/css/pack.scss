@@ -1,13 +1,17 @@
 
 
-img{
+
+
+
+// FEAT
+#feat img{
 	width: 100%;
 	object-fit: cover;
 	overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {
-	#course #hero img{
+	#feat img{
 		height: 100%;
 	}
 }
@@ -17,11 +21,11 @@ img{
 	50% { opacity: 1; }
 }
 
-#hero .like .box{
+#feat .like .box{
 	padding: 2px 15px;
 } 
 
-#hero .dot {
+#feat .dot {
 	width: 8px;
     height: 8px;
     background: var(--dark-link-01);
@@ -47,11 +51,11 @@ img{
 	50% { opacity: 1; }
 }
 
-#hero #team .image img {
+#feat #team .image img {
     width: 42px;
     height: 42px;
 }
 
-#hero .action svg{
+#feat .action svg{
 	margin-right: 0;
 }
