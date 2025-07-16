@@ -2,7 +2,6 @@
 {{- $plan := printf "%s/plan.html" $path -}}
 {{- $talk := printf "%s/talk.html" $path -}}
 {{- $book := printf "%s/book.html" $path -}}
-{{- $syla := printf "%s/syla.html" $path -}}
 {{- $asig := printf "%s/asig.html" $path -}}
 {{- $reqs := printf "%s/reqs.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
@@ -13,7 +12,7 @@
             <div class="icon lg rounded-lg mr-10 border-all">{{ partial "icon/line/book.svg" }}</div>
             <div class="capitalize text-md"> Planing </div>
         </div>
-        <div id="room-action" data-target="room-tabs" class="col col-xs-4 tab-action flex center-x">
+        <div id="taks-action" data-target="taks-tabs" class="col col-xs-4 tab-action flex center-x">
             <div class="icon lg rounded-lg mr-10 border-all">{{ partial "icon/line/edit.svg" }}</div>
             <div class="capitalize text-md"><span class="desktop">Assigment</div>
         </div>
@@ -25,9 +24,9 @@
     <hr>
     <div class="tab-content">
         <div id="plan-tabs" class="tabs-item open">
-            {{ partial $syla . }}
+            {{ partial $plan . }}
         </div>
-        <div id="room-tabs" class="tabs-item">
+        <div id="taks-tabs" class="tabs-item">
             {{ partial $asig . }}
         </div>
         <div id="team-tabs" class="tabs-item">

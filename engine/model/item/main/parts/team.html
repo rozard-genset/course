@@ -2,7 +2,7 @@
 {{ $site := $ }}
 <div id="team" class="mb-30">
     {{ if .Page.Params.Team.Tutor }}
-        <h3 class="text-sm font-bold uppercase mb-30"> Course Tutor </h3>
+        <h3 class="text-sm font-bold uppercase mb-30"> Course Directore </h3>
         {{ range .Page.Params.Team.Tutor }}
             {{- $names := partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
             {{- $cover := partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" . )  -}}
