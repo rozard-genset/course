@@ -1,18 +1,16 @@
-<header id="course" class="flx-ac lb-01">
-    <div class="wrap">
-        <nav class="flex center-x">
-            <div class="col">
-                <div class="text-md font-bold uppercase">
-                    {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
-                </div>
+<header id="course" class="flex center-x lb-01">
+    <nav class="wrap flex center-x mb-00">
+        <div class="col">
+            <div class="text-md font-bold uppercase">
+                {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
             </div>
-            <div class="col ml-a">
-            {{- if .IsPage -}}
-                <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Session</a>
-            {{- else -}}
-                <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Course</a>
-            {{- end -}}
-            </div>
-        </nav>
-    </div>
+        </div>
+        <div class="col ml-a">
+        {{- if .IsPage -}}
+            <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Session</a>
+        {{- else -}}
+            <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Course</a>
+        {{- end -}}
+        </div>
+    </nav>
 </header>

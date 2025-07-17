@@ -35,7 +35,6 @@ let open_plan = ()=> {
     });
 }
 
-
 let init_tabs = ()=> {
     let action_open = document.querySelectorAll(".tab-action");
     let action_aray = Array.prototype.slice.call(action_open);
@@ -62,7 +61,50 @@ let init_tabs = ()=> {
     });
 }
 
+let init_talk = ()=> {
+    let mode = localStorage.getItem("darkmode");
+    let talk = document.getElementById('forum-collumn');
+    if ( mode == 3 ) {
+        talk.setAttribute('data-dark', 0);
+    }
+}
+
+let init_bugs = ()=> {
+
+    if (document.querySelector('.utterances-frame')) {
+
+        let mode  = localStorage.getItem("darkmode");
+        let theme = 'github-light';
+
+        if ( mode == 3 ) {
+            let theme = 'github-light';
+        }
+        else if ( mode == 2 ) {
+            theme = 'dark-blue';
+        }
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+            theme = 'dark-blue';
+        }
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ) {
+            theme = 'github-light';
+        }
+        else {
+            theme = 'github-light';
+        }
+  
+        let message = {
+            type: 'set-theme',
+            theme: theme
+        };
+        
+        let iframe = document.querySelector('.utterances-frame');
+        iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+}
+ 
 window.addEventListener( 'load', ()=> {
     init_plan();
-    init_tabs(); 
+    init_tabs();
+    init_talk();
+    init_bugs();
 });
