@@ -42,19 +42,14 @@ let init_tabs = ()=> {
     let mantab_aray = Array.prototype.slice.call(mantab_open);
 
     action_aray.forEach( (event) => {
-
         event.addEventListener('click', ()=> {
-
             let target = event.getAttribute('data-target');
-
             action_aray.forEach( (event)=> {
                 event.classList.remove('open');
             });
-
             mantab_aray.forEach( (event)=> {
                 event.classList.remove('open');
             });
-
             event.classList.add('open');
             document.getElementById(target).classList.add('open');        
         }) 
@@ -62,24 +57,45 @@ let init_tabs = ()=> {
 }
 
 let init_talk = ()=> {
-    let mode = localStorage.getItem("darkmode");
-    let talk = document.getElementById('forum-collumn');
-    if ( mode == 3 ) {
-        talk.setAttribute('data-dark', 0);
+
+    let darkmod = localStorage.getItem( 'darkmode' );
+    let contain = document.querySelector( '#forum-collumn' );
+    let telebox = document.createElement( 'script' );
+
+    telebox.src = 'https://comments.app/js/widget.js?3';
+    telebox.setAttribute('data-comments-app-website', '_-K1zvYW');
+    telebox.setAttribute('data-limit', 5 );
+    telebox.setAttribute('data-dislikes', 1 );
+
+    if ( darkmod == 2 ) {
+        telebox.setAttribute('data-dark', 1 );
     }
+    else if ( darkmod == 3 ) {
+        telebox.setAttribute('data-dark', 0 );
+    }
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {
+        telebox.setAttribute('data-dark', 1 );
+    }
+    else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ) {
+        telebox.setAttribute('data-dark', 0 );
+    }
+    else {
+        telebox.setAttribute('data-dark', 0 );
+    }
+    contain.appendChild(telebox);
 }
 
 let init_bugs = ()=> {
 
     if (document.querySelector('.utterances-frame')) {
 
-        let mode  = localStorage.getItem("darkmode");
+        let modes = localStorage.getItem("darkmode");
         let theme = 'github-light';
 
-        if ( mode == 3 ) {
-            let theme = 'github-light';
+        if ( modes == 3 ) {
+            theme = 'github-light';
         }
-        else if ( mode == 2 ) {
+        else if ( modes == 2 ) {
             theme = 'dark-blue';
         }
         else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ) {

@@ -1,8 +1,11 @@
-<header id="course" class="flex center-x lb-01">
+<header id="course" class="flex center-x border-bottom">
     <nav class="wrap flex center-x mb-00">
         <div class="col">
-            <div class="text-md font-bold uppercase">
+            <div class="text-md font-bold uppercase desktop">
                 {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
+            </div>
+            <div class="text-md font-bold uppercase mobile">
+                Classroom
             </div>
         </div>
         <div class="col ml-a">
