@@ -10,9 +10,9 @@
         </div>
         <div class="col ml-a">
         {{- if .IsPage -}}
-            <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Session</a>
+            <a href="{{ .Parent.RelPermalink }}" role="button" class="button outline float-right">End Session</a>
         {{- else -}}
-            <a href="{{ .Parent.Permalink }}" role="button" class="button outline float-right">End Course</a>
+            <a href="{{ .Parent.RelPermalink }}" role="button" class="button outline float-right">End Course</a>
         {{- end -}}
         </div>
     </nav>
