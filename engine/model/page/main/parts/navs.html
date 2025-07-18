@@ -1,0 +1,36 @@
+{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Weight -}}{{- end -}}
+{{- $unique := .Page.Params.Title | urlize -}}{{- $curent := .Page.Params.Weight -}}
+{{- $active := "" -}}{{- $sesion := "" -}}
+{{- $populate := slice -}}
+
+{{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
+{{- range $period -}}{{ $sesion = . -}}
+    {{- range $allpage -}}
+        {{- if  and ( eq .Page.Params.Weight $sesion ) ( eq .Page.Params.Format.Type "material" ) -}}
+            {{- $populate = $populate | append . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{ if or ( $populate.Next . ) ( $populate.Prev . ) }}
+<hr class="mb-20"><div class="row mb-20">
+    <div class="col col-xs-6 next-post text-right">
+        {{- with $populate.Next . -}}
+        <a class="link-reverse" href="{{ .Permalink }}">
+            <h2 class="top flex center-x float-right font-bold text-md mb-20">
+                <div class="icon xs ml-10">{{- partial "icon/line/arrow-left.svg" -}}</div>Previous Module
+            </h2>
+            <div class="mid desktop text-sm uppercase font-bold mb-05 clear-both block">Session {{ .Page.Params.Period }}</div><div class="low desktop block">{{ .Title }}</div>
+        </a>{{- end -}}
+    </div>
+    <div class="col col-xs-6 prev-post text-left border-left">
+        {{- with $populate.Prev . -}}
+        <a class="link-reverse" href="{{ .Permalink }}">
+            <h2 class="top flex center-x font-bold text-md  mb-20">
+                Next Module<div class="icon xs ml-10">{{- partial "icon/line/arrow-right.svg" -}}</div>
+            </h2>
+            <div class="mid desktop text-sm uppercase font-bold mb-05 block">Session {{ .Page.Params.Period }}</div><div class="low desktop block">{{ .Title }}</div>
+        </a>{{- end -}}
+    </div>
+</div><hr>
+{{ end }}

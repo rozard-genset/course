@@ -1,8 +1,8 @@
-{{- $weight := .Page.Params.Weight -}}{{- $parted := .Page.Params.Parted -}}{{- $loaded := false -}}
+{{- $weight := .Page.Params.Period -}}{{- $parted := .Page.Params.Parted -}}{{- $loaded := false -}}
 
 <!-- validate -->
 {{- range .Parent.Pages -}}
-    {{- if  and (  eq .Page.Params.Weight $weight  ) ( eq .Page.Params.Parted $parted  ) ( eq .Page.Params.Format.Type "assignment" ) -}}
+    {{- if  and (  eq .Page.Params.Period $weight  ) ( eq .Page.Params.Parted $parted  ) ( eq .Page.Params.Format.Type "assignment" ) -}}
         {{- $loaded = true -}}
     {{- end -}}
 {{- end -}}
