@@ -16,11 +16,8 @@
         <div class="col col-xs-12 col-lg-7">
             <div class="overlay">
                 <div class="box">
-                    <div class="main">
-                        {{ partial "lib/course/hero-thumb.html" . }}
-                    </div>
-                    <div class="extra">
-                    </div>
+                    <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
+                    <div class="extra"></div>
                 </div>
             </div>
         </div>
@@ -39,18 +36,14 @@
                 </div>
                 <div id="team" class="mb-30">
                     <div class="list flex center-x">
-                        <div class="image">
-                            {{ $cover }}
-                        </div>
+                        <div class="image">{{- $cover -}}</div>
                         <div class="bio ml-20">
                             <div class="text-md font-bold mt-00 mb-00">{{ $names }}</div>
                             <div class="text-sm mb-00 mt-00">{{ $twitr }}</div>
                         </div>
                     </div>
                 </div>
-                <div class="info mb-60">
-                    <p>{{ .Page.Params.Lead }} </p>
-                </div>
+                <div class="info mb-60"><p>{{ .Page.Params.Lead }} </p></div>
             </div>
             <div class="bot">
                 <hr class="mb-10">
@@ -59,9 +52,7 @@
                         <div class="row">
                             <div class="col col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">
-                                        {{ partial "icon/line/bar-chart-2.svg" }}
-                                    </div>
+                                    <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                                     <div class="meta flex center-x">
                                         <div class="capitalize text-sm mb-00 mr-10"> Dificulty </div>
                                         <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Info.Level }}</div>
@@ -70,9 +61,7 @@
                             </div>
                             <div class="col col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">
-                                        {{ partial "icon/line/award.svg" }}
-                                    </div>
+                                    <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                                     <div class="meta flex center-x">
                                         <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
                                         <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
@@ -81,9 +70,7 @@
                             </div>
                             <div class="col col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">
-                                        {{ partial "icon/line/calendar.svg" }}
-                                    </div>
+                                    <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
                                     <div class="meta flex center-x">
                                         <div class="capitalize text-sm mb-00 mr-10"> Duration </div>
                                         <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Plan.Length }}</div>
@@ -105,9 +92,7 @@
                     </div>
                     <div class="right flex center-x ml-a">
                         <div class="action">
-                            <div class="button">
-                                {{ partial "icon/line/heart.svg" }}
-                            </div>
+                            <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
                         </div>
                     </div>
                 </div>
