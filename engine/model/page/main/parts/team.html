@@ -1,8 +1,6 @@
-{{ $ctx  := . }}
-{{ $site := $ }}
+{{- $ctx  := . -}}{{- $site := $ -}}
 
-{{ with .Page.Params.Tutor }}
-{{ range . }}
+{{- with .Page.Params.Tutor -}}{{- range . -}}
     {{- $names := partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
     {{- $cover := partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" . )  -}}
     {{- $twitr := partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
@@ -15,5 +13,4 @@
             <h2 class="text-md font-bold mt-00 mb-05">{{ $names }}</h2>
         </div>
     </div>
-{{ end }}
-{{ end }}
+{{- end -}}{{- end -}}

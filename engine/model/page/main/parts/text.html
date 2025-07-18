@@ -1,2 +1,2 @@
 <h1>{{ .Title }}</h1>
-{{ if .Content }}<p>{{ .Content }}</p>{{ else }}<p>{{ .Page.Params.Lead }}</p>{{ end }}
+{{- if .Content -}}<p>{{- .Content -}}</p>{{- else -}}<p>{{- .Page.Params.Lead -}}</p>{{- end -}}

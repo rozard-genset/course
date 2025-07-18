@@ -1,7 +1,7 @@
-{{ $path := "module/course/page/main/parts/" }}
-{{ $talk := printf "%s/talk.html" $path }}
-{{ $main := printf "%s/main.html" $path }}
-{{ $talk := printf "%s/talk.html" $path }}
+{{- $path := "module/course/page/main/parts/" -}}
+{{- $talk := printf "%s/talk.html" $path -}}
+{{- $main := printf "%s/main.html" $path -}}
+{{- $talk := printf "%s/talk.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
 
 <div id="tabs">
@@ -21,13 +21,13 @@
     </div>
     <div class="tab-content">
         <div id="main-tabs" class="tabs-item open">
-            {{ partial $main . }}
+            {{- partial $main . -}}
         </div>
         <div id="talk-tabs" class="tabs-item">
-            {{ partial $talk . }}
+            {{- partial $talk . -}}
         </div>
         <div id="bugs-tabs" class="tabs-item">
-            {{ partial $bugs . }}
+            {{- partial $bugs . -}}
         </div>
     </div>
 </div>

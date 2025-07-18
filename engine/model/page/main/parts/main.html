@@ -1,31 +1,27 @@
+{{- $path := "module/course/page/main/parts/" -}}
+{{- $meta := printf "%s/meta.html" $path -}}
+{{- $text := printf "%s/text.html" $path -}}
+{{- $task := printf "%s/task.html" $path -}}
 
-
-{{ $path := "module/course/page/main/parts/" }}
-{{ $meta := printf "%s/meta.html" $path }}
-{{ $text := printf "%s/text.html" $path }}
-{{ $task := printf "%s/task.html" $path }}
-
-{{ $decending := slice "youtube" "vimeo" "slide" "xterm" "wave" }}
-{{ $contexted := . }}{{ $rangelist := "acending" }}
+{{- $decending := slice "youtube" "vimeo" "slide" "xterm" "wave" -}}
+{{- $contexted := . }}{{ $rangelist := "acending" -}}
 
 {{- range $decending -}}
-    {{ if eq $contexted.Page.Params.Format.Kind . }}
-        {{ $rangelist = "decending" }}
-    {{ end }}
+    {{- if eq $contexted.Page.Params.Format.Kind . -}}
+        {{- $rangelist = "decending" -}}
+    {{- end -}}
 {{- end -}}
 
-
-
-{{ if eq $rangelist "decending" }}
+{{- if eq $rangelist "decending" -}}
     <div class="mb-60">{{- partial "lib/format.html" . -}}</div>
     <div class="mb-60">{{- partial $meta . -}}</div>
     <div class="mb-60">{{- partial $text . -}}</div>
     <div class="mb-60">{{- partial $task . -}}</div>
-{{ else }}
+{{- else -}}
     <div class="mb-60">{{- partial $text . -}}</div>
     <div class="mb-60">{{- partial $meta . -}}</div>
     {{- partial "lib/format.html" . -}}
-{{ end }}
+{{- end -}}
 
 
 

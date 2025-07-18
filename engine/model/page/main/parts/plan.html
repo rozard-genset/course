@@ -1,8 +1,7 @@
 {{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Weight -}}{{- end -}}
 {{- $unique := .Page.Params.Title | urlize -}}
 {{- $curent := .Page.Params.Weight -}}
-{{- $active := "" -}}
-{{- $sesion := "" -}}
+{{- $active := "" -}}{{- $sesion := "" -}}
   
 <div id="plan" class="">
 <div class="mb-20">
