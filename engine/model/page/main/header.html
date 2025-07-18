@@ -4,16 +4,10 @@
             <div class="text-md font-bold uppercase desktop">
                 {{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}
             </div>
-            <div class="text-md font-bold uppercase mobile">
-                Classroom
-            </div>
+            <div class="text-md font-bold uppercase mobile">Classroom</div>
         </div>
         <div class="col ml-a">
-        {{- if .IsPage -}}
-            <a href="{{ .Parent.RelPermalink }}" role="button" class="button outline float-right">End Session</a>
-        {{- else -}}
-            <a href="{{ .Parent.RelPermalink }}" role="button" class="button outline float-right">End Course</a>
-        {{- end -}}
+            <a href="{{ .Parent.Parent.RelPermalink }}" role="button" class="button outline float-right">End Course</a>
         </div>
     </nav>
 </header>
