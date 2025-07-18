@@ -4,13 +4,11 @@
 {{- $populate := slice -}}
 
 {{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
-{{- range $period -}}{{ $sesion = . -}}
-    {{- range $allpage -}}
+{{- range $period -}}{{ $sesion = . -}}{{- range $allpage -}}
         {{- if  and ( eq .Page.Params.Weight $sesion ) ( eq .Page.Params.Format.Type "material" ) -}}
             {{- $populate = $populate | append . -}}
         {{- end -}}
-    {{- end -}}
-{{- end -}}
+{{- end -}}{{- end -}}
 
 {{ if or ( $populate.Next . ) ( $populate.Prev . ) }}
 <hr class="mb-20"><div class="row mb-20">
