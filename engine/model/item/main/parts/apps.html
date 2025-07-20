@@ -1,17 +1,17 @@
 <div id="apps" class="mb-60">
-    {{ if or ( .Page.Params.Canal.Youtube ) ( .Page.Params.Canal.Spotify ) }}
+    {{ if or ( .Page.Params.Module.Canals.Youtube ) ( .Page.Params.Module.Canals.Spotify ) }}
     <h2 class="text-sm uppercase font-bold mb-20 mt-00"> Available On </h2>
     <div class="flex center-x space-between">
-        {{ if .Page.Params.Canal.Youtube  }}
-        <a class="flex center-x" href="{{ .Page.Params.Canal.Youtube }}" target="_blank">
+        {{ if .Page.Params.Module.Canals.Youtube  }}
+        <a class="flex center-x" href="{{ .Page.Params.Module.Canals.Youtube }}" target="_blank">
             <div class="icon xl">{{ partial "icon/logo/youtube-round.svg" }}</div>
             <div class="meta">
                 <div class="capitalize text-md">Youtube</div>
             </div>
         </a>
         {{ end }}
-        {{ if .Page.Params.Canal.Spotify  }}
-        <a class="flex center-x ml-20" href="{{ .Page.Params.Canal.Spotify }}" target="_blank">
+        {{ if .Page.Params.Module.Canals.Spotify  }}
+        <a class="flex center-x ml-20" href="{{ .Page.Params.Module.Canals.Spotify }}" target="_blank">
             <div class="icon xl">{{ partial "icon/logo/spotify-round.svg" }}</div>
             <div class="meta">
                 <div class="capitalize text-md">Spotify</div>

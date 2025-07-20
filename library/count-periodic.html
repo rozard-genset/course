@@ -1,0 +1,7 @@
+{{- $counter := slice -}}
+{{- range .Pages -}}
+    {{- with .Page.Params.Module.Period  -}}
+        {{ $counter = $counter | append . }}
+    {{- end -}}
+{{- end -}}
+{{- $counter | uniq | len -}}

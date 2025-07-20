@@ -1,21 +1,21 @@
-{{ $ctx  := . }}
-{{ $site := $ }}
-<div id="team" class="mb-30">
-    {{ if .Page.Params.Team.Tutor }}
-        <h3 class="text-sm font-bold uppercase mb-30"> Course Directore </h3>
-        {{ range .Page.Params.Team.Tutor }}
-            {{- $names := partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
-            {{- $cover := partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" . )  -}}
-            {{- $twitr := partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
-            <div class="list flex center-x">
-                <div class="image mb-30 rounded-full">
-                    {{ $cover }}
-                </div>
+{{- $ctx  := . -}}{{- $site := $ -}}
+<div id="team">
+    <div class="mb-30"></div>
+    <div class="flex">
+    {{- if .Page.Params.Module.Organ.Team -}}
+        {{- range .Page.Params.Module.Organ.Team -}}
+            {{- $names := partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+            {{- $cover := partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+            {{- $twitr := partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+            <div class="card flex mb-20 mt-20 mr-30 center-x">
+                <div class="image rounded-full">{{- $cover -}}</div>
                 <div class="bio ml-20">
                     <h3 class="text-sm mb-00 mt-00">{{ $twitr }}</h3>
-                    <h2 class="text-md font-bold mt-00 mb-30">{{ $names }}</h2>
+                    <h2 class="text-md font-bold mb-00 mt-00">{{ $names }}</h2>
+                    <h3 class="text-sm mt-00"> {{ .post }} </h3>
                 </div>
             </div>
-        {{ end }}
-    {{ end }}
+        {{- end -}}
+    {{- end -}}
+    </div>
 </div>

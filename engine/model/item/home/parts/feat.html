@@ -1,13 +1,13 @@
-{{ range first 1 ( where .Pages ".Params.promo"  true ) }}
+{{ range first 1 ( where .Pages ".Params.Module.promo"  true ) }}
 
 {{- $ctx  := . -}}{{- $site := $ -}}
 {{- $names := "" -}}{{- $cover := "" -}}{{- $twitr := "" -}}
 
-{{- with .Page.Params.Team.Tutor -}}
-    {{- range . -}}
-        {{- $names = partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" . )  -}}
-        {{- $cover = partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" . )  -}}
-        {{- $twitr = partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" . )  -}}
+{{- with .Page.Params.Module.Organ.Team -}}
+    {{- range first 1 . -}}
+        {{- $names = partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+        {{- $cover = partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+        {{- $twitr = partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" .name )  -}}
     {{- end -}}
 {{- end -}}
 
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="info mb-30"><p>{{ .Page.Params.Lead }} </p></div>
+                <div class="info mb-30"><p>{{ .Page.Params.Description }} </p></div>
             </div>
             <div class="bot">
                 <hr class="mb-10">
@@ -52,8 +52,8 @@
                                 <div class="rounded-lg flex center-x">
                                     <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                                     <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00 mr-10"> Dificulty </div>
-                                        <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Info.Level }}</div>
+                                        <div class="capitalize text-sm mb-00 mr-10"> Level </div>
+                                        <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
                                     </div>
                                 </div>
                             </div>
@@ -62,16 +62,16 @@
                                     <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                                     <div class="meta flex center-x">
                                         <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
-                                        <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                                        <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col col-xs-12 col-md-4">
                                 <div class="rounded-lg flex center-x">
                                     <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
-                                    <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00 mr-10"> Duration </div>
-                                        <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Plan.Length }}</div>
+                                    <div class="meta flex">
+                                        <div class="capitalize text-sm mb-00 mr-10"> Session </div>
+                                        <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
                                     </div>
                                 </div>
                             </div>

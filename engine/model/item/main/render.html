@@ -1,27 +1,23 @@
-{{ $path := "module/course/item/main/parts" }}
-{{ $hero := printf "%s/hero.html" $path }}
-{{ $tabs := printf "%s/tabs.html" $path }}
-{{ $apps := printf "%s/apps.html" $path }}
-{{ $info := printf "%s/info.html" $path }}
-{{ $team := printf "%s/team.html" $path }}
-{{ $reqs := printf "%s/reqs.html" $path }}
+{{- $path := "module/course/item/main/parts" -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $tabs := printf "%s/tabs.html" $path -}}
+{{- $apps := printf "%s/apps.html" $path -}}
+{{- $info := printf "%s/info.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $reqs := printf "%s/reqs.html" $path -}}
 
 
 <main id="room" class="wrap">
     <!-- hero -->
-    {{ partial $hero . }}
+    {{- partial $hero . -}}
     <div id="content" class="row">
          <asside class="col col-lg-4 col-xs-12">
-            <!-- info -->
-            {{ partial $info . }}
-            <!-- apps -->
-            {{ partial $apps . }}
-            <!-- team -->
-            {{ partial $reqs . }}
+            <!-- info -->{{- partial $info . -}}
+            <!-- apps -->{{- partial $apps . -}}
+            <!-- team -->{{- partial $reqs . -}}
         </asside>
         <article class="col col-lg-7 col-xs-12 ml-a">
-            <!-- tabs -->
-            {{ partial $tabs . }}
+            <!-- tabs -->{{- partial $tabs . -}}
         </article>
     </div>
 </main>

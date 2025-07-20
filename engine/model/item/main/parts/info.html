@@ -7,7 +7,7 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00"> Dificulty </div>
-                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Info.Level }} </div>
+                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Module.Plan.Level }} </div>
             </div>
         </div>
         <div class="col col-xs-6 flex center-x border-left">
@@ -16,7 +16,7 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00"> Certificate </div>
-                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Module.Certificate -}} {{- else -}} None {{- end -}} </div>
             </div>
         </div>
     </div>

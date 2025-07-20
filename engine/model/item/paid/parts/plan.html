@@ -2,7 +2,7 @@
 
     <h2 class="mb-50 text-3xl font-light"> Learning Path </h2>
 
-    {{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Period }}{{ end }}
+    {{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Module.Period }}{{ end }}
     {{ $pages := .Pages }}{{ range $period | uniq | sort }}{{ $session := . }}
    
     <hr class="mb-30">
@@ -12,7 +12,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-10">
 
-            {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
+            {{ range $pages }}{{ if and ( eq .Page.Params.Module.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
             
             <div href="{{ .RelPermalink }}" class="flex mb-40">
                 <div class="icon lg rounded-md la-01 mr-20">{{ partial "icon/line/folder.svg" }}</div>

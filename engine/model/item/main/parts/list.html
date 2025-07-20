@@ -1,4 +1,4 @@
-{{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Period }}{{ end }}
+{{ $period := slice }}{{ range .Pages.ByWeight }}{{ $period = $period | append .Page.Params.Module.Period }}{{ end }}
 {{ $pages := .Pages }}{{ range $period | uniq | sort }}{{ $session := . }}
     <div id="plan">
         <div class="row">
@@ -7,7 +7,7 @@
             </div>
             <div class="col col-md-6 col-xs-12">
                 <h3 class="text-lg"> Module </h3>
-                {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
+                {{ range $pages }}{{ if and ( eq .Page.Params.Module.Period $session ) ( eq .Page.Params.Format.Type "material" ) }}
                 <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
                     <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>
                     <div class="capitalize text-md">{{ .LinkTitle }}</div>
@@ -18,7 +18,7 @@
                 
                 <h3 class="text-lg"> Assignment </h3>
                 
-                {{ range $pages }}{{ if and ( eq .Page.Params.Period $session ) ( eq .Page.Params.Format.Type "assignment" ) }}
+                {{ range $pages }}{{ if and ( eq .Page.Params.Module.Period $session ) ( eq .Page.Params.Format.Type "assignment" ) }}
 
                 <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
                     <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>

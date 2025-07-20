@@ -7,7 +7,7 @@
 {{- $contexted := . }}{{ $rangelist := "acending" -}}
 
 {{- range $decending -}}
-    {{- if eq $contexted.Page.Params.Format.Kind . -}}
+    {{- if eq $contexted.Page.Params.Format.Model . -}}
         {{- $rangelist = "decending" -}}
     {{- end -}}
 {{- end -}}

@@ -1,0 +1,7 @@
+{{- $counter := slice -}}
+{{- range .Pages -}}
+    {{- if eq .Page.Params.Module.Strain "material" -}}
+        {{ $counter = $counter | append .Title }}
+    {{- end -}}
+{{- end -}}
+{{- $counter | len -}}

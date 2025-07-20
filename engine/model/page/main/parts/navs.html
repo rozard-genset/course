@@ -5,7 +5,7 @@
 
 {{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
 {{- range $period -}}{{ $sesion = . -}}{{- range $allpage -}}
-        {{- if  and ( eq .Page.Params.Weight $sesion ) ( eq .Page.Params.Format.Type "material" ) -}}
+        {{- if  and ( eq .Page.Params.Weight $sesion ) ( eq .Page.Params.Module.Strain "material" ) -}}
             {{- $populate = $populate | append . -}}
         {{- end -}}
 {{- end -}}{{- end -}}
@@ -18,7 +18,7 @@
             <h2 class="top flex center-x float-right font-bold text-md mb-20">
                 <div class="icon xs ml-10">{{- partial "icon/line/arrow-left.svg" -}}</div>Previous Module
             </h2>
-            <div class="mid desktop text-sm uppercase font-bold mb-05 clear-both block">Session {{ .Page.Params.Period }}</div><div class="low desktop block">{{ .Title }}</div>
+            <div class="mid desktop text-sm uppercase font-bold mb-05 clear-both block">Session {{ .Page.Params.Module.Period }}</div><div class="low desktop block">{{ .Title }}</div>
         </a>{{- end -}}
     </div>
     <div class="col col-xs-6 prev-post text-left border-left">
@@ -27,7 +27,7 @@
             <h2 class="top flex center-x font-bold text-md  mb-20">
                 Next Module<div class="icon xs ml-10">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </h2>
-            <div class="mid desktop text-sm uppercase font-bold mb-05 block">Session {{ .Page.Params.Period }}</div><div class="low desktop block">{{ .Title }}</div>
+            <div class="mid desktop text-sm uppercase font-bold mb-05 block">Session {{ .Page.Params.Module.Period }}</div><div class="low desktop block">{{ .Title }}</div>
         </a>{{- end -}}
     </div>
 </div><hr class="mb-60">

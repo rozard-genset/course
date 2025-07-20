@@ -1,14 +1,20 @@
-{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Period -}}{{- end -}}
-{{- $unique := .Page.Params.Title | urlize -}}{{- $curent := .Page.Params.Period -}}
+{{- $period := slice  -}}
+{{- range .Parent.Pages.ByWeight -}}
+    {{ if .Page.Params.Module.Period }}
+        {{- $period = $period | append .Page.Params.Module.Period -}}
+    {{ end }}
+{{- end -}}
+{{- $unique := .Page.Params.Title | urlize -}}{{- $curent := .Page.Params.Module.Period -}}
 {{- $active := "" -}}{{- $sesion := "" -}}
-  
+
+
 <div id="plan">
     <div class="mb-20">
         <h2 class="font-light text-md font-bold mr-10 mb-05 uppercase">Session Navigation</h2>
-        <h1 class="font-light text-md upper mt-00 mb-20">current Period | <span class="font-bold">Session {{ .Page.Params.Period }}</span></h1><hr>
+        <h1 class="font-light text-md upper mt-00 mb-20">current Period | <span class="font-bold">Session {{ .Page.Params.Module.Period }}</span></h1><hr>
     </div>
     <div class="learnplan">
-        {{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
+        {{- $allpage := .Parent.Pages -}}{{- $period = sort ( $period | uniq ) -}}
         {{- range $period -}}{{ $sesion = . -}}
         <div class="session">
             <div class="open-subdiv flex center-x" data-open="session-module-{{ $sesion }}">
@@ -18,11 +24,11 @@
             <div id="session-module-{{ $sesion }}" class="parted close">
                 {{- $populate := slice -}}
                 {{- range $allpage -}}
-                    {{- if  and (  eq .Page.Params.Period $sesion  ) ( eq .Page.Params.Format.Type "material" ) -}}
-                        {{ $populate = $populate | append . -}}
+                    {{- if and ( eq .Page.Params.Module.Period $sesion  ) ( .IsPage ) ( eq .Page.Params.Module.Strain "material" ) -}}
+                        {{- if . -}}{{- $populate = $populate | append . -}}{{- end -}}
                     {{- end -}}
                 {{- end -}}
-                {{- range sort $populate ".Params.parted" -}}
+                {{- range sort $populate ".Params.Module.Parted" -}}
                     {{- if eq ( .Page.Params.Title | urlize ) $unique -}}
                         {{- $active = "active" -}}
                     {{- else -}}
@@ -34,7 +40,7 @@
                                 <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
                                 <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
                             </div>
-                            <p class="mt-00 text-gray-400">{{ .Page.Params.Lead }}</p>
+                            <p class="mt-00 text-gray-400">{{ .Page.Params.Description }}</p>
                         </div>
                     </a>
                 {{- end -}}

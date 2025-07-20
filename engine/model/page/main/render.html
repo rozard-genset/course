@@ -8,7 +8,7 @@
 <main id="page" class="wrap">
     <div id="content" class="row pt-30">
         <article class="col col-xs-12 col-lg-8 ml-a">
-            {{ if eq .Page.Params.Format.Type "material" }}
+            {{ if eq .Page.Params.Module.Strain "material" }}
                 <div id="main">{{- partial $cont . -}}</div>
                 <div id="navs">{{- partial $navs . -}}</div>
             {{ else }}

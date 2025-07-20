@@ -1,50 +1,50 @@
 <div id="hero" class="mb-60">
     <div class="row">
         <div class="col col-lg-7 col-xs-12 ">
-            {{ partial "lib/course/hero-thumb.html"  . }}
+            {{- partial "lib/course/hero-thumb.html"  . -}}
         </div>
         <div class="col col-lg-4 col-xs-12 ml-a">
             <div class="title mb-40">
                 <h1 class="mt-05">{{ .Title }}</h1>
-                <p class="capitalize mb-05 mb-30">Provide By<span class="font-bold uppercase ml-10">{{ .Page.Params.Team.Organization }}</span></p>
-                <p>{{ .Page.Params.Lead }}</p>
+                <p class="capitalize mb-05 mb-30">Provide By<span class="font-bold uppercase ml-10">{{- .Page.Params.Module.Organ.Name -}}</span></p>
+                <p>{{- .Page.Params.Description -}}</p>
             </div>
             <div class="detail">
                 <div class="row">
                     <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
-                            {{ .Page.Params.Plan.Module }}
+                            {{- partial "lib/course/count-material.html"  . -}}
                         </div>
                         <div class="text">
                             <div class="uppercase font-bold text-xs text-gray-500"> Learning </div>
-                            <div class="text-md"> Material </div> 
+                            <div class="text-md">Material</div> 
                         </div>
                     </div>
                     <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
-                            {{ .Page.Params.Plan.Assignment }}
+                           {{- partial "lib/course/count-assigment.html" . -}}
                         </div>
                         <div class="text">
                             <div class="uppercase font-bold text-xs text-gray-500"> Active </div>
-                            <div class="text-md"> Assigment </div> 
+                            <div class="text-md">Assigment</div> 
                         </div>
                     </div>
                     <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
-                            {{ .Page.Params.Plan.Period }}
+                            {{- partial "lib/course/count-periodic.html"  . -}}
                         </div>
                         <div class="text">
                             <div class="uppercase font-bold text-xs text-gray-500"> Total </div>
-                            <div class="text-md"> Session </div> 
+                            <div class="text-md">Session</div> 
                         </div>
                     </div>
                     <div class="card flex center-x col col-md-6 col-sm-3 col-xs-6 mb-20">
                         <div class="count font-md text-3xl mr-20">
-                            {{ .Page.Params.Plan.Length }}
+                            {{- partial "lib/course/count-projects.html"  . -}}
                         </div>
                         <div class="text">
-                            <div class="uppercase font-bold text-xs text-gray-500"> Hours </div>
-                            <div class="text-md"> Duration </div> 
+                            <div class="uppercase font-bold text-xs text-gray-500"> Project </div>
+                            <div class="text-md">Sandbox</div> 
                         </div>
                     </div>
                 </div>
@@ -53,17 +53,15 @@
             <div id="checkout" class="flex center-x">
                 <div class="">
                     {{ range first 1 .Pages }}
-                    <a href="{{ .RelPermalink }}" class="button flex center-x">
-                        <div class="icon md">
-                            {{ partial "icon/line/edit.svg" }}
-                        </div>
+                    <a href="{{ .RelPermalink }}" class="button outline flex center-x">
+                        <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>
                         <div class="text-sm font-bold">Take Course</div>
                     </a>
                     {{ end }}
                 </div>
                 <div id="share-course" class="ml-a">
-                    <a href="#" class="button outline flex center-x" title="share course">
-                        <div class="icon md">{{ partial "icon/line/share-2.svg" }}</div>
+                    <a href="#" class="button flex center-x" title="share course">
+                        <div class="icon md">{{- partial "icon/line/share-2.svg" -}}</div>
                     </a>
                 </div>
             </div>
