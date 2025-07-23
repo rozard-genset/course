@@ -7,17 +7,19 @@
 {{- $reqs := printf "%s/reqs.html" $path -}}
 
 
-<main id="room" class="wrap">
-    <!-- hero -->
-    {{- partial $hero . -}}
-    <div id="content" class="row">
-         <asside class="col col-lg-4 col-xs-12">
-            <!-- info -->{{- partial $info . -}}
-            <!-- apps -->{{- partial $apps . -}}
-            <!-- team -->{{- partial $reqs . -}}
-        </asside>
-        <article class="col col-lg-7 col-xs-12 ml-a">
-            <!-- tabs -->{{- partial $tabs . -}}
-        </article>
+<main id="room">
+    <div class="wrap">
+        <!-- hero -->
+        {{- partial $hero . -}}
+        <div id="content" class="row">
+            <asside class="col col-lg-4 col-xs-12">
+                <!-- info -->{{- partial $info . -}}
+                <!-- apps -->{{- partial $apps . -}}
+                <!-- team -->{{- partial $reqs . -}}
+            </asside>
+            <article class="col col-lg-7 col-xs-12 ml-a">
+                <!-- tabs -->{{- partial $tabs . -}}
+            </article>
+        </div>
     </div>
 </main>
