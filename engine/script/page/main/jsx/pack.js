@@ -121,6 +121,4 @@ let init_bugs = ()=> {
 window.addEventListener( 'load', ()=> {
     init_plan();
     init_tabs();
-    init_talk();
-    init_bugs();
 });
