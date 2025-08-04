@@ -1,12 +1,15 @@
 {{- $main := "module/course/page/term/parts/" -}}
 {{- $hero := printf "%s/hero.html" $main -}}
+{{- $join := printf "%s/join.html" $main -}}
 <div id="term">
     <div class="wrap">
-        {{- partial $hero . -}}
-        <aside>
-            
-        </aside>
-        <article>
-        </article>
+        <div class="divider flex">
+            <aside>
+                {{- partial $hero . -}}{{- partial $join . -}}
+            </aside>
+            <article>
+                Content
+            </article>
+        </div>
     </div>
 </div>
