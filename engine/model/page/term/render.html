@@ -1,9 +1,10 @@
 {{- $main := "module/course/page/term/parts/" -}}
-{{- $head := printf "%s/head.html" $main -}}
+{{- $hero := printf "%s/hero.html" $main -}}
 <div id="term">
     <div class="wrap">
+        {{- partial $hero . -}}
         <aside>
-            {{- partial $head . -}}
+            
         </aside>
         <article>
         </article>
