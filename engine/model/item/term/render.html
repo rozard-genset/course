@@ -1,6 +1,8 @@
-{{- $main := "module/course/page/term/parts/" -}}
+{{- $main := "module/course/item/term/parts/" -}}
 {{- $hero := printf "%s/hero.html" $main -}}
 {{- $join := printf "%s/join.html" $main -}}
+{{- $list := printf "%s/list.html" $main -}}
+{{- $tags := printf "%s/tags.html" $main -}}
 <div id="term">
     <div class="wrap">
         <div class="divider flex">
@@ -8,7 +10,8 @@
                 {{- partial $hero . -}}{{- partial $join . -}}
             </aside>
             <article>
-                Content
+                {{- partial $tags . -}}
+                {{- partial $list . -}}
             </article>
         </div>
     </div>

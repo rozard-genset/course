@@ -1,7 +1,7 @@
 {{- $path := "module/course/item/home/parts" -}}
 {{- $feat := printf "%s/feat.html" $path -}}
-{{- $reco := printf "%s/reco.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
+{{- $list := printf "%s/list.html" $path -}}
 <main>
     <div class="wrap">
         {{- partial $feat . -}}
@@ -10,7 +10,7 @@
                 {{- partial $term . -}}
             </aside>
             <article>
-                {{- partial $reco . -}}
+                {{- partial $list . -}}
             </article>
         </div>
     </div>
