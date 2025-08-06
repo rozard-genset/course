@@ -2,16 +2,34 @@
 {{- $feat := printf "%s/feat.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
 {{- $list := printf "%s/list.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $regs := printf "%s/regs.html" $path -}}
+{{- $hero := printf "%s/hero.html" $path -}}
 <main>
     <div class="wrap">
-        {{- partial $feat . -}}
-        <div class="divide flex">
-            <aside>
-                {{- partial $term . -}}
-            </aside>
-            <article>
-                {{- partial $list . -}}
-            </article>
+            <section id="herobar">
+                 {{- partial $hero . -}}
+            </section>
+            <section id="feature" class="divide flex">
+                <div class="content">
+                    {{- partial $term . -}}
+                </div>
+                <div class="sidebar">
+                    {{- partial $feat . -}}
+                </div>
+            </section>
+            <section id="register" class="">
+                {{- partial $regs . -}}
+            </section>
+            <section id="listing" class="divide flex">
+                <div class="content">
+                    {{- partial $list . -}}
+                </div>
+                 <div class="sidebar">
+                    {{- partial $team . -}}
+                </div>
+            </section>
+           
         </div>
     </div>
 </main>

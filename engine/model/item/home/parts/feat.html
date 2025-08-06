@@ -11,91 +11,85 @@
     {{- end -}}
 {{- end -}}
 
-<section id="feat" class="feature mb-60">
-    <div class="row">
-        <div class="col col-xs-12 col-lg-7">
-            <div class="overlay">
+<div id="feat" class="mb-60">
+    <div class="top mb-30">
+        <div class="meta border-bottom border-top mb-30">
+            <div class="box">
+                <div class="row">
+                    <div class="col col-xs-12 col-md-4 border-right">
+                        <div class="rounded-lg flex center-x">
+                            <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
+                            <div class="meta flex center-x">
+                                <div class="capitalize text-sm mb-00 mr-10"> Level </div>
+                                <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-12 col-md-4 border-right">
+                        <div class="rounded-lg flex center-x">
+                            <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
+                            <div class="meta flex center-x">
+                                <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
+                                <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-12 col-md-4">
+                        <div class="rounded-lg flex center-x">
+                            <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
+                            <div class="meta flex">
+                                <div class="capitalize text-sm mb-00 mr-10"> Session </div>
+                                <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="title flex center-x mb-15 ml-30">
+            <h1 class="mr-10 mt-00 mb-10">{{ .Title }}</h1>
+            <div class="like ml-a">
+                <div class="box flex center-x rounded-full border-all">
+                    <div class="dot info feature mr-10"></div>
+                    <div class="text-sm mt-05 mb-05">Featured</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mid mb-40 ml-30">
+        <div class="">
+            <div class="col ">
                 <div class="box">
                     <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
                     <div class="extra"></div>
                 </div>
             </div>
-        </div>
-        <div class="col col-xs-12 col-lg-5">
-            <div class="top">
-                <div class="title flex center-x mb-30">
-                    <div class="title mr-10"><h1>{{ .Title }}</h1></div>
-                    <div class="like ml-a">
-                        <div class="box flex center-x rounded-full border-all">
-                            <div class="dot info feature mr-10"></div>
-                            <div class="text-sm mt-05 mb-05">Featured</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="team" class="mb-30">
-                    <div class="list flex center-x">
-                        <div class="image">{{- $cover -}}</div>
-                        <div class="bio ml-20">
-                            <div class="text-md font-bold mt-00 mb-00">{{ $names }}</div>
-                            <div class="text-sm mb-00 mt-00">{{ $twitr }}</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col ">
                 <div class="info mb-30"><p>{{ .Page.Params.Description }} </p></div>
-            </div>
-            <div class="bot">
-                <hr class="mb-10">
-                <div class="meta mb-100">
-                    <div class="box">
-                        <div class="row">
-                            <div class="col col-xs-12 col-md-4">
-                                <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
-                                    <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00 mr-10"> Level </div>
-                                        <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-xs-12 col-md-4">
-                                <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
-                                    <div class="meta flex center-x">
-                                        <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
-                                        <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col col-xs-12 col-md-4">
-                                <div class="rounded-lg flex center-x">
-                                    <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
-                                    <div class="meta flex">
-                                        <div class="capitalize text-sm mb-00 mr-10"> Session </div>
-                                        <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="mb-30">
-                <div class="acts flex center-x">
-                    <div class="left mr-a">
-                        <div class="enroll">
-                            <a href="{{ .RelPermalink }}" class="button outline">
-                                {{ partial "icon/line/bookmark.svg" }}
-                                {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll Now {{- end -}}
-                            </a>
-                        </div>
-                    </div>
-                    <div class="right flex center-x ml-a">
-                        <div class="action">
-                            <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-</section>
+    <div class="bot ml-30">
+        <div class="acts flex center-x ml-20">
+            <div id="team" class="mr-a">
+                <div class="list flex center-x">
+                    <div class="image">{{- $cover -}}</div>
+                    <div class="bio ml-20">
+                        <div class="text-md font-bold mt-00 mb-00">{{ $names }}</div>
+                        <div class="text-sm mb-00 mt-00">{{ $twitr }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="enroll">
+                <a href="{{ .RelPermalink }}" class="button outline">
+                    {{- partial "icon/line/bookmark.svg" -}}
+                    {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll Now {{- end -}}
+                </a>
+            </div>
+            <div class="action flex center-x ml-10">
+                <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
+            </div>
+        </div>
+    </div>
+</div>
 {{ end }}

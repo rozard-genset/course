@@ -1,8 +1,96 @@
 @import "../../../../../core/css/flexs/_init.scss";
+
 @import "../../../../../core/css/flexs/col-12.scss";
-@import "../../../../../core/css/flexs/col-07.scss";
-@import "../../../../../core/css/flexs/col-05.scss";
+@import "../../../../../core/css/flexs/col-06.scss";
 @import "../../../../../core/css/flexs/col-04.scss";
+
+#herobar{
+    height: 260px;
+    h1{
+        margin: auto;
+        width: 620px;
+    }
+
+    hr{
+        margin: 420px auto auto auto;
+        width: 720px;
+        transform: rotate(90deg);
+    }
+}
+
+#feature{
+    margin-bottom: 5rem;
+    .sidebar{
+        width: 50%;
+        padding-left: 0rem;
+    }
+    .content{
+        width: 50%;
+        padding-right: 0rem;
+    }
+    #term {
+        hr{
+            margin-block-start: 0;
+        }
+
+        .row{
+            padding-right: 2rem;
+        }
+
+        .col{
+            padding-left: 0;
+        }
+        ul {
+            list-style: none;
+        }
+
+        .card{
+            border: 1px solid transparent;
+            padding: 5px 10px;
+        }
+
+        .card:hover{
+            border: 1px solid var(--line-01);
+            background-color: var(--background-02);
+           
+        }
+
+        img{
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+        }
+    }
+
+    #feat {
+        .meta{
+            padding: 6px 10px ;
+        }
+    }
+}
+
+#register{
+    .low, .mid, .top {
+        width: 100%;
+    } 
+
+    img{
+        width: 100%;
+    }
+}
+
+#listing{
+    .sidebar{
+        width: 320px;
+        margin-left: 2rem;
+    }
+    .content{
+        width: calc( 100% - 320px );
+        margin-right: 2rem;
+    }
+}
+
+
 
 
 a{
@@ -28,7 +116,7 @@ article{
 }
 
 #list{
-    margin-top: 5rem;
+
 
     img{
         width: 100%;
