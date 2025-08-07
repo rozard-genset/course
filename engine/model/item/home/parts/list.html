@@ -3,9 +3,9 @@
         <h2 class="text-2xl mt-00">Latest Courses</h2><hr>
         <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
-    <div class="row">
+    <div class="divider">
     {{ range .Pages }}{{ if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "none" ) }}
-        <div class="course col col-lg-4 mb-35">
+        <div class="course">
             <a href="{{ .RelPermalink }}">
                 <div class="card rounded-lg">
                     <div class="thumb">

@@ -5,6 +5,7 @@
 {{- $team := printf "%s/team.html" $path -}}
 {{- $regs := printf "%s/regs.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
+{{- $bugs := printf "%s/bugs.html" $path -}}
 <main>
     <div class="wrap">
             <section id="herobar">
@@ -27,6 +28,7 @@
                 </div>
                  <div class="sidebar">
                     {{- partial $team . -}}
+                    {{- partial $bugs . -}}
                 </div>
             </section>
            

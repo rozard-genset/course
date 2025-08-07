@@ -4,36 +4,48 @@
     {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
 {{- end -}}
 <div id="term" class="">
-    <div class="top mb-60">
+    <div class="top mb-40">
         <hr class="mb-40">
-        <div class="info">
-            <h2 class="text-3xl mb-10">Learning Path</h2>
+        <div class="info mb-40">
+            <h2 class="text-3xl mb-10">Involve With Us</h2>
             <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+        </div>
+        <div class="flex">
+            <a href="#">
+                <div class="action flex center-x">
+                    <div class="font-bold">Course Creator</div>
+                    <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="action flex center-x ml-40 border-left pl-40">
+                    <div class="font-bold">Course Contributor</div>
+                    <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="mid mb-40">
         <hr class="mb-40">
-        <div class="info mb-60">
-            <h2 class="text-3xl mb-10">Explore Courses</h2>
+        <div class="info mb-50">
+            <h2 class="text-3xl mb-10 mt-00">Explore Courses</h2>
             <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
         </div>
-        <ul class="row mb-40">
-            {{ range first 9 $list }}
-            <li class="col col-xs-6 col-lg-4 mb-30"><a href="{{ .RelPermalink }}">
-                    <div class="card border-all rounded-lg flex center-x">
-                        <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
-                        <div class="ml-10 font-bold">{{- .Title -}}</div>
-                    </div>
+        <ul class="box mb-40">
+            {{ range first 6 $list }}
+            <li class=""><a href="{{ .RelPermalink }}">
+                <div class="card border-all rounded-lg flex center-x">
+                    <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
+                    <div class="ml-10 font-bold">{{- .Title -}}</div>
+                </div>
             </a></li>
             {{ end }}
         </ul>
-        <div class="flex">
-            <div class="action">
-                Being Course Creator
+        <a href="#">
+            <div class="flex center-x">
+                <div class="font-bold">All Categories</div>
+                <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </div>
-            <div class="action ml-30">
-                Being Course Contributor
-            </div>
-        </div>
+        </a>
     </div>
 </div>

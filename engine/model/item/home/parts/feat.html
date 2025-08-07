@@ -5,9 +5,9 @@
 
 {{- with .Page.Params.Module.Organ.Team -}}
     {{- range first 1 . -}}
-        {{- $names = partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" .name )  -}}
-        {{- $cover = partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" .name )  -}}
-        {{- $twitr = partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+        {{- $names = partial "lib/profile/person-name.html"    (dict  "ctx" $ctx "site" $site "name" .name ) -}}
+        {{- $cover = partial "lib/course/hero-tutor.html"      (dict  "ctx" $ctx "site" $site "name" .name ) -}}
+        {{- $twitr = partial "lib/profile/person-twitter.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}
     {{- end -}}
 {{- end -}}
 
@@ -58,13 +58,11 @@
     </div>
     <div class="mid mb-40 ml-30">
         <div class="">
-            <div class="col ">
-                <div class="box">
-                    <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
-                    <div class="extra"></div>
-                </div>
+            <div class="box">
+                <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
+                <div class="extra"></div>
             </div>
-            <div class="col ">
+            <div class="box">
                 <div class="info mb-30"><p>{{ .Page.Params.Description }} </p></div>
             </div>
         </div>
