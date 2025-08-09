@@ -1,6 +1,7 @@
 {{- $path := "module/course/item/home/view" -}}
 {{- $list := printf "%s/list.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
+{{- $join := printf "%s/join.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
 
@@ -14,7 +15,7 @@
                 {{ partial $list . }}
             </article>
             <aside class="box top">
-                {{ partial $term . }}{{ partial $team . }}{{ partial $bugs . }}
+                {{ partial $term . }}{{ partial $join . }}{{ partial $team . }}{{ partial $bugs . }}
             </aside>
         </div>
     </div>
