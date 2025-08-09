@@ -60,11 +60,11 @@ main{ margin-top: 5rem; }
 #landing #section-4 {
     .sidebar{
         width: 300px;
-        padding-right: 2rem;
+        padding-left: 2rem;
     }
     .content{
         width: calc( 100% - 300px );
-        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 

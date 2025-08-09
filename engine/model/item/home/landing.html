@@ -25,10 +25,10 @@
             {{- partial $info . -}}
         </section>
         <section id="section-4" class="divide flex">
+            <div class="content">{{- partial $list . -}}</div>
             <div class="sidebar">
                 {{- partial $team . -}}{{- partial $bugs . -}}
             </div>
-            <div class="content">{{- partial $list . -}}</div>
         </section>
     </div>
 </main>

@@ -2,9 +2,9 @@
 {{ $pages = $pages.ByDate }}
 
 <div id="listbox">
-    <div class="info mb-50">
-        <h2 class="text-2xl mt-00">Latest Courses</h2><hr>
-        <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+    <div class="info mb-60 flex center-x">
+        <h2 class="text-xl uppercase font-bold mt-00 mb-00">Latest Courses</h2>
+        <p class="text-lg mt-00 mb-00 border-left pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
     <div class="divider">
     {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
