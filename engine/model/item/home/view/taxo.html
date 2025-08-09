@@ -1,7 +1,7 @@
 {{- $title := "Explore Courses" -}}
 {{- with .Page.Params.Module.Parted.Taxo.Lead -}}{{- $title = . -}}{{- end -}}
 
-{{- $leads := "Learn on-the-go or right at home with self-paced courses. Get started today!" -}}
+{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" -}}
 {{- with .Page.Params.Module.Parted.Taxo.desc -}}{{- $leads = . -}}{{- end -}}
 
 
@@ -12,26 +12,25 @@
 {{- end -}}
 
 <div id="taxo" class="">
-    <div class="mid mb-40">
-        <hr class="mb-40">
-        <div class="info mb-50">
-            <h2 class="text-3xl mb-10 mt-00">{{- $title -}}</h2><p class="">{{- $leads -}}</p>
-        </div>
-        <ul class="box mb-40">
-            {{- range first 6 $list -}}
-            <li class=""><a href="{{ .RelPermalink }}">
-                <div class="card border-all rounded-lg flex center-x">
-                    <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
-                    <div class="ml-10 font-bold">{{- .Title -}}</div>
-                </div>
-            </a></li>
-            {{- end -}}
-        </ul>
-        <a href="/{{ .Section }}/terms/">
-            <div class="flex center-x">
-                <div class="font-bold">All Categories</div>
-                <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </div>
+    <hr class="mb-50">
+    <div class="info flex max-width mb-40">
+        <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
+        <a href="/{{ .Section }}/terms/" class="flex center-x ml-a mr-30">
+            <div class="font-bold">All Categories</div>
+            <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
         </a>
     </div>
+    <div class="desc max-width">
+        <p class="mb-40 mr-30">{{- $leads -}}</p>
+    </div>
+    <ul class="box mb-40 mr-30">
+        {{- range first 6 $list -}}
+        <li class=""><a href="{{ .RelPermalink }}">
+            <div class="card border-all rounded-lg flex center-x">
+                <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
+                <div class="ml-10 font-bold">{{- .Title -}}</div>
+            </div>
+        </a></li>
+        {{- end -}}
+    </ul>
 </div>

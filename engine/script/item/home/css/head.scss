@@ -81,17 +81,14 @@ main{ margin-top: 5rem; }
     }
 }
 
-#landing #lead {
+#landing #invo {
+
     hr{
         margin-block-start: 0;
     }
 
-    .row{
-        padding-right: 2rem;
-    }
-
-    .col{
-        padding-left: 0;
+    .max-width{
+        width: 520px;
     }
 }
 
@@ -116,6 +113,10 @@ main{ margin-top: 5rem; }
         width: 42px;
         height: 42px;
         object-fit: cover;
+    }
+
+    .max-width{
+        width: 520px;
     }
 
     .box{

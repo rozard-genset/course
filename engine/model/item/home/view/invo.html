@@ -1,22 +1,23 @@
 {{- $title := "Involve With Us" -}}
 {{- with .Page.Params.Module.Parted.Invo.Lead -}}{{- $title = . -}}{{- end -}}
 
-{{- $leads := "Being Apart Of Open Global Education" -}}
-{{- with .Page.Params.Module.Parted.Invo.desc -}}{{- $leads = . -}}{{- end -}}
+{{- $notes := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" -}}
+{{- with .Page.Params.Module.Parted.Invo.note -}}{{- $notes = . -}}{{- end -}}
 
-<div id="invo" class="mb-40">
+<div id="invo" class="mb-50">
     <hr class="mt-00 mb-40">
-    <div class="info mb-50">
-        <h2 class="text-3xl mb-10 mt-00">{{- $title -}}</h2><p class="">{{- $leads -}}</p>
-    </div>
-    <div class="flex">
-        {{- range .Page.Params.Module.Parted.Invo.Data -}}
-        <a href="{{ .link }}" class="mr-30">
-            <div class="action flex center-x">
+    <div class="info flex max-width mb-40">
+        <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
+        <div class="action flex ml-a">
+            {{- range .Page.Params.Module.Parted.Invo.Data -}}
+            <a href="{{ .link }}" class="mr-30 action flex center-x">
                 <div class="font-bold">{{ .name }}</div>
                 <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </div>
-        </a>
-        {{- end -}}
+            </a>
+            {{- end -}}
+        </div>
+    </div>
+    <div class="desc max-width">
+        <p class="mr-30">{{- $notes -}}</p>
     </div>
 </div>
