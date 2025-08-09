@@ -56,9 +56,9 @@
             </div>
         </div>
     </div>
-    <div class="mid mb-40 ml-30">
+    <div class="mid ml-30 mb-40">
         <div class="">
-            <div class="box">
+            <div class="box mb-30">
                 <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
                 <div class="extra"></div>
             </div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="bot ml-30">
-        <div class="acts flex center-x ml-20">
+        <div class="acts flex center-x">
             <div id="team" class="mr-a">
                 <div class="list flex center-x">
                     <div class="image">{{- $cover -}}</div>
@@ -81,7 +81,7 @@
             <div class="enroll">
                 <a href="{{ .RelPermalink }}" class="button outline">
                     {{- partial "icon/line/bookmark.svg" -}}
-                    {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll Now {{- end -}}
+                    {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll {{- end -}}
                 </a>
             </div>
             <div class="action flex center-x ml-10">
