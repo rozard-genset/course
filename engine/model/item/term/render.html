@@ -3,16 +3,16 @@
 {{- $join := printf "%s/join.html" $main -}}
 {{- $list := printf "%s/list.html" $main -}}
 {{- $tags := printf "%s/tags.html" $main -}}
-<div id="term">
+<main id="term">
     <div class="wrap">
         <div class="divider flex">
             <aside>
                 {{- partial $hero . -}}{{- partial $join . -}}
             </aside>
-            <article>
+            <section id="content">
                 {{- partial $tags . -}}
                 {{- partial $list . -}}
-            </article>
+            </section>
         </div>
     </div>
-</div>
+</main>

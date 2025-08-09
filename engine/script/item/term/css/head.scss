@@ -1,42 +1,19 @@
-@import "../../../../../core/css/flexs/_init.scss";
-@import "../../../../../core/css/flexs/col-12.scss";
-@import "../../../../../core/css/flexs/col-04.scss";
-
-
-#term{
-    margin-top: 3.5rem;
-}
-
-#term aside{
-    width: 260px;
-    padding-right: 3rem;
-}
-
-#term article{
-    width: calc(100% - 260px);
-    padding-left: 3rem;
-}
-
-#hero {
-    .head{
-        width: 260px;
-        overflow: hidden;
-        p{ background-color: var(--background-02); }
-    }
-}
-
-#join{
-
-    .register a{
-        color: var(--link-02-based);
-    }
-}
-
-#list{
+main{
     margin-top: 5rem;
+}
+
+#listbox{
+
     img{
         width: 100%;
         height: 100%;
+    }
+
+    .divider{
+        display: grid;
+        grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+        grid-gap: 2.5rem;
+        grid-row: 2.5rem;
     }
 
     .card{
@@ -58,6 +35,33 @@
         }
     }
 }
+
+#term aside{
+    width: 300px;
+    padding-right: 2rem;
+}
+
+#term #content{
+    width: calc(100% - 300px);
+    padding-left: 2rem;
+}
+
+
+#term #hero {
+    .head{
+        width: 100%;
+        overflow: hidden;
+        p{ background-color: var(--background-02); }
+    }
+}
+
+#term #join{
+
+    .register a{
+        color: var(--link-02-based);
+    }
+}
+
 
 @media only screen and (min-width: 480px) {
 
