@@ -1,4 +1,5 @@
 {{- $path := "module/course/item/home/view" -}}
+{{- $hero := printf "%s/hero.html" $path -}}
 {{- $list := printf "%s/list.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
 {{- $join := printf "%s/join.html" $path -}}
@@ -12,6 +13,7 @@
     <div class="wrap">
         <div class="flex">
             <article class="box mid">
+                {{ partial $hero . }}
                 {{ partial $list . }}
             </article>
             <aside class="box top">
