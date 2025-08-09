@@ -1,0 +1,21 @@
+{{- $path := "module/course/item/home/view" -}}
+{{- $list := printf "%s/list.html" $path -}}
+{{- $term := printf "%s/term.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $bugs := printf "%s/bugs.html" $path -}}
+
+{{- $page := where site.RegularPages "Type" .Section -}}
+{{- $navi := .Paginate $page.ByDate 10 -}}
+
+<main id="paginate" class="pagination page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
+    <div class="wrap">
+        <div class="flex">
+            <article class="box mid">
+                {{ partial $list . }}
+            </article>
+            <aside class="box top">
+                {{ partial $term . }}{{ partial $team . }}{{ partial $bugs . }}
+            </aside>
+        </div>
+    </div>
+</main>

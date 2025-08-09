@@ -3,7 +3,7 @@
 {{- range  where .Site.Pages "Type" "course" -}}
     {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
 {{- end -}}
-<div id="term" class="">
+<div id="lead" class="">
     <div class="top mb-40">
         <hr class="mb-40">
         <div class="info mb-40">

@@ -1,7 +1,41 @@
 a { color: var(--color-02); }
 main{ margin-top: 5rem; }
 
-#herobar{
+#pagelist{
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .divider{
+        display: grid;
+        grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+        grid-gap: 2.5rem;
+        grid-row: 2.5rem;
+    }
+
+    .card{
+        background-color: var(--background-02);
+        overflow: hidden;
+
+        img{
+            border-radius: 0;
+        }
+
+        .title{
+            margin: 0;
+            padding: 15px;
+        }
+
+        .meta .box{
+            width: 50%;
+            padding: 10px 15px;
+        }
+    }
+}
+
+#landing #herobar{
     height: 260px;
     h1{
         margin: auto;
@@ -15,7 +49,7 @@ main{ margin-top: 5rem; }
     }
 }
 
-#feature{
+#landing #feature{
     margin-bottom: 5rem;
     .sidebar{
         width: 50%;
@@ -25,7 +59,7 @@ main{ margin-top: 5rem; }
         width: 50%;
         padding-right: 0rem;
     }
-    #term {
+    #lead {
         hr{
             margin-block-start: 0;
         }
@@ -72,7 +106,7 @@ main{ margin-top: 5rem; }
     }
 }
 
-#register{
+#landing #register{
     .low, .mid, .top {
         width: 100%;
     } 
@@ -82,7 +116,7 @@ main{ margin-top: 5rem; }
     }
 }
 
-#listing{
+#landing #listing{
 
     .sidebar{
         width: 360px;
@@ -92,41 +126,57 @@ main{ margin-top: 5rem; }
         width: calc( 100% - 360px );
         margin-right: 2rem;
     }
+}
 
-    #list{
+#paginate {
+    aside{
+        padding-left: 2rem;
+        width: calc( 27% - 2rem );
+    }
 
-        img{
-            width: 100%;
-            height: 100%;
+    article{
+        padding-right: 2rem;
+        width: calc( 73% - 2rem );
+    }
+}
+
+#paginate aside{
+
+    #term {
+        hr{
+            margin-block-start: 0;
         }
 
-        .divider{
-            display: grid;
-            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
-            grid-gap: 2.5rem;
-            grid-row: 2.5rem;
+        .row{
+            padding-right: 2rem;
+        }
+
+        .col{
+            padding-left: 0;
+        }
+
+        ul {
+            list-style: none;
         }
 
         .card{
+            border: 1px solid transparent;
+            padding: 5px 10px;
+        }
+
+        .card:hover{
+            border: 1px solid var(--line-01);
             background-color: var(--background-02);
-            overflow: hidden;
+        }
 
-            img{
-                border-radius: 0;
-            }
-
-            .title{
-                margin: 0;
-                padding: 15px;
-            }
-
-            .meta .box{
-                width: 50%;
-                padding: 10px 15px;
-            }
+        img{
+            width: 42px; height: 42px;
+            object-fit: cover;
         }
     }
 }
+
+
 
 @media only screen and (min-width: 480px) {
 

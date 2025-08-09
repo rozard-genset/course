@@ -1,18 +1,23 @@
 {{- $path := "module/course/item/home/view" -}}
-{{- $feat := printf "%s/landing-feat.html" $path -}}
-{{- $term := printf "%s/landing-term.html" $path -}}
-{{- $list := printf "%s/landing-list.html" $path -}}
-{{- $team := printf "%s/landing-team.html" $path -}}
-{{- $regs := printf "%s/landing-regs.html" $path -}}
-{{- $hero := printf "%s/landing-hero.html" $path -}}
-{{- $bugs := printf "%s/landing-bugs.html" $path -}}
-<main>
+{{- $feat := printf "%s/feat.html" $path -}}
+{{- $lead := printf "%s/lead.html" $path -}}
+{{- $list := printf "%s/list.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $regs := printf "%s/regs.html" $path -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $bugs := printf "%s/bugs.html" $path -}}
+
+<!-- pagination -->
+{{- $page := where site.RegularPages "Type" .Section -}}
+{{- $navi := .Paginate $page.ByDate 10 -}}
+
+<main id="landing" class="landing page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
     <div class="wrap">
         <section id="herobar">
             {{- partial $hero . -}}
         </section>
         <section id="feature" class="divide flex">
-            <div class="content">{{- partial $term . -}}</div>
+            <div class="content">{{- partial $lead . -}}</div>
             <div class="sidebar">{{- partial $feat . -}}</div>
         </section>
         <section id="register" class="">
