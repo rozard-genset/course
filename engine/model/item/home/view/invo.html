@@ -4,17 +4,19 @@
 {{- $leads := "Learn on-the-go or right at home with self-paced courses. Get started today!" -}}
 {{- with .Page.Params.Module.Parted.Invo.desc -}}{{- $leads = . -}}{{- end -}}
 
-<div id="join" class="mb-60">
-    <div class="mb-20">
-        <h2 class="text-xl font-bold mb-10">{{ $title }}</h2><hr>
-        <p class="mt-10">{{ $leads }}</p>
+<div id="invo" class="mb-40">
+    <hr class="mt-00 mb-40">
+    <div class="info mb-50">
+        <h2 class="text-3xl mb-10 mt-00">{{- $title -}}</h2><p class="">{{- $leads -}}</p>
     </div>
-    <div class="list flex center-x">
+    <div class="flex">
         {{- range .Page.Params.Module.Parted.Invo.Data -}}
-            <a href="{{ .link }}" class="register flex center-x mr-30">
-                <h3 class="text-md mb-00 mt-00">{{ .name }}</h3>
+        <a href="{{ .link }}" class="mr-30">
+            <div class="action flex center-x">
+                <div class="font-bold">{{ .name }}</div>
                 <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </a>
+            </div>
+        </a>
         {{- end -}}
     </div>
 </div>

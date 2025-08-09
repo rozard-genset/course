@@ -1,34 +1,33 @@
+{{- $path := "module/course/item/home/part" -}}
+{{- $ctx  := . -}}{{- $site := $ -}}
+
+{{- $title := "Stakeholder" -}}
+{{- with .Page.Params.Module.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
+
+{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry." -}}
+{{- with .Page.Params.Module.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
+
+
 <div id="team" class="widget mb-60">
-    <div class="head">
-        <h2 class="font-bold text-lg">Stakeholder</h2>
+    <div class="mb-20">
+        <h2 class="text-xl font-bold mb-10">{{- $title -}}</h2>
+        <hr class="mb-10">
+        <h2 class="text-md mt-00">{{- $leads -}}</h2>
     </div>
-    <hr class="mb-20">
     <div class="main">
-        <p class="mb-30">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-        </p>
+        <p class="mb-30"></p>
         <div class="list" class="info">
-            <div class="flex center-x">
-                <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                <div class="name ">
-                    <h3 class="capitalize text-md font-bold mb-00">Muhammad Hadziq Mirza</h3>
-                    <p class="mt-00 text-gray-400">Manager</p>
+            {{- range .Page.Params.Module.Parted.Team.list -}}
+                <div class="flex center-x">
+                    <div class="icon lg">
+                        {{- partial ( printf "%s/image-stakers.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+                    </div>
+                    <div class="name">
+                        <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
+                        <p class="mt-00 text-gray-400">{{ .post }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="flex center-x">
-                <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                <div class="name">
-                    <h3 class="capitalize text-md font-bold mb-00">Muhammad Haydar Ilham Kamil</h3>
-                    <p class="mt-00 text-gray-400">Developer</p>
-                </div>
-            </div>
-            <div class="flex center-x">
-                <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                <div class="name ">
-                    <h3 class="capitalize text-md font-bold mb-00">Nepster</h3>
-                    <p class="mt-00 text-gray-400">Developer</p>
-                </div>
-            </div>
+            {{- end -}}
         </div>
     </div>
 </div>

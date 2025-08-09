@@ -1,9 +1,10 @@
 {{- $path := "module/course/item/home/view" -}}
 {{- $feat := printf "%s/feat.html" $path -}}
-{{- $lead := printf "%s/lead.html" $path -}}
+{{- $invo := printf "%s/invo.html" $path -}}
+{{- $taxo := printf "%s/taxo.html" $path -}}
 {{- $list := printf "%s/list.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
-{{- $regs := printf "%s/regs.html" $path -}}
+{{- $info := printf "%s/info.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
 
@@ -13,17 +14,17 @@
 
 <main id="landing" class="landing page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
     <div class="wrap">
-        <section id="herobar">
+        <section id="section-1">
             {{- partial $hero . -}}
         </section>
-        <section id="feature" class="divide flex">
-            <div class="content">{{- partial $lead . -}}</div>
+        <section id="section-2" class="divide flex">
+            <div class="content">{{- partial $invo . -}}{{- partial $taxo . -}}</div>
             <div class="sidebar">{{- partial $feat . -}}</div>
         </section>
-        <section id="register" class="">
-            {{- partial $regs . -}}
+        <section id="section-3" class="">
+            {{- partial $info . -}}
         </section>
-        <section id="listing" class="divide flex">
+        <section id="section-4" class="divide flex">
             <div class="content">{{- partial $list . -}}</div>
                 <div class="sidebar">
                 {{- partial $team . -}}{{- partial $bugs . -}}

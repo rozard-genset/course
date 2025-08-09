@@ -1,4 +1,6 @@
+{{- $title := "Develop Skills That Move Your Career Forward" -}}
+{{- with .Page.Params.Module.Parted.Hero.Lead -}}{{- $title = . -}}{{- end -}}
 <div id="hero" class="">
-    <h1 class="text-6xl">{{ .Page.Params.Module.Parted.Hero.Lead }}</h1>
+    <h1 class="text-6xl">{{- $title -}}</h1>
     <hr>
 </div>
