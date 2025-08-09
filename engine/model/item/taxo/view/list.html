@@ -1,1 +1,26 @@
-LIST
+{{- $page := where .Site.Pages "Type" "course" -}}{{- $list := slice -}}
+{{- range  where .Site.Pages "Type" "course" -}}
+    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
+{{- end -}}
+
+
+<div id="listing">
+    <div class="list">
+        {{- range ( .Paginate $list 12 ).Pages -}}{{- if eq .Page.Params.Module.Layout "term" -}}
+        <article>
+            <a href="{{ .RelPermalink }}">
+                <div class="render border-left">
+                    <h2 class=" text-sm font-bold mr-15 pl-40 uppercase">{{ .Title }}</h1>
+                    <div class="thumb border-all rounded-full">
+                        <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" >
+                    </div>
+                    <p class="border-top text-sm mt-00 mb-00 pa-15 pl-40">{{- .Page.Params.Description -}}</p>
+                </h2>
+            </a>
+        </article>
+        {{- end -}}{{- end -}}
+    </div>
+    <div class="pagination">
+         {{- partial "pagination.html" . -}}
+    </div>
+</div>
