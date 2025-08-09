@@ -1,4 +1,4 @@
-main{ margin-top: 3rem; }
+main{ margin-top: 3.5rem; }
 
 
 #listbox{
@@ -21,11 +21,12 @@ main{ margin-top: 3rem; }
         flex-direction: row-reverse;
         
         .thumb{
-            width: 30%;
+            width: 128px;
+            height: 128px;
         }
 
         .metas{
-            width: 70%;
+            width: calc( 100% - 128px);
         }
 
         .title{
@@ -53,8 +54,8 @@ main{ margin-top: 3rem; }
 
 
 #landing #section-1 {
+    display: none;
     height: 145px;
-    text-align: center;
 }
 
 
@@ -75,6 +76,7 @@ main{ margin-top: 3rem; }
 
 #landing #hero {
     h1{
+        text-align: left;
         font-size: 2.2rem;
         margin-bottom: 3rem;
     }
@@ -125,6 +127,15 @@ main{ margin-top: 3rem; }
         width: 100%;
         object-fit: cover;
 	    overflow: hidden;
+    }
+
+    .image img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .action svg{
+        margin-right: 0;
     }
 }
 
@@ -249,7 +260,7 @@ main{ margin-top: 3rem; }
 
     #landing #listbox {
         .info{
-            display: none;
+            display: flex;
         }
     }
 
@@ -263,7 +274,7 @@ main{ margin-top: 3rem; }
 
     #landing #section-2 {
         flex-wrap: nowrap;
-        margin-bottom: 5rem;
+        margin-bottom: 2rem;
         -ms-flex-direction: row-reverse;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
@@ -278,6 +289,7 @@ main{ margin-top: 3rem; }
             padding-right: 0rem;
         }
     }
+
 
     #landing #section-3 {
         display: block;
@@ -300,6 +312,7 @@ main{ margin-top: 3rem; }
 
     #landing #hero {
         h1{
+            text-align: center;
             font-size: 3.75rem;
             margin: auto;
             width: 620px;
@@ -404,8 +417,13 @@ main{ margin-top: 3rem; }
         .top {
             display: block;
         }
+
         .mid, .bot{
             margin-left: 3rem;
+        }
+
+        .mid img{
+            height: 100%;
         }
     }
 

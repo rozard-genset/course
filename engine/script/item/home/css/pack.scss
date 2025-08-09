@@ -1,6 +1,6 @@
 
 #feat .like .box{
-	padding: 4px 15px;
+	padding: 6px 15px;
 } 
 
 #feat .dot {
@@ -14,31 +14,26 @@
 	animation: blink 2s infinite;
 }
 
+
 @keyframes blink {
 	0%, 100% { opacity: 0; }
 	50% { opacity: 1; }
 }
+
 
 @-webkit-keyframes blink {
 	0%, 100% { opacity: 0; }
 	50% { opacity: 1; }
 }
 
+
 @-moz-keyframes blink {
 	0%, 100% { opacity: 0; }
 	50% { opacity: 1; }
 }
 
+
 @-o-keyframes blink {
 	0%, 100% { opacity: 0; }
 	50% { opacity: 1; }
-}
-
-#feat #team .image img {
-    width: 42px;
-    height: 42px;
-}
-
-#feat .action svg{
-	margin-right: 0;
 }
