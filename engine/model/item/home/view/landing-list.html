@@ -1,10 +1,13 @@
+{{ $pages := where .Site.RegularPages "Section" .Section }}
+{{ $pages = $pages.ByDate }}
+
 <div id="list">
     <div class="info mb-50">
         <h2 class="text-2xl mt-00">Latest Courses</h2><hr>
         <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
     <div class="divider">
-    {{ range .Pages }}{{ if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "none" ) }}
+    {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "none" ) -}}
         <div class="course">
             <a href="{{ .RelPermalink }}">
                 <div class="card rounded-lg">
@@ -14,7 +17,7 @@
                     <h3 class="text-md font-bold title mb-20">{{ .Title }}</h3>
                     <div class="meta flex center-x text-sm capitalize mb-05">
                         <div class="box level">
-                            {{ .Page.Params.Module.Plan.Level }}
+                            {{- .Page.Params.Module.Plan.Level -}}
                         </div>
                         <div class="box session">
                             {{- partial "lib/course/count-material.html" . -}} <span class="ml-05">Session</span>
@@ -23,6 +26,9 @@
                 </div>
             </a>
         </div>
-    {{ end }}{{ end }}
+    {{- end -}}{{- end -}}
+    </div>
+    <div class="pagination">
+        {{- partial "pagination.html" . -}}
     </div>
 </div>

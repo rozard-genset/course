@@ -1,37 +1,8 @@
-{{- $path := "module/course/item/home/parts" -}}
-{{- $feat := printf "%s/feat.html" $path -}}
-{{- $term := printf "%s/term.html" $path -}}
-{{- $list := printf "%s/list.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $regs := printf "%s/regs.html" $path -}}
-{{- $hero := printf "%s/hero.html" $path -}}
-{{- $bugs := printf "%s/bugs.html" $path -}}
-<main>
-    <div class="wrap">
-            <section id="herobar">
-                 {{- partial $hero . -}}
-            </section>
-            <section id="feature" class="divide flex">
-                <div class="content">
-                    {{- partial $term . -}}
-                </div>
-                <div class="sidebar">
-                    {{- partial $feat . -}}
-                </div>
-            </section>
-            <section id="register" class="">
-                {{- partial $regs . -}}
-            </section>
-            <section id="listing" class="divide flex">
-                <div class="content">
-                    {{- partial $list . -}}
-                </div>
-                 <div class="sidebar">
-                    {{- partial $team . -}}
-                    {{- partial $bugs . -}}
-                </div>
-            </section>
-           
-        </div>
-    </div>
-</main>
+<!-- pagination -->
+{{- $navi := .Paginate .Pages -}}
+
+{{- if eq $navi.PageNumber 1 -}}
+    {{- partial "module/course/item/home/landing.html" . -}}
+{{- else -}}
+    {{- partial "module/course/item/home/paginat.html" . -}}
+{{- end -}}

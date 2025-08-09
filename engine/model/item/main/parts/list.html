@@ -15,18 +15,14 @@
                 {{ end }}{{ end }}
             </div>
             <div class="col col-md-6 col-xs-12">
-                
                 <h3 class="text-lg"> Assignment </h3>
-                
                 {{ range $pages }}{{ if and ( eq .Page.Params.Module.Period $session ) ( eq .Page.Params.Format.Type "assignment" ) }}
-
                 <a href="{{ .RelPermalink }}" class="flex center-x mb-20">
                     <div class="icon md ">{{ partial "icon/line/folder.svg" }}</div>
                     <div class="meta">
                         <div class="capitalize text-md">{{ .LinkTitle }}</div>
                     </div>
                 </a>
-                
                 {{ end }}{{ end }}
             </div>
         </div>
