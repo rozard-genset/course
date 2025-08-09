@@ -6,7 +6,13 @@
 
 <div id="term" class="mid mb-40">
     <div class="mb-20">
-        <h2 class="text-xl font-bold mb-10">Top Categories</h2><hr>
+        <div class="head flex mb-10">
+            <h2 class="text-xl mb-00 mt-00 font-bold">Categories</h2>
+            <a href="#" class="flex center-x ml-a">
+                <div class="font-bold text-sm">Explore</div>
+                <div class="icon md ml-10">{{- partial "icon/line/arrow-right.svg" -}}</div>
+            </a>
+        </div><hr>
         <p class="mt-00">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
     <ul class="box mb-40">
@@ -19,8 +25,4 @@
         </a></li>
         {{- end -}}
     </ul>
-    <a href="#" class="flex center-x">
-        <div class="font-bold">All Categories</div>
-        <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
-    </a>
 </div>
