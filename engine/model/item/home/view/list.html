@@ -7,7 +7,7 @@
         <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
     <div class="divider">
-    {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "none" ) -}}
+    {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
         <div class="course">
             <a href="{{ .RelPermalink }}">
                 <div class="card rounded-lg">

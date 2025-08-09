@@ -32,16 +32,16 @@
             <p class="">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
         </div>
         <ul class="box mb-40">
-            {{ range first 6 $list }}
+            {{- range first 6 $list -}}
             <li class=""><a href="{{ .RelPermalink }}">
                 <div class="card border-all rounded-lg flex center-x">
                     <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
                     <div class="ml-10 font-bold">{{- .Title -}}</div>
                 </div>
             </a></li>
-            {{ end }}
+            {{- end -}}
         </ul>
-        <a href="#">
+        <a href="/{{ .Section }}/terms/">
             <div class="flex center-x">
                 <div class="font-bold">All Categories</div>
                 <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>

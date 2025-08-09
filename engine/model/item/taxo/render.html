@@ -1,0 +1,12 @@
+{{- $path := "module/course/item/taxo/view" -}}
+{{- $list := printf "%s/list.html" $path -}}
+<main id="taxonomy" class="" data-page="">
+    <div class="wrap">
+        <div class="flex">
+            <article class="box mid">{{- partial $list . -}}</article>
+            <aside class="box top">
+                SIDE
+            </aside>
+        </div>
+    </div>
+</main>
