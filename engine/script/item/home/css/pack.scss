@@ -1,39 +1,22 @@
 
-
-
-
-
-// FEAT
-#feat img{
-	width: 100%;
-	object-fit: cover;
-	overflow: hidden;
-}
-
-@media only screen and (min-width: 768px) {
-	#feat img{
-		height: 100%;
-	}
-}
-
-@keyframes blink {
-	0%, 100% { opacity: 0; }
-	50% { opacity: 1; }
-}
-
 #feat .like .box{
-	padding: 2px 15px;
+	padding: 4px 15px;
 } 
 
 #feat .dot {
 	width: 8px;
     height: 8px;
-    background: var(--links-02-based);
+    background: var(--link-02-based);
     border-radius: 50px;
 	-webkit-animation: blink 2s infinite;
 	-moz-animation: blink 2s infinite;
 	-o-animation: blink 2s infinite;
 	animation: blink 2s infinite;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
 }
 
 @-webkit-keyframes blink {

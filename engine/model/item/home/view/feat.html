@@ -1,4 +1,4 @@
-{{ range first 1 ( where .Pages ".Params.Module.promo"  true ) }}
+{{- range first 1 ( where .Pages ".Params.Module.promo"  true ) -}}
 
 {{- $ctx  := . -}}{{- $site := $ -}}
 {{- $names := "" -}}{{- $cover := "" -}}{{- $twitr := "" -}}
@@ -12,7 +12,7 @@
 {{- end -}}
 
 <div id="feat" class="mb-60">
-    <div class="top mb-30">
+    <div class="top mb-40">
         <div class="meta border-bottom border-top mb-30">
             <div class="box">
                 <div class="row">
@@ -20,7 +20,7 @@
                         <div class="rounded-lg flex center-x">
                             <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                             <div class="meta flex center-x">
-                                <div class="capitalize text-sm mb-00 mr-10"> Level </div>
+                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Level </div>
                                 <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
                             </div>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="rounded-lg flex center-x">
                             <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                             <div class="meta flex center-x">
-                                <div class="capitalize text-sm mb-00 mr-10"> Certificate </div>
+                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Certificate </div>
                                 <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="rounded-lg flex center-x">
                             <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
                             <div class="meta flex">
-                                <div class="capitalize text-sm mb-00 mr-10"> Session </div>
+                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Session </div>
                                 <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
                             </div>
                         </div>
@@ -46,17 +46,17 @@
                 </div>
             </div>
         </div>
-        <div class="title flex center-x mb-15 ml-30">
+    </div>
+    <div class="mid mb-40">
+        <div class="title flex center-x mb-15">
             <h1 class="mr-10 mt-00 mb-10">{{ .Title }}</h1>
             <div class="like ml-a">
                 <div class="box flex center-x rounded-full border-all">
                     <div class="dot info feature mr-10"></div>
-                    <div class="text-sm mt-05 mb-05">Featured</div>
+                    <div class="text-sm mb-00">Featured</div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="mid ml-30 mb-40">
         <div class="">
             <div class="box mb-30">
                 <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
@@ -67,9 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="bot ml-30">
+    <div class="bot">
         <div class="acts flex center-x">
-            <div id="team" class="mr-a">
+            <div class="mr-a">
                 <div class="list flex center-x">
                     <div class="image">{{- $cover -}}</div>
                     <div class="bio ml-20">

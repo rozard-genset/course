@@ -7,8 +7,8 @@
 <div id="invo" class="mb-50">
     <hr class="mt-00 mb-40">
     <div class="info flex max-width mb-40">
-        <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
-        <div class="action flex ml-a">
+        <h2 class="text-3xl mb-00 mt-00" >{{- $title -}}</h2>
+        <div class="action flex">
             {{- range .Page.Params.Module.Parted.Invo.Data -}}
             <a href="{{ .link }}" class="mr-30 action flex center-x">
                 <div class="font-bold">{{ .name }}</div>

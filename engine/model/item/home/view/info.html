@@ -14,22 +14,21 @@
 {{ with .Page.Params.Module.Parted.Regs.Low.Desc }}{{ $leads_side_2 = . }}{{ end }}
 
 
-<div id="info" class="mb-20">
-    <div class="card">
-        <div class="flex center-x">
-            <div class="top text-right mr-20">
-                <div class="head mb-30">
-                    <h2 class="text-4xl mb-30">{{- $title_side_1 -}}</h2>
-                </div>
-                <div class="main"><p>{{- $leads_side_1 -}}</p></div>
+<div id="info" class="mb-20 desktop">
+    <div class="card flex center-x">
+        <div class="top text-right mr-20">
+            <div class="head mb-30">
+                <h2 class="text-4xl mb-30">{{- $title_side_1 -}}</h2>
             </div>
-            <div class="mid"><img src="/course/proc-1.png"></div>
-            <div class="low text-left ml-20">
-                <div class="head mb-30">
-                    <h2 class="text-4xl mb-30">{{- $title_side_2 -}}</h2>
-                </div>
-                <div class="main"><p>{{- $leads_side_2 -}}</p></div>
-            </div>
+            <div class="main"><p>{{- $leads_side_1 -}}</p></div>
         </div>
+        <div class="mid"><img src="/course/proc-1.png"></div>
+        <div class="low text-left ml-20">
+            <div class="head mb-30">
+                <h2 class="text-4xl mb-30">{{- $title_side_2 -}}</h2>
+            </div>
+            <div class="main"><p>{{- $leads_side_2 -}}</p></div>
+        </div>
+        
     </div>
 </div>
