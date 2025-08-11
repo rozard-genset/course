@@ -166,15 +166,6 @@ main{ margin-top: 3.5rem; }
 }
 
 
-#landing #team {
-    display: none;
-}
-
-
-#landing #bugs {
-    display: none;
-}
-
 
 #parted {
     #join, #team, #bugs, #term .box{
@@ -432,6 +423,34 @@ main{ margin-top: 3.5rem; }
             display: none;
         }
     }
+
+
+    #landing #join{
+
+        .list{
+            border-top: 1px solid var(--line-01);
+            display: flex;
+        }
+
+        .cont{
+            margin-top: 2rem;
+            padding-right: 1rem;
+        }
+    }
+
+
+    #parteds #join{
+
+        .list{
+            border-top: 1px solid var(--line-01);
+            display: flex;
+        }
+
+        .cont{
+            margin-top: 2rem;
+            padding-right: 1rem;
+        }
+    }
 }
 
 
@@ -518,20 +537,6 @@ main{ margin-top: 3.5rem; }
     }
 
 
-    #landing #join{
-
-        .list{
-            border-top: 1px solid var(--line-01);
-            display: flex;
-        }
-
-        .cont{
-            margin-top: 2rem;
-            padding-right: 2rem;
-        }
-    }
-
-
     #landing #team{
 
         .list{
@@ -541,6 +546,13 @@ main{ margin-top: 3.5rem; }
         .flex{
             margin-bottom: 1.25rem;
             margin-right: 3rem;
+        }
+    }
+
+    
+    #landing #join{
+        .cont{
+            padding-right: 2rem;
         }
     }
 
@@ -561,20 +573,6 @@ main{ margin-top: 3.5rem; }
     }
 
 
-    #parteds #join{
-
-        .list{
-            border-top: 1px solid var(--line-01);
-            display: flex;
-        }
-
-        .cont{
-            margin-top: 2rem;
-            padding-right: 2rem;
-        }
-    }
-
-
     #parteds #team{
 
         .list{
@@ -584,6 +582,13 @@ main{ margin-top: 3.5rem; }
         .flex{
             margin-bottom: 1.25rem;
             margin-right: 3rem;
+        }
+    }
+
+
+    #parteds #join{
+        .cont{
+            padding-right: 2rem;
         }
     }
 }
