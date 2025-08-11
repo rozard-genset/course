@@ -337,7 +337,7 @@ main{ margin-top: 3.5rem; }
 
         h2{
             width: auto;
-            font-size: 1.875rem;
+            font-size: 1.35rem;
             margin-bottom: 0rem;
         }
 
@@ -363,7 +363,7 @@ main{ margin-top: 3.5rem; }
 
         h2{
             font-weight: 300;
-            font-size: 1.875rem;
+            font-size: 1.35rem;
         }
 
         hr{
@@ -415,6 +415,10 @@ main{ margin-top: 3.5rem; }
 
     #landing #list{
 
+        h2{
+            font-size: 1.1rem;
+        }
+
         .info{
             display: flex;
         }
@@ -451,7 +455,7 @@ main{ margin-top: 3.5rem; }
 
     #landing #invo{
         h2{
-            font-size: 1.875rem;
+            font-size: 1.5rem;
             margin-bottom: 0rem;
         }
 
@@ -462,6 +466,10 @@ main{ margin-top: 3.5rem; }
 
 
     #landing #taxo{
+
+        h2{
+            font-size: 1.5rem;
+        }
         .leaf{
             grid-template-columns: repeat(3, calc( 33.33% - 1rem ));
         }
@@ -500,6 +508,7 @@ main{ margin-top: 3.5rem; }
     #landing #list{
 
         h2{
+            font-size: 1.1rem;
             text-wrap: nowrap;
         }
     }
@@ -519,6 +528,7 @@ main{ margin-top: 3.5rem; }
             grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
         }
     }
+    
 }
 
 
@@ -583,9 +593,10 @@ main{ margin-top: 3.5rem; }
 
         
         h2{
-            font-size: 1.875rem;
+            font-size: 1.5rem;
             margin-bottom: 0rem;
         }
+
 
         hr{
             margin-bottom: 2.5rem
@@ -600,7 +611,7 @@ main{ margin-top: 3.5rem; }
         }
 
         h2{
-            font-size: 1.875rem;
+            font-size: 1.5rem;
         }
 
         hr{
@@ -646,6 +657,11 @@ main{ margin-top: 3.5rem; }
 
     
     #landing #list {
+
+        h2{
+            font-size: 1.15rem;
+        }
+
         p {
             display: block;
         }
@@ -709,10 +725,19 @@ main{ margin-top: 3.5rem; }
             margin-top: auto;
             margin-left: auto;
         }
+
+        h2{
+            font-size: 1.75rem;
+        }
     }
 
 
     #landing #taxo{
+
+        h2{
+            font-size: 1.75rem;
+        }
+
         .leaf{
             display: grid;
         }
