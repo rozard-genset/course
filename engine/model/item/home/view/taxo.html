@@ -11,9 +11,9 @@
     {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
 {{- end -}}
 
-<div id="taxo" class="">
+<div id="taxo">
     <hr class="desktop">
-    <div class="info flex center-x max-width">
+    <div class="info max-width flex center-x">
         <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
         <a href="/{{ .Section }}/terms/" class="flex center-x ml-a">
             <div class="font-bold desktop">All Categories</div>
@@ -23,15 +23,12 @@
     <div class="desc max-width desktop">
         <p class="mb-40 mr-30">{{- $leads -}}</p>
     </div>
-    <ul class="box mb-40 mr-30 desktop">
+    <div class="leaf max-width desktop">
         {{- range first 6 $list -}}
-        <li class=""><a href="{{ .RelPermalink }}">
-            <div class="card border-all rounded-lg flex center-x">
-                <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
-                <div class="ml-10 font-bold">{{- .Title -}}</div>
-            </div>
-        </a></li>
+        <a href="{{ .RelPermalink }}" class="card rounded-lg flex center-x">
+            <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="thumb rounded-full">
+            <div class="text ml-10 font-bold">{{- .Title -}}</div>
+        </a>
         {{- end -}}
-    </ul>
-   
+    </div>
 </div>

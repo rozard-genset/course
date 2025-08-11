@@ -56,7 +56,7 @@ main{ margin-top: 3.5rem; }
     display: flex;
     flex-wrap: wrap;
 
-    .content{
+    .main{
         width: 100%;
     }
 }
@@ -164,23 +164,24 @@ main{ margin-top: 3.5rem; }
 }
 
 
-#parteds {
-    .flex{
-        flex-wrap: wrap;
-    }
-
+#parted {
     #join, #team, #bugs, #term .box{
         display: none;
     }
 }
 
+#parteds #rows {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-#parteds #div1{
+
+#parteds #div1 {
      margin-bottom: 3rem;
 }
 
 
-#parteds #div2{
+#parteds #div2 {
      margin-bottom: 3rem;
 }
 
@@ -198,14 +199,6 @@ main{ margin-top: 3.5rem; }
 
     hr{
         margin-block-start: 0;
-    }
-
-    .row{
-        padding-right: 2rem;
-    }
-
-    .col{
-        padding-left: 0;
     }
 
     ul {
@@ -247,7 +240,7 @@ main{ margin-top: 3.5rem; }
 
 
     #list{
-        .divider{
+        .leaf{
             display: grid;
             grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
             grid-gap: 2.5rem;
@@ -278,11 +271,11 @@ main{ margin-top: 3.5rem; }
         -webkit-box-direction: reverse;
         flex-direction: row-reverse;
 
-        .sidebar{
+        .side{
             width: 50%;
             padding-left: 0rem;
         }
-        .content{
+        .main{
             width: 50%;
             padding-right: 0rem;
         }
@@ -297,11 +290,11 @@ main{ margin-top: 3.5rem; }
 
     #landing #div4{
         display: flex;
-        .sidebar{
+        .side{
             width: 300px;
             padding-left: 2rem;
         }
-        .content{
+        .main{
             width: calc( 100% - 300px );
             padding-right: 2rem;
         }
@@ -374,10 +367,6 @@ main{ margin-top: 3.5rem; }
             margin-bottom: 3rem;
         }
 
-        ul {
-            list-style: none;
-        }
-
         .info{
             padding-bottom: 0;
             border-bottom: 0;
@@ -400,7 +389,7 @@ main{ margin-top: 3.5rem; }
             object-fit: cover;
         }
 
-        .box{
+        .leaf{
             display:grid;
             grid-template-columns: repeat(2, calc( 50% - 1rem ));
             grid-row: 1rem;
@@ -444,13 +433,14 @@ main{ margin-top: 3.5rem; }
 
 
     #parteds{
-        .flex {
-            flex-wrap: nowrap;
-        }
-
         #join, #team, #bugs, #term .box{
             display: block;
         }
+    }
+
+
+    #parteds #rows{
+        flex-wrap: nowrap;
     }
 
 

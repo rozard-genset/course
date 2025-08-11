@@ -3,12 +3,18 @@ main{
 }
 
 
-#taxo .flex{
+#taxo #rows{
+    display: flex;
     flex-wrap: wrap;
 }
 
 
-#taxo aside{
+#taxo #div1{
+    width: 100%;
+}
+
+
+#taxo #div2{
     width: 100%;
 
     #team, #bugs{
@@ -17,12 +23,7 @@ main{
 }
 
 
-#taxo #content{
-    width: 100%;
-}
-
-
-#taxo #paginate{
+#taxo #list{
 
     margin-bottom: 2rem;
 
@@ -80,11 +81,19 @@ main{
         margin-top: 5rem;
     }
 
-    #taxo .flex{
+    
+    #taxo #rows{
         flex-wrap: nowrap;
     }
 
-    #taxo aside{
+
+    #taxo #div1{
+        width: calc(100% - 300px);
+        padding-right: 2rem;
+    }
+
+
+    #taxo #div2{
         width: 300px;
         padding-left: 3rem;
 
@@ -93,12 +102,8 @@ main{
         }
     }
 
-    #taxo #content{
-        width: calc(100% - 300px);
-        padding-right: 2rem;
-    }
 
-    #taxo #paginate{
+    #taxo #list{
 
         .list{
             grid-template-columns: repeat(2, calc( 50% - 4rem ));

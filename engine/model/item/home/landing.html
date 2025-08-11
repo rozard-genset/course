@@ -2,7 +2,7 @@
 {{- $feat := printf "%s/feat.html" $path -}}
 {{- $invo := printf "%s/invo.html" $path -}}
 {{- $taxo := printf "%s/taxo.html" $path -}}
-{{- $card := printf "%s/card.html" $path -}}
+{{- $list := printf "%s/list.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $info := printf "%s/info.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
@@ -18,15 +18,15 @@
             {{- partial $hero . -}}
         </section>
         <section id="div2">
-            <div class="sidebar">{{- partial $feat . -}}</div>
-            <div class="content">{{- partial $invo . -}}{{- partial $taxo . -}}</div>
+            <div class="side">{{- partial $feat . -}}</div>
+            <div class="main">{{- partial $invo . -}}{{- partial $taxo . -}}</div>
         </section>
         <section id="div3">
             {{- partial $info . -}}
         </section>
         <section id="div4">
-            <div class="content">{{- partial $card . -}}</div>
-            <div class="sidebar">
+            <div class="main">{{- partial $list . -}}</div>
+            <div class="side">
                 {{- partial $team . -}}{{- partial $bugs . -}}
             </div>
         </section>

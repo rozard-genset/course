@@ -1,14 +1,14 @@
-{{ $pages := where .Site.RegularPages "Section" .Section }}
-{{ $pages = $pages.ByDate }}
+{{- $pages := where .Site.RegularPages "Section" .Section -}}
+{{- $pages = $pages.ByDate -}}
 
 <div id="list">
-    <div class="info mb-60 flex center-x">
+    <div class="info flex center-x mb-60">
         <h2 class="text-lg uppercase font-bold mt-00 mb-00">Available Courses</h2>
-        <p class="text-lg mt-00 mb-00 border-left pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
-    <div class="divider">
-    {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
-        <div class="course">
+    <div class="leaf">
+        {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
+        <article class="course">
             <a href="{{ .RelPermalink }}" class="card rounded-lg">
                 <div class="thumb">{{- partial "lib/course/hero-thumb.html" . -}}</div>
                 <div class="metas">
@@ -23,8 +23,8 @@
                     </div>
                 </div>
             </a>
-        </div>
-    {{- end -}}{{- end -}}
+        </article>
+        {{- end -}}{{- end -}}
     </div>
     <div class="pagination">
         {{- partial "pagination.html" . -}}

@@ -1,6 +1,6 @@
 {{- $path := "module/course/item/home/view" -}}
 {{- $hero := printf "%s/hero.html" $path -}}
-{{- $card := printf "%s/card.html" $path -}}
+{{- $list := printf "%s/list.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
 {{- $join := printf "%s/join.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
@@ -9,16 +9,14 @@
 {{- $page := where site.RegularPages "Type" .Section -}}
 {{- $navi := .Paginate $page.ByDate 10 -}}
 
-<main id="parteds" class="pagination page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
-    <div class="wrap">
-        <div class="flex">
-            <article id="div1" class="box mid">
-                {{- partial $hero . -}}<hr>
-                {{- partial $card . -}}
-            </article>
-            <aside id="div2" class="box top">
-                {{- partial $term . -}}{{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
-            </aside>
+<main id="parteds">
+    <div id="rows" class="wrap">
+        <div id="div1">
+            {{- partial $hero . -}}<hr>
+            {{- partial $list . -}}
+        </div>
+        <div id="div2">
+            {{- partial $term . -}}{{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
         </div>
     </div>
 </main>
