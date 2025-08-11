@@ -5,7 +5,7 @@
 {{- end -}}
 
 <div id="term" class="mid mb-40">
-    <div class="mb-20">
+    <div class="info mb-20">
         <div class="head flex mb-10">
             <h2 class="text-xl mb-00 mt-00 font-bold">Categories</h2>
             <a href="/{{ .Section }}/terms/" class="flex center-x ml-a">
@@ -15,7 +15,7 @@
         </div><hr>
         <p class="mt-00">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
-    <ul class="box mb-40">
+    <ul class="leaf mb-40">
         {{- range first 6 $list -}}
         <li class=""><a href="{{ .RelPermalink }}">
             <div class="card border-all rounded-lg flex center-x">

@@ -119,16 +119,19 @@ main{ margin-top: 3.5rem; }
         }
     }
 
+
     img{
         width: 100%;
         object-fit: cover;
 	    overflow: hidden;
     }
 
+
     .image img {
         width: 42px;
         height: 42px;
     }
+
 
     .action svg{
         margin-right: 0;
@@ -184,21 +187,28 @@ main{ margin-top: 3.5rem; }
 
 
 #parteds #div1 {
-     margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 
 #parteds #div2 {
-     margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 
 #parteds #hero {
+
     margin-bottom: 5rem;
+
+
     h1 {
         margin-top: 0;
     }
-    hr { display: none; }
+
+
+    hr { 
+        display: none; 
+    }
 }
 
 
@@ -208,22 +218,34 @@ main{ margin-top: 3.5rem; }
         margin-block-start: 0;
     }
 
+
     ul {
         list-style: none;
     }
+
+ 
+    .leaf{
+        display: grid;
+        grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
+        grid-gap: 1rem;
+    }
+ 
 
     .card{
         border: 1px solid transparent;
         padding: 5px 10px;
     }
 
+
     .card:hover{
         border: 1px solid var(--line-01);
         background-color: var(--background-02);
     }
 
+
     img{
-        width: 42px; height: 42px;
+        width: 42px; 
+        height: 42px;
         object-fit: cover;
     }
 }
@@ -397,7 +419,7 @@ main{ margin-top: 3.5rem; }
 
     #list{
         .leaf{
-             grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
+            grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
             grid-gap: 2rem;
             grid-row: 2rem;
         }
@@ -405,13 +427,13 @@ main{ margin-top: 3.5rem; }
 
 
     #landing #div1{
-        height: 220px;
+        height: 140px;
     }
     
 
     #landing #hero{
         h1{
-            font-size: 3.75rem;
+            font-size: 2.5rem;
             width: 600px;
         }
     }
@@ -471,11 +493,39 @@ main{ margin-top: 3.5rem; }
             text-wrap: nowrap;
         }
     }
+
+
+    #parteds #hero{
+        h1{
+            font-weight: 300;
+            font-size: 2.5rem;
+            width: 620px;
+        }
+    }
+
+
+    #parteds #term {
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+        }
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
   
+    #list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
 
     #landing #div1{
         height: 200px;
@@ -497,14 +547,14 @@ main{ margin-top: 3.5rem; }
 
     #landing #hero{
         h1{
-            font-size: 3.75rem;
+            font-size: 2.75rem;
             width: 620px;
         }
 
         hr{
             display: block;
-            margin: 400px auto auto auto;
-            width: 700px;
+            margin: 330px auto auto auto;
+            width: 540px;
             transform: rotate(90deg);
         }
     }
@@ -589,34 +639,22 @@ main{ margin-top: 3.5rem; }
             display: block;
         }
     }
+
+
+    #parteds #term {
+        .leaf{
+            grid-template-columns: repeat( 4, calc( 25% - 1rem ) );
+        }
+    }
 }
 
 
 @media only screen and (min-width: 810px) {
 
 
-    #list{
-        .leaf{
-            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
-        }
-
-        .card{
-            padding: 5px 10px;
-        }
-
-        img{
-            width: 42px;
-            height: 42px;
-        }
-
-        .leaf{
-            grid-template-columns: repeat(2, calc( 50% - 1rem ));
-        }
-    }
-
-
     #landing #feat{
-        .info {
+
+        .descr{
             display: none;
         }
     }
@@ -626,11 +664,12 @@ main{ margin-top: 3.5rem; }
         .action{
             padding-right: 1.8rem;
         }
-    }
+    }   
 }
 
 
 @media only screen and (min-width: 970px) {
+
 
     #landing #div2{
         margin-bottom: 2rem;
@@ -639,7 +678,7 @@ main{ margin-top: 3.5rem; }
 
     #landing #hero{
         h1{
-            font-size: 3.75rem;
+            font-size: 3.25rem;
             width: 620px;
         }
 
@@ -670,8 +709,17 @@ main{ margin-top: 3.5rem; }
 
 
     #landing #feat{
-        .info {
+        .descr {
             display: block;
+        }
+    }
+
+    
+    #parteds #hero{
+        h1{
+            font-weight: 300;
+            font-size: 3rem;
+            width: 620px;
         }
     }
 }
@@ -691,6 +739,11 @@ main{ margin-top: 3.5rem; }
     }
 
 
+    #landing #div1{
+        height: 220px;
+    }
+
+
     #landing #div4{
         display: flex;
         .side{
@@ -700,6 +753,19 @@ main{ margin-top: 3.5rem; }
         .main{
             width: calc( 100% - 300px );
             padding-right: 2rem;
+        }
+    }
+
+
+    #landing #hero{
+        h1{
+            font-size: 3.25rem;
+            width: 620px;
+        }
+
+        hr{
+            margin: 380px auto auto auto;
+            width: 660px;
         }
     }
 
@@ -757,6 +823,13 @@ main{ margin-top: 3.5rem; }
         width: 300px;
         padding-left: 2rem;
     }
+
+
+    #parteds #term {
+        .leaf{
+            grid-template-columns: repeat( 1, calc( 100% - 1rem ) );
+        }
+    }
 }
 
 
@@ -787,7 +860,7 @@ main{ margin-top: 3.5rem; }
         .leaf{
             grid-template-columns: repeat(2, calc( 50% - 1rem ));
             grid-gap: 1rem;
-         }
+        }
     }
 }
 
