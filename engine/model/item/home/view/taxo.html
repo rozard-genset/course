@@ -12,21 +12,23 @@
 {{- end -}}
 
 <div id="taxo">
-    <hr class="desktop">
+    <hr>
     <div class="info max-width flex center-x">
         <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
-        <a href="/{{ .Section }}/terms/" class="flex center-x ml-a">
-            <div class="font-bold desktop">All Categories</div>
+        <div class="action flex">
+        <a href="/{{ .Section }}/terms/" class="flex center-x">
+            <div class="font-bold">All Categories</div>
             <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
         </a>
+        </div>
     </div>
-    <div class="desc max-width desktop">
+    <div class="desc max-width">
         <p class="mb-40 mr-30">{{- $leads -}}</p>
     </div>
-    <div class="leaf max-width desktop">
+    <div class="leaf max-width">
         {{- range first 6 $list -}}
         <a href="{{ .RelPermalink }}" class="card rounded-lg flex center-x">
-            <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="thumb rounded-full">
+            <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="thumb rounded-full" loading="lazy">
             <div class="text ml-10 font-bold">{{- .Title -}}</div>
         </a>
         {{- end -}}

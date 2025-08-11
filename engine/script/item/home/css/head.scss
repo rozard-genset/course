@@ -47,8 +47,8 @@ main{ margin-top: 3.5rem; }
 
 
 #landing #div1 {
-    display: none;
-    height: 145px;
+    text-align: center;
+    height: 120px;
 }
 
 
@@ -57,7 +57,7 @@ main{ margin-top: 3.5rem; }
     flex-wrap: wrap;
 
     .main{
-        width: 100%;
+        display: none;
     }
 }
 
@@ -69,9 +69,12 @@ main{ margin-top: 3.5rem; }
 
 #landing #hero {
     h1{
-        text-align: left;
         font-size: 2.2rem;
         margin-bottom: 3rem;
+    }
+
+    hr{
+        display: none;
     }
 }
 
@@ -108,12 +111,12 @@ main{ margin-top: 3.5rem; }
 
 
 #landing #feat {
-    .top {
-        display: none;
-    }
 
     .meta{
         padding: 6px 10px ;
+        .item{
+            width: 100%;
+        }
     }
 
     img{
@@ -141,6 +144,8 @@ main{ margin-top: 3.5rem; }
 
 
 #landing #info {
+    display: none;
+
     .low, .mid, .top {
         width: 100%;
     } 
@@ -148,6 +153,7 @@ main{ margin-top: 3.5rem; }
     h2{
         margin-bottom: 1rem;
     }
+
     img{
         width: 100%;
     }
@@ -169,6 +175,7 @@ main{ margin-top: 3.5rem; }
         display: none;
     }
 }
+
 
 #parteds #rows {
     display: flex;
@@ -223,28 +230,13 @@ main{ margin-top: 3.5rem; }
 
 
 @media only screen and (min-width: 480px) {
-}
-
-
-@media only screen and (min-width: 768px) {
-}
-
-
-@media only screen and (min-width: 1024px) {
-}
-
-
-@media only screen and (min-width: 1280px) {
-
-    main{ margin-top: 5rem; }
-
 
     #list{
         .leaf{
             display: grid;
-            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
-            grid-gap: 2.5rem;
-            grid-row: 2.5rem;
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
+            grid-gap: 1rem;
+            grid-row: 1rem;
         }
 
         .card{
@@ -258,25 +250,24 @@ main{ margin-top: 3.5rem; }
 
     #landing #div1{
         display: block;
-        text-align: center;
-        height: 260px;
+       
     }
 
 
     #landing #div2{
-        flex-wrap: nowrap;
-        margin-bottom: 2rem;
+        margin-bottom: 0;
         -ms-flex-direction: row-reverse;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
         flex-direction: row-reverse;
 
         .side{
-            width: 50%;
+            width: 100%;
             padding-left: 0rem;
         }
         .main{
-            width: 50%;
+            display: block;
+            width: 100%;
             padding-right: 0rem;
         }
     }
@@ -288,39 +279,27 @@ main{ margin-top: 3.5rem; }
     }
 
 
-    #landing #div4{
-        display: flex;
-        .side{
-            width: 300px;
-            padding-left: 2rem;
-        }
-        .main{
-            width: calc( 100% - 300px );
-            padding-right: 2rem;
-        }
-    }
-
-
     #landing #hero{
         h1{
             text-align: center;
-            font-size: 3.75rem;
+            font-size: 2.25rem;
             margin: auto;
-            width: 620px;
+            width: 90%;
         }
 
         hr{
-            display: block;
-            margin: 420px auto auto auto;
-            width: 720px;
-            transform: rotate(90deg);
+            display: none;
         }
     }
 
 
     #landing #invo{
-
         display: block;
+
+        .max-width{
+            width: 100%;
+        }
+
 
         h2{
             width: auto;
@@ -339,28 +318,18 @@ main{ margin-top: 3.5rem; }
         .action {
             margin-left: auto;
         }
-
-        .max-width{
-            width: 520px;
-        }
-
-
     }
 
 
     #landing #taxo{
 
         .max-width{
-            width: 520px;
+            width: 100%;
         }
 
         h2{
             font-weight: 300;
             font-size: 1.875rem;
-        }
-
-        a{
-            margin-right: 1.8rem;
         }
 
         hr{
@@ -371,6 +340,10 @@ main{ margin-top: 3.5rem; }
             padding-bottom: 0;
             border-bottom: 0;
             margin-bottom: 2.5rem;
+        }
+
+        .action{
+            margin-left: auto;
         }
 
         .card{
@@ -398,9 +371,67 @@ main{ margin-top: 3.5rem; }
     }
 
 
+    #landing #feat{
+        padding-left: 0;
+
+        .mid img{
+            height: 100%;
+        }
+    }
+
+
     #landing #list{
+
         .info{
             display: flex;
+        }
+
+        p {
+            display: none;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 620px) {
+
+    #list{
+        .leaf{
+             grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
+            grid-gap: 2rem;
+            grid-row: 2rem;
+        }
+    }
+
+
+    #landing #div1{
+        height: 220px;
+    }
+    
+
+    #landing #hero{
+        h1{
+            font-size: 3.75rem;
+            width: 600px;
+        }
+    }
+
+
+    #landing #invo{
+        h2{
+            font-size: 1.875rem;
+            margin-bottom: 0rem;
+        }
+
+        hr{
+            margin-bottom: 2.5rem
+        }
+    }
+
+
+    #landing #taxo{
+        .leaf{
+            grid-template-columns: repeat(3, calc( 33.33% - 1rem ));
         }
     }
 
@@ -412,15 +443,287 @@ main{ margin-top: 3.5rem; }
             display: block;
         }
 
+        .mid img{
+            height: 100%;
+        }
+
+        .leaf{
+            display: flex;
+        }
+
+        .thumb, .descr{
+            width: 50%;
+        }
+
+        .thumb{
+            padding-right: 1rem;
+        }
+
+        .descr{
+            padding-left: 1rem;
+        }
+    }
+
+
+    #landing #list{
+
+        h2{
+            text-wrap: nowrap;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+  
+
+    #landing #div1{
+        height: 200px;
+    }
+
+    
+    #landing #div2{
+        
+        flex-wrap: nowrap;
+        .side{
+            width: 50%;
+        }
+
+        .main{
+            width: 50%;
+        }
+    }
+
+
+    #landing #hero{
+        h1{
+            font-size: 3.75rem;
+            width: 620px;
+        }
+
+        hr{
+            display: block;
+            margin: 400px auto auto auto;
+            width: 700px;
+            transform: rotate(90deg);
+        }
+    }
+
+
+    #landing #invo{
+        .info{
+            flex-wrap: wrap;
+        }
+
+        .action{
+            margin-top: 2rem;
+            margin-left: 0;
+        }
+
+        
+        h2{
+            font-size: 1.875rem;
+            margin-bottom: 0rem;
+        }
+
+        hr{
+            margin-bottom: 2.5rem
+        }
+    }
+
+
+    #landing #taxo{
+
+        .info{
+            flex-wrap: nowrap;
+        }
+
+        h2{
+            font-size: 1.875rem;
+        }
+
+        hr{
+            margin-bottom: 3rem;
+        }
+
+        .leaf{
+            display: none;
+        }
+    }
+
+
+    #landing #feat{
+
         .mid, .bot{
             margin-left: 3rem;
         }
 
-        .mid img{
-            height: 100%;
+        .leaf{
+            display: block;
+        }
+
+        .thumb, .descr{
+            width: 100%;
+        }
+
+        .thumb{
+            padding-right: 0rem;
+        }
+
+        .descr{
+            padding-left: 0rem;
         }
     }
 
+
+    #landing #info{
+        display: block;
+        .mid{
+            display: none;
+        }
+    }
+
+    
+    #landing #list {
+        p {
+            display: block;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 810px) {
+
+
+    #list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+        }
+
+        .card{
+            padding: 5px 10px;
+        }
+
+        img{
+            width: 42px;
+            height: 42px;
+        }
+
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 1rem ));
+        }
+    }
+
+
+    #landing #feat{
+        .info {
+            display: none;
+        }
+    }
+
+
+    #landing #taxo{
+        .action{
+            padding-right: 1.8rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 970px) {
+
+    #landing #div2{
+        margin-bottom: 2rem;
+    }
+
+
+    #landing #hero{
+        h1{
+            font-size: 3.75rem;
+            width: 620px;
+        }
+
+        hr{
+            margin: 360px auto auto auto;
+            width: 640px;
+        }
+    }
+
+
+    #landing #invo{
+        .info{
+            flex-wrap: nowrap;
+        }
+
+        .action{
+            margin-top: auto;
+            margin-left: auto;
+        }
+    }
+
+
+    #landing #taxo{
+        .leaf{
+            display: grid;
+        }
+    }
+
+
+    #landing #feat{
+        .info {
+            display: block;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    main{ margin-top: 5rem; }
+
+
+    #list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+            grid-gap: 1rem;
+            grid-row: 1rem;
+        }
+    }
+
+
+    #landing #div4{
+        display: flex;
+        .side{
+            width: 300px;
+            padding-left: 2rem;
+        }
+        .main{
+            width: calc( 100% - 300px );
+            padding-right: 2rem;
+        }
+    }
+
+
+    #landing #invo{
+        .action{
+            padding-right: 1.8rem;
+        }
+    }
+
+
+    #landing #taxo{
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 1rem ));
+        }
+    }
+
+
+    #landing #info{
+        .mid{
+            display: block;
+        }
+    }
+ 
 
     #landing #team {
         display: block;
@@ -453,6 +756,38 @@ main{ margin-top: 3.5rem; }
     #parteds #div2{
         width: 300px;
         padding-left: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    
+    #list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+            grid-gap: 2rem;
+            grid-row: 2rem;
+        }
+    }
+
+
+    #landing #invo{
+         .max-width{
+            width: 520px;
+        }
+    }
+
+
+    #landing #taxo{
+        .max-width{
+            width: 520px;
+        }
+
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 1rem ));
+            grid-gap: 1rem;
+         }
     }
 }
 

@@ -19,7 +19,7 @@
         {{- range first 6 $list -}}
         <li class=""><a href="{{ .RelPermalink }}">
             <div class="card border-all rounded-lg flex center-x">
-                <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full">
+                <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full" loading="lazy">
                 <div class="ml-10 font-bold">{{- .Title -}}</div>
             </div>
         </a></li>

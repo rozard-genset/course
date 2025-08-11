@@ -10,7 +10,7 @@
         <h2 class="text-3xl mb-00 mt-00" >{{- $title -}}</h2>
         <div class="action flex">
             {{- range .Page.Params.Module.Parted.Invo.Data -}}
-            <a href="{{ .link }}" class="mr-30 action flex center-x">
+            <a href="{{ .link }}" class="ml-10 flex center-x">
                 <div class="font-bold">{{ .name }}</div>
                 <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </a>

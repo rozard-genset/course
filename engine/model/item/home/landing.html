@@ -8,11 +8,7 @@
 {{- $hero := printf "%s/hero.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
 
-<!-- pagination -->
-{{- $page := where site.RegularPages "Type" .Section -}}
-{{- $navi := .Paginate $page.ByDate 10 -}}
-
-<main id="landing" class="landing page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
+<main id="landing">
     <div class="wrap">
         <section id="div1">
             {{- partial $hero . -}}

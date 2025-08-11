@@ -13,58 +13,43 @@
 
 <div id="feat" class="mb-60">
     <div class="top mb-40">
-        <div class="meta border-bottom border-top mb-30">
-            <div class="box">
-                <div class="row">
-                    <div class="col col-xs-12 col-md-4 border-right">
-                        <div class="rounded-lg flex center-x">
-                            <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
-                            <div class="meta flex center-x">
-                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Level </div>
-                                <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-xs-12 col-md-4 border-right">
-                        <div class="rounded-lg flex center-x">
-                            <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
-                            <div class="meta flex center-x">
-                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Certificate </div>
-                                <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-xs-12 col-md-4">
-                        <div class="rounded-lg flex center-x">
-                            <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
-                            <div class="meta flex">
-                                <div class="capitalize text-sm mb-00 mr-10 desktop"> Session </div>
-                                <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="meta flex border-bottom border-top mb-30">
+            <div class="item flex center-x center-y border-right">
+                <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
+                <div class="meta flex center-x">
+                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Level </div>
+                    <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
+                </div>
+            </div>
+            <div class="item flex center-x center-y border-right">
+                <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
+                <div class="meta flex center-x">
+                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Certificate </div>
+                    <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                </div>
+            </div>
+            <div class="item flex center-x center-y">
+                <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
+                <div class="meta flex">
+                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Session </div>
+                    <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="mid mb-40">
-        <div class="title flex center-x mb-15">
-            <h1 class="mr-10 mt-00 mb-10">{{ .Title }}</h1>
+        <div class="name flex center-x mb-15">
+            <h2 class="mr-10 mt-00 mb-10">{{ .Title }}</h2>
             <div class="like ml-a">
                 <div class="box flex center-x rounded-full border-all">
-                    <div class="dot info feature mr-10"></div>
+                    <div class="dot feature mr-10"></div>
                     <div class="text-sm mb-00">Featured</div>
                 </div>
             </div>
         </div>
-        <div class="">
-            <div class="box mb-30">
-                <div class="main">{{- partial "lib/course/hero-thumb.html" . -}}</div>
-                <div class="extra"></div>
-            </div>
-            <div class="box">
-                <div class="info mb-30"><p>{{ .Page.Params.Description }} </p></div>
-            </div>
+        <div class="leaf">
+            <div class="thumb">{{- partial "lib/course/hero-thumb.html" . -}}</div>
+            <div class="descr mb-30"><p>{{ .Page.Params.Description }} </p></div>
         </div>
     </div>
     <div class="bot">
