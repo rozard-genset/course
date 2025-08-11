@@ -257,19 +257,21 @@ main{ margin-top: 3.5rem; }
         .leaf{
             display: grid;
             grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
-            grid-gap: 1rem;
-            grid-row: 1rem;
+            grid-gap: 2rem;
         }
 
-        .metas{
-            width: 100%;
-        }
+       
 
         .card{
             display: block;
+            margin-bottom: 0;
             .thumb{
                 width: 100%;
                 height: auto;
+            }
+
+            .metas{
+                width: 100%;
             }
 
             img{
@@ -397,7 +399,6 @@ main{ margin-top: 3.5rem; }
         .leaf{
             display:grid;
             grid-template-columns: repeat(2, calc( 50% - 1rem ));
-            grid-row: 1rem;
             grid-gap: 1rem;
         }
     }
@@ -429,9 +430,8 @@ main{ margin-top: 3.5rem; }
 
     #list{
         .leaf{
-            grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
             grid-gap: 2rem;
-            grid-row: 2rem;
         }
     }
 
@@ -526,7 +526,8 @@ main{ margin-top: 3.5rem; }
   
     #list{
         .leaf{
-            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+            grid-gap: 2rem;
         }
 
         img{
@@ -743,8 +744,7 @@ main{ margin-top: 3.5rem; }
     #list{
         .leaf{
             grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
-            grid-gap: 1rem;
-            grid-row: 1rem;
+            grid-gap: 2rem;
         }
     }
 
