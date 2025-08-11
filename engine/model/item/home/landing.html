@@ -2,7 +2,7 @@
 {{- $feat := printf "%s/feat.html" $path -}}
 {{- $invo := printf "%s/invo.html" $path -}}
 {{- $taxo := printf "%s/taxo.html" $path -}}
-{{- $list := printf "%s/list.html" $path -}}
+{{- $card := printf "%s/card.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $info := printf "%s/info.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
@@ -14,18 +14,18 @@
 
 <main id="landing" class="landing page-{{ $navi.PageNumber }}" data-page="{{ $navi.PageNumber }}">
     <div class="wrap">
-        <section id="section-1">
+        <section id="div1">
             {{- partial $hero . -}}
         </section>
-        <section id="section-2">
+        <section id="div2">
             <div class="sidebar">{{- partial $feat . -}}</div>
             <div class="content">{{- partial $invo . -}}{{- partial $taxo . -}}</div>
         </section>
-        <section id="section-3">
+        <section id="div3">
             {{- partial $info . -}}
         </section>
-        <section id="section-4">
-            <div class="content">{{- partial $list . -}}</div>
+        <section id="div4">
+            <div class="content">{{- partial $card . -}}</div>
             <div class="sidebar">
                 {{- partial $team . -}}{{- partial $bugs . -}}
             </div>
