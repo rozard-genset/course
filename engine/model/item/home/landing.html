@@ -6,6 +6,7 @@
 {{- $team := printf "%s/team.html" $path -}}
 {{- $info := printf "%s/info.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
+{{- $join := printf "%s/join.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
 
 <main id="landing">
@@ -23,7 +24,7 @@
         <section id="div4">
             <div class="main">{{- partial $list . -}}</div>
             <div class="side">
-                {{- partial $team . -}}{{- partial $bugs . -}}
+                {{- partial $team . -}}{{- partial $join . -}}{{- partial $bugs . -}}
             </div>
         </section>
     </div>

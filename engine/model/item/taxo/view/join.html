@@ -1,5 +1,5 @@
 {{- $leads := "Being Apart Of Open Global Education" -}}
-{{- with .Parent.Page.Params.Module.Parted.Invo.desc -}}{{- $leads = . -}}{{- end -}}
+{{- with .Parent.Page.Params.Parted.Join.desc -}}{{- $leads = . -}}{{- end -}}
 
 <div id="join" class="mb-60">
     <div class="mb-20">
@@ -7,7 +7,7 @@
         <p class="mt-10">{{ $leads }}</p>
     </div>
     <div class="list">
-        {{- range .Parent.Page.Params.Module.Parted.Invo.Data -}}
+        {{- range .Parent.Page.Params.Parted.Join.Data -}}
             <hr class="mb-20">
             <div class="cont">
                 <div class="register flex center-x">

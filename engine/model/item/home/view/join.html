@@ -1,17 +1,26 @@
-{{- $leads := "Learn on-the-go or right at home with self-paced courses. Get started today!" -}}
-{{- with .Page.Params.Module.Parted.Invo.desc -}}{{- $leads = . -}}{{- end -}}
+{{- $leads := "Being Apart Of Open Global Education" -}}
+{{- with .Page.Params.Parted.Join.desc -}}{{- $leads = . -}}{{- end -}}
 
 <div id="join" class="mb-60">
     <div class="mb-20">
-        <h2 class="text-xl font-bold mb-10">Contribute</h2><hr>
+        <h2 class="text-xl font-bold mb-10">Contribute</h2>
         <p class="mt-10">{{ $leads }}</p>
     </div>
-    <div class="list flex center-x">
-        {{- range .Page.Params.Module.Parted.Invo.Data -}}
-            <a href="{{ .link }}" class="register flex center-x mr-30">
-                <h3 class="text-md mb-00 mt-00">{{ .name }}</h3>
-                <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </a>
+    <div class="list">
+        {{- range .Page.Params.Parted.Join.Data -}}
+            <hr class="mb-20">
+            <div class="cont">
+                <div class="register flex center-x">
+                    <h3 class="text-md font-bold mb-10 mt-00">{{ .name }}</h3>
+                    <a href="{{ .link }}" class="mb-10 flex center-x  ml-a">
+                        <div>Register</div>
+                        <div class="action">
+                            <div class="icon md">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                        </div>
+                    </a>
+                </div>
+                <p class="text-sm">Help tutor to improve registered course and being a team mates for spesific course</p>
+            </div>
         {{- end -}}
     </div>
 </div>

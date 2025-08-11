@@ -13,10 +13,10 @@
             <article class="metas">
                 <h3 class="text-md font-bold title mb-20">{{ .Title }}</h3>
                 <div class="meta flex center-x text-sm capitalize mb-05">
-                    <div class="box level">
+                    <div class="box">
                         {{- .Page.Params.Module.Plan.Level -}}
                     </div>
-                    <div class="box session">
+                    <div class="box">
                         {{- partial "lib/course/count-material.html" . -}} <span class="ml-05">Session</span>
                     </div>
                 </div>

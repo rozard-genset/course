@@ -1,8 +1,8 @@
 {{- $title := "Explore Courses" -}}
-{{- with .Page.Params.Module.Parted.Taxo.Lead -}}{{- $title = . -}}{{- end -}}
+{{- with .Page.Params.Parted.Taxo.Lead -}}{{- $title = . -}}{{- end -}}
 
 {{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" -}}
-{{- with .Page.Params.Module.Parted.Taxo.desc -}}{{- $leads = . -}}{{- end -}}
+{{- with .Page.Params.Parted.Taxo.desc -}}{{- $leads = . -}}{{- end -}}
 
 
 {{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
@@ -28,7 +28,12 @@
     <div class="leaf max-width">
         {{- range first 6 $list -}}
         <a href="{{ .RelPermalink }}" class="card rounded-lg flex center-x">
-            <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="thumb rounded-full" loading="lazy">
+
+            {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
+            {{- $thumb := $image.Fill "42x42 webp q100" -}}
+            {{- with $thumb -}}
+                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="category-image rounded-full" loading="lazy" alt="{{ .Title }}course category">
+            {{- end -}}
             <div class="text ml-10 font-bold">{{- .Title -}}</div>
         </a>
         {{- end -}}
