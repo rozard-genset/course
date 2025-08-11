@@ -1,9 +1,26 @@
 main{
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
 
-#listbox{
+#term #rows{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#term #div2{
+    width: 100%;
+}
+
+
+#term #div1{
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+
+#term #list{
 
     img{
         width: 100%;
@@ -51,19 +68,6 @@ main{
     }
 }
 
-#term .flex{
-    flex-wrap: wrap;
-}
-
-#term aside{
-    width: 100%;
-}
-
-#term #content{
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
 
 #term #hero {
     .head{
@@ -73,8 +77,8 @@ main{
     }
 }
 
-#term #join{
 
+#term #join{
     .register a{
         color: var(--link-02-based);
     }
@@ -83,30 +87,20 @@ main{
 
 @media only screen and (min-width: 480px) {
 
-}
-
-
-@media only screen and (min-width: 768px) {
-
-}
-
-
-@media only screen and (min-width: 1024px) {
-
-}
-
-@media only screen and (min-width: 1280px) {
-
-    #listbox{
+    #term #list{
         .divider{
             display: grid;
-            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
-            grid-gap: 2.5rem;
-            grid-row: 2.5rem;
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
+            grid-gap: 1rem;
+            grid-row: 1rem;
         }
 
         .card{
             display: block;
+
+            .metas{
+                width: 100%;
+            }
 
             .thumb, img{
                 width: 100%;
@@ -118,30 +112,80 @@ main{
             margin-top: 4rem;
         }
     }
+}
 
-    #term .flex{
-        flex-wrap: nowrap;
-       
+
+@media only screen and (min-width: 620px) {
+
+    #term #list{
+        .divider{
+            grid-template-columns: repeat( 3, calc( 33.33% - 1rem ) );
+        }
     }
+}
 
-    #term .divider{
-        -ms-flex-direction: row-reverse;
+
+@media only screen and (min-width: 768px) {
+}
+
+
+@media only screen and (min-width: 920px) {
+    #term #list{
+        .divider{
+            grid-template-columns: repeat( 4, calc( 25% - 1rem ) );
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    #term #rows{
+        flex-wrap: nowrap;
+         -ms-flex-direction: row-reverse;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
         flex-direction: row-reverse;
     }
 
-    #term aside{
+
+    #term #div2{
         width: 300px;
         padding-right: 3rem;
     }
 
-    #term #content{
+
+    #term #div1{
         width: calc(100% - 300px);
         padding-left: 2rem;
     }
+
+
+    #term #list{
+        .divider{
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+            grid-gap: 1rem;
+            grid-row: 1rem;
+        }
+    }
 }
 
-@media only screen and (min-width: 1536px) {
-    
+
+@media only screen and (min-width: 1280px) {
+
+    main{
+        margin-top: 5rem;
+    }
+
+    #term #list{
+        .divider{
+            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+            grid-gap: 2rem;
+            grid-row: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
 }

@@ -19,7 +19,11 @@
         {{- range first 6 $list -}}
         <li class=""><a href="{{ .RelPermalink }}">
             <div class="card border-all rounded-lg flex center-x">
-                <img src="{{ .RelPermalink }}{{ .Page.Params.Module.Cover }}" class="category-image rounded-full" loading="lazy">
+                {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
+                {{- $thumb := $image.Fill "42x42 webp q100" -}}
+                {{- with $thumb -}}
+                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="category-image rounded-full" loading="lazy" alt="{{ .Title }}course category">
+                {{- end -}}
                 <div class="ml-10 font-bold">{{- .Title -}}</div>
             </div>
         </a></li>

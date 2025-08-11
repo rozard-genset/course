@@ -4,12 +4,16 @@
     {{- if ne .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
 {{- end -}}
 
-<div id="listbox" class="mb-60">
+<div id="list" class="mb-60">
+    <div id="tags" class="info mb-60">
+        <h2 class="text-4xl mt-00 mb-10">{{ .Page.Params.Module.Qoutes }}</h2>
+        <h2 class="mt-10"> Explore {{ .Title }} Course </h2>
+    </div>
 	<div class="divider">
 		{{- range ( .Paginate ($list) 2 ).Pages -}}
 		<div class="course">
             <a href="{{ .RelPermalink }}" class="card rounded-lg">
-                <div class="thumb">{{- partial "lib/course/hero-thumb.html" . -}}</div>
+                <div class="thumb">{{- partial "module/course/item/term/part/thumb-list.html" . -}}</div>
                 <div class="metas">
                     <h3 class="text-md font-bold title mb-20">{{ .Title }}</h3>
                     <div class="meta center-x text-sm capitalize mb-05">
@@ -26,4 +30,4 @@
 		{{- end -}}
 	</div>
 	<div class="paginate">{{- partial "pagination.html" . -}}</div>
-</div>
+</div> 

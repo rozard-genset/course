@@ -68,10 +68,24 @@ main{
 
 
 @media only screen and (min-width: 768px) {
+    #taxo #list{
+        .list{
+            grid-template-columns: repeat(2, calc( 50% - 2rem ));
+            grid-gap: 2rem;
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1024px) {
+
+    #taxo #list{
+        .list{
+            grid-template-columns: repeat(3, calc( 33.333% - 2rem ));
+            grid-gap: 2rem;
+        }
+    }
+
 }
 
 
@@ -81,41 +95,11 @@ main{
         margin-top: 5rem;
     }
 
-    
-    #taxo #rows{
-        flex-wrap: nowrap;
-    }
-
-
-    #taxo #div1{
-        width: calc(100% - 300px);
-        padding-right: 2rem;
-    }
-
-
-    #taxo #div2{
-        width: 300px;
-        padding-left: 3rem;
-
-        #team, #bugs{
-            display: block;
-        }
-    }
-
-
+ 
     #taxo #list{
-
         .list{
             grid-template-columns: repeat(2, calc( 50% - 4rem ));
             grid-gap: 4rem;
-        }
-
-        article{
-            margin-left: 0;
-        }
-
-        .pagination{
-            margin-top: 4rem;
         }
     }
 }
