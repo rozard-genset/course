@@ -64,8 +64,30 @@ main{
 
 
 @media only screen and (min-width: 480px) {
+
+    #taxo #join{
+
+        .list{
+            border-top: 1px solid var(--line-01);
+            display: flex;
+        }
+
+        .cont{
+            margin-top: 2rem;
+            padding-right: 1rem;
+        }
+    }
 }
 
+
+@media only screen and (min-width: 620px) {
+    
+    #taxo #join{
+        .cont{
+            padding-right: 2rem;
+        }
+    }
+}
 
 @media only screen and (min-width: 768px) {
     #taxo #list{
@@ -78,6 +100,27 @@ main{
 
 
 @media only screen and (min-width: 1024px) {
+
+    #taxo #rows{
+        flex-wrap: nowrap;
+    }
+
+
+    #taxo #div2{
+        width: 300px;
+        padding-right: 2rem;
+
+        #team, #bugs{
+            display: block;
+        }
+    }
+
+
+    #taxo #div1{
+        width: calc(100% - 300px);
+        padding-left: 2rem;
+    }
+
 
     #taxo #list{
         .list{

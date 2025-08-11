@@ -2,10 +2,10 @@
 {{- $ctx  := . -}}{{- $site := $ -}}
 
 {{- $title := "Stakeholder" -}}
-{{- with .Parent.Page.Params.Module.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
+{{- with .Parent.Page.Params.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
 
 {{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry." -}}
-{{- with .Parent.Page.Params.Module.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
+{{- with .Parent.Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
 
 
 <div id="team" class="widget mb-60">
@@ -17,10 +17,10 @@
     <div class="main">
         <p class="mb-30"></p>
         <div class="list" class="info">
-            {{- range .Parent.Page.Params.Module.Parted.Team.list -}}
+            {{- range .Parent.Page.Params.Parted.Team.list -}}
                 <div class="flex center-x">
                     <div class="icon lg">
-                        {{- partial ( printf "%s/image-stakers.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+                        {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
                     </div>
                     <div class="name">
                         <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>

@@ -70,6 +70,13 @@ main{ margin-top: 3.5rem; }
 }
 
 
+#landing #div4 {
+    .main{
+        margin-bottom: 3rem;
+    }
+}
+
+
 #landing #hero {
     h1{
         font-size: 2.2rem;
@@ -166,6 +173,15 @@ main{ margin-top: 3.5rem; }
 }
 
 
+#landing #team{
+    display: none;
+}
+
+
+#landing #bugs{
+    display: none;
+}
+
 
 #parted {
     #join, #team, #bugs, #term .box{
@@ -188,7 +204,6 @@ main{ margin-top: 3.5rem; }
 
 #parteds #div2 {
     width: 100%;
-    margin-bottom: 3rem;
 }
 
 
@@ -244,6 +259,16 @@ main{ margin-top: 3.5rem; }
         height: 42px;
         object-fit: cover;
     }
+}
+
+
+#parteds #team{
+    display: none;
+}
+
+
+#parteds #bugs{
+    display: none;
 }
 
 
@@ -549,7 +574,7 @@ main{ margin-top: 3.5rem; }
         }
     }
 
-    
+
     #landing #join{
         .cont{
             padding-right: 2rem;
@@ -895,10 +920,6 @@ main{ margin-top: 3.5rem; }
     }
  
 
-    #landing #team {
-        display: block;
-    }
-
 
     #landing #join{
 
@@ -978,6 +999,8 @@ main{ margin-top: 3.5rem; }
 
     #parteds #team{
 
+        display: block;
+
         .list{
             display: block;
         }
@@ -985,6 +1008,10 @@ main{ margin-top: 3.5rem; }
         .flex{
             margin-right: 0;
         }
+    }
+
+    #parteds #bugs{
+        display: block;
     }
 }
 
