@@ -1,60 +1,39 @@
 main{
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 
-#listbox{
 
-    img{
-        width: 100%;
-        height: 100%;
-    }
-
-    .divider{
-        display: grid;
-        grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
-        grid-gap: 2.5rem;
-        grid-row: 2.5rem;
-    }
-
-    .card{
-        background-color: var(--background-02);
-        overflow: hidden;
-
-        img{
-            border-radius: 0;
-        }
-
-        .title{
-            margin: 0;
-            padding: 15px;
-        }
-
-        .meta .box{
-            width: 50%;
-            padding: 10px 15px;
-        }
-    }
+#taxo .flex{
+    flex-wrap: wrap;
 }
+
 
 #taxo aside{
-    width: 300px;
-    padding-left: 3rem;
+    width: 100%;
+
+    #team, #bugs{
+        display: none;
+    }
 }
 
+
 #taxo #content{
-    width: calc(100% - 300px);
-    padding-right: 2rem;
+    width: 100%;
 }
+
 
 #taxo #paginate{
 
+    margin-bottom: 2rem;
+
     .list{
         display: grid;
-        grid-template-columns: repeat(2, calc( 50% - 4rem ));
-        grid-gap: 4rem;
+        grid-template-columns: repeat(1, calc( 100% - 2.5rem ));
+        grid-gap: 2.5rem;
     }
 
     article{
+        margin-left: 10%;
         position: relative;
     }
 
@@ -76,6 +55,10 @@ main{
     .render{
         overflow: hidden;
     }
+
+    .pagination{
+        margin-top: 2rem;
+    }
 }
 
 
@@ -95,6 +78,43 @@ main{
 
 @media only screen and (min-width: 1280px) {
 
+    main{
+        margin-top: 5rem;
+    }
+
+    #taxo .flex{
+        flex-wrap: nowrap;
+    }
+
+    #taxo aside{
+        width: 300px;
+        padding-left: 3rem;
+
+        #team, #bugs{
+            display: block;
+        }
+    }
+
+    #taxo #content{
+        width: calc(100% - 300px);
+        padding-right: 2rem;
+    }
+
+    #taxo #paginate{
+
+        .list{
+            grid-template-columns: repeat(2, calc( 50% - 4rem ));
+            grid-gap: 4rem;
+        }
+
+        article{
+            margin-left: 0;
+        }
+
+        .pagination{
+            margin-top: 4rem;
+        }
+    }
 }
 
 @media only screen and (min-width: 1536px) {

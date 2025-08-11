@@ -165,15 +165,18 @@ main{ margin-top: 3.5rem; }
 
 
 #paginate {
-    aside{
-        width: 300px;
-        padding-left: 2rem;
-       
+    .flex{
+        flex-wrap: wrap;
     }
 
     article{
-        width: calc( 100% - 300px );
-        padding-right: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    aside{
+        #join, #team, #bugs, #term .box{
+            display: none;
+        }
     }
 }
 
@@ -436,6 +439,28 @@ main{ margin-top: 3.5rem; }
 
     #landing #bugs {
         display: block;
+    }
+
+    
+    #paginate {
+
+        .flex {
+            flex-wrap: nowrap;
+        }
+
+        aside{
+            width: 300px;
+            padding-left: 2rem;
+
+            #join, #team, #bugs, #term .box{
+                display: block;
+            }
+        }
+
+        article{
+            width: calc( 100% - 300px );
+            padding-right: 2rem;
+        }
     }
 }
 
