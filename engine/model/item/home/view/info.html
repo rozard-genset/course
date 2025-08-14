@@ -1,12 +1,10 @@
 {{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." -}}
 
-
 {{- $title_side_1 := "Publish Your Personal Knowledge" -}}
 {{- with .Page.Params.Parted.Info.Top.Lead -}}{{- $title_side_1 = . -}}{{- end -}}
 
 {{- $leads_side_1 := $leads -}}
 {{- with .Page.Params.Parted.Info.Top.Desc -}}{{- $leads_side_1 = . -}}{{- end -}}
-
 
 {{- $thumb_image := "/course/proc-1.png" -}}
 
@@ -32,6 +30,5 @@
             </div>
             <div class="main"><p>{{- $leads_side_2 -}}</p></div>
         </div>
-        
     </div>
 </div>
