@@ -1,17 +1,20 @@
-{{ $title_side_1 := "Publish Your Personal Knowledge" }}
-{{ with .Page.Params.Parted.Info.Top.Lead }}{{ $title_side_1 = . }}{{ end }}
-
-{{ $title_side_2 := "Your Organization For Global Education" }}
-{{ with .Page.Params.Parted.Info.Low.Lead }}{{ $title_side_2 = . }}{{ end }}
+{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." -}}
 
 
-{{- $leader_text := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." -}}
+{{- $title_side_1 := "Publish Your Personal Knowledge" -}}
+{{- with .Page.Params.Parted.Info.Top.Lead -}}{{- $title_side_1 = . -}}{{- end -}}
 
-{{ $leads_side_1 := $leader_text }}
-{{ with .Page.Params.Parted.Info.Top.Desc }}{{ $leads_side_1 = . }}{{ end }}
+{{- $leads_side_1 := $leads -}}
+{{- with .Page.Params.Parted.Info.Top.Desc -}}{{- $leads_side_1 = . -}}{{- end -}}
 
-{{ $leads_side_2 := $leader_text }}
-{{ with .Page.Params.Parted.Info.Low.Desc }}{{ $leads_side_2 = . }}{{ end }}
+
+{{- $thumb_image := "/course/proc-1.png" -}}
+
+{{- $title_side_2 := "Your Organization For Global Education" -}}
+{{- with .Page.Params.Parted.Info.Low.Lead -}}{{- $title_side_2 = . -}}{{- end -}}
+
+{{- $leads_side_2 := $leads -}}
+{{- with .Page.Params.Parted.Info.Low.Desc -}}{{- $leads_side_2 = . -}}{{- end -}}
 
 
 <div id="info" class="mb-20">
@@ -22,7 +25,7 @@
             </div>
             <div class="main"><p>{{- $leads_side_1 -}}</p></div>
         </div>
-        <div class="mid"><img src="/course/proc-1.png"></div>
+        <div class="mid"><img src="{{ $thumb_image }}"></div>
         <div class="low text-left ml-20">
             <div class="head mb-30">
                 <h2 class="text-4xl mb-30">{{- $title_side_2 -}}</h2>
