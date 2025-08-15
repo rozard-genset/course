@@ -29,6 +29,18 @@ main{
 		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 		grid-gap: 1rem;
 	}
+
+	.title .img{
+		background-color: var(--background-02);
+	}
+
+	.title img{
+		height: auto;
+	}
+
+	.share svg{
+		margin-right: 0;
+	}
 }
 
 

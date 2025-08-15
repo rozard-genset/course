@@ -1,13 +1,18 @@
+{{- $ctx  := . -}}{{- $site := $ -}}
 <div id="hero" class="mb-70 grid">
     <div class="top">
         {{- partial "lib/course/hero-thumb.html"  . -}}
     </div>
     <div class="bot">
         <div class="title mb-40">
-            <h1 class="mt-05">{{ .Title }}</h1>
-            <p class="capitalize mb-05 mb-30">Provide By
-                <span class="font-bold uppercase ml-10">{{- .Page.Params.Module.Organ.Name -}}</span>
-            </p>
+            <h1 class="mt-00">{{ .Title }}</h1>
+            <div class="mb-05 mb-30 flex center-x">
+                <div class="img border-all rounded-lg mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Module.Organ.Name ) -}}</div>
+                <div class="text">
+                    <p class="capitalize mb-10 mt-00">Provide By</p>
+                    <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Module.Organ.Name -}}</p>
+                </div>
+            </div>
             <p>{{- .Page.Params.Description -}}</p>
         </div>
         <div class="card grid">
@@ -49,8 +54,8 @@
             </div>
         </div>
         <hr class="mb-20 mt-20">
-        <div id="checkout" class="flex center-x">
-            <div class="">
+        <div id="action" class="flex center-x">
+            <div class="checkout">
                 {{ range first 1 .Pages }}
                 <a href="{{ .RelPermalink }}" class="button outline flex center-x">
                     <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>
@@ -58,10 +63,10 @@
                 </a>
                 {{ end }}
             </div>
-            <div id="share-course" class="ml-a">
-                <a href="#" class="button flex center-x" title="share course">
-                    <div class="icon md">{{- partial "icon/line/share-2.svg" -}}</div>
-                </a>
+            <div class="share ml-a">
+                <div class="icon md button outline flex center-x mr-00" title="share course">
+                    {{- partial "icon/line/share-2.svg" -}}
+                </div>
             </div>
         </div>
     </div>

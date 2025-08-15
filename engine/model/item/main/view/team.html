@@ -1,8 +1,7 @@
 {{- $ctx  := . -}}{{- $site := $ -}}
 <div id="team" class="mt-40">
     <div class="leaf grid">
-    {{- if .Page.Params.Module.Organ.Team -}}{{- range .Page.Params.Module.Organ.Team -}}
-        {{- if .name -}}
+    {{- if .Page.Params.Module.Organ.Team -}}{{- range .Page.Params.Module.Organ.Team -}}{{- if .name -}}
         <div class="card flex center-x mb-20 mr-30">
             <div class="img rounded-full">{{- partial "module/course/item/main/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}</div>
             <div class="bio ml-20">
@@ -10,7 +9,6 @@
                 <h3 class="text-sm mb-00 mt-00">{{- .post -}}</h3>
             </div>
         </div>
-        {{- end -}}
-    {{- end -}}{{- end -}}
+    {{- end -}}{{- end -}}{{- end -}}
     </div>
 </div>
