@@ -9,21 +9,12 @@
 @import "../../../../../core/css/wrap/p-10.scss";
 
 
-
 main{
-    margin-top: 5rem;
-}
-
-
-#desc{
-	grid-template-columns: 31% calc(69% - 6rem);
-	grid-gap: 6rem
+    margin-top: 3rem;
 }
 
 
 #hero{
-	grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
-	grid-gap: 4rem;
 
 	.card{
 		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
@@ -58,17 +49,199 @@ main{
 }
 
 
-#task{
-	.leaf{
-		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
-		grid-gap: 1rem;
+#plan{
+
+	.icon{
+		display: none;
+	}
+
+	.desc{
+		flex-wrap: wrap;
+	}
+
+	h4{
+		width: 100%;
+		margin-bottom: 10px;
 	}
 }
 
 
-#team{
-	.leaf{
-		grid-template-columns: repeat(3, calc( 33% - 1rem ) );
-		grid-gap: 1rem;
+@media only screen and (min-width: 480px) {
+
+	
+}
+
+
+@media only screen and (min-width: 620px) {
+
+	#task{
+		.leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
 	}
+
+	#team{
+		.leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 768px) {
+	
+	#hero{
+		.info{
+			display: grid;
+			grid-template-columns: 30% 70%;
+
+			p{
+				margin-top: 0;
+			}
+		}
+
+		.tablet{
+			.card {
+				grid-template-columns: repeat(4, calc( 25% - 1rem ) );
+				grid-gap: 1rem;
+			}
+		}
+	}	
+
+
+	#plan{
+		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+		grid-gap: 2rem;
+		
+		h4{
+			margin-bottom: 0;
+			width: auto;
+		}
+
+		.desc{
+			flex-wrap: nowrap;
+			h4{
+				text-wrap: nowrap;
+			}
+		}
+
+		.item{
+			align-items: flex-start;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 810px) {
+	
+
+	#task{
+		.leaf{
+			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+		}
+	}
+
+	#team{
+		.leaf{
+			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+
+
+}
+
+
+@media only screen and (min-width: 920px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+	#hero{
+		grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
+		grid-gap: 4rem;
+
+		.info{
+			grid-template-columns: 100%;
+
+			p{
+				margin-top: 0;
+			}
+		}
+
+		.tablet{
+			.card {
+				grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+				grid-gap: 1rem;
+			}
+		}
+	}	
+
+	
+	#desc{
+		grid-template-columns: 31% calc(69% - 6rem);
+		grid-gap: 6rem
+	}
+
+
+	#plan{
+		grid-template-columns: auto;
+
+		.desc{
+			align-items: center;
+		}
+		.icon{
+			display: flex;
+		}
+
+		.item{
+			align-items: center;
+		}
+	}
+
+	#task{
+		.leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+
+
+	#team{
+		.leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+	main{
+		margin-top: 5rem;
+	}
+
+
+	#team{
+		.leaf{
+			grid-template-columns: repeat(3, calc( 33% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+
+
+	#desc{
+		grid-template-columns: 31% calc(69% - 6rem);
+		grid-gap: 6rem
+	}
+}
+
+
+@media only screen and (min-width: 1536px) {
+	
+	
 }

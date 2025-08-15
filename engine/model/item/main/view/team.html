@@ -2,7 +2,7 @@
 <div id="team" class="mt-40">
     <div class="leaf grid">
     {{- if .Page.Params.Module.Organ.Team -}}{{- range .Page.Params.Module.Organ.Team -}}{{- if .name -}}
-        <div class="card flex center-x mb-20 mr-30">
+        <div class="card flex center-x mb-40 mr-30">
             <div class="img rounded-full">{{- partial "module/course/item/main/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}</div>
             <div class="bio ml-20">
                 <h2 class="text-md font-bold mb-00 mt-00">{{- .name -}}</h2>
