@@ -1,3 +1,11 @@
+@import "../../../../../core/css/wrap/m-00.scss";
+@import "../../../../../core/css/wrap/m-10.scss";
+@import "../../../../../core/css/wrap/m-20.scss";
+@import "../../../../../core/css/wrap/m-60.scss";
+@import "../../../../../core/css/wrap/p-15.scss";
+@import "../../../../../core/css/wrap/p-40.scss";
+
+
 main{
     margin-top: 3rem;
 }
@@ -34,7 +42,7 @@ main{
     }
 
     article{
-        margin-left: 10%;
+        margin-left: 5%;
         position: relative;
     }
 
@@ -42,8 +50,8 @@ main{
         position: absolute;
         width: 42px;
         height: 42px;
-        margin-left: -21px;
-        margin-top: -21px;
+        margin-left: -23px;
+        margin-top: -23px;
         overflow: hidden;
     }
 
@@ -87,6 +95,7 @@ main{
         }
     }
 }
+
 
 @media only screen and (min-width: 768px) {
     #taxo #list{
