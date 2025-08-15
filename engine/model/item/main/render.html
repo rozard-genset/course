@@ -1,25 +1,19 @@
-{{- $path := "module/course/item/main/parts" -}}
+{{- $path := "module/course/item/main/view" -}}
 {{- $hero := printf "%s/hero.html" $path -}}
-{{- $tabs := printf "%s/tabs.html" $path -}}
-{{- $apps := printf "%s/apps.html" $path -}}
 {{- $info := printf "%s/info.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $reqs := printf "%s/reqs.html" $path -}}
+{{- $need := printf "%s/need.html" $path -}}
+{{- $tabs := printf "%s/tabs.html" $path -}}
 
-
-<main id="room">
-    <div class="wrap">
-        <!-- hero -->
+<main id="main">
+    <article class="wrap">
         {{- partial $hero . -}}
-        <div id="content" class="row">
-            <asside class="col col-lg-4 col-xs-12">
-                <!-- info -->{{- partial $info . -}}
-                <!-- apps -->{{- partial $apps . -}}
-                <!-- team -->{{- partial $reqs . -}}
-            </asside>
-            <article class="col col-lg-7 col-xs-12 ml-a">
-                <!-- tabs -->{{- partial $tabs . -}}
-            </article>
+        <div id="desc" class="grid">
+            <div id="div1">
+                {{- partial $info . -}}{{- partial $need . -}}
+            </div>
+            <div id="div2">
+                {{- partial $tabs . -}}
+            </div>
         </div>
-    </div>
+    </article>
 </main>

@@ -1,7 +1,9 @@
-<div id="cert" class="mb-60">
-    <h2 class="text-sm uppercase font-bold mb-30"> Information </h2>
-    <div class="row border-all rounded-lg mb-30">
-        <div class="col col-xs-6 flex center-x py-5">
+<div id="info" class="mb-60">
+    <div class="head mb-30">
+        <h2 class="text-sm uppercase font-bold"> Information </h2>
+    </div>
+    <div class="leaf grid border-all rounded-lg mb-30">
+        <div class="flex center-x pa-05">
             <div class="icon md text-white">
                 {{ partial "icon/line/bar-chart-2.svg" }}
             </div>
@@ -10,7 +12,7 @@
                 <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Module.Plan.Level }} </div>
             </div>
         </div>
-        <div class="col col-xs-6 flex center-x border-left">
+        <div class="flex center-x border-left pa-05">
             <div class="icon md text-white">
                 {{ partial "icon/line/award.svg" }}
             </div>

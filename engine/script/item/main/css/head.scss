@@ -1,42 +1,61 @@
-@import "../../../../../core/css/flexs/_init.scss";
-@import "../../../../../core/css/flexs/col-12.scss";
-@import "../../../../../core/css/flexs/col-06.scss";
-@import "../../../../../core/css/flexs/col-07.scss";
-@import "../../../../../core/css/flexs/col-04.scss";
+@import "../../../../../core/css/wrap/m-00.scss";
+@import "../../../../../core/css/wrap/m-10.scss";
+@import "../../../../../core/css/wrap/m-20.scss";
+@import "../../../../../core/css/wrap/m-40.scss";
+@import "../../../../../core/css/wrap/m-30.scss";
+@import "../../../../../core/css/wrap/m-60.scss";
+
+@import "../../../../../core/css/wrap/p-05.scss";
+@import "../../../../../core/css/wrap/p-10.scss";
+
 
 
 main{
     margin-top: 5rem;
 }
 
-img{
-	width: 100%;
-	object-fit: cover;
-	overflow: hidden;
+
+#desc{
+	grid-template-columns: 31% calc(69% - 6rem);
+	grid-gap: 6rem
 }
 
-@media only screen and (min-width: 768px) {
-	#course #hero img{
-		height: 100%;
+
+
+#hero{
+	grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
+	grid-gap: 4rem;
+
+	.card{
+		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+		grid-gap: 1rem;
 	}
 }
 
-@media only screen and (min-width: 1024px) {
-	#hero{
-		margin-bottom: 3.5rem;
+
+#info{
+	.leaf{
+		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 	}
 }
 
-#plan-action{
-	padding-left: 0;
+
+#tabs{
+	.head{
+		grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+	}
 }
 
-#share-course .icon,
-#share-course svg{
-	margin-right: 0;
-	
+#task{
+	.leaf{
+		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+		grid-gap: 1rem;
+	}
 }
 
-#share-course .button{
-	padding: 3px;
+#team{
+	.leaf{
+		grid-template-columns: repeat(3, calc( 33% - 1rem ) );
+		grid-gap: 1rem;
+	}
 }

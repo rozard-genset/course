@@ -1,0 +1,18 @@
+{{- $session := 1 -}}
+
+<div id="plan" class="mt-40">
+    
+        {{- range .Page.Params.Module.Material -}}
+        <div class="flex center-x mb-40">
+            <div class="icon text-sm font-bold border-all rounded-full pa-05 mr-20">
+                {{- $session -}}
+            </div>
+            <div class="desc flex">
+                <h4 class="text-sm uppercase font-bold mb-00 mt-00"> session  {{ $session }} </h4>
+                <p class="text-md mb-00 mt-00 ml-10 pl-10 border-left">{{ . }}</p>
+            </div>
+        </div>
+        {{- $session = math.Sum $session 1 -}}
+        {{- end -}}
+
+</div>

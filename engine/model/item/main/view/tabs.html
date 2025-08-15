@@ -1,30 +1,26 @@
-{{- $path := "module/course/item/main/parts" -}}
+{{- $path := "module/course/item/main/view" -}}
 {{- $plan := printf "%s/plan.html" $path -}}
-{{- $talk := printf "%s/talk.html" $path -}}
-{{- $book := printf "%s/book.html" $path -}}
-{{- $asig := printf "%s/asig.html" $path -}}
-{{- $reqs := printf "%s/reqs.html" $path -}}
+{{- $task := printf "%s/task.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 
-<div id="main" class="mb-60">
-    <div class="head row between mb-20 mt-10">
-        <div id="plan-action" data-target="plan-tabs" class="col col-xs-4 tab-action flex center-x open">
+<div id="tabs" class="mb-60">
+    <div class="head grid mb-20 mt-10">
+        <div id="plan-action" data-target="plan-tabs" class="tab-action flex center-x open">
             <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/book.svg" -}}</div>
             <div class="capitalize text-md"> Plan </div>
         </div>
-        <div id="taks-action" data-target="taks-tabs" class="col col-xs-4 tab-action flex center-x">
+        <div id="taks-action" data-target="taks-tabs" class="tab-action flex center-x">
             <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/edit.svg" -}}</div>
             <div class="capitalize text-md">Task</div>
         </div>
-         <div id="team-action" data-target="team-tabs" class="col col-xs-4 tab-action flex center-x">
+         <div id="team-action" data-target="team-tabs" class="tab-action flex center-x">
             <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/users.svg" -}}</div>
             <div class="capitalize text-md">Team</div>
         </div>
-    </div>
-    <hr>
-    <div class="tab-content">
+    </div><hr>
+    <div class="leaf tab-content">
         <div id="plan-tabs" class="tabs-item open">{{- partial $plan . -}}</div>
-        <div id="taks-tabs" class="tabs-item">{{- partial $asig . -}}</div>
+        <div id="taks-tabs" class="tabs-item">{{- partial $task . -}}</div>
         <div id="team-tabs" class="tabs-item">{{- partial $team . -}}</div>
     </div>
 </div>
