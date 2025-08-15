@@ -4,7 +4,7 @@
 @import "../../../../../core/css/wrap/m-40.scss";
 @import "../../../../../core/css/wrap/m-30.scss";
 @import "../../../../../core/css/wrap/m-60.scss";
-
+@import "../../../../../core/css/wrap/m-70.scss";
 @import "../../../../../core/css/wrap/p-05.scss";
 @import "../../../../../core/css/wrap/p-10.scss";
 
@@ -19,7 +19,6 @@ main{
 	grid-template-columns: 31% calc(69% - 6rem);
 	grid-gap: 6rem
 }
-
 
 
 #hero{
@@ -46,12 +45,14 @@ main{
 	}
 }
 
+
 #task{
 	.leaf{
 		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 		grid-gap: 1rem;
 	}
 }
+
 
 #team{
 	.leaf{

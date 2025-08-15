@@ -1,11 +1,13 @@
-<div id="hero" class="mb-60 grid">
+<div id="hero" class="mb-70 grid">
     <div class="top">
         {{- partial "lib/course/hero-thumb.html"  . -}}
     </div>
     <div class="bot">
         <div class="title mb-40">
             <h1 class="mt-05">{{ .Title }}</h1>
-            <p class="capitalize mb-05 mb-30">Provide By<span class="font-bold uppercase ml-10">{{- .Page.Params.Module.Organ.Name -}}</span></p>
+            <p class="capitalize mb-05 mb-30">Provide By
+                <span class="font-bold uppercase ml-10">{{- .Page.Params.Module.Organ.Name -}}</span>
+            </p>
             <p>{{- .Page.Params.Description -}}</p>
         </div>
         <div class="card grid">
