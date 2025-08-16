@@ -9,41 +9,69 @@
 @import "../../../../../core/css/wrap/p-05.scss";
 
 main{
-    margin-top: 5rem;
+    margin-top: 3rem;
+}
+
+
+.icon.md{
+    margin-right: 0;
+}
+
+
+.button{
+    padding: 5px 18px;
+}
+
+
+.share {
+
+    .icon svg {
+        margin-right: 0;
+        height: 18px;
+        width: 18px;
+    }
+    .button{
+        padding: 5px;
+    }
+
 }
 
 
 #slot{
-    grid-template-columns: calc( 37% - 7rem ) 63% ;
-	grid-gap: 7rem;
+    grid-template-columns: 100% ;
+    grid-gap: 3rem;
 }
 
 
 #hero {
     .organ{
-        margin-left: 3rem;
+        margin-left: 1rem;
         display: block;
     }
+
 
     .thumb{
         position: relative;
         z-index: 2;
         background-color: var(--background-02);
         margin-top: -4rem;
-        width: 48px;
+        width: 42px;
     }
+
 
     p{
         font-size: 1.1rem;
     }
+
+
+    .organ .texts{
+        align-items: self-end;
+    }
 }
+
 
 #paid{
     h2{ line-height: 1; }
-
-    .icon.md{
-        margin-right: 0;
-    }
 
     .share .icon svg {
         margin-right: 0;
@@ -60,6 +88,7 @@ main{
     }
 }
 
+
 #take{
 
     .inform{
@@ -72,4 +101,199 @@ main{
             width: 100%;
         }
     }
+}
+
+
+#plan{
+    .leaf .grid{
+        grid-template-columns: 100%;
+        grid-gap: 1rem;
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+    #hero {
+        .organ{
+            margin-left: 3rem;
+        }
+
+        .thumb{
+            width: 48px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 620px) {
+
+    #take{
+        .inform{
+            grid-template-columns: repeat( 4, calc( 25% - 1rem ) );
+	        grid-gap: 1rem;
+        }
+    }
+
+
+    #need{
+        .leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+    }
+
+
+    #team{
+		.leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+
+
+    #plan{
+		.leaf .grid{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 768px) {
+	
+    #take{
+        .leaf {
+            display: flex;
+        }
+
+        .capsul{
+            width: 250px;
+        }
+
+        .inform{
+            width: calc(100% - 250px - 2rem);
+            margin-left: 2rem;
+            margin-top: -1rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 810px) {
+	
+    #team{
+		.leaf{
+			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 920px) {
+    #need{
+        .leaf{
+			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+			grid-gap: 1rem;
+		}
+    }
+
+    #plan{
+		.leaf .grid{
+			grid-template-columns: repeat(3, calc( 33.333% - 2rem ) );
+			grid-gap: 2rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    #slot{
+        grid-template-columns: calc( 35% - 5rem ) 65% ;
+        grid-gap: 5rem;
+    }
+
+    #div1{
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    #div2{
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #take{
+
+        .leaf{
+            display: block;
+        }
+
+        .inform, .capsul{
+            width: 100%;
+        }
+       
+        .inform{
+            grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
+	        grid-gap: 2rem;
+            margin-left: unset;
+            margin-top: unset;
+        }
+    }
+
+
+    #need{
+        .leaf{
+			grid-template-columns: 100%;
+			grid-gap: 0rem;
+		}
+    }
+
+
+    #team{
+		.leaf{
+			grid-template-columns: 100%;
+			grid-gap: 0rem;
+		}
+	}
+
+    
+    #plan{
+		.leaf .grid{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+	main{
+		margin-top: 5rem;
+	}
+
+    
+    #slot{
+        grid-template-columns: calc( 37% - 5rem ) 63% ;
+        grid-gap: 5rem;
+    }
+
+
+    #plan{
+		.leaf .grid{
+			grid-template-columns: repeat(2, calc( 50% - 2rem ) );
+			grid-gap: 2rem;
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1536px) {
+	
+	
 }

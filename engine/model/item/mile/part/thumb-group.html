@@ -7,6 +7,6 @@
     {{- with $site.Site.GetPage $path -}}
         {{- $link := .Page.Resources.GetMatch .Page.Params.Thumb -}}
         {{- $link = $link.Resize "48x48 webp q100" -}}
-        <img src="{{ $link.RelPermalink }}" class="rounded-xl" fetchpriority="high" width="{{ $link.Width}}" height="{{ $link.Height}}" alt="organization course provider image">
+        <img src="{{ $link.RelPermalink }}" class="rounded-xl" fetchpriority="high" width="{{ $link.Width}}" height="{{ $link.Height}}" fetchpriority="high" alt="organization course provider image">
      {{- end -}}
 {{- end -}}

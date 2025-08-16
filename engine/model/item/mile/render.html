@@ -5,13 +5,13 @@
 {{- $team := printf "%s/team.html" $path -}}
 {{- $need := printf "%s/need.html" $path -}}
 
-<main id="obes">
+<main id="mile">
     <article id="slot" class="wrap grid">
         <div id="div1" class="">
-            {{- partial $take . -}}{{- partial $need . -}}{{- partial $team . -}}
+           {{- partial $hero . -}}{{- partial $plan . -}}
         </div>
         <div id="div2" class="">
-            {{- partial $hero . -}}{{- partial $plan . -}}
+            {{- partial $take . -}}{{- partial $need . -}}{{- partial $team . -}}
         </div>
     </article>
 </main>

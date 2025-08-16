@@ -6,7 +6,7 @@
         <div class="head flex center-x mb-10">
             <div class="text flex center-x">
                 <div class="icon lg rounded-md la-01 mr-20">{{ partial "icon/line/folder.svg" }}</div>
-                <h3 class="font-bold text-md uppercase mt-00 mb-00">Session {{ .period }}</h3>
+                <h2 class="font-bold text-md uppercase mt-00 mb-00">Session {{ .period }}</h2>
             </div>
             <div class="menu flex center-x ml-a">
                 <div id="info-action-{{ .period }}" data-target="info-tabs-{{ .period }}" class="tab-action flex center-x open mr-20">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <hr class="mb-30">
-        <div class="leaf row">
+        <div class="leaf">
             <div id="info-tabs-{{ .period }}" class="tabs-item open">
                 <div class="flex">
                     {{- partial "module/course/item/mile/part/thumb-plans.html" $ctx }}
@@ -29,6 +29,7 @@
                  </div>
             </div>
             <div id="plan-tabs-{{ .period }}" class="tabs-item">
+                <div class="grid">
                 {{- range .material -}}
                     <div class="flex center-x mb-10">
                         <div class="icon md rounded-full pa-05">
@@ -39,8 +40,10 @@
                         </div>
                     </div>
                 {{ end }}
+                </div>
             </div>
             <div id="taks-tabs-{{ .period }}" class="tabs-item">
+                <div class="grid">
                 {{- range .assignment -}}
                     <div class="flex center-x mb-10">
                         <div class="icon md rounded-full pa-05">
@@ -51,6 +54,7 @@
                         </div>
                     </div>
                 {{ end }}
+                </div>
             </div>
         </div>
     </div>

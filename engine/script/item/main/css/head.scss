@@ -59,7 +59,7 @@ main{
 		flex-wrap: wrap;
 	}
 
-	h4{
+	h3{
 		width: 100%;
 		margin-bottom: 10px;
 	}
@@ -73,6 +73,13 @@ main{
 
 
 @media only screen and (min-width: 620px) {
+
+	#need{
+        .leaf{
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			grid-gap: 1rem;
+		}
+    }
 
 	#task{
 		.leaf{
@@ -115,14 +122,14 @@ main{
 		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 		grid-gap: 2rem;
 		
-		h4{
+		h3{
 			margin-bottom: 0;
 			width: auto;
 		}
 
 		.desc{
 			flex-wrap: nowrap;
-			h4{
+			h3{
 				text-wrap: nowrap;
 			}
 		}
@@ -186,6 +193,14 @@ main{
 	}	
 
 
+	#need{
+        .leaf{
+			grid-template-columns: 100%;
+			grid-gap: 0rem;
+		}
+    }
+
+
 	#plan{
 		grid-template-columns: auto;
 
@@ -222,6 +237,17 @@ main{
 
 	main{
 		margin-top: 5rem;
+	}
+
+
+	#slot{
+		grid-template-columns: 31% calc(69% - 8rem);
+        grid-gap: 8rem;
+	}
+
+
+	#hero{
+		margin-bottom: 2rem;
 	}
 
 

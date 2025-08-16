@@ -4,7 +4,7 @@
         <h2 class="title text-md uppercase font-bold font-light mt-00 mb-00">Course Tutor</h2>
     </div>
     <hr class="mb-40">
-    <div class="leaf">
+    <div class="leaf grid">
         {{- if .Page.Params.Module.Organ.Team -}}{{- range .Page.Params.Module.Organ.Team -}}{{- if .name -}}
         <div class="card flex center-x mb-50 mr-30">
             <div class="img rounded-full">{{- partial "module/course/item/mile/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}</div>

@@ -3,12 +3,14 @@
         <h2 class="title text-md uppercase font-bold font-light mt-00 mb-00">Requirement</h2>
     </div>
     <hr class="mb-40">
-    {{- range .Page.Params.Module.Requirement -}}
-    <div class="flex center-x mb-30">
-        <div class="icon md mr-20">
-            {{- partial "icon/line/check-circle.svg" -}}
+    <div class="leaf grid">
+        {{- range .Page.Params.Module.Requirement -}}
+        <div class="flex center-x mb-30">
+            <div class="icon md mr-20">
+                {{- partial "icon/line/check-circle.svg" -}}
+            </div>
+            <p class="mb-00 mt-00 ml-15">{{ . }}</p>
         </div>
-        <p class="mb-00 mt-00">{{ . }}</p>
+        {{- end -}}
     </div>
-    {{- end -}}
 </div>
