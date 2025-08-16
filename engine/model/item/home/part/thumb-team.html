@@ -10,6 +10,6 @@
     {{- with $site.Site.GetPage $path -}}
         {{ $link = .Page.Resources.GetMatch .Page.Params.Thumb }}
         {{ $link = $link.Fill "63x63 webp q100" }}
-        <img src="{{ $link.RelPermalink }}" class="rounded-full" loading="lazy" width="42" height="42" alt="course tutor image">
+        <img src="{{ $link.RelPermalink }}" class="rounded-full" loading="lazy" width="42" height="42" alt="course tutor image" fetchpriority="high">
      {{- end -}}
 {{- end -}}

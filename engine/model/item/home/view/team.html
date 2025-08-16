@@ -9,11 +9,10 @@
 
 <div id="team" class="widget mb-60">
     <div class="head mb-20">
-        <h2 class="text-xl font-bold mt-00 mb-10">{{- $title -}}</h2><hr class="mb-10">
-        <h2 class="text-md mt-00">{{- $leads -}}</h2>
+        <h2 class="text-md uppercase font-bold mt-00 mb-10">{{- $title -}}</h2><hr class="mb-10">
+        <p class="text-sm mt-00">{{- $leads -}}</p>
     </div>
     <div class="leaf">
-        <p class="mb-30"></p>
         <div class="list" class="info">
             {{- range .Page.Params.Parted.Team.list -}}
                 <div class="flex center-x">
