@@ -1,0 +1,25 @@
+{{- $ctx  := . -}}{{- $site := $ -}}
+
+<div id="hero" class="mb-60">
+    <div class="mb-60">
+        {{- partial "lib/course/hero-thumb.html" . -}}
+        <div class="organ">
+            <div class="mb-20">
+                {{- partial "lib/course/hero-group.html" . -}}
+            </div>
+            <div class="mt-10 mb-20">
+                <div class="thumb border-all rounded-lg mr-20 pa-05">
+                    {{- partial "module/course/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Module.Organ.Name ) -}}
+                </div>
+                <div class="named mr-05 flex center-x">
+                    <span class="capitalize text-lg text-sm">Present by</span>
+                    <h2 class="uppercase font-bold text-md ml-10">{{- .Page.Params.Module.Organ.Name -}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-60">
+        <h1 class="text-4xl mt-05 mb-50">{{ .Title }}</h1>
+        <div class="mb-60 content">{{ .Content }}</p>
+    </div>
+</div>

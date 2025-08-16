@@ -136,7 +136,6 @@ main{
 
 @media only screen and (min-width: 810px) {
 	
-
 	#task{
 		.leaf{
 			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
@@ -149,8 +148,6 @@ main{
 			grid-gap: 1rem;
 		}
 	}
-
-
 }
 
 

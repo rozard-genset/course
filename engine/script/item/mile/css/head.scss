@@ -1,0 +1,75 @@
+@import "../../../../../core/css/wrap/m-00.scss";
+@import "../../../../../core/css/wrap/m-10.scss";
+@import "../../../../../core/css/wrap/m-15.scss";
+@import "../../../../../core/css/wrap/m-20.scss";
+@import "../../../../../core/css/wrap/m-30.scss";
+@import "../../../../../core/css/wrap/m-40.scss";
+@import "../../../../../core/css/wrap/m-50.scss";
+@import "../../../../../core/css/wrap/m-60.scss";
+@import "../../../../../core/css/wrap/p-05.scss";
+
+main{
+    margin-top: 5rem;
+}
+
+
+#slot{
+    grid-template-columns: calc( 37% - 7rem ) 63% ;
+	grid-gap: 7rem;
+}
+
+
+#hero {
+    .organ{
+        margin-left: 3rem;
+        display: block;
+    }
+
+    .thumb{
+        position: relative;
+        z-index: 2;
+        background-color: var(--background-02);
+        margin-top: -4rem;
+        width: 48px;
+    }
+
+    p{
+        font-size: 1.1rem;
+    }
+}
+
+#paid{
+    h2{ line-height: 1; }
+
+    .icon.md{
+        margin-right: 0;
+    }
+
+    .share .icon svg {
+        margin-right: 0;
+        height: 18px;
+        width: 18px;
+    }
+
+    .button{
+        padding: 5px 18px;
+    }
+
+    .share .button{
+        padding: 5px;
+    }
+}
+
+#take{
+
+    .inform{
+        grid-template-columns: repeat( 2, calc( 50% - 2rem ) );
+	    grid-gap: 2rem;
+    }
+
+    .capsul{
+        .flex{
+            width: 100%;
+        }
+    }
+}
