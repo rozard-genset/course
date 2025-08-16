@@ -5,6 +5,7 @@
 @import "../../../../../core/css/wrap/m-40.scss";
 @import "../../../../../core/css/wrap/m-50.scss";
 @import "../../../../../core/css/wrap/m-60.scss";
+@import "../../../../../core/css/wrap/m-70.scss";
 @import "../../../../../core/css/wrap/p-15.scss";
 
 
@@ -20,6 +21,7 @@ main{ margin-top: 3.5rem; }
         border-radius: 0;
     }
 
+    
     .card{
         background-color: var(--background-02);
         margin-bottom: 2rem;
@@ -49,6 +51,7 @@ main{ margin-top: 3.5rem; }
             padding: 10px 15px;
         }
     }
+
 
     .pagination{
         margin-top: 2.5rem;
