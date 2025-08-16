@@ -1,7 +1,7 @@
-<div id="apps" class="mb-60">
+<div id="invo" class="mb-60">
     <h2 class="text-6xl uppercase font-light mt-00 mb-50"> 
         {{ .Page.Params.Paid.Charge }}
-        <span class="text-2xl"> USD </span> 
+        <span class="text-2xl">USD</span> 
     </h2>
     <div class="row la-01 rounded-lg mb-50">
         <div class="col col-xs-6 flex center-x py-5">
@@ -9,17 +9,21 @@
                 {{ partial "icon/line/bar-chart-2.svg" }}
             </div>
             <div class="meta">
-                <div class="capitalize text-sm mb-00"> Dificulty </div>
-                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Info.Level }} </div>
+                <div class="capitalize text-sm mb-00">Dificulty</div>
+                <div class="capitalize text-sm text-white font-bold">{{- .Page.Params.Info.Level -}}</div>
             </div>
         </div>
         <div class="col col-xs-6 flex center-x ll-01">
-            <div class="icon md text-white">
-                {{ partial "icon/line/award.svg" }}
-            </div>
+            <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00"> Certificate </div>
-                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                <div class="capitalize text-sm text-white font-bold">
+                    {{- if .Page.Params.Info.Certificate -}}
+                        {{- .Page.Params.Info.Certificate -}} 
+                    {{- else -}} 
+                        None 
+                    {{- end -}} 
+                </div>
             </div>
         </div>
     </div>

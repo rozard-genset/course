@@ -1,11 +1,3 @@
-@import "../../../../../core/css/flexs/_init.scss";
-@import "../../../../../core/css/flexs/col-03.scss";
-@import "../../../../../core/css/flexs/col-06.scss";
-@import "../../../../../core/css/flexs/col-12.scss";
-@import "../../../../../core/css/flexs/col-08.scss";
-@import "../../../../../core/css/flexs/col-07.scss";
-@import "../../../../../core/css/flexs/col-05.scss";
-@import "../../../../../core/css/flexs/col-04.scss";
 
 
 
@@ -13,11 +5,15 @@ main{
     margin-top: 5rem;
 }
 
-img{
-	width: 100%;
-	object-fit: cover;
-	overflow: hidden;
+#slot{
+    grid-template-columns: calc( 61% - 2rem ) calc( 39% - 2rem ) ;
+	grid-gap: 2rem;
 }
+
+#hero {
+
+}
+
 
 @media only screen and (min-width: 768px) {
 	#course #hero img{

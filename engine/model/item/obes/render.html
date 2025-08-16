@@ -1,0 +1,17 @@
+{{- $path := "module/course/item/obes/view" -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $plan := printf "%s/plan.html" $path -}}
+{{- $invo := printf "%s/invo.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $info := printf "%s/info.html" $path -}}
+
+<main id="obes">
+    <article id="slot" class="wrap grid">
+        <div id="div1" class="">
+            {{- partial $hero . -}}{{- partial $plan . -}}
+        </div>
+        <div id="div2" class="">
+            {{- partial $invo . -}}{{- partial $team . -}}{{- partial $info . -}}
+        </div>
+    </article>
+</main>

@@ -161,6 +161,13 @@ main{
 
 @media only screen and (min-width: 1024px) {
 
+
+	#slot{
+		grid-template-columns: 31% calc(69% - 6rem);
+		grid-gap: 6rem
+	}
+
+
 	#hero{
 		grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
 		grid-gap: 4rem;
@@ -181,12 +188,6 @@ main{
 		}
 	}	
 
-	
-	#desc{
-		grid-template-columns: 31% calc(69% - 6rem);
-		grid-gap: 6rem
-	}
-
 
 	#plan{
 		grid-template-columns: auto;
@@ -203,6 +204,7 @@ main{
 		}
 	}
 
+	
 	#task{
 		.leaf{
 			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
