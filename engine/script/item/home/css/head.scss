@@ -784,9 +784,18 @@ main{ margin-top: 3.5rem; }
 
 
     #landing #feat{
-
         .descr{
             display: none;
+        }
+    }
+
+    #landing #invo{
+        .info{
+            flex-wrap: nowrap;
+        }
+        .action{
+            margin-top: auto;
+            margin-left: auto;
         }
     }
 
@@ -821,14 +830,6 @@ main{ margin-top: 3.5rem; }
 
 
     #landing #invo{
-        .info{
-            flex-wrap: nowrap;
-        }
-
-        .action{
-            margin-top: auto;
-            margin-left: auto;
-        }
 
         h2{
             font-size: 1.75rem;
@@ -911,12 +912,19 @@ main{ margin-top: 3.5rem; }
         .action{
             padding-right: 1.8rem;
         }
+
+        .max-width{
+            width: 98%;
+        }
     }
 
 
     #landing #taxo{
         .leaf{
             grid-template-columns: repeat(2, calc( 50% - 1rem ));
+        }
+        .max-width{
+            width: 98%;
         }
     }
     
@@ -1052,6 +1060,10 @@ main{ margin-top: 3.5rem; }
             grid-template-columns: repeat(2, calc( 50% - 1rem ));
             grid-gap: 1rem;
         }
+    }
+
+    #landing #list h2 {
+        font-size: 1.35rem;
     }
 }
 
