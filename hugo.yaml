@@ -20,3 +20,6 @@ module:
       target: "assets/scripts/module/course/blocks"
     - source: "content"
       target: "content/course"
+    - source: "assets"
+      target: "assets/media/course"
+    

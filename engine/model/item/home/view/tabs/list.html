@@ -1,4 +1,4 @@
-{{- $pages := where .Site.RegularPages "Section" .Section -}}
+{{- $pages := where .Site.Pages "Section" ".Section" -}}
 {{- $pages = $pages.ByDate -}}
 
 <div class="list">
@@ -7,7 +7,7 @@
         <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
     </div>
     <div class="leaf mb-60">
-        {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
+        {{- range (.Paginate $pages 10 ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
         <a href="{{ .RelPermalink }}" class="card course rounded-lg">
             <div class="thumb">{{- partial "module/course/item/home/part/thumb-list.html" . -}}</div>
             <article class="metas">

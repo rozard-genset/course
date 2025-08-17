@@ -1,4 +1,4 @@
-#landing #bugs{
+#landing #team{
     display: none;
 }
 
@@ -9,13 +9,32 @@
 
 @media only screen and (min-width: 768px) {
     
+    #landing #team{
+
+        .list{
+            display: flex;
+        }
+
+        .flex{
+            margin-right: 3rem;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     
-    #landing #bugs {
+    #landing #team{
         display: block;
+        
+        .list{
+            display: block;
+        }
+
+        .flex{
+            margin-right: 0;
+        }
     }
+
 }
 
 @media only screen and (min-width: 1280px) {

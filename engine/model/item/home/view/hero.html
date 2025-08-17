@@ -1,6 +1,12 @@
 {{- $title := "Develop Skills That Move Your Career Forward" -}}
 {{- with .Page.Params.Parted.Hero.Lead -}}{{- $title = . -}}{{- end -}}
-<div id="hero">
-    <h1>{{- $title -}}</h1>
-    <hr>
+<div id="hero" class="grid center-x center-y">
+    <div class="rows">
+        <div class="imgs">
+           {{- partial "module/course/item/home/part/thumb-hero.html" . -}}
+        </div>
+        <div class="text">
+            <h1 class="mt-00">{{- $title -}}</h1>
+        </div>
+    </div>
 </div>

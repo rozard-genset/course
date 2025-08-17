@@ -1,23 +1,24 @@
-{{- $title := "Join With Us" -}}
-{{- with .Page.Params.Parted.Invo.Lead -}}{{- $title = . -}}{{- end -}}
-
 {{- $notes := "Learn How to be a tutor or contributor, Join with global educator arround the world." -}}
 {{- with .Page.Params.Parted.Invo.note -}}{{- $notes = . -}}{{- end -}}
 
-<div id="invo" class="mb-50">
-    <hr class="mt-00 mb-40">
-    <div class="info flex max-width mb-40">
-        <h2 class="text-3xl mb-00 mt-00" >{{- $title -}}</h2>
-        <div class="action flex">
-            {{- range .Page.Params.Parted.Invo.Data -}}
-            <a href="{{ .link }}" class="ml-10 flex center-x">
-                <div class="font-bold">{{ .name }}</div>
-                <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </a>
-            {{- end -}}
+
+<div id="invo" class="mb-60">
+    <hr class="mt-00">
+    <div class="max-width mt-30">
+        <div class="head flex center-x mb-20 mt-40">
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 mobile" >Learnhub</h2>
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 desktop" >Tutor Classrom</h2>
+            <div class="action flex ml-a">
+                {{- range .Page.Params.Parted.Invo.Data -}}
+                <a href="{{ .link }}" class="ml-10 flex center-x">
+                    <div class="font-bold">{{ .name }}</div>
+                    <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                </a>
+                {{- end -}}
+            </div>
         </div>
-    </div>
-    <div class="desc max-width">
-        <p class="mr-30">{{- $notes -}}</p>
+        <div class="leaf max-width">
+            <p class="mr-30">{{- $notes -}}</p>
+        </div>
     </div>
 </div>

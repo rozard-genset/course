@@ -3,7 +3,6 @@
 {{- $invo := printf "%s/invo.html" $path -}}
 {{- $taxo := printf "%s/taxo.html" $path -}}
 {{- $list := printf "%s/list.html" $path -}}
-{{- $tabs := printf "%s/tabs.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $info := printf "%s/info.html" $path -}}
 {{- $hero := printf "%s/hero.html" $path -}}
@@ -12,15 +11,21 @@
 
 <main id="landing">
     <div class="wrap">
-        <div id="div1">
+        <section id="div1">
             {{- partial $hero . -}}
-        </div>
-        <div id="div2">
+        </section>
+        <section id="div2">
             <div class="main">{{- partial $invo . -}}{{- partial $taxo . -}}</div>
             <div class="side">{{- partial $feat . -}}</div>
-        </div>
-         <div id="div3">
-            {{- partial $tabs . -}}
-         </div>
+        </section>
+        <section id="div3">
+            {{- partial $info . -}}
+        </section>
+        <section id="div4">
+            <div class="main">{{- partial $list . -}}</div>
+            <div class="side">
+                {{- partial $team . -}}{{- partial $join . -}}{{- partial $bugs . -}}
+            </div>
+        </section>
     </div>
 </main>

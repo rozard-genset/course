@@ -22,10 +22,21 @@
 
 @media only screen and (min-width: 768px) {
     
+    #landing #info{
+        display: block;
+        .mid{
+            display: none;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     
+    #landing #info{
+        .mid{
+            display: block;
+        }
+    }
 }
 
 @media only screen and (min-width: 1280px) {

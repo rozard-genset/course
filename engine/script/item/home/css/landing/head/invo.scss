@@ -1,22 +1,35 @@
-#landing #invo {
-    display: none;
-}
-
-
 @media only screen and (min-width: 480px) {
+    #landing #invo{
 
+        .info {
+            flex-wrap: nowrap;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
     
+    #landing #invo{
+
+        width: 48%;
+        float: left;
+        padding-right: 2%;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
     
+    #landing #invo{
+
+        width: 100%;
+        float: unset;
+        padding-right: 0;
+    }
 }
 
 @media only screen and (min-width: 1280px) {
     
+
 }
 
 @media only screen and (min-width: 1536px) {

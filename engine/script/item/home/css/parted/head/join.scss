@@ -1,49 +1,43 @@
-#parteds #team{
-    display: none;
-}
+
 
 @media only screen and (min-width: 480px) {
 
-    #parteds #team{
+    #parteds #join{
 
         .list{
+            border-top: 1px solid var(--line-01);
             display: flex;
         }
 
-        .flex{
-            margin-bottom: 1.25rem;
-            margin-right: 3rem;
+        .cont{
+            margin-top: 2rem;
+            padding-right: 2rem;
         }
     }
 }
-
 
 @media only screen and (min-width: 768px) {
     
 }
 
-
 @media only screen and (min-width: 1024px) {
-    
-    #parteds #team{
-
-        display: block;
+    #parteds #join{
 
         .list{
+            border-top: 0px;
             display: block;
         }
 
-        .flex{
-            margin-right: 0;
+        .cont{
+            margin-top: 0;
+            padding-right: 0rem;
         }
     }
 }
 
-
 @media only screen and (min-width: 1280px) {
     
 }
-
 
 @media only screen and (min-width: 1536px) {
 

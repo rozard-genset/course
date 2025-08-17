@@ -17,6 +17,6 @@
         <source media="(width > 481px)" srcset="{{ $mid.RelPermalink }}" />
 
         {{- $top := $image.Resize "300x webp q100" -}}
-        <img src="{{ $top.RelPermalink }}" width="{{ $top.Width }}" height="{{ $top.Height }}" alt="{{ .Title }}" title="{{ .Title }}" fetchpriority="high" />
+        <img src="{{ $top.RelPermalink }}" width="{{ $top.Width }}" height="{{ $top.Height }}" alt="{{ .Title }}" title="{{ .Title }}" loading="lazy" />
     </picture>    
  {{- end -}}

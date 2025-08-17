@@ -1,24 +1,7 @@
 #landing #taxo {
-    width: 100%;
 
-    h2{
-        font-weight: 600;
-        font-size: 1.25rem;
-    }
-
-    hr{
-        margin-bottom: 1rem;
-    }
-    .max-width{
-        width: 100%;
-    }
-
-    .info{
-        margin-bottom: 3.5rem;
-    }
-
-    a{
-        margin-right: 0;
+    .list{
+        display: none;
     }
 }
 
@@ -27,64 +10,42 @@
 
     #landing #taxo{
 
-        .max-width{
-            width: 100%;
-        }
-
-        h2{
-            font-weight: 300;
-            font-size: 1.35rem;
-        }
-
-        hr{
-            margin-bottom: 3rem;
-        }
-
         .info{
             padding-bottom: 0;
             border-bottom: 0;
             margin-bottom: 2.5rem;
         }
-
-        .action{
-            margin-left: auto;
-        }
-
-        .card{
-            border: 1px solid transparent;
-            padding: 5px 10px;
-        }
-
-        .card:hover{
-            border: 1px solid var(--line-01);
-            background-color: var(--background-02);
-        }
-
-        img{
-            width: 42px;
-            height: 42px;
-            object-fit: cover;
-        }
-
-        .leaf{
-            display:grid;
-            grid-template-columns: repeat(2, calc( 50% - 1rem ));
-            grid-gap: 1rem;
-        }
     }
-
-
-
-
-    
 }
 
 @media only screen and (min-width: 768px) {
     
+    #landing #taxo{
+
+        width: 48%;
+        padding-left: 2%;
+        float: right;
+
+        .info{
+            flex-wrap: nowrap;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
+ 
     
+    #landing #taxo{
+
+        width: auto;
+        float: unset;
+        padding-right: 0;
+
+        img{
+            width: 42px;
+            height: 42px;
+        }
+    }
 }
 
 @media only screen and (min-width: 1280px) {

@@ -1,0 +1,113 @@
+#feat {
+
+    clear: both;
+
+    .meta{
+        padding: 6px 10px ;
+        .item{
+            width: 100%;
+        }
+    }
+
+    .box{
+	    padding: 6px 15px;
+    } 
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--link-02-based);
+        border-radius: 50px;
+        -webkit-animation: blink 2s infinite;
+        -moz-animation: blink 2s infinite;
+        -o-animation: blink 2s infinite;
+        animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+
+    @-webkit-keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+
+    @-moz-keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+
+    @-o-keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+
+    .profile img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .action svg{
+        margin-right: 0;
+    }
+}
+
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+    #landing #feat{
+
+        .info{
+            display: grid;
+            grid-template-columns: 320px calc( 100% - 320px - 2rem );
+            grid-gap: 2rem;
+        }
+
+        .descr{
+            display: grid;
+            justify-content: space-between;
+            p{ margin-top: 0; }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+    #landing #feat{
+        .info{
+            grid-template-columns: 280px calc( 100% - 280px - 1rem );
+            grid-gap: 1rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+    
+    #landing #feat{
+
+        .info{
+            grid-template-columns: 320px calc( 100% - 320px - 2.5rem );
+            grid-gap: 2.5rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

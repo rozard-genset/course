@@ -12,34 +12,34 @@
 {{- end -}}
 
 <div id="feat" class="mb-60">
-    <div class="top mb-40">
+    <div class="head mb-40">
         <div class="meta flex border-bottom border-top mb-30">
             <div class="item flex center-x center-y border-right">
                 <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                 <div class="meta flex center-x">
-                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Level </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Level </div>
                     <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
                 </div>
             </div>
             <div class="item flex center-x center-y border-right">
                 <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                 <div class="meta flex center-x">
-                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Certificate </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Certificate </div>
                     <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                 </div>
             </div>
             <div class="item flex center-x center-y">
                 <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
                 <div class="meta flex">
-                    <div class="capitalize text-sm mb-00 mr-10 desktop"> Session </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Session </div>
                     <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mid mb-40">
-        <div class="name flex center-x mb-15">
-            <h2 class="mr-10 text-2xl mt-00 mb-10">{{ .Title }}</h2>
+    <div class="leaf mb-40">
+        <div class="name flex center-x mb-40">
+            <h2 class="mr-10 text-2xl mt-00 mb-00">{{ .Title }}</h2>
             <div class="like ml-a">
                 <div class="box flex center-x rounded-full border-all">
                     <div class="dot feature mr-10"></div>
@@ -47,30 +47,30 @@
                 </div>
             </div>
         </div>
-        <div class="leaf">
-            <div class="thumb">{{- partial "module/course/item/home/part/thumb-feat.html" . -}}</div>
-            <div class="descr mb-30"><p>{{ .Page.Params.Description }} </p></div>
-        </div>
-    </div>
-    <div class="bot">
-        <div class="acts flex center-x">
-            <div class="mr-a">
-                <div class="list flex center-x">
-                    <div class="profile">{{- $cover -}}</div>
-                    <div class="bio ml-20">
-                        <div class="text-md font-bold mt-00 mb-00">{{ $names }}</div>
-                        <div class="text-sm mb-00 mt-00">{{ $twitr }}</div>
+        <div class="info">
+            <div class="thumb mb-25">{{- partial "module/course/item/home/part/thumb-feat.html" . -}}</div>
+            <div class="descr">
+                <p>{{ .Page.Params.Description }} </p>
+                <div class="acts flex center-x">
+                    <div class="mr-a">
+                        <div class="list flex center-x">
+                            <div class="profile">{{- $cover -}}</div>
+                            <div class="bio ml-20">
+                                <div class="text-md font-bold mt-00 mb-00">{{ $names }}</div>
+                                <div class="text-sm mb-00 mt-00">{{ $twitr }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="enroll">
+                        <a href="{{ .RelPermalink }}" class="button outline">
+                            {{- partial "icon/line/bookmark.svg" -}}
+                            {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll {{- end -}}
+                        </a>
+                    </div>
+                    <div class="action flex center-x ml-10">
+                        <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
                     </div>
                 </div>
-            </div>
-            <div class="enroll">
-                <a href="{{ .RelPermalink }}" class="button outline">
-                    {{- partial "icon/line/bookmark.svg" -}}
-                    {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll {{- end -}}
-                </a>
-            </div>
-            <div class="action flex center-x ml-10">
-                <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
             </div>
         </div>
     </div>

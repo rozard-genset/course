@@ -1,41 +1,35 @@
-{{- $title := "Explore Courses" -}}
-{{- with .Page.Params.Parted.Taxo.Lead -}}{{- $title = . -}}{{- end -}}
 
-{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" -}}
+{{- $leads := "Explore diverse course categories now and discover new skills, fresh knowledge, and endless opportunities to grow and succeed today!" -}}
 {{- with .Page.Params.Parted.Taxo.desc -}}{{- $leads = . -}}{{- end -}}
+{{- $list := partial "module/course/item/home/data/query-term-page.html" . -}}
 
 
-{{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
-{{- $fil2 := where .Site.Pages "Type" "course" -}}{{- $page := $fil1 | intersect $fil2 -}}{{- $list := slice -}}
-{{- range  where .Site.Pages "Type" "course" -}}
-    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
 
-<div id="taxo">
-    <hr>
-    <div class="info max-width flex center-x">
-        <h2 class="text-3xl mb-00 mt-00">{{- $title -}}</h2>
-        <div class="action flex">
-        <a href="/{{ .Section }}/terms/" class="flex center-x">
-            <div class="font-bold">All Categories</div>
-            <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
-        </a>
+<div id="taxo" class="mb-60">
+    <hr class="mt-00 mb-30">
+    <div class="max-width">
+        <div class="head flex center-x mb-20 mt-40">
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 mobile" >Exploration</h2>
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 desktop">Explore Subjects</h2>
+            <a href="/{{ .Section }}/terms/" class="action flex center-x ml-a">
+                <div class="font-bold">All Categories</div>
+                <div class="icon md border-all rounded-full ml-20">{{- partial "icon/line/arrow-right.svg" -}}</div>
+            </a>
         </div>
-    </div>
-    <div class="desc max-width">
-        <p class="mb-40 mr-30">{{- $leads -}}</p>
-    </div>
-    <div class="leaf max-width">
-        {{- range first 6 $list -}}
-        <a href="{{ .RelPermalink }}" class="card rounded-lg flex center-x">
-
-            {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
-            {{- $thumb := $image.Fill "42x42 webp q100" -}}
-            {{- with $thumb -}}
-                <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="category-image rounded-full" loading="lazy" alt="{{ .Title }}course category">
+        <div class="leaf">
+            <p class="mb-40 mr-30">{{- $leads -}}</p>
+        </div>
+        <div class="list">
+            {{- range first 6 $list -}}
+            <a href="{{ .RelPermalink }}" class="card rounded-lg flex center-x">
+                {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
+                {{- $thumb := $image.Fill "42x42 webp q100" -}}
+                {{- with $thumb -}}
+                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="category-image rounded-full" loading="lazy" alt="{{ .Title }}course category">
+                {{- end -}}
+                <div class="text ml-10 font-bold">{{- .Title -}}</div>
+            </a>
             {{- end -}}
-            <div class="text ml-10 font-bold">{{- .Title -}}</div>
-        </a>
-        {{- end -}}
+        </div>
     </div>
 </div>
