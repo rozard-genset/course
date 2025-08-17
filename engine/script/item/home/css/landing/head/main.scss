@@ -1,21 +1,9 @@
-#landing #div4 {
-    .main{
-        margin-bottom: 3rem;
-    }
-}
-
 
 @media only screen and (min-width: 480px) {
 
-    #landing #div1{
-        display: block;
-    }
 
+    
 
-    #landing #div3{
-        display: block;
-        margin-bottom: 5rem;
-    }
 }
 
 
@@ -32,19 +20,6 @@
         grid-template-columns: calc( 33% - 3rem ) 67%;
         grid-gap: 3rem;
     }
-
-
-    #landing #div4{
-        display: flex;
-        .side{
-            width: 300px;
-            padding-left: 2rem;
-        }
-        .main{
-            width: calc( 100% - 300px );
-            padding-right: 2rem;
-        }
-    }
 }
 
 
@@ -54,6 +29,11 @@
         display: grid;
         grid-template-columns: calc( 37% - 3rem ) 63%;
         grid-gap: 3rem;
+    }
+
+
+    #landing #div3{
+        display: grid;
     }
 }
 

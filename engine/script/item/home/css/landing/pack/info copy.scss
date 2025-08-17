@@ -1,7 +1,17 @@
 #landing #info {
-    display: grid;
-    min-height: 90vh;
-    align-items: center;
+    display: none;
+
+    .low, .mid, .top {
+        width: 100%;
+    } 
+
+    h2{
+        margin-bottom: 1rem;
+    }
+
+    img{
+        width: 100%;
+    }
 }
 
 
@@ -13,6 +23,7 @@
 @media only screen and (min-width: 768px) {
     
     #landing #info{
+        display: block;
         .mid{
             display: none;
         }
@@ -30,17 +41,8 @@
 
 @media only screen and (min-width: 1280px) {
     
-    #landing #info{
-        .rows{
-            grid-template-columns: calc( 260px - 3rem ) calc( 100% - 260px ); 
-            grid-gap: 3rem;
-        }
 
-        .root{
-            grid-template-columns: repeat( 3, calc( 33.333% - 3rem )); 
-            grid-gap: 3rem;
-        }
-    }
+
 }
 
 @media only screen and (min-width: 1536px) {
