@@ -1,0 +1,39 @@
+
+#feat .like .box{
+	padding: 6px 15px;
+} 
+
+#feat .dot {
+	width: 8px;
+    height: 8px;
+    background: var(--link-02-based);
+    border-radius: 50px;
+	-webkit-animation: blink 2s infinite;
+	-moz-animation: blink 2s infinite;
+	-o-animation: blink 2s infinite;
+	animation: blink 2s infinite;
+}
+
+
+@keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+
+@-webkit-keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+
+@-moz-keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
+
+
+@-o-keyframes blink {
+	0%, 100% { opacity: 0; }
+	50% { opacity: 1; }
+}
