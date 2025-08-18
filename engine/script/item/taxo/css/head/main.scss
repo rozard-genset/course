@@ -1,0 +1,29 @@
+#taxo #rows{
+
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    #taxo #rows{
+        grid-template-columns: calc( 100% - 300px - 3rem ) 300px;
+        grid-gap: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

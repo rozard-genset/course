@@ -7,15 +7,15 @@
 @import "../../../../../core/css/wrap/p-40.scss";
 
 
+
+@import "head/hero.scss";
+@import "head/main.scss";
+
 main{
     margin-top: 3rem;
 }
 
 
-#taxo #rows{
-    display: flex;
-    flex-wrap: wrap;
-}
 
 
 #taxo #div1{
@@ -114,21 +114,6 @@ main{
         flex-wrap: nowrap;
     }
 
-
-    #taxo #div2{
-        width: 300px;
-        padding-right: 2rem;
-
-        #team, #bugs{
-            display: block;
-        }
-    }
-
-
-    #taxo #div1{
-        width: calc(100% - 300px);
-        padding-left: 2rem;
-    }
 
 
     #taxo #list{

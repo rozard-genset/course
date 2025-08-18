@@ -1,0 +1,33 @@
+#hero{
+
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    #hero{
+        display: grid;
+        min-height: 70vh;
+        align-items: start;
+        .rows{
+            grid-template-columns: calc(360px - 3rem) calc( 100% - 360px );
+            grid-gap: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}
