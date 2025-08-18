@@ -1,30 +1,28 @@
 {{- $path := "module/course/item/home/part" -}}
 {{- $ctx  := . -}}{{- $site := $ -}}
 
-{{- $title := "Stakeholder" -}}
+{{- $title := "Person In Charge" -}}
 {{- with .Page.Params.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
 
-{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry." -}}
+{{- $leads := "If you have any question about this section, please contact person below for more information." -}}
 {{- with .Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
 
 <div id="team" class="widget mb-60">
-    <div class="head mb-20">
+    <div class="head mb-00">
         <h2 class="text-md uppercase font-bold mt-00 mb-10">{{- $title -}}</h2><hr class="mb-10">
         <p class="text-sm mt-00">{{- $leads -}}</p>
     </div>
-    <div class="leaf">
-        <div class="list" class="info">
-            {{- range .Page.Params.Parted.Team.list -}}
-                <div class="flex center-x">
-                    <div class="icon lg">
-                        {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
-                    </div>
-                    <div class="name ml-15">
-                        <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
-                        <p class="mt-00 text-gray-400">{{ .post }}</p>
-                    </div>
+    <div class="leaf grid">
+        {{- range .Page.Params.Parted.Team.list -}}
+            <div class="flex center-x">
+                <div class="icon lg">
+                    {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
                 </div>
-            {{- end -}}
-        </div>
+                <div class="name ml-15">
+                    <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
+                    <p class="mt-00 text-gray-400">{{ .post }}</p>
+                </div>
+            </div>
+        {{- end -}}
     </div>
 </div>

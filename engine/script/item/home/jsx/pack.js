@@ -5,6 +5,10 @@ console.log('deffers paid course javascript engine loaded');
 
 let tabs_action = ()=> {
 
+    if ( ! document.getElementById('tabs') ){
+        return;
+    }
+
     let tabscourses = document.getElementById('tabs');
     let action_open = tabscourses.querySelectorAll(".tab-action");
     let action_aray = Array.prototype.slice.call(action_open);
@@ -33,6 +37,11 @@ let tabs_action = ()=> {
 
 
 let tabs_scroll = ()=> {
+
+    if ( ! document.getElementById('tabs') ){
+        return;
+    }
+
     let prev = document.getElementById('prev-action');
     let next = document.getElementById('next-action');
     let bars = document.getElementById('tabs-action');

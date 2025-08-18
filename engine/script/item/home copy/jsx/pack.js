@@ -1,1 +1,0 @@
-console.log('deffers home course javascript engine loaded');

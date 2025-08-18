@@ -62,7 +62,7 @@
     
     #parteds #term {
         .leaf{
-            grid-template-columns: repeat( 1, calc( 100% - 1rem ) );
+            grid-template-columns: repeat( 4, calc( 25% - 1rem ) );
         }
     }
 }

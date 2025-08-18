@@ -1,17 +1,19 @@
+{{- $title := "Develop Skills That Move Your Career Forward" -}}
+{{- with .Page.Params.Parted.Hero.Lead -}}{{- $title = . -}}{{- end -}}
+
 {{- $pages := where .Site.RegularPages "Section" .Section -}}
 {{- $pages = $pages.ByDate -}}
 
-<div class="list">
-    <div class="info flex center-x mb-60">
-        <h2 class="text-lg uppercase font-bold mt-00 mb-00">All Courses</h2>
-        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+<div id="lead" class="list">
+    <div class="head flex center-x mb-70">
+        <h1 class="mt-00">{{- $title -}}</h1>
     </div>
     <div class="leaf mb-60">
         {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
         <a href="{{ .RelPermalink }}" class="card course rounded-lg">
             <div class="thumb">{{- partial "module/course/item/home/part/thumb-list.html" . -}}</div>
             <article class="metas">
-                <h3 class="text-md font-bold title mb-20">{{ .Title }}</h3>
+                <h2 class="text-md font-bold title mb-20">{{ .Title }}</h2>
                 <div class="meta flex center-x text-sm capitalize mb-05">
                     <div class="box">
                         {{- .Page.Params.Module.Plan.Level -}}
@@ -24,14 +26,7 @@
         </a>
         {{- end -}}{{- end -}}
     </div>
-    <div class="hasnext flex">
-        <div class="ml-a">
-        {{ with (.Paginate $pages ).Next }}
-            <a href="{{ .URL }}" class="ml-10 flex center-x">
-                <div class="font-bold">Next Page</div>
-                <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </a>
-        {{ end }}
-        </div>
+    <div class="pagination">
+        {{ partial "pagination.html" . }}
     </div>
 </div>

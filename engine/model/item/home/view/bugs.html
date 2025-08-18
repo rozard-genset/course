@@ -1,9 +1,16 @@
+{{- $leads := "Open issue to github" -}}
+{{- with .Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
 <div id="bugs">
     <div class="head">
-        <h2 class="text-md uppercase font-bold mt-00 mb-10">Reporting</h2>
+        <h2 class="text-md uppercase font-bold mt-00 mb-10">Trouble Reporting</h2><hr class="mb-10">
     </div>
-    <hr class="mb-20">
     <div class="leaf">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        <script src="https://utteranc.es/client.js"
+            repo="yuros-website/comment"
+            issue-term="title"
+            theme="dark-blue"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 </div>

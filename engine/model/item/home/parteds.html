@@ -1,6 +1,5 @@
 {{- $path := "module/course/item/home/view" -}}
-{{- $hero := printf "%s/hero.html" $path -}}
-{{- $list := printf "%s/list.html" $path -}}
+{{- $lead := printf "%s/lead.html" $path -}}
 {{- $term := printf "%s/term.html" $path -}}
 {{- $join := printf "%s/join.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
@@ -10,13 +9,15 @@
 {{- $navi := .Paginate $page.ByDate 10 -}}
 
 <main id="parteds">
-    <div id="rows" class="wrap">
+    <div class="wrap slot grid">
         <div id="div1">
-            {{- partial $hero . -}}<hr>
-            {{- partial $list . -}}
+            {{- partial $lead . -}}
+            <div class="extra grid">
+                {{- partial $term . -}}
+            </div>
         </div>
         <div id="div2">
-            {{- partial $term . -}}{{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
+            {{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
         </div>
     </div>
 </main>
