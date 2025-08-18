@@ -1,0 +1,31 @@
+#slot{
+    grid-template-columns: 100% ;
+    grid-gap: 3rem;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    #slot{
+        grid-template-columns: calc( 35% - 5rem ) 65% ;
+        grid-gap: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    #slot{
+        grid-template-columns: calc( 37% - 5rem ) 63% ;
+        grid-gap: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

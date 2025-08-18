@@ -1,0 +1,55 @@
+#hero {
+    .organ{
+        margin-left: 1rem;
+        display: block;
+    }
+
+
+    .thumb{
+        position: relative;
+        z-index: 2;
+        background-color: var(--background-02);
+        margin-top: -4rem;
+        width: 42px;
+    }
+
+
+    p{
+        font-size: 1.1rem;
+    }
+
+
+    .organ .texts{
+        align-items: self-end;
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+    #hero {
+        .organ{
+            margin-left: 3rem;
+        }
+
+        .thumb{
+            width: 48px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

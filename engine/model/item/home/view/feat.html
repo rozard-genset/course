@@ -62,13 +62,13 @@
                         </div>
                     </div>
                     <div class="enroll">
-                        <a href="{{ .RelPermalink }}" class="button outline">
-                            {{- partial "icon/line/bookmark.svg" -}}
-                            {{- if .Page.Params.Paid.Charge -}} Add To Cart {{- else -}} Enroll {{- end -}}
+                        <a href="{{ .RelPermalink }}" class="button outline flex center-x">
+                            <div class="text-sm font-bold mr-10">Visit Course</div>
+                            <div class="icon sm ml-a mr-00">{{- partial "icon/line/arrow-right.svg" -}}</div>
                         </a>
                     </div>
                     <div class="action flex center-x ml-10">
-                        <div class="button">{{- partial "icon/line/heart.svg" -}}</div>
+                        <div class="button outline icon sm">{{- partial "icon/line/share-2.svg" -}}</div>
                     </div>
                 </div>
             </div>

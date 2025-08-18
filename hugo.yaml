@@ -2,8 +2,6 @@ module:
     mounts:
     - source: "render"
       target: "layouts/course/_markup"
-    - source: "statics"
-      target: "static/course"
     - source: "library"
       target: "layouts/partials/lib/course"
     - source: "format/model"

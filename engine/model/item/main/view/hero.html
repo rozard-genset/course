@@ -62,15 +62,13 @@
             <div class="checkout">
                 {{ range first 1 .Pages }}
                 <a href="{{ .RelPermalink }}" class="button outline flex center-x">
-                    <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>
+                    <div class="icon sm">{{- partial "icon/line/bookmark.svg" -}}</div>
                     <div class="text-sm font-bold">Take Course</div>
                 </a>
                 {{ end }}
             </div>
-            <div class="share ml-a">
-                <div class="icon md button outline flex center-x mr-00" title="share course">
-                    {{- partial "icon/line/share-2.svg" -}}
-                </div>
+            <div class="share action flex center-x ml-a">
+                <div class="button outline icon sm">{{- partial "icon/line/share-2.svg" -}}</div>
             </div>
         </div>
     </div>

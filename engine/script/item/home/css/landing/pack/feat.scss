@@ -24,6 +24,10 @@
         animation: blink 2s infinite;
     }
 
+    svg{
+        margin-right: 0;
+    }
+
     @keyframes blink {
         0%, 100% { opacity: 0; }
         50% { opacity: 1; }
