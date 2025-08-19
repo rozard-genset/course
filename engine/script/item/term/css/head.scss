@@ -6,6 +6,12 @@
 
 @import "../../../../../core/css/wrap/p-15.scss";
 
+@import "head/hero.scss";
+@import "head/join.scss";
+@import "head/list.scss";
+@import "head/main.scss";
+
+
 
 main{
     margin-top: 3rem;
@@ -14,8 +20,6 @@ main{
 
 
 @media only screen and (min-width: 480px) {
-
-   
 }
 
 
@@ -24,17 +28,14 @@ main{
 
 
 @media only screen and (min-width: 920px) {
-   
 }
 
 
 @media only screen and (min-width: 1024px) {
-
 }
 
 
 @media only screen and (min-width: 1280px) {
-
     main{
         margin-top: 5rem;
     }

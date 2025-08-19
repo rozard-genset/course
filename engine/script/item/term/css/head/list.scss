@@ -1,4 +1,4 @@
-#term #list{
+#list{
 
     .card{
         background-color: var(--background-02);
@@ -43,12 +43,14 @@
 @media only screen and (min-width: 480px) {
 
     #list{
+
         .divider{
             display: grid;
             grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
             grid-gap: 1rem;
         }
 
+        
         .card{
             display: block;
 
@@ -61,6 +63,7 @@
                 height: 100%;
             }
         }
+
 
         .pagination{
             margin-top: 4rem;
