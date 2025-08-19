@@ -4,8 +4,32 @@
            {{- partial "module/course/item/taxo/part/thumb-hero.html" . -}}
         </div>
         <div class="text">
-            <h2 class="text-5xl mt-00 mb-20">Subjects Explorer</h2>
-            <h2 class="text-xl mt-10"> Find a right subject and Learn Any Skill From Many Disicplines</h2>
+            <h2 class="mt-00 mb-20">Exploring Course Subject From Many Diciplines</h2>
+            <div class="status flex center-x mb-30">
+                <div class="box flex center-x">
+                    <h2 class="text-5xl">{{- partial "module/course/item/taxo/data/count-taxono.html" . -}}</h2>
+                    <div class="info border-left ml-15 pl-15">
+                        <p class="text-sm uppercase mb-00 mt-00"> Available </p>
+                        <p class="text-xl uppercase mb-00 mt-00"> Subject </p>
+                    </div>
+                </div>
+                <div class="box flex center-x ml-15">
+                    <h2 class="text-5xl">{{- partial "module/course/item/taxo/data/count-course.html" . -}}</h2>
+                     <div class="info border-left ml-15 pl-15">
+                        <p class="text-sm uppercase mb-00 mt-00"> Total </p>
+                        <p class="text-xl uppercase mb-00 mt-00"> Course </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="mb-20 desktop">
+            <div class="action">
+                <a href="#" class="mb-10 flex center-x  ml-a">
+                    <div class="text-lg">Register New Subject</div>
+                    <div class="action ml-20">
+                        <div class="icon md border-all rounded-full">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

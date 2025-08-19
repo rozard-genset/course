@@ -1,0 +1,5 @@
+{{- $page := where .Site.Pages "Type" "course" -}}{{- $count := 0 -}}
+{{- range  where .Site.Pages "Type" "course" -}}
+    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $count = math.Sum $count 1 -}}{{- end -}}
+{{- end -}}
+{{- return $count -}}

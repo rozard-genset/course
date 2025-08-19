@@ -1,31 +1,107 @@
 #hero{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 3rem;
 
+    img{
+        width: 300px;
+        margin: auto;
+    }
+
+    h2{
+        text-align: center;
+        font-size: 2.2rem;
+    }
+
+    .status{
+        display: none;
+    }
+
+    .action{
+        a{
+            margin-top: 2rem;
+            justify-content: center;
+        }
+    }
 }
 
 
 @media only screen and (min-width: 480px) {
-
 }
 
 
 @media only screen and (min-width: 768px) {
     
+    #hero{
+        width: 80%;
+        display: grid;
+        align-items: center;
+
+        .rows{
+            grid-template-columns: 260px  calc( 100% - 260px - 2rem );
+            grid-gap: 2rem;
+        }
+
+        img{
+            width: 260px;
+        }
+
+        h2{
+            text-align: left;
+        }
+
+        .action{
+            a{
+                justify-content: left;
+            }
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1024px) {
     
+    #hero{
+        width: 90%;
+        min-height: 50vh;
+
+        .rows{
+            grid-template-columns: 420px  calc( 100% - 420px - 2rem );
+            grid-gap: 2rem;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        h2{
+            font-size: 2.4rem;
+        }
+
+        .status{
+            display: flex;
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1280px) {
 
     #hero{
-        display: grid;
-        min-height: 70vh;
-        align-items: start;
+        width: 85%;
+        min-height: 90vh;
+
         .rows{
-            grid-template-columns: calc(360px - 3rem) calc( 100% - 360px );
+            grid-template-columns: 460px  calc( 100% - 460px - 5rem );
+            grid-gap: 5rem;
+        }
+
+        h2{
+            font-size: 2.5rem;
+        }
+
+        .status{
+            grid-template-columns: repeat( 3, calc( 320px - 3rem )) ;
             grid-gap: 3rem;
         }
     }

@@ -1,19 +1,15 @@
-{{- $page := where .Site.Pages "Type" "course" -}}{{- $list := slice -}}
-{{- range  where .Site.Pages "Type" "course" -}}
-    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
-
+{{ $list := partial "module/course/item/taxo/data/query-taxo-page.html" . }}
+{{ $page := ( .Paginate $list 12 ).PageNumber }}
 
 <div id="list">
     <div class="list">
-        {{- range ( .Paginate $list 12 ).Pages -}}{{- if eq .Page.Params.Module.Layout "term" -}}
+        {{- range ( .Paginate ($page) 12 ).Pages -}}
         <article>
             <a href="{{ .RelPermalink }}" title="{{ .Title }} link">
                 <div class="render border-left">
                     <h2 class=" text-sm font-bold mr-15 pl-40 uppercase">{{ .Title }}</h1>
                     <div class="thumb border-all rounded-full">
-                        {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
-                        {{- $thumb := $image.Fill "42x42 webp q100" -}}
+                        {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}{{- $thumb := $image.Fill "42x42 webp q100" -}}
                         {{- with $thumb -}}
                             <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="category-image rounded-full" loading="lazy" alt="{{ .Title }}course category">
                         {{- end -}}
@@ -22,7 +18,7 @@
                 </h2>
             </a>
         </article>
-        {{- end -}}{{- end -}}
+        {{- end -}}
     </div>
     <div class="pagination">
          {{- partial "pagination.html" . -}}

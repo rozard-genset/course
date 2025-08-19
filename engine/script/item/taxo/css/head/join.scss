@@ -1,0 +1,49 @@
+
+
+
+@media only screen and (min-width: 480px) {
+
+    #join{
+        .list{
+            border-top: 1px solid var(--line-01);
+            display: flex;
+        }
+
+        .cont{
+            margin-top: 2rem;
+            padding-right: 1rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #join{
+        .cont{
+            padding-right: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    #join{
+        .list{
+            border-top: 0px;
+            display: block;
+        }
+
+        .cont{
+            margin-top: 0rem;
+            padding-right: 0rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

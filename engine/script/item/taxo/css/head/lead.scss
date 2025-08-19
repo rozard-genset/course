@@ -1,0 +1,39 @@
+#lead{
+    display: grid;
+    align-items: center;
+    min-height: 240px;
+    width: 90%;
+    h2{
+        font-size: 1.9rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    #lead{
+        h2{
+            font-size: 2.25rem;
+            margin-bottom: 1.35rem;
+        } 
+    }
+
+}
+
+@media only screen and (min-width: 1280px) {
+
+
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

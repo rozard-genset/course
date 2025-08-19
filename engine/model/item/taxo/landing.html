@@ -1,0 +1,16 @@
+{{- $path := "module/course/item/taxo/view" -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $list := printf "%s/list.html" $path -}}
+{{- $join := printf "%s/join.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $bugs := printf "%s/bugs.html" $path -}}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+<main id="landing">
+    <div id="rows" class="wrap grid">
+        <div id="div1">{{- partial $hero . -}}</div>
+        <div id="div2">{{- partial $list . -}}</div>
+        <div id="div3">
+            {{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
+        </div>
+    </div>
+</main>

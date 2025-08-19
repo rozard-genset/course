@@ -19,7 +19,7 @@
         {{- $mid := $image.Resize "360x webp q100" -}}
         <source media="(width > 420px)" srcset="{{ $mid.RelPermalink }}" fetchpriority="high"/>
 
-        {{- $top := $low.Fill "280x226 webp q100" -}}
+        {{- $top := $low.Fill "320x226 webp q100" -}}
         <img src="{{ $top.RelPermalink }}" data="{{ $top.RelPermalink }}" alt="{{ .Title }}" width="{{ $top.Width }}" height="{{ $top.Height }}" title="{{ .Title }}" fetchpriority="high"/>
     </picture>
 {{- end -}}
