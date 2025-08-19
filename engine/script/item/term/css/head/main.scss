@@ -1,0 +1,54 @@
+#rows{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+#div2{
+    width: 100%;
+}
+
+
+#div1{
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+    #rows{
+        flex-wrap: nowrap;
+         -ms-flex-direction: row-reverse;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        flex-direction: row-reverse;
+    }
+
+    #div2{
+        width: 300px;
+        padding-right: 3rem;
+    }
+
+
+    #div1{
+        width: calc(100% - 300px);
+        padding-left: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

@@ -1,13 +1,14 @@
-{{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
-{{- $fil2 := where .Site.Pages "Type" "course" -}}{{- $page := $fil1 | intersect $fil2 -}}{{- $list := slice -}}
-{{- range $page -}}
-    {{- if ne .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
-
-
-
-{{- if eq ( .Paginate ($list)  ).PageNumber 1 -}}
-    {{- partial "module/course/item/home/landing.html" . -}}
-{{- else -}}
-    {{- partial "module/course/item/home/parteds.html" . -}}
-{{- end -}}
+{{- $main := "module/course/item/term/view/" -}}
+{{- $hero := printf "%s/hero.html" $main -}}
+{{- $join := printf "%s/join.html" $main -}}
+{{- $list := printf "%s/list.html" $main -}}
+<main id="term">
+    <div id="rows" class="wrap">
+        <div id="div1">
+            {{- partial $list . -}}
+        </div>
+        <div id="div2">
+            {{- partial $hero . -}}{{- partial $join . -}}
+        </div>
+    </div>
+</main>
