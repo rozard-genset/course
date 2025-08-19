@@ -1,33 +1,28 @@
 {{- $path := "module/course/item/home/part" -}}
 {{- $ctx  := . -}}{{- $site := $ -}}
 
-{{- $title := "Stakeholder" -}}
-{{- with .Parent.Page.Params.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
+{{- $title := "Person In Charge" -}}
+{{- with .Page.Params.Parted.Team.Lead -}}{{- $title = . -}}{{- end -}}
 
-{{- $leads := "Lorem Ipsum is simply dummy text of the printing and typesetting industry." -}}
-{{- with .Parent.Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
-
+{{- $leads := "If you have any question about this section, please contact person below for more information." -}}
+{{- with .Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
 
 <div id="team" class="widget mb-60">
-    <div class="mb-20">
-        <h2 class="text-xl font-bold mb-10">{{- $title -}}</h2>
-        <hr class="mb-10">
-        <h2 class="text-md mt-00">{{- $leads -}}</h2>
+    <div class="head mb-00">
+        <h2 class="text-md uppercase font-bold mt-00 mb-10">{{- $title -}}</h2><hr class="mb-10">
+        <p class="text-sm mt-00">{{- $leads -}}</p>
     </div>
-    <div class="main">
-        <p class="mb-30"></p>
-        <div class="list" class="info">
-            {{- range .Parent.Page.Params.Parted.Team.list -}}
-                <div class="flex center-x">
-                    <div class="icon lg">
-                        {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
-                    </div>
-                    <div class="name ml-15">
-                        <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
-                        <p class="mt-00 text-gray-400">{{ .post }}</p>
-                    </div>
+    <div class="leaf grid">
+        {{- range .Parent.Page.Params.Parted.Team.list -}}
+            <div class="flex center-x">
+                <div class="icon lg">
+                    {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
                 </div>
-            {{- end -}}
-        </div>
+                <div class="name ml-15">
+                    <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
+                    <p class="mt-00 text-gray-400">{{ .post }}</p>
+                </div>
+            </div>
+        {{- end -}}
     </div>
 </div>
