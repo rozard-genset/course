@@ -12,7 +12,7 @@
 @import "head/hero.scss";
 @import "head/lead.scss";
 @import "head/list.scss";
-@import "head/main.scss";
+
 
 main{
     margin-top: 1rem;
@@ -20,28 +20,22 @@ main{
 
 
 @media only screen and (min-width: 480px) {
-   
 }
 
 
-@media only screen and (min-width: 620px) {
-    
-   
+@media only screen and (min-width: 620px) {   
 }
 
 
 @media only screen and (min-width: 768px) {
-
 }
 
 
 @media only screen and (min-width: 1024px) {
-
 }
 
 
 @media only screen and (min-width: 1280px) {
-
     main{
         margin-top: 0rem;
     }

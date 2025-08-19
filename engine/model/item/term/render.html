@@ -1,14 +1,16 @@
 {{- $main := "module/course/item/term/view/" -}}
 {{- $hero := printf "%s/hero.html" $main -}}
-{{- $join := printf "%s/join.html" $main -}}
 {{- $list := printf "%s/list.html" $main -}}
+{{- $join := printf "%s/join.html" $main -}}
+{{- $team := printf "%s/team.html" $main -}}
+
 <main id="term">
     <div id="rows" class="wrap grid">
         <div id="div1">
-            {{- partial $list . -}}
+            {{- partial $hero . -}}{{- partial $list . -}}
         </div>
         <div id="div2">
-            {{- partial $hero . -}}{{- partial $join . -}}
+            {{- partial $join . -}}{{- partial $team . -}}
         </div>
     </div>
 </main>

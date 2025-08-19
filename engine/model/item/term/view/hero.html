@@ -1,6 +1,17 @@
 <div id="hero" class="mb-60">
-    <div class="head border-all rounded-lg">
-        <h1 class="text-xl mr-15 ml-15 uppercase">{{ .Title }}</h1>
-        <p class="border-top text-sm mt-00 mb-00 pa-15">{{- .Page.Params.Description -}}</p>
+    <div class="grid center-x">
+        <div class="head">
+            <h2 class="text-4xl mt-00 mb-10">{{- .Page.Params.Module.Qoutes -}}</h2>
+        </div>
+        <div class="leaf border-left">
+            <div class="flex center-x">
+                {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}{{- $thumb := $image.Fill "42x42 webp q100" -}}
+                {{- with $thumb -}}
+                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" class="taxpic rounded-full" loading="lazy" alt="{{ .Title }} course category">
+                {{- end -}}
+                <h1 class="text-xl mr-15 ml-15 uppercase">{{ .Title }}</h1>
+            </div>
+            <p class="border-top text-sm mt-00 mb-00 pa-15">{{- .Page.Params.Description -}}</p>
+        </div>
     </div>
 </div>

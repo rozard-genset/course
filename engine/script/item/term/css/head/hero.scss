@@ -1,8 +1,11 @@
-#term #hero {
-    .head{
-        width: 100%;
-        overflow: hidden;
-        p{ background-color: var(--background-02); }
+#hero {
+    
+    .taxpic{
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        padding-right: 0;
+        padding-top: 0;
     }
 }
 
@@ -11,12 +14,18 @@
 
 }
 
+
 @media only screen and (min-width: 768px) {
     
 }
 
+
 @media only screen and (min-width: 1024px) {
     
+    .grid{
+        grid-template-columns: calc( 100% - 420px - 2rem ) 420px;
+        grid-gap: 2rem;
+    }
 }
 
 @media only screen and (min-width: 1280px) {
