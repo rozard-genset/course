@@ -1,10 +1,9 @@
-#klas{
+#time{
 
     margin-bottom: 5rem;
 
     .head{
-        margin-bottom: 1rem;
-        height: 4rem;
+        margin-bottom: 4rem;
     }
 
     .leaf, .time, .close, .start, .date, .time, .data{
@@ -29,7 +28,6 @@
         }
 
         .close, .start, .date, .time, .data{
-            display: grid;
             font-size: .95rem;
         }
 
@@ -50,6 +48,5 @@
         .utc{
             margin-left: 10px;
         }
-        
     }
 }

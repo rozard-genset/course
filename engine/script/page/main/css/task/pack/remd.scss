@@ -1,6 +1,4 @@
-#task{
 
-}
 
 @media only screen and (min-width: 480px) {
 
@@ -14,24 +12,9 @@
     
 }
 
-
 @media only screen and (min-width: 1280px) {
-
-    #task{
-        margin-bottom: 10rem;
-        #div2{
-           display: flex;
-
-           .side{
-                width: 250px;
-            }
-           .page{
-                width: calc( 100% - 250px );
-            }
-        }
-    }
+    
 }
-
 
 @media only screen and (min-width: 1536px) {
 

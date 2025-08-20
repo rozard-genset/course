@@ -1,4 +1,4 @@
-#task{
+#eval{
 
 }
 
@@ -17,17 +17,14 @@
 
 @media only screen and (min-width: 1280px) {
 
-    #task{
-        margin-bottom: 10rem;
-        #div2{
-           display: flex;
+    #eval{
+        display: grid;
+        grid-template-columns: calc( 30% - 3rem ) calc( 100% - 30% );
+        grid-gap: 3rem;
 
-           .side{
-                width: 250px;
-            }
-           .page{
-                width: calc( 100% - 250px );
-            }
+        .slot{
+            grid-template-columns: repeat( 2, 50% );
+            grid-gap: 3rem;
         }
     }
 }

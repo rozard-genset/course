@@ -1,13 +1,13 @@
-<div id="klas">
-    <div class="head">
-        <h2 class="mb-60 font-bold uppercase text-lg mt-00">Assignment Schedule</h2>
-        <p class="border-left pl-20"></p>
+<div id="time" class="tabs-item open">
+    <div class="head flex center-x mb-40">
+        <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/clock.svg" -}}</div>
+        <h2 class="font-bold uppercase text-lg mb-00 mt-00">Task Schedule</h2>
     </div>
     <div class="leaf">
         {{- range .Page.Params.Format.Group -}}
         <div class="box">
             <div class="text-sm uppercase font-bold border-left border-bottom mt-00 mb-00 pb-10 pl-20"> Group {{ .info.class }}</div>
-            {{ with .info.Tutor }}<h3> Tutor | {{ . }}</h3>{{ end }}
+            {{- with .info.Tutor -}}<h3> Tutor | {{ . }}</h3>{{- end -}}
             <div class="time border-left pl-20 pt-10">
                 <div class="start flex center-x">
                     <div class="font-bold">Open</div>
