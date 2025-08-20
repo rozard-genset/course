@@ -7,14 +7,14 @@
     <div class="lead">
         <div class="crit">
             <div class="subhead">
-                <h2 class="font-bold mb-20 mt-00">{{- .Page.Params.Module.scope.lead -}}</h2><hr class="mb-10">
-                <p>{{- .Page.Params.Module.scope.desc -}}</p>
+                <h2 class="font-bold uppercase text-lg mb-20 mt-00">{{- .Page.Params.Module.scope.lead -}}</h2><hr class="mb-10">
+                <p class="text-sm">{{- .Page.Params.Module.scope.desc -}}</p>
             </div>
             <div class="slot grid">
                 {{- range .Page.Params.Module.scope.data -}}
                     <div class="card">
-                        <h4 class="text-lg font-bold mt-00 mb-00 pb-10 pl-20 border-left border-bottom">{{ .lead  }}</h4>
-                        <p class="text-md border-left mt-00 mb-00 pt-10 pb-10 pl-20">{{ .desc }}</p>
+                        <div class="text-sm uppercase font-bold mt-00 mb-00 pb-15 pl-20 border-left border-bottom">{{ .lead  }}</div>
+                        <p class="text-sm border-left mt-00 mb-00 pt-15 pb-10 pl-20">{{ .desc }}</p>
                         {{ range .item }}
                         <div class="flex center-x border-left mb-00 pt-10 pb-10 pl-20">
                             <div class="icon md">

@@ -1,16 +1,16 @@
 <div id="klas">
     <div class="head">
-        <h2 class="mb-60 text-2xl font-bold mt-00">Assignment Schedule</h2>
+        <h2 class="mb-60 font-bold uppercase text-lg mt-00">Assignment Schedule</h2>
         <p class="border-left pl-20"></p>
     </div>
     <div class="leaf">
         {{- range .Page.Params.Format.Group -}}
         <div class="box">
-            <h3 class="text-sm uppercase font-bold border-left border-bottom mt-00 mb-00 pb-10 pl-20"> Group {{ .info.class }}</h3>
+            <div class="text-sm uppercase font-bold border-left border-bottom mt-00 mb-00 pb-10 pl-20"> Group {{ .info.class }}</div>
             {{ with .info.Tutor }}<h3> Tutor | {{ . }}</h3>{{ end }}
             <div class="time border-left pl-20 pt-10">
                 <div class="start flex center-x">
-                    <div class="font-bold">Start Time</div>
+                    <div class="font-bold">Open</div>
                     <div class="data flex center-x">
                         <div class="flex center-x">
                             <div class="item day">{{ .time.start.day }} - </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="close flex center-x">
-                    <div class="font-bold">Dateline</div>
+                    <div class="font-bold">Close</div>
                     <div class="data">
                         <div class="flex center-x">
                             <div class="item day">{{ .time.close.day }} - </div>

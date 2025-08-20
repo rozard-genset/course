@@ -1,5 +1,23 @@
 #hero{
 
+    label{
+        text-wrap: nowrap;
+    }
+
+    select {
+        width: 100%;
+        min-width: 15ch;
+        max-width: 30ch;
+        border: 1px solid var(--link-02-based);
+        border-radius: 0.4em;
+        padding: 0.675em 0.75em;
+        font-size: .925rem;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 1.1;
+        background-color: var(--background-02);
+        color: var(--link-02-based);
+    }
 }
 
 @media only screen and (min-width: 480px) {
@@ -23,7 +41,7 @@
         margin-bottom: 5rem;
 
         .slot{
-            grid-template-columns: calc( 620px - 60px ) calc( 100% - 620px );
+            grid-template-columns: calc( 680px - 60px ) calc( 100% - 680px );
             grid-gap: 60px;
         }
 
@@ -32,7 +50,7 @@
             align-content: space-between;
         }
 
-        h2{
+        .title{
             width: 100px;
         }
 

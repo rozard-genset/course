@@ -18,15 +18,16 @@
 @media only screen and (min-width: 1280px) {
 
     #task{
+        margin-bottom: 10rem;
         #div2{
            display: flex;
 
            .side{
-                width: 200px;
+                width: 260px;
            }
 
            .page{
-                width: calc( 100% - 200px );
+                width: calc( 100% - 260px );
            }
         }
     }

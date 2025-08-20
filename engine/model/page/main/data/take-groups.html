@@ -1,0 +1,5 @@
+{{ $data := slice }}
+{{- range .Page.Params.Format.Group -}}
+    {{ $data =  $data | append .info.class }}
+{{- end -}}
+{{ return $data }}
