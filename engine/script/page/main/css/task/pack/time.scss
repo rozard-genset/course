@@ -1,20 +1,12 @@
 #time{
 
-    margin-bottom: 5rem;
-
-    .head{
-        margin-bottom: 4rem;
+    .head, .box{
+        margin-bottom: 3rem;
     }
 
     .leaf, .time, .close, .start, .date, .time, .data{
         display: grid;
     }
-
-    .leaf{
-        grid-template-columns: repeat( 2, calc( 50% - 5rem ));
-        grid-gap: 3rem 5rem;
-    }
-
 
     .time{
         width: 100%;
@@ -49,4 +41,48 @@
             margin-left: 10px;
         }
     }
+}
+
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    #time{
+        .box{
+            margin-bottom: inherit;
+        }
+
+        .leaf{
+            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
+            grid-gap: 3rem 5rem;
+        } 
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    #time{
+
+        margin-bottom: 5rem;
+
+        .head{
+            margin-bottom: 4rem;
+        }
+
+        .leaf{
+            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
+            grid-gap: 3rem 5rem;
+        }       
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
 }

@@ -1,12 +1,12 @@
 <div id="eval" class="tabs-item">
-    <div class="subhead">
+    <div class="head">
         <div class="flex center-x mb-40">
             <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/award.svg" -}}</div>
             <h2 class="font-bold uppercase text-lg mb-00 mt-00">Parameter</h2>
         </div>
         <p class="text-sm">{{- .Page.Params.Module.Score.Desc -}}</p>
     </div>
-    <div class="slot grid">
+    <div class="leaf">
         {{- range .Page.Params.Module.Score.Data -}}
             <div class="card">
                 <div class="text-sm uppercase font-bold mt-00 mb-00 pb-15 pl-20 border-left border-bottom">{{ .lead  }}</div>

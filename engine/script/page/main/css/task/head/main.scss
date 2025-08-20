@@ -1,5 +1,9 @@
 #task{
 
+    #div1{
+        margin-bottom: 3rem;
+    }
+
 }
 
 @media only screen and (min-width: 480px) {
@@ -19,6 +23,11 @@
 
     #task{
         margin-bottom: 10rem;
+
+        #div1{
+            margin-bottom: 0rem;
+        }
+
         #div2{
            display: flex;
 

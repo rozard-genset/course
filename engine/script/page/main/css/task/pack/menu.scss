@@ -1,3 +1,19 @@
+#menu{
+
+     margin-bottom: 3rem;
+
+    .box{
+         display: flex;
+    }
+
+    .tab-action{
+        width: 100%;
+    }
+
+    .icon{
+        display: none;
+    }
+}
 
 
 @media only screen and (min-width: 480px) {
@@ -15,6 +31,18 @@
 @media only screen and (min-width: 1280px) {
     
     #menu{
+
+        .box{
+             display: block;
+        }
+       
+        .tab-action{
+            width: auto;
+        }
+        
+        .icon{
+            display: flex;
+        }
 
         .tab-action{
             margin-bottom: 1.25rem;
