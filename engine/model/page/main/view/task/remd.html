@@ -1,6 +1,46 @@
-<div id="remd" class="tabs-item">
+<div id="remd" class="tabs-item open">
     <div class="head flex center-x mb-40">
         <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/rotate-cw.svg" -}}</div>
         <h2 class="font-bold uppercase text-lg mb-00 mt-00">Remedial</h2>
+    </div>
+    <div class="leaf">
+        <div class="box advice">
+            <div class="head mb-20">
+                <div class="flex center-x">
+                    <div class="icon md mr-00">{{- partial "icon/line/bookmark.svg" -}}</div>
+                    <div class="font-bold uppercase text-sm border-left mb-00 mt-00 pl-10">Term and Condition</div>
+                </div>
+                <p class="text-sm">You can use this sugestion for help your assigment</p>
+            </div>
+            <div class="item">
+                {{ range .Page.Params.Module.Retry.Term }}
+                <div class="flex center-x mb-10 pl-05">
+                    <div class="icon md">
+                        {{- partial "icon/line/check-circle.svg" -}}
+                    </div>
+                    <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="box warning">
+            <div class="head mb-20">
+                <div class="flex center-x">
+                    <div class="icon lg mr-00">{{- partial "icon/line/folder.svg" -}}</div>
+                    <div class="font-bold uppercase text-sm border-left mb-00 mt-00 pl-10">Homework</div>
+                </div>
+                <p class="text-sm">Please consider a few point above before do the task.</p>
+            </div>
+            <div class="item">
+                {{ range .Page.Params.Module.Retry.Task }}
+                <div class="flex center-x mb-10 pl-05">
+                    <div class="icon md">
+                        {{- partial "icon/line/check-circle.svg" -}}
+                    </div>
+                    <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
     </div>
 </div>

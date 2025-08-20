@@ -1,6 +1,68 @@
 <div id="guid" class="tabs-item">
-     <div class="head flex center-x mb-40">
-        <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/table.svg" -}}</div>
-        <h2 class="font-bold uppercase text-lg mb-00 mt-00">Guideline</h2>
+     <div class="main">
+        <div class="head flex center-x mb-40">
+            <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/table.svg" -}}</div>
+            <h2 class="font-bold uppercase text-lg mb-00 mt-00">Instruction</h2>
+        </div>
+        <div class="leaf">{{ .Content }}</div>
+    </div>
+    <div class="side">
+        <div class="box advice">
+            <div class="head mb-20">
+                <div class="flex center-x">
+                    <div class="icon md mr-00">{{- partial "icon/line/zap.svg" -}}</div>
+                    <div class="font-bold uppercase text-sm border-left mb-00 mt-00 pl-10">Sugestion</div>
+                </div>
+                <p class="text-sm">You can use this sugestion for help your assigment</p>
+            </div>
+            <div class="leaf">
+                {{ range .Page.Params.Module.Guide.Tips.Sugest }}
+                <div class="flex center-x mb-10 pl-05">
+                    <div class="icon md">
+                        {{- partial "icon/line/check-circle.svg" -}}
+                    </div>
+                    <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="box warning">
+            <div class="head mb-20">
+                <div class="flex center-x">
+                    <div class="icon lg mr-00">{{- partial "icon/line/alert-triangle.svg" -}}</div>
+                    <div class="font-bold uppercase text-sm border-left mb-00 mt-00 pl-10">Warning</div>
+                </div>
+                <p class="text-sm">Please consider a few point above before do the task.</p>
+            </div>
+            <div class="leaf">
+                {{ range .Page.Params.Module.Guide.Tips.Warning }}
+                <div class="flex center-x mb-10 pl-05">
+                    <div class="icon md">
+                        {{- partial "icon/line/check-circle.svg" -}}
+                    </div>
+                    <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="box prohibit">
+            <div class="head mb-20">
+                <div class="flex center-x">
+                    <div class="icon md mr-00">{{- partial "icon/line/slash.svg" -}}</div>
+                    <div class="font-bold uppercase text-sm border-left mb-00 mt-00 pl-10">Prohbited</div>
+                </div>
+                <p class="text-sm">Act a point below is prohbited due the task accomplished.</p>
+            </div>
+            <div class="leaf">
+                {{ range .Page.Params.Module.Guide.Tips.Prohibit }}
+                <div class="flex center-x mb-10 pl-05">
+                    <div class="icon md">
+                        {{- partial "icon/line/check-circle.svg" -}}
+                    </div>
+                    <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
     </div>
 </div>
