@@ -39,6 +39,14 @@
         hr{
             margin-bottom: 0;
         }
+
+        .disable, .enabled{
+            display: none;
+        }
+
+        .disable.open, .enabled.open{
+            display: flex;
+        }
     }
 }
 
