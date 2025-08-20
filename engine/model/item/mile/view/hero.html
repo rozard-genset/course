@@ -17,7 +17,7 @@
                         <h2 class="uppercase font-bold text-md ml-10 mt-00 mb-00">{{- .Page.Params.Module.Organ.Name -}}</h2>
                     </div>
                     <div class="action flex center-x ml-a">
-                    {{- if eq .Page.Params.Module.Paid.Charge "" -}}
+                    {{- if eq .Page.Params.Module.Paid.Prices "" -}}
                         {{- range first 1 .Pages -}}
                         <a href="{{ .RelPermalink }}" class="button flex center-x ml-a">
                             <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>

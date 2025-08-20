@@ -1,0 +1,38 @@
+#info{
+
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    #info{
+         
+        .crit{
+            display: grid;
+            grid-template-columns: calc( 31% - 5rem ) calc( 100% - 31% );
+            grid-gap: 5rem;
+
+            .slot{
+                grid-template-columns: repeat( 2, calc( 50% - 3rem ) );
+                grid-gap: 3rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

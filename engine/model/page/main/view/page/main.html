@@ -4,6 +4,8 @@
 {{- $page := printf "%s/page.html" $path -}}
 {{- $talk := printf "%s/talk.html" $path -}}
 {{- $bugs := printf "%s/bugs.html" $path -}}
+{{- $task := printf "%s/task.html" $path -}}
+{{- $navs := printf "%s/navs.html" $path -}}
 
 <div id="main">
     <div id="tabs">
@@ -29,4 +31,6 @@
             <div id="bugs-tabs" class="tabs-item">{{- partial $bugs . -}}</div>
         </div>
     </div>
+    {{- partial $navs . -}}
 </div>
+

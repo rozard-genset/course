@@ -1,10 +1,14 @@
 <main id="open">
-    <div id="rows" class="wrap">
-        {{- if eq .Page.Params.Module.Strain "material" -}}
+    {{- if eq .Page.Params.Module.Strain "material" -}}
+        <div id="rows" class="wrap">
             {{- partial "module/course/page/main/view/page/main.html" . -}}
             {{- partial "module/course/page/main/view/page/plan.html" . -}}
-        {{- else -}}
+        </div>
+    {{- else -}}
+        <div id="task" class="wrap">
             {{- partial "module/course/page/main/view/task/main.html" . -}}
-        {{- end -}}
+        </div>
+        <div id="load" class="wrap"></div>
+    {{- end -}}
     </div>
 </main>

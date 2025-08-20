@@ -1,7 +1,6 @@
-{{- $task := printf "module/course/page/main/view/page/task.html" -}}
 {{- $team := printf "module/course/page/main/view/page/team.html" -}}
 {{- $apps := printf "module/course/page/main/view/page/apps.html" -}}
-{{- $navs := printf "module/course/page/main/view/page/navs.html" -}}
+{{- $asig := printf "module/course/page/main/view/page/asig.html" -}}
 {{- $type := partial "module/course/page/main/data/take-fomat.html" . -}}
 
 
@@ -22,6 +21,5 @@
         <div class="meta">{{- partial $team . -}}{{- partial $apps . -}}</div>
         <div class="main">{{- partial "lib/format.html" . -}}</div>
     {{- end -}}
+    {{- partial $asig . -}}
 </article>
-{{- partial $task . -}}
-{{- partial $navs . -}}

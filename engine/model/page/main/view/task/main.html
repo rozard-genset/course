@@ -1,6 +1,20 @@
-{{ $path := "module/course/page/main/tasks" }}
+{{- $path := "module/course/page/main/view/task" -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $side := printf "%s/side.html" $path -}}
+{{- $info := printf "%s/info.html" $path -}}
+{{- $guid := printf "%s/guid.html" $path -}}
+{{- $remd := printf "%s/remd.html" $path -}}
 
 
-<article id="task">
-    
-</article>
+<div id="div1">
+    {{- partial $hero . -}}
+</div>
+<div id="div2">
+    <div class="side">
+        {{- partial $side . -}}
+    </div>
+    <div class="page">
+        {{- partial $info . -}}{{- partial $guid . -}}{{- partial $remd . -}}
+    </div>
+</div>
+

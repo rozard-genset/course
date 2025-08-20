@@ -1,0 +1,46 @@
+<div id="hero">
+    <div class="slot grid">
+        <div class="thumb">
+            {{ partial "module/course/page/main/part/task-thumb.html" . }}
+        </div>
+        <div class="rows">
+            <div class="meta">
+                <h1 class="text-4xl mt-00 mb-60">{{ .Title }}</h1>
+                <hr>
+                <div class="desc flex">
+                    <h2 class="font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-30">Description</h2>
+                    <div class="border-left pb-10 pt-30 pl-30">
+                        {{ .Page.Params.Description }}
+                    </div>
+                </div>
+                <div class="desc flex">
+                    <h2 class="font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-20">Qualification</h2>
+                    <div class="border-left pb-10 pt-20 pl-30 ">
+                        <span class="font-bold mb-00 mt-00">{{ .Page.Params.Module.Score }}</span> minimum passing grade 
+                    </div>
+                </div>
+                <div class="desc flex">
+                    <h2 class="font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-20">Spesification</h2>
+                    <div class="border-left pb-10 pt-20 pl-30 mr-20">
+                        {{ if eq .Page.Params.Module.Group.Status false }}
+                            <p class="">Personal Assigment</p>
+                        {{ else }}
+                            <p class="font-bold mb-00 mt-00">Workgroup Assignment</p>
+                            <p class="mt-00 mb-00">Maximum <span class="font-bold">{{ .Page.Params.Module.Group.Member }}</span> Member Per Group</p>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="acts">
+                <div class="disable flex center-x">
+                    <div class="icon xl">
+                        {{- partial "icon/line/alert-circle.svg" -}}
+                    </div>
+                    <p class="text-lg mb-00 mt-00">No Assigment Activity For This Time.</p>
+                </div>
+                <div class="enabled">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,13 +2,7 @@
     <div class="main">
         <h2 class="mb-30 text-lg font-bold uppercase">Report Trouble</h2>
         <div id="bugs-report" class="issue">
-            <script src="https://utteranc.es/client.js"
-                repo="yuros-website/comment"
-                issue-term="title"
-                theme="dark-blue"
-                crossorigin="anonymous"
-                async>
-            </script>
+            {{ partial "parted/report/main/render.html" . }}
         </div>
     </div>
     <div class="info">

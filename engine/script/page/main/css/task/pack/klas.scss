@@ -1,0 +1,55 @@
+#klas{
+
+    margin-bottom: 5rem;
+
+    .head{
+        margin-bottom: 1rem;
+        height: 4rem;
+    }
+
+    .leaf, .time, .close, .start, .date, .time, .data{
+        display: grid;
+    }
+
+    .leaf{
+        grid-template-columns: repeat( 2, calc( 50% - 5rem ));
+        grid-gap: 3rem 5rem;
+    }
+
+
+    .time{
+        width: 100%;
+
+        .flex{
+            flex-wrap: nowrap;
+        }
+
+        .item{
+            text-wrap: nowrap;
+        }
+
+        .close, .start, .date, .time, .data{
+            display: grid;
+            font-size: .95rem;
+        }
+
+        .close, .start{
+            grid-template-columns: 85px 200px;
+            margin-bottom: 10px;
+        }
+
+        .data{
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+        }
+
+        .time, .date{
+            grid-template-columns: auto auto auto;
+        }
+
+        .utc{
+            margin-left: 10px;
+        }
+        
+    }
+}
