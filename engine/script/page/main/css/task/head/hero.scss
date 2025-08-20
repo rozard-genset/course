@@ -17,12 +17,14 @@
 @media only screen and (min-width: 1280px) {
     
     #hero{
-        min-height: 10rem;
+        display: grid;
+        align-items: center;
+        min-height: 70vh;
         margin-bottom: 5rem;
 
         .slot{
-            grid-template-columns: calc( 560px - 40px ) calc( 100% - 560px );
-            grid-gap: 40px;
+            grid-template-columns: calc( 620px - 60px ) calc( 100% - 620px );
+            grid-gap: 60px;
         }
 
         .rows{
