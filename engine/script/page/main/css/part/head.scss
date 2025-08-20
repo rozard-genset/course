@@ -1,0 +1,16 @@
+header{
+	margin-bottom: 2rem;
+    height: 3.5rem;
+    background-color: var(--background-02);
+
+    .action{
+        margin-left: auto;
+    }
+}
+
+@media only screen and(min-width: 1024px) {
+    
+    header{
+        margin-bottom: 3.5rem;
+    }
+}

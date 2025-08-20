@@ -8,17 +8,16 @@
 {{- end -}}
 
 {{- if eq $loaded true -}}
-<div class="task">
-    <hr class="">
-    <h2 class="text-md uppercase font-bold mb-40">Assignment</h2>
+<div id="task">
+    <hr><h2 class="text-lg uppercase font-bold mb-40 mt-30">Assignment</h2>
     <div class="row">
     {{- range .Parent.Pages -}}{{- if  and (  eq .Page.Params.Module.Period $weight  ) ( eq .Page.Params.Module.Parted $parted  ) ( eq .Page.Params.Module.Strain "assignment" ) -}}
         <a href="{{ .RelPermalink }}" class="col col-xs-12 col-lg-6 center-x mb-10 pl-00 info">
             <div class="name flex card">
                 <div class="icon lg">{{- partial "icon/line/edit.svg" -}}</div>
                 <div class="info border-left pl-20">
-                    <h3 class="capitalize text-md font-bold mb-10 mt-00">{{ .Title }}</h3>
-                    <p class="mt-00 text-gray-400"> {{ .Page.Params.Description }}</p>
+                    <h3 class="capitalize text-lg font-bold mb-10 mt-00">{{ .Title }}</h3>
+                    <p class="mt-00 mb-00"> {{ .Page.Params.Description }}</p>
                 </div>
             </div>                
         </a>

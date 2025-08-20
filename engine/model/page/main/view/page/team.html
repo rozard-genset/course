@@ -1,0 +1,13 @@
+{{- $ctx  := . -}}{{- $site := $ -}}{{- with .Page.Params.Metadata.Author -}}
+<div id="team">
+    <div class="flex center-x">
+        <div class="image">
+            {{- partial "module/course/page/main/part/tutor-thumb.html" (dict "ctx" $ctx "site" $site "name" . ) -}}
+        </div>
+        <div class="text ml-20">
+            <h2 class="tutor-name text-md font-bold mt-00 mb-00">{{ . }}</h2>
+            <div class="text-sm">Session Tutor</div>
+        </div>
+    </div>
+</div>
+{{- end -}}

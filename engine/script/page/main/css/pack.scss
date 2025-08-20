@@ -1,67 +1,7 @@
-footer {
-	margin-top: 5rem;
-	background-color: var(--background-02);
+@import "part/foot.scss";
 
-	.wrap{
-		height: 50px;
-	}
-}
+@import "page/pack/navs.scss";
 
-#team .image{
-    width: 48px;
-    height: 48px;
-    overflow: hidden;
-}
-
-#team .image img{
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-#forum .wa{
-	border-radius: 7px 0 0 7px;
-	border: 1px solid var(--link-01-based);
-}
-
-#forum .tl{
-	border-radius: 0 7px 7px 0;
-}
-
-#course #plan h3{
-	color: var(--color-01);
-}
-
-#course #plan .info p{
-	border-left: 1px solid var(--link-02-based);
-	padding-left: 2rem;
-	margin-left: 1rem;
-}
-
-
-#plan a{
-    color: var(--color-02);
-}
-
-#plan a .icon{ 
-    color: var(--link-02-based);
-}
-
-#course #page #bugs-action.open div,
-#course #page #bugs-action:hover div{
-	background-color: transparent;
-	color: red;
-	transition: 200ms;
-}
-
-#course #page .tab-action:hover, 
-#course #page .tab-action.open {
-	border-color: var(--button-02);
-	.icon{
-		background-color: var(--button-02);
-	}
-	.capitalize{
-		color: var(--button-02);
-	}
-}
+@import "page/pack/bugs.scss";
+@import "page/pack/talk.scss";
+@import "page/pack/task.scss";

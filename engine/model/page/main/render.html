@@ -1,22 +1,5 @@
-{{- $main := "module/course/page/main/parts/" -}}
-{{- $task := "module/course/page/main/tasks/" -}}
-{{- $cont := printf "%s/tabs.html" $main -}}
-{{- $plan := printf "%s/plan.html" $main -}}
-{{- $navs := printf "%s/navs.html" $main -}}
-{{- $asig := printf "%s/main.html" $task -}}
-
-<main id="page" class="wrap">
-    <div id="content" class="row pt-30">
-        <article class="col col-xs-12 col-lg-8 ml-a">
-            {{ if eq .Page.Params.Module.Strain "material" }}
-                <div id="main">{{- partial $cont . -}}</div>
-                <div id="navs">{{- partial $navs . -}}</div>
-            {{ else }}
-                <div id="taks">{{- partial $asig . -}}</div>
-            {{ end }}
-        </article>
-        <asside class="col col-xs-12 col-lg-3">
-            {{- partial $plan . -}}
-        </asside>
-    </div>
-</main>
+{{- if .Page.Params.Module.Paid.Charge -}}
+    {{- partial "module/course/page/main/view/paid.html" . -}}
+{{- else -}}
+    {{- partial "module/course/page/main/view/open.html" . -}}
+{{- end -}}

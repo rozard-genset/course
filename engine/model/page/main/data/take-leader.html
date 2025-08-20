@@ -1,0 +1,3 @@
+{{- $value := .Content -}}
+{{- with .Page.Params.Description  -}}{{ $value = . }}{{- end -}}
+{{- return $value -}}

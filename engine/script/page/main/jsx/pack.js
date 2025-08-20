@@ -1,19 +1,20 @@
 console.log('Module : page : deffers page course javascript engine loaded');
 
-// LEARNING PLAN
+
 let init_plan = ()=> {
     if ( window.innerWidth > 1024 ) {
-        let element = document.querySelector( '.learnplan' );
+        let element = document.querySelector( '#plan .list' );
         let activet = element.querySelector('a.active');
         let targets = activet.getAttribute('data-open');
         element.querySelector("#"+targets).classList.remove('close'); 
     }
+
     open_plan();
-   
 }
 
+
 let exit_plan = ()=> {
-    let element = document.querySelector( '.learnplan' );
+    let element = document.querySelector( '#plan .list' );
     let activet = Array.prototype.slice.call(element.querySelectorAll('.parted'));
     activet.forEach( active => {
         if ( ! active.classList.contains('.close')) {
@@ -22,9 +23,10 @@ let exit_plan = ()=> {
     })
 }
 
+
 let open_plan = ()=> {
-    let element = document.querySelector( '.learnplan' );
-    let activet = Array.prototype.slice.call(element.querySelectorAll('.open-subdiv'));
+    let element = document.querySelector( '#plan .list' );
+    let activet = Array.prototype.slice.call(element.querySelectorAll('.opening'));
     activet.forEach( button => {
         button.addEventListener('click', ()=> {
             exit_plan();
@@ -34,6 +36,7 @@ let open_plan = ()=> {
         });
     });
 }
+
 
 let init_tabs = ()=> {
     let action_open = document.querySelectorAll(".tab-action");
@@ -56,15 +59,18 @@ let init_tabs = ()=> {
     });
 }
 
+
 let init_talk = ()=> {
 
     let darkmod = localStorage.getItem( 'darkmode' );
     let contain = document.querySelector( '#forum-collumn' );
+    let frameid = contain.getAttribute('data-title');;
     let telebox = document.createElement( 'script' );
 
     telebox.src = 'https://comments.app/js/widget.js?3';
     telebox.setAttribute('data-comments-app-website', '_-K1zvYW');
     telebox.setAttribute('data-limit', 5 );
+    telebox.setAttribute('title', frameid );
     telebox.setAttribute('data-dislikes', 1 );
 
     if ( darkmod == 2 ) {
@@ -84,6 +90,7 @@ let init_talk = ()=> {
     }
     contain.appendChild(telebox);
 }
+
 
 let init_bugs = ()=> {
 
@@ -118,7 +125,10 @@ let init_bugs = ()=> {
     }
 }
  
+
 window.addEventListener( 'load', ()=> {
     init_plan();
     init_tabs();
+    // init_bugs();
+    // init_talk();
 });

@@ -1,86 +1,18 @@
-@import "../../../../../core/css/flexs/_init.scss";
-@import "../../../../../core/css/flexs/col-12.scss";
-@import "../../../../../core/css/flexs/col-06.scss";
-@import "../../../../../core/css/flexs/col-07.scss";
-@import "../../../../../core/css/flexs/col-04.scss";
-@import "../../../../../core/css/flexs/col-03.scss";
-@import "../../../../../core/css/flexs/col-08.scss";
+@import "../../../../../core/css/wrap/m-00.scss";
+@import "../../../../../core/css/wrap/m-05.scss";
+@import "../../../../../core/css/wrap/m-10.scss";
+@import "../../../../../core/css/wrap/m-20.scss";
+@import "../../../../../core/css/wrap/m-30.scss";
+@import "../../../../../core/css/wrap/m-40.scss";
+@import "../../../../../core/css/wrap/m-60.scss";
+@import "../../../../../core/css/wrap/p-20.scss";
+@import "../../../../../core/css/part/tabs.scss";
 
-header{
-	margin-bottom: 2rem;
-    height: 3.5rem;
-    background-color: var(--background-02);
 
-    .action{
-        margin-left: auto;
-    }
-}
+@import "part/head.scss";
 
-@media only screen and(min-width: 1024px) {
-    header{
-        margin-bottom: 3.5rem;
-    }
-    #content{
-        -ms-flex-direction: row-reverse;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: reverse;
-        flex-direction: row-reverse;
-    }
-}
 
-.float-right{
-    float: right;
-}
-
-.parted{
-    transition: 200ms;
-}
-
-.close{
-    height: 0;
-    z-index: -1;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    transition: 200ms;
-}
-
-#course .tabs-item{
-	position: fixed;
-	width: 0;
-	height: 0;
-	overflow: hidden;
-	display: block;
-	transition: 100ms;
-}
-
-#course .tabs-item.open{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	transition: 100ms;
-}
-
-#course .tab-action,
-#course .tab-action:hover{
-	cursor: pointer;
-}
-
-#talk-tabs .forum iframe{
-    border-radius: 7px;
-}
-
-.tab-action{
-    padding-left: 0;
-    margin-right: 10px;
-    overflow: hidden;
-}
-
-.tab-action.open{
-    color: var(--color-01);
-    font-weight: bold;
-}
-
-.task a{
-    padding-left: 0;
-}
+@import "page/head/main.scss";
+@import "page/head/page.scss";
+@import "page/head/tabs.scss";
+@import "page/head/plan.scss";

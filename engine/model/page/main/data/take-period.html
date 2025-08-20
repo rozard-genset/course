@@ -1,0 +1,7 @@
+{{- $period := slice  -}}
+{{- range .Parent.Pages.ByWeight -}}
+    {{ if .Page.Params.Module.Period }}
+        {{- $period = $period | append .Page.Params.Module.Period -}}
+    {{ end }}
+{{- end -}}
+{{- $period = sort ( $period | uniq ) -}}{{- return $period -}}
