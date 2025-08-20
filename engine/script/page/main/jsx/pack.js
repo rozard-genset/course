@@ -104,9 +104,24 @@ let task_tabs = ()=> {
 }
 
 
+let task_asig = ()=> {
+
+    if ( ! document.getElementById('task')) {
+        return;
+    }
+
+    document.getElementById( 'start-task' ).addEventListener('click', ()=> {
+        let task = document.getElementById('task');
+        let load = document.getElementById('load');
+        task.classList.add('hide');
+        load.classList.remove('hide');
+    }, false );
+} 
+
 
 window.addEventListener( 'load', ()=> {
     init_plan();
     main_tabs();
     task_tabs();
+    task_asig();
 });
