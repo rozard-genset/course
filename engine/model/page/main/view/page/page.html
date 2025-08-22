@@ -17,9 +17,10 @@
     {{- else -}}
         <div class="head">
             <h1 class="text-4xl mb-30">{{ .Title }}</h1>
+            {{- partial "module/course/page/main/part/hero-thumb.html" . -}}
         </div>
         <div class="meta">{{- partial $team . -}}{{- partial $apps . -}}</div>
         <div class="main">{{- partial "lib/format.html" . -}}</div>
     {{- end -}}
-    {{- partial $asig . -}}
 </article>
+{{- partial $asig . -}}

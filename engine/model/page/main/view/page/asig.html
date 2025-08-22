@@ -9,14 +9,17 @@
 
 {{- if eq $loaded true -}}
 <div id="asig">
-    <hr><h2 class="text-lg uppercase font-bold mb-40 mt-30">Assignment</h2>
-    <div class="row">
+    <hr>
+    <div class="head">
+        <h2 class="text-lg uppercase font-bold mb-40 mt-20">Assignment</h2>
+    </div>
+    <div class="leaf">
     {{- range .Parent.Pages -}}{{- if  and (  eq .Page.Params.Module.Period $weight  ) ( eq .Page.Params.Module.Parted $parted  ) ( eq .Page.Params.Module.Strain "assignment" ) -}}
-        <a href="{{ .RelPermalink }}" class="col col-xs-12 col-lg-6 center-x mb-10 pl-00 info">
+        <a href="{{ .RelPermalink }}" class="flex center-x mb-10 pl-00">
             <div class="name flex card">
-                <div class="icon lg">{{- partial "icon/line/edit.svg" -}}</div>
+                <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>
                 <div class="info border-left pl-20">
-                    <h3 class="capitalize text-lg font-bold mb-10 mt-00">{{ .Title }}</h3>
+                    <h3 class="capitalize text-lg font-bold mb-00 mt-00">{{ .Title }}</h3>
                     <p class="mt-00 mb-00"> {{ .Page.Params.Description }}</p>
                 </div>
             </div>                
