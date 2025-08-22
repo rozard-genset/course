@@ -6,30 +6,14 @@
     <div class="info">
         <div class="rule mb-60">
             <h3 class="mb-20 text-md font-bold uppercase">Rules</h3>
-            <p class="mb-30 text-sm">Berikut ini adalah aturan forum disuksi pada modul <span class="font-bold">{{ .Title }}</span></p>
-            <div class="flex mb-20">
-                <div class="icon sm mr-10">
-                    {{- partial "icon/line/check-circle.svg" -}}
+            <p class="mb-30 text-sm">{{ .Parent.Page.Params.Module.Forums.Lead }}</p>
+            <div class="rule">
+            {{- range .Parent.Page.Params.Module.Forums.Rule -}}
+                <div class="flex mb-20">
+                    <div class="icon sm mr-10">{{- partial "icon/line/check-circle.svg" -}}</div>
+                    <p class="text-sm mb-00 mt-00">{{ . }}</p>
                 </div>
-                <p class="text-sm mb-00 mt-00">Login menggunakan akun <span class="font-bold">telegram</span> untuk memulai diskusi.</p>
-            </div>
-            <div class="flex mb-20">
-                <div class="icon sm mr-10">
-                    {{- partial "icon/line/check-circle.svg" -}}
-                </div>
-                <p class="text-sm mb-00 mt-00">Gunakan bahasa yang sopan, baik dan benar</p>
-            </div>
-            <div class="flex mb-20">
-                <div class="icon sm mr-10">
-                    {{- partial "icon/line/check-circle.svg" -}}
-                </div>
-                <p class="text-sm mb-00 mt-00">Dilarang menggunakan perkataan yang mengandung unsur pelecehan, cacian dan merendahkan aggota forum lain.</p>
-            </div>
-            <div class="flex mb-20">
-                <div class="icon sm mr-10">
-                    {{- partial "icon/line/check-circle.svg" -}}
-                </div>
-                <p class="text-sm mb-00 mt-00">Dilarang memulai pembicaraan yang keluar dari topik pembahasan.</p>
+            {{- end -}}
             </div>
         </div>
     </div>
