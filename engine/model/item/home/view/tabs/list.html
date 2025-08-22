@@ -3,8 +3,12 @@
 
 <div class="list">
     <div class="info flex center-x mb-60">
-        <h2 class="text-lg uppercase font-bold mt-00 mb-00">{{ T "all_course" }} {{ T "courses" }}</h2>
-        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">{{ .Page.Params.Parted.Tabs.Desc }}</p>
+        {{- with .Page.Params.Parted.Tabs.Lead -}}
+        <h2 class="text-lg uppercase font-bold mt-00 mb-00">{{ . }}</h2>
+        {{- end -}}
+        {{- with .Page.Params.Parted.Tabs.Desc -}}
+        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">{{ . }}</p>
+        {{- end -}}
     </div>
     <div class="leaf mb-60">
         {{- range (.Paginate $pages 10 ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
@@ -28,7 +32,7 @@
         <div class="ml-a">
         {{ with (.Paginate $pages ).Next }}
             <a href="{{ .URL }}" class="ml-10 flex center-x">
-                <div class="capitalize font-bold">{{ T "next_more" }}</div>
+                <div class="capitalize font-bold">{{ T "get_more" }}</div>
                 <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </a>
         {{ end }}

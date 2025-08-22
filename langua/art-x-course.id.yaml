@@ -1,18 +1,14 @@
-tingkat: tingkat
-sertifikat: sertifikat
-pertemuan: pertemuan 
-unggulan: unggulan
-detail kelas : detail kelas
-kelas tutor: kelas tutor
-learnhub: kelas tutor
-eksplorasi: eksplorasi
-explore_long: Jelajahi Subjek
-allcat: semua kategori
-avail_course: temukan kelas
-all_course: semua
-courses: kelas
-next_more: Tampilkan Lainya
+level: tingkat
+certificate: sertifikat
+session: pertemuan 
+featured: unggulan
+visit: informasi kelas
+get_more: tampilkan lainya
 register: daftar
-registration: Pendaftaran
-pic: penanggung jawab
-bug: Laporan Kerusakan
+home_class_tutor: kelas tutor
+home_class_tutor_long: kelas tutor
+home_term: eksplorasi
+home_term_long: jelajahi subjek
+home_term_link: semua kategori
+home_find_course: temukan kelas
+home_all_course: semua

@@ -2,13 +2,13 @@
 
 <div id="term" class="mid mb-40">
     <div class="info mb-40">
-        <div class="head flex mb-15">
-            <h2 class="text-2xl mb-00 mt-00">{{ T "explore_long" }}</h2>
+        <div class="head flex mb-10">
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "explore_long" }}</h2>
             <a href="/{{ .Section }}/terms/" class="flex center-x ml-a">
                 <div class="capitalize font-bold text-sm">{{ T "allcat" }}</div>
                 <div class="icon md ml-10">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </a>
-        </div><hr class="mb-15">
+        </div><hr class="mb-10">
         {{- with .Page.Params.Parted.Taxo.desc -}}
             <p class="mt-00">{{ . }}</p>
         {{- end -}}
