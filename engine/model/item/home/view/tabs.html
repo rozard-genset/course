@@ -1,16 +1,16 @@
 {{- $terms := partial  "module/course/item/home/data/query-term-name.html" . -}}
 {{- $conte := . -}}
-
+{{- $sites := .Site -}}
 <div id="tabs">
     <div class="slot">
         <div class="head">
-            <h2 class="lead text-lg uppercase font-bold mb-00 mt-00 desktop">Available Course</h2>
+            <h2 class="lead text-lg uppercase font-bold mb-00 mt-00 desktop">{{ T "avail_course" }}</h2>
             <div id="prev-action" class="flex center-x mr-a mobile">
                 <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/arrow-left.svg" -}}</div>
             </div>
             <div id="tabs-action" class="menu">
                 <div id="list-action" data-target="course-tabs-list" class="tab-action flex center-x open">
-                    <h3 class="text-md font-bold mr-10">All Course</h3>
+                    <h3 class="text-md font-bold mr-10">{{ T "all_course" }}</h3>
                     <div class="icon sm rounded-full border-all mr-10 pa-05 desktop">{{- partial "icon/line/plus.svg" -}}</div>
                 </div>
                 {{- range first 10 $terms -}}
@@ -27,11 +27,11 @@
         <div class="leaf">
             <div id="tabs-content" class="content">
                 <div id="course-tabs-list" class="tabs-item open">
-                    {{- partial  "module/course/item/home/view/tabs/list.html" . -}}
+                    {{- partial "module/course/item/home/view/tabs/list.html" . -}}
                 </div>
                 {{- range first 10 $terms -}}
                 <div id="course-tabs-{{- . -}}" class="tabs-item">
-                    {{- partial  "module/course/item/home/view/tabs/term.html" (dict "name" . "ctx"  $conte ) -}}
+                    {{- partial  "module/course/item/home/view/tabs/term.html" (dict "name" . "ctx"  $conte "site" $sites ) -}}
                 </div>
                 {{- end -}}
             </div>

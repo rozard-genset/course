@@ -1,13 +1,9 @@
-{{- $notes := "Learn How to be a tutor or contributor, Join with global educator arround the world." -}}
-{{- with .Page.Params.Parted.Invo.note -}}{{- $notes = . -}}{{- end -}}
-
-
 <div id="invo" class="mb-60">
     <hr class="mt-00">
     <div class="max-width mt-30">
         <div class="head flex center-x mb-20 mt-40">
-            <h2 class="text-md uppercase font-bold mb-00 mt-00 mobile" >Learnhub</h2>
-            <h2 class="text-md uppercase font-bold mb-00 mt-00 desktop" >Tutor Classrom</h2>
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 mobile" >{{ T "learnhub" }}</h2>
+            <h2 class="text-md uppercase font-bold mb-00 mt-00 desktop" >{{ T "kelas tutor" }}</h2>
             <div class="action flex ml-a">
                 {{- range .Page.Params.Parted.Invo.Data -}}
                 <a href="{{ .link }}" class="ml-10 flex center-x">
@@ -17,8 +13,10 @@
                 {{- end -}}
             </div>
         </div>
+        {{- with .Page.Params.Parted.Invo.Desc -}}
         <div class="leaf max-width">
-            <p class="mr-30">{{- $notes -}}</p>
+            <p class="mr-30">{{- . -}}</p>
         </div>
+        {{- end -}}
     </div>
 </div>

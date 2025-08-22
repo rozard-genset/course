@@ -17,21 +17,21 @@
             <div class="item flex center-x center-y border-right">
                 <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                 <div class="meta flex center-x">
-                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Level </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet">{{ T "tingkat" }}</div>
                     <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
                 </div>
             </div>
             <div class="item flex center-x center-y border-right">
                 <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                 <div class="meta flex center-x">
-                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Certificate </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet">{{ T "sertifikat" }}</div>
                     <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                 </div>
             </div>
             <div class="item flex center-x center-y">
                 <div class="icon md text-white">{{- partial "icon/line/calendar.svg" -}}</div>
                 <div class="meta flex">
-                    <div class="capitalize text-sm mb-00 mr-10 tablet"> Session </div>
+                    <div class="capitalize text-sm mb-00 mr-10 tablet">{{ T "pertemuan" }} </div>
                     <div class="capitalize text-sm text-white font-bold">{{- partial "lib/course/count-periodic.html"  . -}}</div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="like ml-a">
                 <div class="box flex center-x rounded-full border-all">
                     <div class="dot feature mr-10"></div>
-                    <div class="text-sm mb-00">Featured</div>
+                    <div class="capitalize text-sm mb-00">{{ T "unggulan" }}</div>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="enroll">
                         <a href="{{ .RelPermalink }}" class="button outline flex center-x">
-                            <div class="text-sm font-bold mr-10">Visit Course</div>
+                            <div class="capitalize text-sm font-bold mr-10">{{ T "detail kelas" }}</div>
                             <div class="icon sm ml-a mr-00">{{- partial "icon/line/arrow-right.svg" -}}</div>
                         </a>
                     </div>

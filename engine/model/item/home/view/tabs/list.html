@@ -3,8 +3,8 @@
 
 <div class="list">
     <div class="info flex center-x mb-60">
-        <h2 class="text-lg uppercase font-bold mt-00 mb-00">All Courses</h2>
-        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+        <h2 class="text-lg uppercase font-bold mt-00 mb-00">{{ T "all_course" }} {{ T "courses" }}</h2>
+        <p class="text-lg border-left mt-00 mb-00 pl-15 ml-15">{{ .Page.Params.Parted.Tabs.Desc }}</p>
     </div>
     <div class="leaf mb-60">
         {{- range (.Paginate $pages 10 ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
@@ -28,7 +28,7 @@
         <div class="ml-a">
         {{ with (.Paginate $pages ).Next }}
             <a href="{{ .URL }}" class="ml-10 flex center-x">
-                <div class="font-bold">Next Page</div>
+                <div class="capitalize font-bold">{{ T "next_more" }}</div>
                 <div class="icon md border-all rounded-full ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </a>
         {{ end }}

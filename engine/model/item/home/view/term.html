@@ -1,23 +1,20 @@
-{{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
-{{- $fil2 := where .Site.Pages "Type" "course" -}}{{- $page := $fil1 | intersect $fil2 -}}{{- $list := slice -}}
-{{- range  where .Site.Pages "Type" "course" -}}
-    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
-
+{{- $list := partial  "module/course/item/home/data/query-term-page.html" . -}}
 
 <div id="term" class="mid mb-40">
     <div class="info mb-40">
         <div class="head flex mb-15">
-            <h2 class="text-2xl mb-00 mt-00">Subject Exploration</h2>
+            <h2 class="text-2xl mb-00 mt-00">{{ T "explore_long" }}</h2>
             <a href="/{{ .Section }}/terms/" class="flex center-x ml-a">
-                <div class="font-bold text-sm">All Subject</div>
+                <div class="capitalize font-bold text-sm">{{ T "allcat" }}</div>
                 <div class="icon md ml-10">{{- partial "icon/line/arrow-right.svg" -}}</div>
             </a>
         </div><hr class="mb-15">
-        <p class="mt-00">Learn on-the-go or right at home with self-paced courses. Get started today!</p>
+        {{- with .Page.Params.Parted.Taxo.desc -}}
+            <p class="mt-00">{{ . }}</p>
+        {{- end -}}
     </div>
     <ul class="leaf mb-40">
-        {{- range first 6 $list -}}
+        {{- range first 8 $list -}}
         <li class=""><a href="{{ .RelPermalink }}">
             <div class="card border-all rounded-lg flex center-x">
                 {{- $image := .Page.Resources.GetMatch .Page.Params.Module.Cover -}}

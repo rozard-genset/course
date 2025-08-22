@@ -1,12 +1,9 @@
-{{- $title := "Develop Skills That Move Your Career Forward" -}}
-{{- with .Page.Params.Parted.Hero.Lead -}}{{- $title = . -}}{{- end -}}
-
 {{- $pages := where .Site.RegularPages "Section" .Section -}}
 {{- $pages = $pages.ByDate -}}
 
 <div id="lead" class="list">
     <div class="head flex center-x mb-70">
-        <h1 class="mt-00">{{- $title -}}</h1>
+        {{- with .Page.Params.Parted.Hero.Lead -}}<h1 class="mt-00">{{- . -}}</h1>{{- end -}}
     </div>
     <div class="leaf mb-60">
         {{- range (.Paginate $pages ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
