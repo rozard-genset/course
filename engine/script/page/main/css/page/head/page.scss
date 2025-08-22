@@ -1,43 +1,135 @@
+#page {
+   
+    .head{
+
+        margin-bottom: 3rem;
+        h1{
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 3rem;
+        }
+
+        picture{
+            display: block;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+
+    .meta{
+        display: grid;
+        grid-template-columns: auto 100px;
+        grid-gap: 2rem;
+        margin-bottom: 3rem;
+        align-items: center;
+        .apps{
+            .text {
+                display: none;
+            }
+        }
+    }
+}
 
 
 @media only screen and (min-width: 480px) {
 
+    #page {
+
+        .head{
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .meta{
+            justify-content: space-between;
+            grid-template-columns: auto auto;
+
+            .apps{
+                .text {
+                    display: block;
+                }
+                .youtube{
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
 }
+
 
 @media only screen and (min-width: 768px) {
     
+    #page {
+
+        .head{
+            display: grid;
+            grid-template-columns: 400px auto;
+            grid-gap: 2rem;
+
+            h1{
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            picture{
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+       
+        .meta{
+            .apps{
+                .youtube{
+                    margin-right: 2.5rem;
+                }
+            }
+        }
+
+    }
 }
 
+
 @media only screen and (min-width: 1024px) {
-    
+ 
+    #page{
+        .head{
+            grid-template-columns: 420px auto;
+
+            h1{
+                font-size: 2.2rem;
+            }
+        }
+    }
 }
+
 
 @media only screen and (min-width: 1280px) {
 
     #page {
 
         .head{
+            grid-template-columns: 100%;
+            margin-bottom: inherit;
+            grid-gap: 0;
 
             h1{
-                margin-top: 0;
+                font-size: 2.4rem;
                 margin-bottom: 4rem;
+                grid-column: 1;
             }
 
             picture{
-                display: block;
-                height: 100%;
-                overflow: hidden;
+                grid-row: 2;
             }
         }
 
         .meta{
-            display: grid;
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-            margin: 2.5rem 0;
+            margin: 3rem 0;
         }
     }
 }
+
 
 @media only screen and (min-width: 1536px) {
 

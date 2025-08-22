@@ -11,12 +11,12 @@
             {{- partial $team . -}}{{- partial $apps . -}}
         </div>
         <div class="head">
-            <h1 class="text-4xl mb-30">{{ .Title }}</h1>
+            <h1>{{ .Title }}</h1>
             <p class="text-md">{{- partial "module/course/page/main/data/take-leader.html" . -}}</p>
         </div>
     {{- else -}}
         <div class="head">
-            <h1 class="text-4xl mb-30">{{ .Title }}</h1>
+            <h1>{{ .Title }}</h1>
             {{- partial "module/course/page/main/part/hero-thumb.html" . -}}
         </div>
         <div class="meta">{{- partial $team . -}}{{- partial $apps . -}}</div>

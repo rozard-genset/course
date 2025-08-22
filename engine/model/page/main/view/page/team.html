@@ -1,13 +1,16 @@
-{{- $ctx  := . -}}{{- $site := $ -}}{{- with .Page.Params.Metadata.Author -}}
-<div id="team">
-    <div class="flex center-x">
-        <div class="image">
-            {{- partial "module/course/page/main/part/tutor-thumb.html" (dict "ctx" $ctx "site" $site "name" . ) -}}
-        </div>
-        <div class="text ml-20">
-            <h2 class="tutor-name text-md font-bold mt-00 mb-00">{{ . }}</h2>
-            <div class="text-sm">Session Tutor</div>
-        </div>
+{{- $ctx   := . -}}{{- $site := $ -}}
+{{- $author := .Parent.Page.Params.Metadata.Author -}}
+{{- with .Page.Params.Metadata.Author -}}
+    {{- $author =  . -}}
+{{- end -}}
+
+
+<div class="team flex center-x">
+      <div class="image">
+        {{- partial "module/course/page/main/part/tutor-thumb.html" (dict "ctx" $ctx "site" $site "name" $author ) -}}
+    </div>
+    <div class="text ml-20">
+        <h2 class="tutor-name text-md font-bold mt-00 mb-00">{{ $author }}</h2>
+        <div class="text-sm">Session Tutor</div>
     </div>
 </div>
-{{- end -}}

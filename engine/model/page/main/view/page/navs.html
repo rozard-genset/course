@@ -1,6 +1,6 @@
 {{ $populate := partial "module/course/page/main/data/take-paged.html" . }}
 
-{{ if or ( $populate.Next . ) ( $populate.Prev . ) }}
+{{- if or ( $populate.Next . ) ( $populate.Prev . ) -}}
 <div id="navs">
     <hr class="mt-00 mb-00">
     <div class="rows grid">
@@ -25,4 +25,4 @@
     </div>
     <hr class="mt-00 mb-00">
 </div>
-{{ end }}
+{{- end -}}
