@@ -13,7 +13,7 @@
 <div class="apps">
     <div class="flex center-x">
         {{- with $youtube -}}
-        <a class="youtube flex center-x" href="{{ . }}" target="_blank">
+        <a class="youtube flex center-x" href="{{ . }}" target="_blank" aria-label="Access this module at youtube">
             <div class="icon xl">{{- partial "icon/logo/youtube-round.svg" -}}</div>
             <div class="text">
                 <div class="text-sm">Watch on</div>
@@ -22,7 +22,7 @@
         </a>
         {{- end -}}
         {{- with $spotify -}}
-        <a class="spotify flex center-x" href="{{ . }}" target="_blank">
+        <a class="spotify flex center-x" href="{{ . }}" target="_blank" aria-label="Access this module at spotify">
             <div class="icon xl">{{- partial "icon/logo/spotify-round.svg" -}}</div>
             <div class="text">
                 <div class="text-sm">Listen at</div>

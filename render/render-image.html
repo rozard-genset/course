@@ -1,0 +1,24 @@
+{{- $image := .Page.Resources.GetMatch .Destination -}}
+
+
+{{- if $image -}}
+    <picture class="rounded-2xl">
+
+        {{- $xs := $image.Resize "480x webp q100" -}}
+        <source media="(width < 481px)" srcset="{{ $xs.RelPermalink }}"/>
+
+        {{- $sm := $image.Resize "620x webp q100" -}}
+        <source media="(width < 620px)" srcset="{{ $sm.RelPermalink }}"/>
+
+        {{- $md := $image.Resize "768x webp q100" -}}
+        <source media="(width < 768px)" srcset="{{ $md.RelPermalink }}"/>
+
+        {{- $lg := $image.Resize "800x webp q100" -}}
+        <source media="(width > 800px)" srcset="{{ $lg.RelPermalink }}"/>
+
+        {{- $top := $image.Resize "800x webp q100" -}}
+        <img src="{{ $top.RelPermalink }}" alt="{{ .Title }}" width="{{ $top.Width }}" height="{{ $top.Height }}" title="{{ .Title }}" loading="lazy"/>
+    </picture>
+{{- end -}}
+
+
