@@ -22,9 +22,11 @@ main_hero_sesion_bot: session
 main_hero_proyek_top: project
 main_hero_proyek_bot: sandbox
 main_hero_take_class: take class
-main_info_lead: information
+main_stat_lead: overview
 main_need_lead: requirement
 main_tabs_lead_plan: module
 main_tabs_lead_task: task
-main_tabs_lead_team: tutor
+main_tabs_lead_info: info
 main_task_sums_desc: task
+main_team_head_lead: stakeholder
+main_desc_lead: "description"

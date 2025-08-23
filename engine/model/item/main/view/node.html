@@ -1,0 +1,66 @@
+<div id="node">
+    <div class="rows grid">
+        {{- range .Page.Params.Parted.Node -}}
+        <div class="class">
+            <div class="subhead border-bottom flex center-x mb-20">
+                <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/layers.svg" -}}</div>
+                {{- if .class -}}
+                    <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">Kelas {{ .class }}</h2>
+                {{- else -}}
+                    <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">{{ T "main_desc_lead" }} {{ .class }}</h2>
+                {{- end -}}
+            </div>
+            <div class="leaf">
+                <ul>
+                    <li class="quota">
+                        <div class="li-head">
+                            <h3 class="text-sm font-bold uppercase mb-00">Class Capacity</h3>
+                        </div>
+                        <div class="li-leaf">
+                            <h4 class="text-md mt-05">{{ .quota }} Orang</h4> 
+                        </div>
+                    </li>
+                    <li class="enrol">
+                        <div class="li-head">
+                           <h3 class="text-sm font-bold uppercase mb-00">Registration</h3>
+                        </div>
+                        <div class="li-leaf grid">
+                            <div class="subli">
+                                <div class="text-sm font-bold capitalize mb-00">Open</div>
+                                <h4 class="text-md mt-05">{{ .start.register }}</h4>
+                             </div>
+                             <div class="subli">
+                                <div class="text-sm font-bold capitalize mb-00">Close</div>
+                                <h4 class="text-md mt-05">{{ .close.register }}</h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="learn">
+                        <div class="li-head">
+                           <h3 class="text-sm font-bold uppercase mb-00">Learning</h3>
+                        </div>
+                        <div class="li-leaf grid">
+                            <div class="subli">
+                                <div class="text-sm font-bold capitalize mb-00">Start</div>
+                                <h4 class="text-md mt-05">{{ .start.learning }}</h4>
+                             </div>
+                             <div class="subli">
+                                <div class="text-sm font-bold capitalize mb-00">End</div>
+                                <h4 class="text-md mt-05">{{ .close.learning }}</h4>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="tutor">
+                        <div class="li-head">
+                           <h3 class="text-sm font-bold uppercase mb-00">Tutor</h3>
+                        </div>
+                        <div class="li-leaf flex">
+                            {{ .tutor }}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>

@@ -1,0 +1,45 @@
+#node{
+
+    .leaf, .rows{
+        display: grid;
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    #node{
+
+        .rows{
+             grid-template-columns: calc( 50% - 1.5rem ) calc( 50% - 1.5rem );
+            grid-gap: 3rem;
+        }
+       
+
+        .leaf{
+            display: grid;
+        }
+
+        .li-leaf.grid{
+            grid-template-columns: calc( 50% - 1.5rem ) calc( 50% - 1.5rem );
+            grid-gap: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

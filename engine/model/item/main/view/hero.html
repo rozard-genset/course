@@ -6,16 +6,15 @@
     <div class="bot mb-70">
         <div class="tablet grid">
         <div class="title mb-20">
-            <h1 class="text-3xl mt-00">{{ .Title }}</h1>
+            <h1 class="text-4xl mt-00">{{ .Title }}</h1>
             <div class="info">
                 <div class="mb-05 mb-30 flex center-x">
-                    <div class="img border-all rounded-lg mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Module.Organ.Name ) -}}</div>
+                    <div class="img border-all rounded-lg mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
                     <div class="text">
                         <p class="capitalize mb-10 mt-00">{{ T "main_hero_provide" }}</p>
-                        <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Module.Organ.Name -}}</p>
+                        <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Parted.Team.Name -}}</p>
                     </div>
                 </div>
-                <p>{{- .Page.Params.Description -}}</p>
             </div>
         </div>
         <div class="card grid">

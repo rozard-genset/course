@@ -1,6 +1,7 @@
 {{- $path := "module/course/item/main/view" -}}
 {{- $hero := printf "%s/hero.html" $path -}}
-{{- $info := printf "%s/info.html" $path -}}
+{{- $stat := printf "%s/stat.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
 {{- $need := printf "%s/need.html" $path -}}
 {{- $tabs := printf "%s/tabs.html" $path -}}
 
@@ -9,7 +10,7 @@
         {{- partial $hero . -}}
         <div id="slot" class="grid">
             <div id="div1">
-                {{- partial $info . -}}{{- partial $need . -}}
+                {{- partial $stat . -}}{{- partial $team . -}}{{- partial $need . -}}
             </div>
             <div id="div2">
                 {{- partial $tabs . -}}

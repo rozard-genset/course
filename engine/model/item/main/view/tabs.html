@@ -2,10 +2,16 @@
 {{- $plan := printf "%s/plan.html" $path -}}
 {{- $task := printf "%s/task.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
+{{- $desc := printf "%s/desc.html" $path -}}
+{{- $node := printf "%s/node.html" $path -}}
 
 <div id="tabs" class="mb-60">
     <div class="head grid mb-10 mt-00">
-        <div id="plan-action" data-target="plan-tabs" class="tab-action flex center-x open">
+        <div id="info-action" data-target="info-tabs" class="tab-action flex center-x open">
+            <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/tablet.svg" -}}</div>
+            <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_info" }}</p>
+        </div>
+        <div id="plan-action" data-target="plan-tabs" class="tab-action flex center-x">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/book.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_plan" }}</p>
         </div>
@@ -13,14 +19,12 @@
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/edit.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_task" }}</p>
         </div>
-         <div id="team-action" data-target="team-tabs" class="tab-action flex center-x">
-            <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/users.svg" -}}</div>
-            <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_team" }}</p>
-        </div>
+
     </div><hr>
     <div class="leaf tab-content">
-        <div id="plan-tabs" class="tabs-item open">{{- partial $plan . -}}</div>
+        <div id="info-tabs" class="tabs-item open">{{- partial $desc . -}}{{- partial $node . -}}</div>
+        <div id="plan-tabs" class="tabs-item">{{- partial $plan . -}}</div>
         <div id="taks-tabs" class="tabs-item">{{- partial $task . -}}</div>
-        <div id="team-tabs" class="tabs-item">{{- partial $team . -}}</div>
+        
     </div>
 </div>

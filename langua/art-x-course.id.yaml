@@ -21,10 +21,12 @@ main_hero_sesion_top: total
 main_hero_sesion_bot: pertamuan
 main_hero_proyek_top: aktivitas
 main_hero_proyek_bot: proyek
-main_hero_take_class: Daftar Kelas
-main_info_lead: informasi
+main_hero_take_class: ambil kelas
+main_stat_lead: pratinjau
 main_need_lead: prasyarat
 main_tabs_lead_plan: modul
 main_tabs_lead_task: tugas
-main_tabs_lead_team: tutor
+main_tabs_lead_info: Info
 main_task_sums_desc: tugas
+main_team_head_lead: pegelola
+main_desc_lead: "deskripsi"
