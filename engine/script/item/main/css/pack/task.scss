@@ -1,9 +1,25 @@
+ #task{
+		.leaf{
+			display: grid;
+			grid-template-columns: 100%;
+			grid-gap: 2.5rem 0;
+		}
+
+		.icon{
+			display: none;
+		}
+	}
+
 @media only screen and (min-width: 480px) {
 
     #task{
 		.leaf{
 			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
-			grid-gap: 1rem;
+			grid-gap: 3rem 2rem;
+		}
+
+		.icon{
+			display: block;
 		}
 	}
 }
@@ -14,6 +30,7 @@
     #task{
 		.leaf{
 			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
+			grid-gap: 3rem 1.5rem;
 		}
 	}
 }
@@ -21,9 +38,11 @@
 @media only screen and (min-width: 1024px) {
     #task{
 		.leaf{
-			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
-			grid-gap: 1rem;
+			grid-template-columns: calc( 50% - 2rem ) calc( 50% - 2rem ) ;
+			grid-gap: 2.5rem 4rem;
 		}
+
+		
 	}
 }
 

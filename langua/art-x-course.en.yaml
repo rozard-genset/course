@@ -1,6 +1,6 @@
-tingkat: level
-sertifikat: certificate
-pertemuan: session 
+level: level
+certificate: certificate
+session: session 
 featured: featured 
 visit: class information
 get_more: tampilkan lainya
@@ -12,3 +12,19 @@ home_term_long: explore subjects
 homer_term_link: all categories
 home_find_course: explore course
 home_all_course: general
+main_hero_provide: provide by
+main_hero_module_top: learning
+main_hero_module_bot: material
+main_hero_assign_top: active
+main_hero_assign_bot: assignment
+main_hero_sesion_top: total
+main_hero_sesion_bot: session
+main_hero_proyek_top: project
+main_hero_proyek_bot: sandbox
+main_hero_take_class: take class
+main_info_lead: information
+main_need_lead: requirement
+main_tabs_lead_plan: module
+main_tabs_lead_task: task
+main_tabs_lead_team: tutor
+main_task_sums_desc: task

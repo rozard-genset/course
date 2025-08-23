@@ -4,18 +4,18 @@
 {{- $team := printf "%s/team.html" $path -}}
 
 <div id="tabs" class="mb-60">
-    <div class="head grid mb-20 mt-10">
+    <div class="head grid mb-10 mt-00">
         <div id="plan-action" data-target="plan-tabs" class="tab-action flex center-x open">
-            <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/book.svg" -}}</div>
-            <div class="capitalize text-md"> Plan </div>
+            <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/book.svg" -}}</div>
+            <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_plan" }}</p>
         </div>
         <div id="taks-action" data-target="taks-tabs" class="tab-action flex center-x">
-            <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/edit.svg" -}}</div>
-            <div class="capitalize text-md">Task</div>
+            <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/edit.svg" -}}</div>
+            <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_task" }}</p>
         </div>
          <div id="team-action" data-target="team-tabs" class="tab-action flex center-x">
-            <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/users.svg" -}}</div>
-            <div class="capitalize text-md">Team</div>
+            <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/users.svg" -}}</div>
+            <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_team" }}</p>
         </div>
     </div><hr>
     <div class="leaf tab-content">

@@ -18,14 +18,14 @@
                 <div class="icon md text-white">{{ partial "icon/line/bar-chart-2.svg" }}</div>
                 <div class="meta flex center-x">
                     <div class="capitalize text-sm mb-00 mr-10 tablet">{{ T "level" }}</div>
-                    <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Module.Plan.Level }}</div>
+                    <div class="capitalize text-sm text-white font-bold">{{ .Page.Params.Parted.Info.Level }}</div>
                 </div>
             </div>
             <div class="item flex center-x center-y border-right">
                 <div class="icon md text-white">{{- partial "icon/line/award.svg" -}}</div>
                 <div class="meta flex center-x">
                     <div class="capitalize text-sm mb-00 mr-10 tablet">{{ T "certificate" }}</div>
-                    <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
+                    <div class="capitalize text-sm text-white font-bold ">{{- if .Page.Params.Parted.Info.Certificate -}} {{- .Page.Params.Info.Certificate -}} {{- else -}} None {{- end -}} </div>
                 </div>
             </div>
             <div class="item flex center-x center-y">

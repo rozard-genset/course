@@ -1,6 +1,10 @@
 <div id="info" class="mb-60">
     <div class="head mb-30">
-        <h2 class="text-md uppercase font-bold"> Information </h2>
+        {{- if .Page.Params.Parted.Info.Lead -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Info.Lead }}</h2>
+        {{- else -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "main_info_lead" }}</h2>
+        {{- end -}}
     </div>
     <div class="leaf grid border-all rounded-lg mb-30">
         <div class="flex center-x pa-05">
@@ -8,8 +12,8 @@
                 {{ partial "icon/line/bar-chart-2.svg" }}
             </div>
             <div class="meta">
-                <div class="capitalize text-sm mb-00">Dificulty</div>
-                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Module.Plan.Level }} </div>
+                <div class="capitalize text-sm mb-00">{{ T "level" }}</div>
+                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Parted.Info.Level }} </div>
             </div>
         </div>
         <div class="flex center-x border-left pa-05">
@@ -17,8 +21,8 @@
                 {{ partial "icon/line/award.svg" }}
             </div>
             <div class="meta">
-                <div class="capitalize text-sm mb-00"> Certificate </div>
-                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Module.Plan.Certificate -}} {{- .Page.Params.Module.Certificate -}} {{- else -}} None {{- end -}} </div>
+                <div class="capitalize text-sm mb-00">{{ T "certificate" }}</div>
+                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Parted.Info.Certificate -}} {{- .Page.Params.Module.Certificate -}} {{- else -}} None {{- end -}} </div>
             </div>
         </div>
     </div>
