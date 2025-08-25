@@ -9,7 +9,7 @@
     <div class="leaf grid">
         {{- range .Page.Params.Parted.Need.Data -}}
         <div class="flex mb-30">
-            <div class="icon md mr-15">
+            <div class="icon sm mr-15">
                 {{ $icon :=  printf "icon/line/check-circle.svg" }}
                 {{ with .icon }} {{ $icon = . }}{{ end }}
                 {{- partial $icon -}}

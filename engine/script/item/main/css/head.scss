@@ -29,7 +29,7 @@
 @media only screen and (min-width: 1024px) {
 
 	#slot{
-		grid-template-columns: 31% calc(69% - 6rem);
+		grid-template-columns: calc( 37% - 6rem ) 63%;
 		grid-gap: 6rem;
 
 		#div1{
@@ -47,8 +47,8 @@
 @media only screen and (min-width: 1280px) {
 
 	#slot{
-		grid-template-columns: 31% calc(69% - 8rem);
-        grid-gap: 8rem;
+		grid-template-columns: calc( 37% - 7rem ) 63%;
+        grid-gap: 7rem;
 	}
 }
 

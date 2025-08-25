@@ -1,0 +1,19 @@
+{{- $session := 1 -}}
+ 
+<div class="task mb-20">
+    <hr class="mt-00 mb-15">
+    <div class="desc text-sm mb-40">{{ .desc.task }}</div>
+    <div class="leaf grid">
+    {{- range .task -}}
+        <div class="desc border-left">
+            <div class="head flex center-x ml-15">
+                <div class="icon sm ">{{ partial "icon/line/edit.svg" }}</div>
+                <h2 class="text-md font-bold mb-00 mt-00">{{ .type }}</h2>
+                <h2 class="text-lg font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ .sums }}</h2> {{ T "parted_task_name" }}
+            </div>
+            <hr class="mt-00">
+            <p class="text-sm mb-00 mt-00 pl-15 pt-10 pb-10">{{ .desc }}</p>
+        </div>
+    {{- end -}}
+    </div>
+</div>

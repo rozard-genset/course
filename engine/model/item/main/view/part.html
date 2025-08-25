@@ -1,0 +1,32 @@
+{{- $session := 1 -}}
+
+<div id="part" class="mt-60 grid">
+    {{- range .Page.Params.Parted.Plan.Data -}}
+    <div class="period">
+        <div class="head mb-40">
+            <div class="flex">
+                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "session" }}  {{ $session }} </div>
+                <h3 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .lead.part }}</h3>
+                <div class="icon md border-left border-top border-right ml-a dropdown" data-target="droppart-{{ $session }}">
+                    {{ partial "icon/line/plus.svg" }}
+                </div>
+            </div><hr class="mt-00 mb-15">
+            <div class="desc text-sm mb-40">{{ .desc.part }}</div>
+        </div>
+        <div id="droppart-{{ $session }}" class="leaf dropboxs">
+            {{- range .part -}}
+            <div class="item flex">
+                <div class="icon sm rounded-full">
+                    {{ partial "icon/line/book.svg" }}
+                </div>
+                <div class="desc border-left">
+                    <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .name }}</h2>
+                    <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .desc }}</p>
+                </div>
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+    {{- $session = math.Sum $session 1 -}}
+    {{- end -}}
+</div>

@@ -47,6 +47,8 @@ parted_team_lead: stakeholder
 
 parted_task_name: task
 
+parted_task_lead: assignment
+
 
 home_class_tutor: learnhub
 home_class_tutor_long: tutor classroom

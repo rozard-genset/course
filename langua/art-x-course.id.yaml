@@ -30,7 +30,7 @@ parted_stat_lead: pratinjau
 
 parted_take_free: take class
 parted_take_paid: checkout
-parted_take_pric: gratis
+parted_take_pric: tersedia
 
 parted_node_lead: ruang kelas
 parted_node_clas: kelas
@@ -46,7 +46,7 @@ parted_node_ends: selesai
 parted_team_lead: penyusun
 
 parted_task_name: tugas
-
+parted_task_lead: penugasan
 
 home_class_tutor: kelas tutor
 home_class_tutor_long: kelas tutor

@@ -1,17 +1,34 @@
-<div id="task" class="mt-60">
-    <div class="leaf grid">
-        {{- range .Page.Params.Parted.Task.Data -}}
-        <div class="desc border-left">
-            <div class="head flex center-x ml-15">
-                <div class="icon sm ">
-                    {{ partial "icon/line/edit.svg" }}
+{{- $session := 1 -}}
+
+<div id="task" class="mt-60 grid">
+    {{- range .Page.Params.Parted.Plan.Data -}}{{ if .task }}
+    <div class="period">
+        <div class="head mb-40">
+            <div class="flex">
+                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "parted_task_lead" }}  {{ $session }} </div>
+                <h3 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .lead.task }}</h3>
+                <div class="icon md border-left border-top border-right ml-a dropdown" data-target="droptask-{{ $session }}">
+                    {{ partial "icon/line/plus.svg" }}
                 </div>
-                <h2 class="uppercase text-sm font-bold mb-00 mt-00">{{ .type }}</h2>
-                <h2 class="text-lg font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ .sums }}</h2> {{ T "parted_task_name" }}
-            </div>
-            <hr class="mt-00">
-            <p class="text-sm mb-00 mt-00 pl-15 pt-10 pb-10">{{ .desc }}</p>
+            </div><hr class="mt-00 mb-15">
+            <div class="desc text-sm mb-40">{{ .desc.task }}</div>
         </div>
-        {{- end -}}
+        <div id="droptask-{{ $session }}" class="leaf dropboxs">
+            {{- range .task -}}
+            <div class="item border-left">
+                <div class="head flex center-x ml-15">
+                    <div class="icon xs">
+                        {{ partial "icon/line/edit.svg" }}
+                    </div>
+                    <h2 class="capitalize text-md font-bold mb-00 mt-00">{{ .type }}</h2>
+                    <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ .sums }}</h2> {{ T "parted_task_name" }}
+                </div>
+                <hr class="mt-00">
+                <p class="text-sm mb-00 mt-00 pl-15 pt-10 pb-10">{{ .desc }}</p>
+            </div>
+            {{- end -}}
+        </div>
     </div>
+    {{- $session = math.Sum $session 1 -}}
+    {{- end -}}{{- end -}}
 </div>

@@ -1,5 +1,5 @@
 {{- $path := "module/course/item/main/view" -}}
-{{- $plan := printf "%s/plan.html" $path -}}
+{{- $part := printf "%s/part.html" $path -}}
 {{- $task := printf "%s/task.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $desc := printf "%s/desc.html" $path -}}
@@ -11,7 +11,7 @@
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/tablet.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_info" }}</p>
         </div>
-        <div id="plan-action" data-target="plan-tabs" class="base-action tab-action flex center-x">
+        <div id="part-action" data-target="part-tabs" class="base-action tab-action flex center-x">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/book.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_plan" }}</p>
         </div>
@@ -21,8 +21,8 @@
         </div>
     </div><hr>
     <div class="leaf tab-content">
-        <div id="info-tabs" class="base-item tabs-item open">{{- partial $desc . -}}{{- partial $node . -}}</div>
-        <div id="plan-tabs" class="base-item tabs-item">{{- partial $plan . -}}</div>
-        <div id="taks-tabs" class="base-item tabs-item">{{- partial $task . -}}</div>
+        <div id="info-tabs" class="base-item tabs-item">{{- partial $desc . -}}{{- partial $node . -}}</div>
+        <div id="part-tabs" class="base-item tabs-item">{{- partial $part . -}}</div>
+        <div id="taks-tabs" class="base-item tabs-item open">{{- partial $task . -}}</div>
     </div>
 </div>

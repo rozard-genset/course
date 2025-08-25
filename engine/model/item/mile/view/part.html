@@ -1,0 +1,17 @@
+<div class="part mb-20">
+    <hr class="mt-00 mb-15">
+    <div class="desc text-sm mb-40">{{ .desc.part }}</div>
+    <div class="leaf grid">
+    {{- range .part -}}
+        <div class="flex mb-10">
+            <div class="icon sm rounded-full">
+                {{ partial "icon/line/book.svg" }}
+            </div>
+            <div class="desc border-left">
+                <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .name }}</h2>
+                <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .desc }}</p>
+            </div>
+        </div>
+    {{- end -}}
+    </div>
+</div>
