@@ -5,7 +5,7 @@
 {{- $desc := printf "%s/desc.html" $path -}}
 {{- $node := printf "%s/node.html" $path -}}
 
-<div id="tabs" class="mb-60">
+<div id="tabs">
     <div class="head grid mb-10 mt-00">
         <div id="info-action" data-target="info-tabs" class="base-action tab-action flex center-x open">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/tablet.svg" -}}</div>
@@ -21,8 +21,8 @@
         </div>
     </div><hr>
     <div class="leaf tab-content">
-        <div id="info-tabs" class="base-item tabs-item">{{- partial $desc . -}}{{- partial $node . -}}</div>
+        <div id="info-tabs" class="base-item tabs-item open">{{- partial $desc . -}}{{- partial $node . -}}</div>
         <div id="part-tabs" class="base-item tabs-item">{{- partial $part . -}}</div>
-        <div id="taks-tabs" class="base-item tabs-item open">{{- partial $task . -}}</div>
+        <div id="taks-tabs" class="base-item tabs-item">{{- partial $task . -}}</div>
     </div>
 </div>
