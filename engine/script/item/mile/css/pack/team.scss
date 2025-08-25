@@ -1,14 +1,10 @@
-
-
-
 @media only screen and (min-width: 480px) {
-    #team{
+	#team{
 		.leaf{
 			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 			grid-gap: 1rem;
 		}
 	}
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -21,18 +17,20 @@
 }
 
 @media only screen and (min-width: 1024px) {
-    
     #team{
 		.leaf{
 			grid-template-columns: 100%;
-			grid-gap: 0rem;
 		}
 	}
-
 }
 
 @media only screen and (min-width: 1280px) {
-    
+    #team{
+		.leaf{
+			grid-template-columns: 100%;
+			grid-gap: 1rem;
+		}
+	}
 }
 
 @media only screen and (min-width: 1536px) {

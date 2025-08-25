@@ -1,9 +1,6 @@
-
-
-
 @media only screen and (min-width: 480px) {
 
-    #need{
+	#need{
         .leaf{
 			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 			grid-gap: 1rem;
@@ -12,13 +9,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-   
-    #need{
-        .leaf{
-			grid-template-columns: repeat(3, calc( 33.333% - 1rem ) );
-			grid-gap: 1rem;
-		}
-    }
+    
 }
 
 @media only screen and (min-width: 1024px) {

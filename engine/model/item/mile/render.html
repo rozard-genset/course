@@ -1,17 +1,19 @@
 {{- $path := "module/course/item/mile/view" -}}
 {{- $hero := printf "%s/hero.html" $path -}}
+{{- $tabs := printf "%s/tabs.html" $path -}}
 {{- $plan := printf "%s/plan.html" $path -}}
-{{- $take := printf "%s/take.html" $path -}}
+{{- $stat := printf "%s/stat.html" $path -}}
 {{- $team := printf "%s/team.html" $path -}}
 {{- $need := printf "%s/need.html" $path -}}
 
 <main id="mile">
     <article id="slot" class="wrap grid">
         <div id="div1" class="">
-           {{- partial $hero . -}}{{- partial $plan . -}}
+           {{- partial $hero . -}}{{- partial $tabs . -}}
         </div>
         <div id="div2" class="">
-            {{- partial $take . -}}{{- partial $need . -}}{{- partial $team . -}}
+           
+            {{- partial $stat . -}}{{- partial $need . -}}{{- partial $team . -}}
         </div>
     </article>
 </main>

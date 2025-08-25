@@ -1,17 +1,17 @@
 {{- $ctx  := . -}}{{- $site := $ -}}{{- $index := 1 -}}
 <div id="node">
-    <div class="subhead border-bottom flex center-x mb-20">
+    <div class="head border-bottom flex center-x mb-20">
         <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/layers.svg" -}}</div>
         <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">{{ T "parted_node_lead" }}</h2>
         <div class="boxtab flex center-x ml-a">
             {{- range .Page.Params.Parted.Node -}}
-            <div id="info-{{ .class | urlize }}-action" data-target="tabs-page-group-{{ .class | urlize }}" class="node-action tab-action flex center-x open ml-15">
+            <div id="info-{{ .class | urlize }}-action" data-target="tabs-page-group-{{ .class | urlize }}" class="node-action tab-action flex center-x ml-15">
                 <p class="text-sm font-bold uppercase"><span class="tablet">{{ T "parted_node_clas" }}</span> {{ .class }}</p>
             </div>
             {{- end -}}
         </div>
     </div>
-    <div class="subleaf">
+    <div class="leaf">
         {{- range .Page.Params.Parted.Node -}}
             <div id="tabs-page-group-{{ .class | urlize }}" class="node-item tabs-item {{ with $index }}open{{ end }}">
                 <div class="quota mb-20 mt-30 flex center-x">
@@ -64,8 +64,7 @@
                         <h4 class="text-md mt-00 mb-00">{{ .tutor }}</h4>
                     </div>
                 </div>
-            </div>
-            {{ $index = "" }}
+            </div>{{- $index = "" -}}
         {{- end -}}
     </div>
 </div>

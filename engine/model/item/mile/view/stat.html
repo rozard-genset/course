@@ -1,0 +1,67 @@
+<div id="stat" class="mb-60">
+    <div class="head mb-40">
+        {{- if .Page.Params.Parted.Info.Lead -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Stat.Lead }}</h2>
+        {{- else -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_stat_lead" }}</h2>
+        {{- end -}}
+    </div>
+    <div class="leaf grid border-all rounded-lg mb-40">
+        <div class="flex center-x border-right pa-05">
+            <div class="icon md text-white">
+                {{ partial "icon/line/bar-chart-2.svg" }}
+            </div>
+            <div class="meta">
+                <div class="capitalize text-sm mb-00">{{ T "level" }}</div>
+                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Parted.Stat.Data.Level }} </div>
+            </div>
+        </div>
+        <div class="flex center-x pa-05">
+            <div class="icon md text-white">
+                {{ partial "icon/line/award.svg" }}
+            </div>
+            <div class="meta">
+                <div class="capitalize text-sm mb-00">{{ T "certificate" }}</div>
+                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Parted.Stat.Data.Certs -}} {{- .Page.Params.Parted.Stat.Data.Certs -}} {{- else -}} None {{- end -}} </div>
+            </div>
+        </div>
+    </div>
+    <div class="info grid">
+        <div class="flex center-x mb-20">
+            <div class="count font-md text-3xl mr-20">
+                {{- partial "lib/course/count-material.html"  . -}}
+            </div>
+            <div class="text">
+                <div class="uppercase font-bold text-xs text-gray-500">{{ T "module_sum_top" }}</div>
+                <div class="capitalize text-md">{{ T "module_sum_bot" }}</div> 
+            </div>
+        </div>
+        <div class="flex center-x mb-20">
+            <div class="count font-md text-3xl mr-20">
+                {{- partial "lib/course/count-assigment.html" . -}}
+            </div>
+            <div class="text">
+                <div class="uppercase font-bold text-xs text-gray-500">{{ T "assign_sum_top" }}</div>
+                <div class="capitalize text-md">{{ T "assign_sum_bot" }}</div> 
+            </div>
+        </div>
+        <div class="flex center-x mb-20">
+            <div class="count font-md text-3xl mr-20">
+                {{- partial "lib/course/count-periodic.html"  . -}}
+            </div>
+            <div class="text">
+                <div class="uppercase font-bold text-xs text-gray-500">{{ T "sesion_sum_top" }}</div>
+                <div class="capitalize text-md">{{ T "sesion_sum_bot" }}</div> 
+            </div>
+        </div>
+        <div class="flex center-x mb-20">
+            <div class="count font-md text-3xl mr-20">
+                {{- partial "lib/course/count-projects.html"  . -}}
+            </div>
+            <div class="text">
+                <div class="uppercase font-bold text-xs text-gray-500">{{ T "proyek_sum_top" }}</div>
+                <div class="capitalize text-md">{{ T "proyek_sum_bot" }}</div> 
+            </div>
+        </div>
+    </div>
+</div>

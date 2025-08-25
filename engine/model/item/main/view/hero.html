@@ -1,74 +1,67 @@
 {{- $ctx  := . -}}{{- $site := $ -}}
-<div id="hero" class="grid">
-    <div class="top mb-70">
-        {{- partial "module/course/item/main/part/thumb-feature.html" . }}
-    </div>
-    <div class="bot mb-70">
-        <div class="tablet grid">
-        <div class="title mb-20">
-            <h1 class="text-4xl mt-00">{{ .Title }}</h1>
-            <div class="info">
-                <div class="mb-05 mb-30 flex center-x">
-                    <div class="img border-all rounded-lg mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
-                    <div class="text">
-                        <p class="capitalize mb-10 mt-00">{{ T "main_hero_provide" }}</p>
-                        <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Parted.Team.Name -}}</p>
+<div id="hero">
+    <div class="rows grid">
+        <div class="thumb">
+            {{- partial "module/course/item/main/part/thumb-feature.html" . }}
+        </div>
+        <div class="metas grid center-x">
+            <div class="inform">
+                <div class="title mb-20">
+                    <h1 class="text-4xl mt-00 mb-00">{{ .Title }}</h1>
+                    <div class="info mr-30">
+                        <div class="flex center-x mb-05 mb-40">
+                            <div class="img border-all rounded-lg flex center-x mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
+                            <div class="text">
+                                <p class="capitalize mb-05 mt-00">{{ T "parted_hero_prov" }}</p>
+                                <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Parted.Team.Name -}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card grid">
+                    <div class="flex center-x mb-20">
+                        <div class="count font-md text-3xl mr-20">
+                            {{- partial "lib/course/count-material.html"  . -}}
+                        </div>
+                        <div class="text">
+                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "module_sum_top" }}</div>
+                            <div class="capitalize text-md">{{ T "module_sum_bot" }}</div> 
+                        </div>
+                    </div>
+                    <div class="flex center-x mb-20">
+                        <div class="count font-md text-3xl mr-20">
+                            {{- partial "lib/course/count-assigment.html" . -}}
+                        </div>
+                        <div class="text">
+                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "assign_sum_top" }}</div>
+                            <div class="capitalize text-md">{{ T "assign_sum_bot" }}</div> 
+                        </div>
+                    </div>
+                    <div class="flex center-x mb-20">
+                        <div class="count font-md text-3xl mr-20">
+                            {{- partial "lib/course/count-periodic.html"  . -}}
+                        </div>
+                        <div class="text">
+                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "sesion_sum_top" }}</div>
+                            <div class="capitalize text-md">{{ T "sesion_sum_bot" }}</div> 
+                        </div>
+                    </div>
+                    <div class="flex center-x mb-20">
+                        <div class="count font-md text-3xl mr-20">
+                            {{- partial "lib/course/count-projects.html"  . -}}
+                        </div>
+                        <div class="text">
+                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "proyek_sum_top" }}</div>
+                            <div class="capitalize text-md">{{ T "proyek_sum_bot" }}</div> 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card grid">
-            <div class="flex center-x mb-20">
-                <div class="count font-md text-3xl mr-20">
-                    {{- partial "lib/course/count-material.html"  . -}}
-                </div>
-                <div class="text">
-                    <div class="uppercase font-bold text-xs text-gray-500">{{ T "main_hero_module_top" }}</div>
-                    <div class="capitalize text-md">{{ T "main_hero_module_bot" }}</div> 
-                </div>
-            </div>
-            <div class="flex center-x mb-20">
-                <div class="count font-md text-3xl mr-20">
-                    {{- partial "lib/course/count-assigment.html" . -}}
-                </div>
-                <div class="text">
-                    <div class="uppercase font-bold text-xs text-gray-500">{{ T "main_hero_assign_top" }}</div>
-                    <div class="capitalize text-md">{{ T "main_hero_assign_bot" }}</div> 
-                </div>
-            </div>
-            <div class="flex center-x mb-20">
-                <div class="count font-md text-3xl mr-20">
-                    {{- partial "lib/course/count-periodic.html"  . -}}
-                </div>
-                <div class="text">
-                    <div class="uppercase font-bold text-xs text-gray-500">{{ T "main_hero_sesion_top" }}</div>
-                    <div class="capitalize text-md">{{ T "main_hero_sesion_bot" }}</div> 
-                </div>
-            </div>
-            <div class="flex center-x mb-20">
-                <div class="count font-md text-3xl mr-20">
-                    {{- partial "lib/course/count-projects.html"  . -}}
-                </div>
-                <div class="text">
-                    <div class="uppercase font-bold text-xs text-gray-500">{{ T "main_hero_proyek_top" }}</div>
-                    <div class="capitalize text-md">{{ T "main_hero_proyek_bot" }}</div> 
-                </div>
-            </div>
-        </div>
-        </div>
-        <hr class="mb-20 mt-20">
-        <div id="action" class="flex center-x">
-            <div class="checkout">
-                {{ range first 1 .Pages }}
-                <a href="{{ .RelPermalink }}" class="button outline flex center-x">
-                    <div class="icon sm">{{- partial "icon/line/bookmark.svg" -}}</div>
-                    <div class="capitalize text-sm font-bold">{{ T "main_hero_take_class" }}</div>
-                </a>
-                {{ end }}
-            </div>
-            <div class="share action flex center-x ml-a">
-                <div class="button outline icon sm">{{- partial "icon/line/share-2.svg" -}}</div>
-            </div>
+            {{- if .Page.Params.Parted.Paid.Data.Price -}}
+                {{- partial "module/course/item/main/view/paid.html" . -}}
+            {{- else -}}
+                {{- partial "module/course/item/main/view/open.html" . -}}
+            {{- end -}}
         </div>
     </div>
 </div>

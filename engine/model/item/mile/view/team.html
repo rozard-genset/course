@@ -1,18 +1,21 @@
 {{- $ctx  := . -}}{{- $site := $ -}}
-<div id="team" class="mb-60">
-    <div class="head mb-15">
-        <h2 class="title text-md uppercase font-bold font-light mt-00 mb-00">Course Tutor</h2>
+<div id="team">
+    <div class="head mb-15 mb-30">
+        {{- if .Page.Params.Parted.Team.Lead -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Team.Lead }}</h2>
+        {{- else -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_team_lead" }}</h2>
+        {{- end -}}
     </div>
-    <hr class="mb-40">
     <div class="leaf grid">
-        {{- if .Page.Params.Module.Organ.Team -}}{{- range .Page.Params.Module.Organ.Team -}}{{- if .name -}}
-        <div class="card flex center-x mb-50 mr-30">
-            <div class="img rounded-full">{{- partial "module/course/item/mile/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}</div>
+    {{- range .Page.Params.Parted.Team.User -}}{{- if .name -}}
+        <div class="card flex center-x mb-15">
+            <div class="img rounded-full">{{- partial "module/course/item/main/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .name ) -}}</div>
             <div class="bio ml-20">
                 <h2 class="text-md font-bold mb-00 mt-00">{{- .name -}}</h2>
                 <h3 class="text-sm mb-00 mt-00">{{- .post -}}</h3>
             </div>
         </div>
-        {{- end -}}{{- end -}}{{- end -}}
+    {{- end -}}{{- end -}}
     </div>
 </div>

@@ -1,42 +1,30 @@
 {{- $ctx  := . -}}{{- $site := $ -}}
 
 <div id="hero" class="mb-60">
-    <div class="mb-60">
+    <div class="head">
         {{- partial "module/course/item/mile/part/thumb-feature.html" . }}
-        <div class="organ">
-            <div class="mb-20">
-                {{- partial "lib/course/hero-group.html" . -}}
+    </div>
+    <div class="leaf">
+        <div class="mb-20">
+            {{- partial "lib/course/hero-group.html" . -}}
+        </div>
+        <div class="mt-10 mb-20">
+            <div class="thumb border-all rounded-lg mr-20 pa-05">
+                {{- partial "module/course/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}
             </div>
-            <div class="mt-10 mb-20">
-                <div class="thumb border-all rounded-lg mr-20 pa-05">
-                    {{- partial "module/course/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Module.Organ.Name ) -}}
+            <div class="texts">
+                <div class="named flex center-x">
+                    <span class="capitalize text-lg text-sm">{{ T "parted_hero_prov" }}</span>
+                    <h2 class="uppercase font-bold text-md ml-10 mt-00 mb-00">{{- .Page.Params.Parted.Team.Name -}}</h2>
                 </div>
-                <div class="texts mr-05 flex">
-                    <div class="named flex center-x">
-                        <span class="capitalize text-lg text-sm">Present by</span>
-                        <h2 class="uppercase font-bold text-md ml-10 mt-00 mb-00">{{- .Page.Params.Module.Organ.Name -}}</h2>
-                    </div>
-                    <div class="action flex center-x ml-a">
-                    {{- if eq .Page.Params.Module.Paid.Prices "" -}}
-                        {{- range first 1 .Pages -}}
-                        <a href="{{ .RelPermalink }}" class="button flex center-x ml-a">
-                            <div class="icon md">{{- partial "icon/line/edit.svg" -}}</div>
-                            <div class="text-md font-bold">Take Course</div>
-                        </a>
-                        {{- end -}}
-                        <div class="share ml-20">
-                            <div class="icon md button outline flex center-x mr-00" title="share course">
-                                {{- partial "icon/line/share-2.svg" -}}
-                            </div>
-                        </div>
-                    {{- end -}}
-                    </div>
+                <div class="action flex center-x">
+                    {{- if .Page.Params.Parted.Paid.Data.Price -}}
+                    {{- partial "module/course/item/mile/view/paid.html" . -}}
+                {{- else -}}
+                    {{- partial "module/course/item/mile/view/open.html" . -}}
+                {{- end -}}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="mb-60">
-        <h1 class="text-3xl mt-05 mb-50">{{ .Title }}</h1>
-        <div class="mb-60 content">{{ .Content }}</div>
     </div>
 </div>

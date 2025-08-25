@@ -3,7 +3,7 @@
         {{- if .Page.Params.Parted.Info.Lead -}}
             <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Stat.Lead }}</h2>
         {{- else -}}
-            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "main_stat_lead" }}</h2>
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_stat_lead" }}</h2>
         {{- end -}}
     </div>
     <div class="leaf grid border-all rounded-lg mb-30">
@@ -13,7 +13,7 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "level" }}</div>
-                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Parted.Stat.Level }} </div>
+                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Parted.Stat.Data.Level }} </div>
             </div>
         </div>
         <div class="flex center-x border-left pa-05">
@@ -22,7 +22,7 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "certificate" }}</div>
-                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Parted.Stat.Certificate -}} {{- .Page.Params.Module.Certificate -}} {{- else -}} None {{- end -}} </div>
+                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Parted.Stat.Data.Certs -}} {{- .Page.Params.Parted.Stat.Data.Certs -}} {{- else -}} None {{- end -}} </div>
             </div>
         </div>
     </div>

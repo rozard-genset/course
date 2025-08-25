@@ -1,15 +1,24 @@
 <div id="need" class="mb-60">
-    <div class="head mb-15">
-        <h2 class="title text-md uppercase font-bold font-light mt-00 mb-00">Requirement</h2>
+    <div class="head mb-15 mb-40">
+        {{- if .Page.Params.Parted.Info.Lead -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Need.Lead }}</h2>
+        {{- else -}}
+            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_need_lead" }}</h2>
+        {{- end -}}
     </div>
-    <hr class="mb-40">
     <div class="leaf grid">
-        {{- range .Page.Params.Module.Requirement -}}
-        <div class="flex center-x mb-30">
-            <div class="icon md mr-20">
-                {{- partial "icon/line/check-circle.svg" -}}
+        {{- range .Page.Params.Parted.Need.Data -}}
+        <div class="flex mb-30">
+            <div class="icon md mr-15">
+                {{ $icon :=  printf "icon/line/check-circle.svg" }}
+                {{ with .icon }} {{ $icon = . }}{{ end }}
+                {{- partial $icon -}}
             </div>
-            <p class="mb-00 mt-00 ml-15">{{ . }}</p>
+            <div class="text border-left">
+                <h3 class="uppercase text-sm font-bold mb-05 mt-00 pl-20">{{ .name }}</h3>
+                <hr>
+                <p class="text-sm mb-00 mt-00 pl-20">{{ .desc }}</p>
+            </div>
         </div>
         {{- end -}}
     </div>

@@ -6,6 +6,8 @@
     }
 
 	.icon{
+		min-width: 1.3rem;
+		width: 1.3rem;
         color: var(--link-01-based);
 	}
 
@@ -18,11 +20,6 @@
 		div{
 			text-wrap: nowrap;
 		}
-	}
-
-	.icon{
-		min-width: 1.3rem;
-		width: 1.3rem;
 	}
 }
 

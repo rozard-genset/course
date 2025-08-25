@@ -1,14 +1,4 @@
-{{- $image := "" -}}
-
-{{- if .Page.Params.Metadata.thumb -}}
-    {{- $image = .Page.Resources.GetMatch .Page.Params.Metadata.thumb -}}
-{{- end -}}
-
-{{- if .Page.Params.Module.Cover -}}
-    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
-{{- end -}}
-
-{{- $image = resources.GetMatch "media/course/info.png" -}}
+{{- $image := resources.GetMatch "media/course/info.png" -}}
 
 
 {{- if $image -}}

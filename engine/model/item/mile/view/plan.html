@@ -1,62 +1,64 @@
-{{- $ctx  := . -}}
+{{- $ctx  := . -}}{{ $sum := 1 }}
 
-<div id="plan">
-    {{- range .Page.Params.Module.Plans -}}
-    <div class="plan-session mb-60">
-        <div class="head flex center-x mb-10">
-            <div class="text flex center-x">
-                <div class="icon lg rounded-md la-01 mr-20">{{ partial "icon/line/folder.svg" }}</div>
-                <h2 class="font-bold text-md uppercase mt-00 mb-00">Session {{ .period }}</h2>
+<div id="plan" class="mt-40">
+    {{- range .Page.Params.Parted.Plan.Data -}}
+    <div class="period mb-20">
+        <div class="head flex center-x">
+            <div class="text">
+                <div class="flex center-x">
+                    <div class="text-sm font-bold uppercase mt-00 mb-00">{{ T "session" }} {{ $sum }}</div>
+                    <span class="ml-10 mr-10 tablet"> | </span>
+                    <h2 class="text-sm font-bold uppercase mt-00 mb-00 tablet">{{ .lead }}</h2>
+                </div>
             </div>
             <div class="menu flex center-x ml-a">
-                <div id="info-action-{{ .period }}" data-target="info-tabs-{{ .period }}" class="tab-action flex center-x open mr-20">
-                    <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/folder.svg" -}}</div>
+                <div id="base-action-{{ $sum }}" data-target="base-tabs-{{ $sum }}" class="tab-action flex center-x open">
+                    <div class="icon xs rounded-full border-all mr-10">{{- partial "icon/line/tag.svg" -}}</div>
                 </div>
-                <div id="plan-action-{{ .period }}" data-target="plan-tabs-{{ .period }}" class="tab-action flex center-x open mr-20">
-                    <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/book.svg" -}}</div>
+                <div id="part-action-{{ $sum }}" data-target="part-tabs-{{ $sum }}" class="tab-action flex center-x">
+                    <div class="icon xs rounded-full border-all mr-10">{{- partial "icon/line/book.svg" -}}</div>
                 </div>
-                <div id="taks-action-{{ .period }}" data-target="taks-tabs-{{ .period }}" class="tab-action flex center-x">
-                    <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/edit.svg" -}}</div>
+                <div id="taks-action-{{ $sum }}" data-target="taks-tabs-{{ $sum }}" class="tab-action flex center-x">
+                    <div class="icon xs rounded-full border-all mr-10">{{- partial "icon/line/edit.svg" -}}</div>
                 </div>
             </div>
         </div>
-        <hr class="mb-30">
         <div class="leaf">
-            <div id="info-tabs-{{ .period }}" class="tabs-item open">
-                <div class="flex">
-                    {{- partial "module/course/item/mile/part/thumb-plans.html" $ctx }}
-                    <p class="capitalize text-md mt-00 ml-20">{{ .describe }}</p>
-                 </div>
+            <div id="base-tabs-{{ $sum }}" class="tabs-item open">
+                <p class="infos mt-05">{{ .desc }}</p>
             </div>
-            <div id="plan-tabs-{{ .period }}" class="tabs-item">
-                <div class="grid">
-                {{- range .material -}}
-                    <div class="flex center-x mb-10">
-                        <div class="icon md rounded-full pa-05">
+            <div id="part-tabs-{{ $sum }}" class="tabs-item">
+                <div class="grid mt-40 mb-20">
+                {{- range .part -}}
+                    <div class="flex mb-10">
+                        <div class="icon sm rounded-full">
                             {{ partial "icon/line/book.svg" }}
                         </div>
-                        <div class="desc flex border-left">
-                            <p class="text-md mb-00 mt-00 ml-10 pl-10">{{ . }}</p>
+                        <div class="desc border-left">
+                            <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .name }}</h2>
+                            <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .desc }}</p>
                         </div>
                     </div>
-                {{ end }}
+                {{- end -}}
                 </div>
             </div>
-            <div id="taks-tabs-{{ .period }}" class="tabs-item">
-                <div class="grid">
-                {{- range .assignment -}}
-                    <div class="flex center-x mb-10">
-                        <div class="icon md rounded-full pa-05">
+            <div id="taks-tabs-{{ $sum }}" class="tabs-item">
+                <div class="grid mt-40 mb-20">
+                {{- range .task -}}
+                    <div class="flex mb-10">
+                        <div class="icon sm rounded-full">
                             {{ partial "icon/line/edit.svg" }}
                         </div>
-                        <div class="desc flex border-left">
-                            <p class="text-md mb-00 mt-00 ml-10 pl-10">{{ . }}</p>
+                        <div class="desc border-left">
+                            <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .type }}</h2>
+                            <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .desc }}</p>
                         </div>
                     </div>
-                {{ end }}
+                {{- end -}}
                 </div>
             </div>
         </div>
     </div>
-    {{ end }}
- </div>
+    {{ $sum = math.Sum $sum 1 }}
+    {{- end -}}
+</div>

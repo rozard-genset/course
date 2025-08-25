@@ -1,19 +1,33 @@
 #hero{
 
+	margin-bottom: 3rem;
+
 	.card{
 		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 		grid-gap: 1rem;
 	}
 
-	.title .img{
-		background-color: var(--background-02);
+	.title {
+		h1{
+			width: 100%;
+			margin-bottom: 1.5rem;
+		}
+		.img{
+			background-color: var(--background-02);
+		}
+
+		img{
+			min-width: 32px;
+			height: auto;
+		}
 	}
 
-	.title img{
-		height: auto;
+
+	.thumb{
+		margin-bottom: 2.5rem;
 	}
 
-	.share svg{
+	.sharing svg{
 		margin-right: 0;
 	}
 }
@@ -21,21 +35,13 @@
 
 @media only screen and (min-width: 480px) {
 
-}
+	 #hero{
 
-@media only screen and (min-width: 768px) {
-    
-    #hero{
-		.info{
-			display: grid;
-			grid-template-columns: 30% 70%;
-
-			p{
-				margin-top: 0;
+		.inform{
+			.title{
+				display: flex;
+				flex-direction: row-reverse;
 			}
-		}
-
-		.tablet{
 			.card {
 				grid-template-columns: repeat(4, calc( 25% - 1rem ) );
 				grid-gap: 1rem;
@@ -44,21 +50,29 @@
 	}
 }
 
+@media only screen and (min-width: 768px) {
+
+}
+
 @media only screen and (min-width: 1024px) {
  
     #hero{
-		grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
-		grid-gap: 4rem;
+		margin-bottom: 4rem;
 
-		.info{
-			grid-template-columns: 100%;
-
-			p{
-				margin-top: 0;
-			}
+		.rows{
+			grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
+			grid-gap: 4rem;
 		}
 
-		.tablet{
+		.thumb{
+			margin-bottom: 0rem;
+		}
+
+		.inform{
+			.title{
+				display: block;
+				margin-bottom: 0rem;
+			}
 			.card {
 				grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 				grid-gap: 1rem;
@@ -67,12 +81,17 @@
 	}	
 }
 
+
 @media only screen and (min-width: 1280px) {
     
     #hero{
-		margin-bottom: 2rem;
+		display: grid;
+		align-items: center;
+		min-height: 86vh;
+		margin-bottom: 0rem;
 	}
 }
+
 
 @media only screen and (min-width: 1536px) {
 

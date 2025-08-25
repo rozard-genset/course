@@ -1,4 +1,5 @@
- <div id="take">
+<div class="take">
+    <hr class="mb-20">
     <div class="flex center-x">
         <h2 class="text-4xl uppercase font-bold mt-00 mb-00 flex center-x">
             {{- if eq .Site.Language.Lang "id" -}}
@@ -7,7 +8,7 @@
                 {{- .Page.Params.Parted.Paid.Data.Price -}}<span class="text-xl font-light ml-10">USD</span> 
             {{- end -}}
         </h2>
-        <div class="checkout ml-40">
+        <div class="checkout ml-a">
             {{- range first 1 .Pages -}}
             <a href="{{ .RelPermalink }}" class="button outline flex center-x">
                 <div class="icon sm">{{ partial "icon/line/shopping-bag.svg" }}</div>

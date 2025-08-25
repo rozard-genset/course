@@ -1,0 +1,23 @@
+<div id="tabs" class="mb-20">
+    <div class="head border-bottom flex center-x mb-20">
+        <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/tablet.svg" -}}</div>
+        <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">informasi</h2>
+        <div class="boxtab flex center-x ml-a">
+            <div id="info-action" data-target="info-tabs" class="base-action tab-action flex center-x ml-15 open">
+                <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_desc" }}</p>
+            </div>
+            <div id="info-action" data-target="plan-tabs" class="base-action tab-action flex center-x ml-15">
+                <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_plan" }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="leaf tab-content">
+        <div id="info-tabs" class="base-item tabs-item open">
+            {{- partial "module/course/item/mile/view/desc.html" . -}}
+            {{- partial "module/course/item/mile/view/node.html" . -}}
+        </div>
+        <div id="plan-tabs" class="base-item tabs-item">
+            {{- partial "module/course/item/mile/view/plan.html" . -}}
+        </div>
+    </div>
+</div>

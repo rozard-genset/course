@@ -7,24 +7,22 @@
 
 <div id="tabs" class="mb-60">
     <div class="head grid mb-10 mt-00">
-        <div id="info-action" data-target="info-tabs" class="tab-action flex center-x open">
+        <div id="info-action" data-target="info-tabs" class="base-action tab-action flex center-x open">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/tablet.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_info" }}</p>
         </div>
-        <div id="plan-action" data-target="plan-tabs" class="tab-action flex center-x">
+        <div id="plan-action" data-target="plan-tabs" class="base-action tab-action flex center-x">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/book.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_plan" }}</p>
         </div>
-        <div id="taks-action" data-target="taks-tabs" class="tab-action flex center-x">
+        <div id="taks-action" data-target="taks-tabs" class="base-action tab-action flex center-x">
             <div class="icon md rounded-lg border-all mr-15">{{- partial "icon/line/edit.svg" -}}</div>
             <p class="text-sm font-bold uppercase">{{ T "main_tabs_lead_task" }}</p>
         </div>
-
     </div><hr>
     <div class="leaf tab-content">
-        <div id="info-tabs" class="tabs-item open">{{- partial $desc . -}}{{- partial $node . -}}</div>
-        <div id="plan-tabs" class="tabs-item">{{- partial $plan . -}}</div>
-        <div id="taks-tabs" class="tabs-item">{{- partial $task . -}}</div>
-        
+        <div id="info-tabs" class="base-item tabs-item open">{{- partial $desc . -}}{{- partial $node . -}}</div>
+        <div id="plan-tabs" class="base-item tabs-item">{{- partial $plan . -}}</div>
+        <div id="taks-tabs" class="base-item tabs-item">{{- partial $task . -}}</div>
     </div>
 </div>

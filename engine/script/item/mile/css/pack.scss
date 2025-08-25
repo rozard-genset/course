@@ -1,19 +1,8 @@
 @import "../../../../../core/css/part/tabs.scss";
 @import "pack/need.scss";
+@import "pack/desc.scss";
 @import "pack/paid.scss";
 @import "pack/plan.scss";
-@import "pack/take.scss";
+@import "pack/stat.scss";
 @import "pack/team.scss";
-
-
-#paid .desc img{
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    object-fit: cover;
-}
-
-#hero.feature .meta{
-	display: grid;
-	align-content: space-between;
-}
+@import "pack/node.scss";

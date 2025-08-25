@@ -5,6 +5,49 @@ featured: unggulan
 visit: informasi kelas
 get_more: tampilkan lainya
 register: daftar
+
+module_sum_top: modul
+module_sum_bot: belajar
+assign_sum_top: modul
+assign_sum_bot: penilaian
+sesion_sum_top: total
+sesion_sum_bot: pertemuan
+proyek_sum_top: aktivitas
+proyek_sum_bot: proyek
+
+
+main_tabs_lead_info: info
+main_tabs_lead_plan: modul
+main_tabs_lead_task: tugas
+main_tabs_lead_desc: deskripsi
+
+
+parted_hero_prov: publikator
+
+parted_need_lead: prasyarat
+
+parted_stat_lead: pratinjau
+
+parted_take_free: take class
+parted_take_paid: checkout
+parted_take_pric: gratis
+
+parted_node_lead: ruang kelas
+parted_node_clas: kelas
+parted_node_caps: kapasitas
+parted_node_seat: orang
+parted_node_regs: pendaftaran
+parted_node_prog: pembelajaran
+parted_node_open: mulai
+parted_node_clos: selesai
+parted_node_init: mulai
+parted_node_ends: selesai
+
+parted_team_lead: penyusun
+
+parted_task_name: tugas
+
+
 home_class_tutor: kelas tutor
 home_class_tutor_long: kelas tutor
 home_term: eksplorasi
@@ -12,21 +55,3 @@ home_term_long: jelajahi subjek
 home_term_link: semua kategori
 home_find_course: temukan kelas
 home_all_course: semua
-main_hero_provide: institusi
-main_hero_module_top: modul
-main_hero_module_bot: belajar
-main_hero_assign_top: modul
-main_hero_assign_bot: penilaian
-main_hero_sesion_top: total
-main_hero_sesion_bot: pertamuan
-main_hero_proyek_top: aktivitas
-main_hero_proyek_bot: proyek
-main_hero_take_class: ambil kelas
-main_stat_lead: pratinjau
-main_need_lead: prasyarat
-main_tabs_lead_plan: modul
-main_tabs_lead_task: tugas
-main_tabs_lead_info: Info
-main_task_sums_desc: tugas
-main_team_head_lead: pegelola
-main_desc_lead: "deskripsi"

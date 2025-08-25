@@ -9,11 +9,9 @@
     <article class="wrap">
         {{- partial $hero . -}}
         <div id="slot" class="grid">
-            <div id="div1">
-                {{- partial $stat . -}}{{- partial $team . -}}{{- partial $need . -}}
-            </div>
+            <div id="div1">{{- partial $tabs . -}}</div>
             <div id="div2">
-                {{- partial $tabs . -}}
+                {{- partial $stat . -}}{{- partial $team . -}}{{- partial $need . -}}
             </div>
         </div>
     </article>

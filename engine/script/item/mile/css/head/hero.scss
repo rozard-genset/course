@@ -1,9 +1,17 @@
 #hero {
-    .organ{
+    .leaf{
         margin-left: 1rem;
         display: block;
     }
 
+    .texts{
+        display: block;
+        align-items: self-end;
+    }
+
+    .action{
+        margin: 2rem 0;
+    }
 
     .thumb{
         position: relative;
@@ -13,14 +21,8 @@
         width: 42px;
     }
 
-
     p{
         font-size: 1.1rem;
-    }
-
-
-    .organ .texts{
-        align-items: self-end;
     }
 }
 
@@ -28,7 +30,7 @@
 
 @media only screen and (min-width: 480px) {
     #hero {
-        .organ{
+        .leaf{
             margin-left: 3rem;
         }
 
@@ -40,6 +42,15 @@
 
 @media only screen and (min-width: 768px) {
     
+    #hero {
+        .texts{
+            display: flex;
+        }
+
+        .action{
+            margin: 0 0 0 auto;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -48,6 +59,9 @@
 
 @media only screen and (min-width: 1280px) {
     
+     #hero {
+        margin-bottom: 4rem;
+     }
 }
 
 @media only screen and (min-width: 1536px) {
