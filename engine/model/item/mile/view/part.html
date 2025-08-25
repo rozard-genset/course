@@ -1,7 +1,12 @@
+{{- $session := hugo.Store.Get "session" -}}
+
 <div class="part mb-20">
-    <hr class="mt-00 mb-15">
-    <div class="desc text-sm mb-40">{{ .desc.part }}</div>
-    <div class="leaf grid">
+    <hr class="mt-00 mb-20">
+    <div class="head flex mb-40">
+        <div class="icon sm droppart" data-target="droppart-{{ $session }}">{{ partial "icon/line/plus.svg" }}</div>
+        <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .desc.part }}</div>
+    </div>
+    <div id="droppart-{{ $session }}" class="leaf grid parttabs">
     {{- range .part -}}
         <div class="flex mb-10">
             <div class="icon sm rounded-full">

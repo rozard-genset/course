@@ -1,10 +1,10 @@
 console.log('deffers paid course javascript engine loaded');
 
 let plan_tabs = ()=> {
+
     let plansession = Array.prototype.slice.call(document.querySelectorAll('.period'));
 
     plansession.forEach((item)=> {
-
 
         let action_open = item.querySelectorAll(".tab-action");
         let action_aray = Array.prototype.slice.call(action_open);
@@ -31,6 +31,7 @@ let plan_tabs = ()=> {
         });
     })
 }
+
 
 let node_tabs = ()=> {
     let parent_elem = document.getElementById('node');
@@ -59,6 +60,7 @@ let node_tabs = ()=> {
     });
 }
 
+
 let main_tabs = ()=> {
     let action_open = document.querySelectorAll(".base-action");
     let action_aray = Array.prototype.slice.call(action_open);
@@ -85,8 +87,89 @@ let main_tabs = ()=> {
     });
 }
 
+
+let part_tabs = ()=> {
+
+    if (window.innerWidth > 1024 ) {
+       return;
+    } 
+
+    let parent_elem = document.getElementById('plan');
+    let action_open = parent_elem.querySelectorAll(".droppart");
+    let action_aray = Array.prototype.slice.call(action_open);
+    let mantab_open = parent_elem.querySelectorAll(".parttabs");
+    let mantab_aray = Array.prototype.slice.call(mantab_open);
+
+    action_aray.forEach( (event) => {
+
+        event.addEventListener('click', ()=> {
+
+            let target = event.getAttribute('data-target');
+
+            if (event.classList.contains('open')) {
+                event.classList.remove('open');
+                document.getElementById(target).classList.remove('open'); 
+            }  
+            else {
+
+                action_aray.forEach( (event)=> {
+                    event.classList.remove('open');
+                });
+
+                mantab_aray.forEach( (event)=> {
+                    event.classList.remove('open');
+                });
+
+                event.classList.add('open');
+                document.getElementById(target).classList.add('open'); 
+            }
+        }) 
+    });
+}
+
+let task_tabs = ()=> {
+
+    if (window.innerWidth > 1024 ) {
+       return;
+    } 
+
+    let parent_elem = document.getElementById('plan');
+    let action_open = parent_elem.querySelectorAll(".droptask");
+    let action_aray = Array.prototype.slice.call(action_open);
+    let mantab_open = parent_elem.querySelectorAll(".node-item");
+    let mantab_aray = Array.prototype.slice.call(mantab_open);
+
+   action_aray.forEach( (event) => {
+
+        event.addEventListener('click', ()=> {
+
+            let target = event.getAttribute('data-target');
+
+            if (event.classList.contains('open')) {
+                event.classList.remove('open');
+                document.getElementById(target).classList.remove('open'); 
+            }  
+            else {
+
+                action_aray.forEach( (event)=> {
+                    event.classList.remove('open');
+                });
+
+                mantab_aray.forEach( (event)=> {
+                    event.classList.remove('open');
+                });
+
+                event.classList.add('open');
+                document.getElementById(target).classList.add('open'); 
+            }
+        }) 
+    });
+}
+
 window.addEventListener('load', ()=> {
     plan_tabs();
     main_tabs();
     node_tabs();
+    part_tabs();
+    task_tabs();
 })

@@ -2,6 +2,7 @@
 
 <div id="plan" class="mt-40">
     {{- range .Page.Params.Parted.Plan.Data -}}
+    {{- hugo.Store.Set "session" $sum -}}
     <div class="period mb-30">
         <div class="head flex center-x">
             <div class="text">

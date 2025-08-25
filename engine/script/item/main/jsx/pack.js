@@ -95,6 +95,7 @@ let part_tabs = ()=> {
     });
 }
 
+
 let task_tabs = ()=> {
 
     if (window.innerWidth > 1024 ) {
@@ -133,6 +134,7 @@ let task_tabs = ()=> {
         }) 
     });
 }
+
 
 window.addEventListener('load', ()=> {
     main_tabs();
