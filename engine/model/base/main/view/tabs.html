@@ -1,4 +1,4 @@
-{{- $terms := partial  "module/course/item/home/data/query-term-name.html" . -}}
+{{- $terms := partial  "course/module/base/main/data/query-term-name.html" . -}}
 {{- $conte := . -}}
 {{- $sites := .Site -}}
 <div id="tabs">
@@ -27,11 +27,11 @@
         <div class="leaf">
             <div id="tabs-content" class="content">
                 <div id="course-tabs-list" class="tabs-item open">
-                    {{- partial "module/course/item/home/view/tabs/list.html" . -}}
+                    {{- partial "course/module/base/main/view/tabs/list.html" . -}}
                 </div>
                 {{- range first 10 $terms -}}
                 <div id="course-tabs-{{- . -}}" class="tabs-item">
-                    {{- partial  "module/course/item/home/view/tabs/term.html" (dict "name" . "ctx"  $conte "site" $sites ) -}}
+                    {{- partial  "course/module/base/main/view/tabs/term.html" (dict "name" . "ctx"  $conte "site" $sites ) -}}
                 </div>
                 {{- end -}}
             </div>

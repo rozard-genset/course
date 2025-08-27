@@ -13,7 +13,7 @@
     <div class="leaf mb-60">
         {{- range (.Paginate $pages 10 ).Pages -}}{{- if and ( ne .Page.Params.Module.Layout "term" ) ( ne .Page.Params.Module.Layout "taxo" ) -}}
         <a href="{{ .RelPermalink }}" class="card course rounded-lg">
-            <div class="thumb">{{- partial "module/course/item/home/part/thumb-list.html" . -}}</div>
+            <div class="thumb">{{- partial "course/module/base/main/part/thumb-list.html" . -}}</div>
             <article class="metas">
                 <h3 class="text-md font-bold title mb-20">{{ .Title }}</h3>
                 <div class="meta flex center-x text-sm capitalize mb-05">

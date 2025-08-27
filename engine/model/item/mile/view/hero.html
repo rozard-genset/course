@@ -2,7 +2,7 @@
 
 <div id="hero" class="mb-60">
     <div class="head">
-        {{- partial "module/course/item/mile/part/thumb-feature.html" . }}
+        {{- partial "course/module/item/mile/part/thumb-feature.html" . }}
     </div>
     <div class="leaf">
         <div class="mb-20">
@@ -10,7 +10,7 @@
         </div>
         <div class="mt-10 mb-20">
             <div class="thumb border-all rounded-lg mr-20 pa-05">
-                {{- partial "module/course/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}
+                {{- partial "course/module/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}
             </div>
             <div class="texts">
                 <div class="named flex center-x">
@@ -19,9 +19,9 @@
                 </div>
                 <div class="action flex center-x">
                     {{- if .Page.Params.Parted.Paid.Data.Price -}}
-                    {{- partial "module/course/item/mile/view/paid.html" . -}}
+                    {{- partial "course/module/item/mile/view/paid.html" . -}}
                 {{- else -}}
-                    {{- partial "module/course/item/mile/view/open.html" . -}}
+                    {{- partial "course/module/item/mile/view/open.html" . -}}
                 {{- end -}}
                 </div>
             </div>

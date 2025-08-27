@@ -2,7 +2,7 @@
 <div id="hero">
     <div class="rows grid">
         <div class="thumb">
-            {{- partial "module/course/item/main/part/thumb-feature.html" . }}
+            {{- partial "course/module/item/main/part/thumb-feature.html" . }}
         </div>
         <div class="metas grid center-x">
             <div class="inform">
@@ -10,7 +10,7 @@
                     <h1 class="text-4xl mt-00 mb-00">{{ .Title }}</h1>
                     <div class="info mr-30">
                         <div class="flex center-x mb-05 mb-40">
-                            <div class="img border-all rounded-lg flex center-x mr-20 pa-05">{{- partial "module/course/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
+                            <div class="img border-all rounded-lg flex center-x mr-20 pa-05">{{- partial "course/module/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
                             <div class="text">
                                 <p class="capitalize mb-05 mt-00">{{ T "parted_hero_prov" }}</p>
                                 <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Parted.Team.Name -}}</p>
@@ -58,9 +58,9 @@
                 </div>
             </div>
             {{- if .Page.Params.Parted.Paid.Data.Price -}}
-                {{- partial "module/course/item/main/view/paid.html" . -}}
+                {{- partial "course/module/item/main/view/paid.html" . -}}
             {{- else -}}
-                {{- partial "module/course/item/main/view/open.html" . -}}
+                {{- partial "course/module/item/main/view/open.html" . -}}
             {{- end -}}
         </div>
     </div>

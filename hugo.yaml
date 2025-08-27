@@ -1,23 +1,33 @@
 module:
     mounts:
-    - source: "render"
-      target: "layouts/course/_markup"
+
     - source: "langua"
       target: "i18n"
+
     - source: "library"
       target: "layouts/partials/lib/course"
+    
     - source: "format/model"
-      target: "layouts/partials/module/course/format"
+      target: "layouts/partials/format/course"
+
     - source: "format/script"
-      target: "assets/scripts/module/course/format"
+      target: "assets/scripts/format/course"
+
+    - source: "engine/based"
+      target: "layouts/course/_markup"
+    
     - source: "engine/model"
-      target: "layouts/partials/module/course"
+      target: "layouts/partials/course/module"
+
     - source: "engine/script"
-      target: "assets/scripts/module/course"
+      target: "assets/scripts/course/module"
+
     - source: "blocks/model"
-      target: "layouts/partials/module/course/blocks"
+      target: "layouts/partials/course/blocks"
+
     - source: "blocks/script"
-      target: "assets/scripts/module/course/blocks"
+      target: "assets/scripts/course/blocks"
+
     - source: "content"
       target: "content/course"
     - source: "assets"

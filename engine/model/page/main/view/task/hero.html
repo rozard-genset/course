@@ -1,7 +1,7 @@
 <div id="hero">
     <div class="slot grid">
         <div class="thumb">
-            {{ partial "module/course/page/main/part/task-thumb.html" . }}
+            {{ partial "course/module/page/main/part/task-thumb.html" . }}
         </div>
         <div class="rows">
             <div class="meta">
@@ -42,7 +42,7 @@
                     <div class="option flex center-x">
                         <label for="group-option" class="font-bold uppercase text-sm">Select Group</label>
                         <select id="group-option" name="selectedgroup" class="ml-20">
-                        {{- $data := partial "module/course/page/main/data/take-groups.html" . -}}{{- range $data -}}
+                        {{- $data := partial "course/module/page/main/data/take-groups.html" . -}}{{- range $data -}}
                             <option value="{{ . }}">Group {{ . }}</option>
                         {{- end -}}
                         </select>
