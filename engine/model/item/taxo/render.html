@@ -1,8 +1,0 @@
-{{ $list := partial "course/module/item/taxo/data/query-taxo-page.html" . }}
-{{ $page := ( .Paginate $list 12 ).PageNumber }}
-
-{{- if eq $page 1 -}}
-    {{- partial "course/module/item/taxo/landing.html" . -}}
-{{- else -}}
-    {{- partial "course/module/item/taxo/parteds.html" . -}}
-{{- end -}}

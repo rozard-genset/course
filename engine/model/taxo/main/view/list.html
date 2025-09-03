@@ -1,4 +1,4 @@
-{{ $list := partial "course/module/item/taxo/data/query-taxo-page.html" . }}
+{{ $list := partial "course/module/taxo/main/data/query-taxo-page.html" . }}
 {{ $page := ( .Paginate $list 12 ).PageNumber }}
 
 <div id="list">
