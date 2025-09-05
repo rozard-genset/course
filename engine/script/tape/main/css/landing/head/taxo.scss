@@ -1,0 +1,57 @@
+#landing #taxo {
+
+    .list{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+    #landing #taxo{
+
+        .info{
+            padding-bottom: 0;
+            border-bottom: 0;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #landing #taxo{
+
+        width: 48%;
+        padding-left: 2%;
+        float: right;
+
+        .info{
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+ 
+    
+    #landing #taxo{
+
+        width: auto;
+        float: unset;
+        padding-right: 0;
+
+        img{
+            width: 42px;
+            height: 42px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

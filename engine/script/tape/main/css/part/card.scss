@@ -1,0 +1,112 @@
+// LIST
+.list{
+
+    .card{
+        background-color: var(--background-02);
+        margin-bottom: 2rem;
+        display: flex;
+        overflow: hidden;
+        -ms-flex-direction: row-reverse;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        flex-direction: row-reverse;
+        
+        .thumb{
+            width: 128px;
+            height: 128px;
+        }
+
+        .metas{
+            width: calc( 100% - 128px);
+        }
+
+        .title{
+            margin: 0;
+            padding: 15px;
+        }
+
+        .meta .box{
+            width: 50%;
+            padding: 10px 15px;
+        }
+    }
+
+
+    .pagination{
+        margin-top: 2.5rem;
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+    .list{
+        .leaf{
+            display: grid;
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
+            grid-gap: 2rem;
+        }
+
+        .card{
+            display: block;
+            margin-bottom: 0;
+            .thumb{
+                width: 100%;
+                height: auto;
+            }
+
+            .metas{
+                width: 100%;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+  
+    .list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+            grid-gap: 2rem;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
+            grid-gap: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+    
+    .list{
+        .leaf{
+            grid-template-columns: repeat( 3, calc( 33.333% - 2rem ) );
+            grid-gap: 2rem;
+            grid-row: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
+}

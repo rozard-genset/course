@@ -13,7 +13,7 @@ module:
     - source: "format/script"
       target: "assets/scripts/format/course"
 
-    - source: "engine/based"
+    - source: "markit"
       target: "layouts/course/_markup"
     
     - source: "engine/model"

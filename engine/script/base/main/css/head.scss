@@ -10,63 +10,9 @@
 @import "../../../../../css/wrap/p-15.scss";
 
 
+// skel
+@import "skel/based.scss";
 
-
-// landing
-@import "landing/head/main.scss";
-@import "landing/head/hero.scss";
-@import "landing/head/invo.scss";
-@import "landing/head/taxo.scss";
-
-// parted
-@import "parted/head/main.scss";
-@import "parted/head/lead.scss";
-@import "parted/head/join.scss";
-
-
-
-
-
-main{ margin-top: 1rem; }
-
-
-
-@media only screen and (min-width: 480px) {
-
-}
-
-
-@media only screen and (min-width: 620px) {
-
-}
-
-
-@media only screen and (min-width: 768px) {
-
-}
-
-
-@media only screen and (min-width: 810px) {
-
-
-}
-
-
-@media only screen and (min-width: 970px) {
-
-}
-
-
-@media only screen and (min-width: 1024px) {
-
-    main{ margin-top: 0rem; }
-}
-
-
-@media only screen and (min-width: 1280px) {
-
-}
-
-
-@media only screen and (min-width: 1536px) {  
-}
+// view
+@import "view/hero.scss";
+@import "view/term.scss";

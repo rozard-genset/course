@@ -1,0 +1,23 @@
+{{- $path := "course/module/base/main/view" -}}
+{{- $lead := printf "%s/lead.html" $path -}}
+{{- $term := printf "%s/term.html" $path -}}
+{{- $join := printf "%s/join.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $bugs := printf "%s/bugs.html" $path -}}
+
+{{- $page := where site.RegularPages "Type" .Section -}}
+{{- $navi := .Paginate $page.ByDate 10 -}}
+
+<main id="parteds">
+    <div class="wrap slot grid">
+        <div id="div1">
+            {{- partial $lead . -}}
+            <div class="extra grid">
+                {{- partial $term . -}}
+            </div>
+        </div>
+        <div id="div2">
+            {{- partial $join . -}}{{- partial $team . -}}{{- partial $bugs . -}}
+        </div>
+    </div>
+</main>

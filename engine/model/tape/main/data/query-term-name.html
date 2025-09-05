@@ -1,0 +1,4 @@
+{{- $list := slice -}}{{- range where .Site.Pages "Type" "course" -}}
+    {{- with .Page.Params.Terms -}}{{- $list = $list | append . -}}{{- end -}}
+{{- end -}}
+{{- $list := $list | uniq -}}{{ return $list }}

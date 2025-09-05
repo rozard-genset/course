@@ -12,13 +12,13 @@
 {{- if $image -}}
     <picture>
 
-        {{- $low := $image.Resize "420x webp q100" -}}
-        <source media="(width < 481px)" srcset="{{ $low.RelPermalink }}" />
 
-        {{- $mid := $image.Resize "520x webp q100" -}}
-        <source media="(width > 481px)" srcset="{{ $mid.RelPermalink }}" />
+        {{- $sm := $image.Resize "575x webp q100" -}}
+        <source media="(width > 481px)" srcset="{{ $sm.RelPermalink }}" />
 
-        {{- $top := $image.Resize "420x webp q100" -}}
-        <img src="{{ $top.RelPermalink }}" alt="{{ .Title }}" class="rounded-xl" width="{{ $top.Width }}" height="{{ $top.Height }}" title="{{ .Title }}" loading="lazy"/>
+        {{- $xs := $image.Resize "420x webp q100" -}}
+         <source media="(width > 481px)" srcset="{{ $sm.RelPermalink }}" />
+         
+        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title | safe.HTMLAttr }} course hero" class="rounded-xl" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" loading="lazy"/>
     </picture>
 {{- end -}}

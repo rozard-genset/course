@@ -1,0 +1,9 @@
+{{- $view := "course/module/base/main/view/" -}}
+{{- $invo := printf "%s/invo.html" $view -}}
+{{- $term := printf "%s/term.html" $view -}}
+
+<div id="main-2" class="mb-60">
+    <div class="wrap grid">
+        {{- partial $term . -}}
+    </div>
+</div>
