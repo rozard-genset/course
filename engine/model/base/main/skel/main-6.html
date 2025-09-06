@@ -1,8 +1,12 @@
 {{- $view := "course/module/base/main/view/" -}}
-{{- $hero := printf "%s/hero.html" $view -}}
+{{- $bugs := printf "%s/bugs.html" $view -}}
+{{- $team := printf "%s/team.html" $view -}}
+{{- $join := printf "%s/join.html" $view -}}
 
 <section id="main-6">
     <div class="wrap grid">
-   
+        {{- partial $join -}}
+        {{- partial $team -}}
+        {{- partial $bugs -}}
     </div>
 </section>

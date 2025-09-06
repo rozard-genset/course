@@ -1,0 +1,40 @@
+
+@media only screen and (min-width: 480px) {
+
+    #team{
+        margin-bottom: 5vh;
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 2rem ));
+            grid-gap: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+    #team{
+        .leaf{
+            grid-template-columns: repeat(3, calc( 33.333% - 2rem ));
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+}
+
+
+@media only screen and (min-width: 1280px) {
+    
+    #team{
+        .leaf{
+            grid-template-columns: 100%;
+            grid-gap: 0;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+}

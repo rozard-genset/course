@@ -15,7 +15,14 @@
 
 
 @media only screen and (min-width: 1280px) {
-
+    #main-6{
+        margin-top: 5rem ;
+        .grid{
+            grid-template-columns: repeat( 3, calc( 33.333% - 5rem ) );
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
 }
 
 

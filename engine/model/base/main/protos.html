@@ -2,6 +2,13 @@
 {{- $lazy := "course/module/base/main/lazy" -}}
 {{- $tuto := printf "%s/tuto.html" $lazy -}}
 {{- $lead := printf "%s/lead.html" $lazy -}}
+{{- $bugs := printf "%s/bugs.html" $lazy -}}
+{{- $team := printf "%s/team.html" $lazy -}}
+{{- $join := printf "%s/join.html" $lazy -}}
 
 <!-- render -->
-{{- partial $tuto . -}}{{- partial $lead . -}}
+{{- partial $tuto . -}}
+{{- partial $lead . -}}
+{{- partial $bugs . -}}
+{{- partial $team . -}}
+{{- partial $join . -}}
