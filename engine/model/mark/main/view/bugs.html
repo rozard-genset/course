@@ -1,0 +1,10 @@
+{{- $leads := "Open issue to github" -}}
+{{- with .Page.Params.Parted.Team.desc -}}{{- $leads = . -}}{{- end -}}
+<div id="bugs">
+    <div class="head">
+        <h2 class="text-md uppercase font-bold mt-00 mb-10">Trouble Reporting</h2><hr class="mb-10">
+    </div>
+    <div class="leaf">
+       {{ partial "parted/report/main/render.html" . }}
+    </div>
+</div>

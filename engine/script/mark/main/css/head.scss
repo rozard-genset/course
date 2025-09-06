@@ -1,0 +1,43 @@
+@import "../../../../../css/wrap/m-00.scss";
+@import "../../../../../css/wrap/m-10.scss";
+@import "../../../../../css/wrap/m-15.scss";
+@import "../../../../../css/wrap/m-20.scss";
+@import "../../../../../css/wrap/m-60.scss";
+
+@import "../../../../../css/wrap/p-15.scss";
+
+@import "head/hero.scss";
+@import "head/list.scss";
+@import "head/main.scss";
+
+
+main{
+    margin-top: 3rem;
+}
+
+
+@media only screen and (min-width: 480px) {
+}
+
+
+@media only screen and (min-width: 768px) {
+}
+
+
+@media only screen and (min-width: 920px) {
+}
+
+
+@media only screen and (min-width: 1024px) {
+}
+
+
+@media only screen and (min-width: 1280px) {
+    main{
+        margin-top: 5rem;
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
+}

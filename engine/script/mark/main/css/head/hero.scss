@@ -1,0 +1,57 @@
+#hero {
+    
+    margin-bottom: 5rem;
+
+    .taxpic{
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        padding-right: 0;
+        padding-top: 0;
+    }
+
+    .head{
+        margin-bottom: 2rem;
+    }
+
+    .lead{
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+
+@media only screen and (min-width: 1024px) {
+    #hero {
+
+        .head{
+            margin-bottom: 0rem;
+        }
+        
+        .lead{
+            display: block;
+        }
+
+        .grid{
+            grid-template-columns: calc( 100% - 380px - 5rem ) 380px;
+            grid-gap: 5rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {   
+}
+
+
+@media only screen and (min-width: 1536px) {
+}

@@ -1,0 +1,34 @@
+#div1{
+    margin-bottom: 2.5rem;
+}
+
+@media only screen and (min-width: 480px) {
+
+    #div1{
+        margin-bottom: 0rem;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+    
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    #div2 {
+        display: grid;
+        grid-template-columns: calc( 30% - 3rem ) calc( 30% - 3rem ) 35%;
+        grid-gap: 3rem;
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+}

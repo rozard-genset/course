@@ -1,0 +1,22 @@
+{{- $image := "" -}}
+
+{{- if .Page.Params.Metadata.thumb  -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Metadata.thumb -}}
+{{- end -}}
+
+{{- if .Page.Params.Module.Cover.Image -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover.Image -}}
+{{- end -}}
+
+{{- if $image -}}
+    <picture class="rounded-2xl">
+        {{- $low := $image.Fill "128x128" -}}{{- $low = $low.Resize "128x128 webp q100" -}}
+        <source media="(width < 480px)" srcset="{{ $low.RelPermalink }}" />
+
+        {{- $mid := $image.Resize "320x webp q100" -}}
+        <source media="(width > 480px)" srcset="{{ $mid.RelPermalink }}" />
+
+        {{- $top := $image.Resize "300x webp q100" -}}
+        <img src="{{ $top.RelPermalink }}" width="{{ $top.Width }}" height="{{ $top.Height }}" alt="{{ .Title }}" title="{{ .Title }}" fetchpriority="high" />
+    </picture>    
+ {{- end -}}

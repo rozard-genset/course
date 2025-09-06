@@ -4,7 +4,7 @@
 {{- $type := partial "course/module/page/main/data/take-fomat.html" . -}}
 
 
-<article id="page">
+
     {{- if eq $type "decending" -}}
         <div class="main">{{- partial "lib/format.html" . -}}</div>
         <div class="meta">
@@ -15,12 +15,7 @@
             <p class="text-md">{{- partial "course/module/page/main/data/take-leader.html" . -}}</p>
         </div>
     {{- else -}}
-        <div class="head">
-            <h1>{{ .Title }}</h1>
-            {{- partial "course/module/page/main/part/hero-thumb.html" . -}}
-        </div>
-        <div class="meta">{{- partial $team . -}}{{- partial $apps . -}}</div>
         {{- partial "lib/format.html" . -}}
     {{- end -}}
-</article>
+
 {{- partial $asig . -}}
