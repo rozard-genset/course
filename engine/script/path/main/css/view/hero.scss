@@ -1,49 +1,123 @@
 #hero{
-
     display: grid;
     grid-template-columns: 100%;
     justify-content: space-between;
-
+    align-items: center;
     .head{
-        margin-bottom: 1rem;
+        margin-bottom: 4rem;
 
-        picture{
+        picture, img{
             width: 280px;
+            height: 100%;
             margin: auto;
         }
     } 
 
     .leaf{
-        text-align: center;
+
+        .lead{
+            margin-bottom: 3rem;
+
+            h1{
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+
+            hr{
+                width: 50%;
+            }
+
+            p{
+                display: none;
+            }
+        }
 
         .stat{
-            grid-template-columns: 100%;
-            justify-content: space-between;
+            text-align: left;
+            grid-template-columns: repeat( 2, calc( 50% - 3rem ) );
+            justify-content: normal;
+            grid-gap: 2rem 0;
+            margin-bottom: 1rem;
         }
     }
 }
 
 @media only screen and (min-width: 480px) {
 
+    #hero{
+
+        .head{
+            picture, img{
+                width: 380px;
+            }
+        } 
+
+        .leaf{
+
+            .lead{
+                margin-bottom: 4rem;
+
+                h1{
+                    font-size: 2.4rem;
+                    margin-bottom: 2rem;
+                }
+
+                p{
+                    display: none;
+                }
+            }
+
+            .stat{
+                justify-content: center;
+                grid-gap: 2.5rem 0;
+                margin-bottom: 1rem;
+            }
+        }
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
 
     #hero{
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
+        
 
         .head{
-            picture{
-                width: 380px;
+            picture, img{
+                width: 480px;
                 margin: auto;
             }
         }
 
         .leaf{
-            text-align: left;
+
+            text-align: center;
+
+            .lead{
+                margin-bottom: 3rem;
+
+                h1{
+                    font-size: 2.7rem;
+                    margin-bottom: 2rem;
+                }
+
+                hr{
+                    margin: 2rem auto;
+                }
+
+                p{
+                    font-size: 1.2rem;
+                    margin: auto;
+                    display: block;
+                    width: 80%;
+                }
+            }
+
+            .stat{
+                width: 80%;
+                grid-gap: 1.5rem 0;
+                margin: 1rem auto;
+            }
         }
     }
 }
@@ -52,10 +126,41 @@
 @media only screen and (min-width: 1024px) {
 
     #hero{
+        grid-template-columns: 420px calc( 100% - 420px) ;
         min-height: 58vh;
 
         .head{
-            picture{
+            margin-bottom: 0;
+            
+            picture, img{
+                width: 420px;
+            }
+        }
+
+        .leaf{
+
+            text-align: left;
+
+            .lead{
+                margin-bottom: 3rem;
+
+                h1{
+                    font-size: 2.7rem;
+                    margin-bottom: 2rem;
+                }
+
+                hr{
+                    margin: 2rem 0;
+                }
+
+                p{
+                    font-size: 1rem;
+                    width: 100%;
+                }
+            }
+
+            .stat{
+                justify-content: flex-start;
                 width: 100%;
             }
         }
@@ -66,18 +171,16 @@
 @media only screen and (min-width: 1280px) {
 
     #hero{
-        grid-template-columns: 460px calc( 100% - 460px );
+        grid-template-columns: 480px calc( 100% - 480px );
 
        .head{
-            margin-bottom: 1rem;
+            picture, img{
+                width: 480px;
+            }
         }
 
         .leaf{
             width: 90%;
-
-            .lead{
-                margin-bottom: 3rem;
-            }
 
             .stat{
                 grid-template-columns: repeat( 2, calc( 50% - 4rem ) );
