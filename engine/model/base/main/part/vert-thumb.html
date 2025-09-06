@@ -11,9 +11,9 @@
 {{- if $image -}}
     <picture>
 
-        {{- $xl := $image.Resize "320x" -}}
-        {{- $xl = $xl.Fill "135x135 webp q100" -}}
-        <source media="(width > 1280px)" srcset="{{ $xl.RelPermalink }}" />
+        {{- $xl := $image.Resize "420x" -}}
+        {{- $xl = $xl.Fill "235x180 webp q100" -}}
+        <source media="(width > 1024px)" srcset="{{ $xl.RelPermalink }}" />
 
         {{- $md := $image.Resize "380x" -}}
         {{- $md = $md.Fill "225x160 webp q100" -}}

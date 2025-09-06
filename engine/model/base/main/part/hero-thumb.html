@@ -1,0 +1,23 @@
+{{- $image := resources.GetMatch "media/course/hero.png" -}}
+
+{{- if $image -}}
+    <picture>
+
+        {{- $xl := $image.Resize "560x webp q100" -}}
+        <source media="(width > 1280px)" srcset="{{ $xl.RelPermalink }}" />
+
+        {{- $lg := $image.Resize "520x webp q100" -}}
+        <source media="(width > 1024px)" srcset="{{ $lg.RelPermalink }}" />
+
+        {{- $md := $image.Resize "440x webp q100" -}}
+        <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}" />
+        
+        {{- $sm := $image.Resize "420x webp q100" -}}
+        <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}" />
+
+        {{- $xs := $image.Resize "300x webp q100" -}}
+        <source media="(width > 100px)" srcset="{{ $xs.RelPermalink }}" />
+
+        <img src="{{ $image.RelPermalink }}" data="{{ $image.RelPermalink }}" alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" title="{{ .Title }}" fetchpriority="high"/>
+    </picture>
+{{- end -}}

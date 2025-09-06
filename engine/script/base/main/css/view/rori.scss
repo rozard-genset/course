@@ -33,7 +33,6 @@
 @media only screen and (min-width: 768px) {
 
     .rori{
-
         .leaf{
             grid-template-columns: repeat(auto-fill, 225px);
             grid-gap: 3rem 0;
@@ -53,7 +52,7 @@
         grid-template-columns: calc( 100% - 360px - 3.5rem ) 360px;
 
         .leaf{
-            grid-template-columns: repeat(auto-fill,240px);
+            grid-template-columns: repeat(auto-fill,235px);
             grid-gap: 3rem;
             grid-column: 1;
             grid-row: 1;

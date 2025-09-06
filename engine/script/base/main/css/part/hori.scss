@@ -1,11 +1,10 @@
-.horibox {
-    grid-template-columns: calc( 100% - 120px ) 120px;
+.carbox.horibox {
+    grid-template-columns: calc( 100% - 125px ) 125px;
 
     .metas{
-        
         .title{
-            line-clamp: 2;
-            -webkit-line-clamp: 2;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
         }
     }
 }
@@ -14,22 +13,13 @@
 
 @media only screen and (min-width: 480px) {
 
-    .horibox{
-        
-        .metas{
-            .title{
-                line-clamp: 1;
-                -webkit-line-clamp: 1;
-            }
-        }
-    }
 }
 
 
 @media only screen and (min-width: 768px) {
 
-    .horibox{
-
+    .carbox.horibox{
+        grid-template-columns: 100%;
         .thumb{
             grid-column: 1;
             grid-row: 1;

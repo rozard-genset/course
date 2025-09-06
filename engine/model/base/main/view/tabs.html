@@ -34,7 +34,7 @@
                         <h2 class="uppercase font-normal mt-00 mb-00 pb-15">{{ .name -}}</h2>
                         <h3 class="capitalize text-xl border-left mt-00 mb-00 ml-15 pl-15 pb-15">{{ .page.Params.module.qoutes }}</h3>
                     </div>
-                    <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a">
+                    <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a" title="{{ .name }} more course">
                         <div class="name text-xs font-bold uppercase">Ekplorasi</div>
                         <div class="icon sm ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
                     </a>
