@@ -21,14 +21,14 @@
         }
 
         .tab-action{
-            h3{
+            h2{
                 margin:0 15px 0 0 ;
                 text-wrap: nowrap;
             }
         }
 
         .tab-action.open {
-            h3{
+            h2{
                 font-weight: 600;
             }    
         }
@@ -43,11 +43,11 @@
                 color: orangered;
             }
 
-            h3{
+            h2{
                 font-size: 1.2rem;
                 margin-top: 0;
             }
-            h4{
+            h3{
                 display: none;
             }
         }
@@ -67,7 +67,7 @@
     #tabs{
         .pool{
             .lead{
-                h4{
+                h3{
                     margin-top: 3px;
                     font-size: 1rem;
                     display: block;
