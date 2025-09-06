@@ -1,0 +1,51 @@
+.vertbox{
+    grid-template-columns: 120px calc( 100% - 120px );
+
+    .metas{
+
+        .title{
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .vertbox{
+
+        .thumb{
+            grid-row: 1;
+        }
+
+        .metas{
+
+            .title{
+                line-clamp: 2;
+                 -webkit-line-clamp: 2;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+
+@media only screen and (min-width: 1536px) {  
+}

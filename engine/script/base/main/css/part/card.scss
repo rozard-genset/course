@@ -1,13 +1,9 @@
-// LIST
-
-.card-vert{
-    grid-template-columns: 120px calc( 100% - 120px );
+.carbox{
     justify-content: space-between;
     background-color: var(--background-02);
     overflow: hidden;
 
     .thumb{
-
         img{
             height: 120px;
             width: 120px;
@@ -15,38 +11,35 @@
     }
 
     .metas{
-        padding: 1rem 1.85rem 1rem 1.75rem;
+        padding: 1rem 2.25rem 1rem 1.5rem;
         align-content: space-between;
+    }
 
-        .title{
-            font-size: 1rem;
-            line-clamp: 1;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;  
-        }
+    .title{
+        font-size: 1.02rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;  
+    }
 
-        .tutor{
-            margin: 1rem 0;
-            display: none;
-        }
+    .tutor{
+        display: none;
+    }
 
-        .stats{
-            grid-template-columns: auto auto;
-            justify-content: space-between;
-        }
+    .stats{
+        grid-template-columns: auto auto;
+        justify-content: space-between;
     }
 }
 
 
-
 @media only screen and (min-width: 480px) {
 
-    .card-vert{
+    .carbox{
+
         grid-template-columns: 135px calc( 100% - 135px );
         grid-template-rows: 135px ;
-        
+
         .thumb{
             img{
                 height: 135px;
@@ -58,15 +51,17 @@
             padding: 1rem 2rem;
 
             .title{
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
 
             .tutor{
+                margin: 1rem 0;
                 display: flex;
             }
 
             .stats{
-                grid-template-columns: auto auto auto;
+                margin-top: 1.5rem;
+                grid-template-columns: auto auto;
                 justify-content: normal;
             }
         }
@@ -76,13 +71,11 @@
 
 @media only screen and (min-width: 768px) {
 
-    .card-vert{
+    .carbox{
         grid-template-columns: 100%;
         grid-template-rows: 160px;
-        
-        .thumb{
-            grid-row: 1;
 
+        .thumb{
             img{
                 width: 240px;
                 height: 160px;
@@ -90,42 +83,34 @@
         }
 
         .metas{
-            padding: 1.5rem 1rem ;
+            padding: 1.5rem 1rem;
 
-            .title{
-                line-clamp: 2;
-                font-size: 1rem;
-                -webkit-line-clamp: 2;
-            }
-
-           .stats{
-               margin-top: 1.5rem;
-               grid-template-columns: auto auto;
-               justify-content: space-between;
+            .stats{
+                grid-template-columns: auto auto;
+                justify-content: space-between;
             }
         }
-    }
+    }   
 }
 
 
 @media only screen and (min-width: 1024px) {
 
-
 }
 
 
 @media only screen and (min-width: 1280px) {
-    
-    .card-vert{
 
+    .carbox{
         .metas{
             .title{
-                font-size: 1.03rem;
+                font-size: 1.06rem;
             }
         }
-    }
+    }  
 }
 
 
-@media only screen and (min-width: 1536px) {  
+@media only screen and (min-width: 1536px) {
+
 }

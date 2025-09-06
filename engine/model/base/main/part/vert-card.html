@@ -1,11 +1,11 @@
 {{- $thumb := "course/module/base/main/part/hori-thumb.html" -}}
 {{- $count := "lib/course/count-material.html" -}}
 
-<article class="card-vert grid rounded-lg">
+<article class="carbox vertbox grid rounded-lg">
     <a href="{{ .RelPermalink }}" class="thumb">{{- partial $thumb . -}}</a>
     <div class="metas grid">
         <a href="{{ .RelPermalink }}" class="">
-            <h1 class="title font-bold mt-00">{{ .Title }}</h1>
+            <h1 class="title font-normal mt-00">{{ .Title }}</h1>
         </a>
         <div class="info">
             <div class="tutor center-x">
