@@ -1,0 +1,18 @@
+{{- $user := partial "lib/pageds/user-section.html" . -}}
+<template id="proto-team">
+    <div class="head flex center-x mb-30 border-bottom">
+        <div class="icon md">
+            {{- partial "icon/line/user.svg" -}}
+        </div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Top Author</h2>
+    </div>
+    <div class="leaf">
+        <div class="box border-all rounded-lg flex center-x pa-10">
+        {{- range $user -}}
+            <div class="author rounded-full overflow-hidden mr-15">
+                {{- partial "parted/avatar/user-36.html" . -}}
+            </div>
+        {{- end -}}
+        </div>
+    </div>
+</template>

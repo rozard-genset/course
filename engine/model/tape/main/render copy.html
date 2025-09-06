@@ -1,8 +1,0 @@
-<!-- pagination -->
-{{- $navi := .Paginate .Pages -}}
-
-{{- if eq $navi.PageNumber 1 -}}
-    {{- partial "course/module/base/main/landing.html" . -}}
-{{- else -}}
-    {{- partial "course/module/base/main/parteds.html" . -}}
-{{- end -}}

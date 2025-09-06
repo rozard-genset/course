@@ -1,8 +1,7 @@
-{{- $view := "course/module/base/main/view/" -}}
-{{- $hero := printf "%s/hero.html" $view -}}
+{{- $part := "stories/module/tape/main/view/" -}}
+{{- $team := printf "%s/team.html" $part -}}
+{{- $join := printf "%s/join.html" $part -}}
 
-<div id="main-3" class="mb-60">
-    <div class="wrap grid">
-   
-    </div>
+<div id="main-3">
+    {{- partial $team . -}}{{- partial $join . -}}
 </div>

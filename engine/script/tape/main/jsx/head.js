@@ -1,1 +1,1 @@
-console.log('critical home course javascript engine loaded');
+console.log("Themes : critical default item main loaded");

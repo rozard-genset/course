@@ -1,0 +1,9 @@
+<!-- variable -->
+{{- $part := "stories/module/tape/main/lazy" -}}
+{{- $term := printf "%s/term.html" $part -}}
+{{- $feat := printf "%s/feat.html" $part -}}
+{{- $team := printf "%s/team.html" $part -}}
+{{- $join := printf "%s/join.html" $part -}}
+
+<!-- render -->
+{{- partial $term . -}}{{- partial $feat . -}}{{- partial $team . -}}{{- partial $join . -}}

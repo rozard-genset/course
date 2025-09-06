@@ -1,19 +1,13 @@
-{{- $skels := "course/module/base/main/skel" -}}
+<!-- variable -->
+{{- $skels := "stories/module/tape/main/skel/" -}}
 {{- $main1 := printf "%s/main-1.html" $skels -}}
 {{- $main2 := printf "%s/main-2.html" $skels -}}
 {{- $main3 := printf "%s/main-3.html" $skels -}}
-{{- $main4 := printf "%s/main-4.html" $skels -}}
-{{- $main5 := printf "%s/main-5.html" $skels -}}
-{{- $main6 := printf "%s/main-6.html" $skels -}}
-{{- $main7 := printf "%s/main-7.html" $skels -}}
 
-
-<main id="base" class="main">
-    {{- partial $main1 . -}}
-    {{- partial $main2 . -}}
-    {{- partial $main3 . -}}
-    {{- partial $main4 . -}}
-    {{- partial $main5 . -}}
-    {{- partial $main6 . -}}
-    {{- partial $main7 . -}}
-</main>
+<main id="tape" class="main">
+    <div class="rows wrap grid">
+        {{- partial $main1 . -}}
+        {{- partial $main2 . -}}
+        {{- partial $main3 . -}}
+    </div>
+</main> 

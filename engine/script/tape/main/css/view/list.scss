@@ -1,0 +1,145 @@
+
+#list {
+
+    .leaf{
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 100%;
+        justify-content: space-between;
+    }
+
+
+    .card{
+        overflow: hidden;
+        background-color: var(--background-02);
+
+        picture{
+            height: 100%;
+        }
+
+        .linker{
+            display: grid;
+        }
+
+        .action{
+            padding: .5rem 1rem ;
+        }
+
+        .icon{
+            margin-right: 0;
+            margin-left: 1.5rem;
+        }
+
+        .thumb{
+            display: block;
+            height: 100%;
+        }
+
+        .meta{
+            padding: 1rem;
+        }
+
+        .descs{
+            display: none;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+     #list{
+
+        .card{
+
+            .linker{
+                grid-template-columns: 40% calc( 60% - 5% );
+                padding: 1rem;
+                grid-gap: 5%;
+            }
+
+            .meta {
+                padding: 0;
+                .icon{
+                    display: none;
+                }
+            }
+
+            .thumb{
+                border-radius: .5rem;
+                overflow: hidden;
+            }
+
+            .descs{
+                margin-top: 1rem;
+                display: block;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    #list{
+
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 1rem ));
+        }
+
+        .card{
+
+            .linker{
+                grid-template-columns: 100%;
+                padding: 0rem;
+                grid-gap: 0;
+            }
+
+            .thumb{
+                border-radius: 0;
+            }
+
+            .meta{
+                padding: 1rem;
+            }
+
+            .descs{
+                margin-top: .3rem;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    #list{
+        width: 480px;
+        margin: auto;
+        .leaf{
+            grid-template-columns: 100%;
+        }
+    }    
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    #list{
+        .card{
+
+            .linker{
+                align-items: center;
+            }
+          
+            .icon{
+                display: flex;
+            }
+        }
+    } 
+}
+
+
+@media only screen and (min-width: 1536px) {
+}

@@ -1,0 +1,25 @@
+{{- $image := "" -}}
+
+{{- if .Page.Params.Metadata.thumb -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Metadata.thumb -}}
+{{- end -}}
+
+{{- if .Page.Params.Module.Cover.Image -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover.Image -}}
+{{- end -}}
+
+{{- if $image -}}
+    <picture>
+        {{- $lg := $image.Resize "480x360 webp q100" -}}
+        <source media="(width > 1024px)" srcset="{{ $lg.RelPermalink }}"/>
+
+        {{- $md := $image.Resize "420x315 webp q100" -}}
+        <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}"/>
+
+        {{- $sm := $image.Resize "272x webp q100" -}}
+        <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}"/>
+              
+        {{- $xs := $image.Resize "420x315 webp q100" -}}
+        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" class="feature-image" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }} feature image" fetchpriority="high"/>
+    </picture>
+{{- end -}}

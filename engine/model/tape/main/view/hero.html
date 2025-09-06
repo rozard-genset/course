@@ -1,12 +1,5 @@
-<div id="hero" class="grid center-x center-y">
-    <div class="rows">
-        <div class="imgs">
-           {{- partial "course/module/base/main/part/thumb-hero.html" . -}}
-        </div>
-        {{- with .Page.Params.Parted.Hero.Lead -}}
-        <div class="text">
-            <h1 class="mt-00">{{- . -}}</h1>
-        </div>
-        {{- end -}}
+<div id="hero" class="mb-20">
+    <div class="flex center-x">
+        <h1 class="text-xl font-bold uppercase mb-30 mt-00"># {{ .Title }}</h1>
     </div>
 </div>
