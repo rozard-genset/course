@@ -6,7 +6,7 @@
             <div class="icon lg pb-10">
                 {{ partial "icon/line/box.svg" }}
             </div>
-            <h1 class="text-xl uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
+            <h1 class="text-lg uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
             <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a">
                 <div class="name text-xs font-bold uppercase">Ekplorasi</div>
                 <div class="icon sm ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
@@ -17,7 +17,7 @@
         <div class="desc mb-60">
             {{ .page.Params.description }}
         </div>
-        <div class="list mb-60">
+        <div class="list">
             {{- range first 4 .list -}}{{- partial $card . -}}{{- end -}}
         </div>
     </div>

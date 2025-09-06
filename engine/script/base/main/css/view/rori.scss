@@ -5,27 +5,40 @@
 
     .head{
         .desc{
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.5;
         }
     }
-
 
     .leaf{
         display: grid;
         grid-template-columns: 100%;
         justify-content: space-between;
+        grid-gap: 2rem 0;
     }
 }
 
 
 @media only screen and (min-width: 480px) {
 
+    .rori{
+
+        .leaf{
+            grid-gap: 2rem 0;
+        }
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
 
+    .rori{
+
+        .leaf{
+            grid-template-columns: repeat(auto-fill, 225px);
+            grid-gap: 3rem 0;
+        }
+    }
 }
 
 
@@ -42,6 +55,13 @@
         .leaf{
             grid-template-columns: repeat(auto-fill,240px);
             grid-gap: 3rem;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .head{
+            grid-column: 2;
+            grid-row: 1;
         }
     }
 }

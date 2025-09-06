@@ -13,7 +13,7 @@
 
     .leaf{
         .desc{
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             line-height: 1.5;
         }
 
@@ -21,19 +21,33 @@
             display: grid;
             grid-template-columns: 100%;
             justify-content: space-between;
+            grid-gap: 2rem 0;
         }
-    }
-
-    
+    }    
 }
 
 @media only screen and (min-width: 480px) {
 
+    .vert{
+        .leaf{
+            .list{
+                grid-gap: 2.5rem 0;
+            }
+        }
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
 
+    .vert{
+        .leaf{
+            .list{
+                grid-template-columns: repeat(auto-fill, 225px );
+                grid-gap: 3rem 0;
+            }
+        }
+    }
 }
 
 
@@ -44,9 +58,23 @@
 
 @media only screen and (min-width: 1280px) {
 
+    
     .vert{
-        .list{
-            grid-gap: 2.8rem;
+        .leaf{
+            .list{
+                grid-template-columns: 100%;
+                grid-gap: 2.8rem;
+            }
+
+            .metas{
+                grid-column: 2;
+                grid-row: 1;
+            }
+
+            .thumb{
+                grid-column: 1;
+                grid-row: 1;
+            }
         }
     }
 }
