@@ -1,8 +1,8 @@
 {{- $view := "course/module/base/main/view/" -}}
-{{- $hero := printf "%s/hero.html" $view -}}
+{{- $tabs := printf "%s/tabs.html" $view -}}
 
-<div id="main-3" class="mb-60">
+<section id="main-3">
     <div class="wrap grid">
-   
+        {{- partial $tabs . -}}
     </div>
-</div>
+</section>

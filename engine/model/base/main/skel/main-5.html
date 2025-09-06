@@ -1,8 +1,8 @@
 {{- $view := "course/module/base/main/view/" -}}
-{{- $hero := printf "%s/hero.html" $view -}}
+{{- $path := printf "%s/path.html" $view -}}
 
-<div id="main-5" class="mb-60">
+<section id="main-5">
     <div class="wrap grid">
-   
+        {{ partial $path . }}
     </div>
-</div>
+</section>

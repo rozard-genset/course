@@ -13,7 +13,8 @@
 
     .thumb{
         img{
-            width: 320px;
+            width: 280px;
+            height: 100%;
             margin: auto;
         }
     }
@@ -22,7 +23,7 @@
 
         h1{
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
         }
     }
 }
@@ -51,14 +52,19 @@
     
     #hero{
 
-        .rows{
-            grid-template-columns: calc( 100% - 380px - 2rem ) 380px;
-            margin-bottom: 0rem;
-        }
+        min-height: 86vh;
+        grid-template-columns: calc( 100% - 380px - 2rem ) 380px;
+        margin-bottom: 0rem;
+
 
         .leads{
             grid-column: 1;
             grid-row: 1;
+
+            h1{
+                text-align: left;
+                font-size: 2.2rem;
+            }
         }
 
         .thumb{
@@ -69,13 +75,6 @@
                 width: 380px;
             }
         }
-
-        .leads{
-            h1{
-                text-align: left;
-                font-size: 2.2rem;
-            }
-        }
     }
 }
 
@@ -84,11 +83,7 @@
     
     
     #hero{
-        min-height: 85vh;
-        
-        .rows{
-           grid-template-columns: calc( 100% - 420px - 2rem ) 420px;
-        }
+        grid-template-columns: calc( 100% - 420px - 2rem ) 420px;
 
         .thumb{
             img{
@@ -108,10 +103,7 @@
 @media only screen and (min-width: 1280px) {  
     
     #hero{
-        width: 80%;
-        .rows{
-            grid-template-columns: calc( 100% - 460px - 2rem ) 460px;
-        }
+        grid-template-columns: calc( 100% - 460px - 2rem ) 460px;
 
         .thumb{
             img{

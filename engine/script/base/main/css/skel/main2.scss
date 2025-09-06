@@ -1,4 +1,3 @@
-
 @media only screen and (min-width: 480px) {
 
 }
@@ -16,6 +15,15 @@
 
 @media only screen and (min-width: 1280px) {
 
+    #main-2{
+        margin-bottom: 10rem;
+
+        .wrap{
+            grid-template-columns: 64% calc( 36% - 5rem );
+            justify-content: space-between;
+            
+        }
+    }
 }
 
 

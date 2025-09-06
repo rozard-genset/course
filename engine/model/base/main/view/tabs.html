@@ -1,40 +1,49 @@
-{{- $terms := partial  "course/module/base/main/data/query-term-name.html" . -}}
-{{- $conte := . -}}
-{{- $sites := .Site -}}
+{{- $page := partial "lib/queries/page-list-all-term.html" . -}}
+{{- $card := "course/module/base/main/part/vert-card.html" -}}
+
+
 <div id="tabs">
-    <div class="slot">
-        <div class="head">
-            <h2 class="lead text-lg uppercase font-bold mb-00 mt-00 desktop">{{ T "home_find_course" }}</h2>
-            <div id="prev-action" class="flex center-x mr-a mobile">
-                <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/arrow-left.svg" -}}</div>
+    <div class="head">
+        <div id="head-action" class="main center-x border-bottom">
+            <div class="icon lg pb-05">
+                {{ partial "icon/line/box.svg" }}
             </div>
-            <div id="tabs-action" class="menu">
-                <div id="list-action" data-target="course-tabs-list" class="tab-action flex center-x open">
-                    <h3 class="text-md font-bold mr-10">{{ T "home_all_course" }}</h3>
-                    <div class="icon sm rounded-full border-all mr-10 pa-05 desktop">{{- partial "icon/line/plus.svg" -}}</div>
-                </div>
-                {{- range first 10 $terms -}}
-                <div id="{{- . -}}-action" data-target="course-tabs-{{- . -}}" class="tab-action flex center-x">
-                    <h3 class="text-md font-bold mr-10">{{- . -}}</h3>
-                    <div class="icon sm rounded-full border-all mr-10 pa-05 desktop">{{- partial "icon/line/plus.svg" -}}</div>
-                </div>
-                {{- end -}}
-            </div>
-            <div id="next-action" class="flex center-x ml-a mobile">
-                <div class="icon sm rounded-full border-all mr-10 pa-05">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </div>
+            <h2 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">Featured</h2>
         </div>
-        <div class="leaf">
-            <div id="tabs-content" class="content">
-                <div id="course-tabs-list" class="tabs-item open">
-                    {{- partial "course/module/base/main/view/tabs/list.html" . -}}
-                </div>
-                {{- range first 10 $terms -}}
-                <div id="course-tabs-{{- . -}}" class="tabs-item">
-                    {{- partial  "course/module/base/main/view/tabs/term.html" (dict "name" . "ctx"  $conte "site" $sites ) -}}
-                </div>
-                {{- end -}}
+        <div id="prev-action" class="prev flex center-x mobile">
+            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "icon/line/arrow-left.svg" -}}</div>
+        </div>
+        <div id="tabs-action" class="menu">
+            {{- range $index, $value := first 5 $page -}}
+            <div id="action-{{- $index  -}}" data-target="course-tabs-{{- $index  -}}" class="tab-action flex center-x">
+                <div class="icon sm rounded-full border-all ml-10 mr-10 desktop">{{- partial "icon/line/plus.svg" -}}</div>
+                <h3 class="text-lg">{{- .name  -}}</h3>
             </div>
+            {{- end -}}
+        </div>
+        <div id="next-action" class="next flex center-x mobile">
+            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "icon/line/arrow-right.svg" -}}</div>
         </div>
     </div>
-</div>
+    <div class="leaf">
+        <div id="tabs-content" class="content">
+            {{- range $index, $value := first 5 $page -}}
+            <div id="course-tabs-{{- $index -}}" class="tabs-item pool{{ with eq $index 0 }} open {{- end }}">
+                <div class="lead flex center-x mb-60">
+                    <div class="border-bottom flex center-x">
+                        <h3 class="capitalize mt-00 mb-00 pb-15">{{ .name -}}</h3>
+                        <h4 class="capitalize text-xl border-left mt-00 mb-00 ml-15 pl-15 pb-15">{{ .page.Params.module.qoutes }}</h4>
+                    </div>
+                    <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a">
+                        <div class="name text-xs font-bold uppercase">Ekplorasi</div>
+                        <div class="icon sm ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                    </a>
+                </div>
+                <div class="list">
+                    {{- range first 6 .list -}}{{- partial $card . -}}{{- end -}}
+                </div>
+            </div>
+            {{- end -}}
+        </div>
+    </div>
+ </div>

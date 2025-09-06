@@ -1,0 +1,166 @@
+#tabs{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+
+    .head{
+        display: grid;
+        grid-template-columns: 35px calc( 100% - 70px) 35px;
+        margin: 2rem 0;
+
+        .main{
+            display: none;
+        }
+
+        .menu {
+            display: inline-flex;
+            max-width: 85%;
+            margin: 0 auto;
+            overflow: scroll;
+            scroll-behavior: smooth;
+        }
+
+        .tab-action{
+            h3{
+                margin:0 15px 0 0 ;
+                text-wrap: nowrap;
+            }
+        }
+
+        .tab-action.open {
+            h3{
+                font-weight: 600;
+            }    
+        }
+    }
+
+    .pool{
+        .lead{
+            margin-bottom: 2rem;
+
+            .pathway{
+                display: flex;
+                color: orangered;
+            }
+
+            h3{
+                font-size: 1.2rem;
+                margin-top: 0;
+            }
+            h4{
+                display: none;
+            }
+        }
+
+        .list{
+            display: grid;
+            grid-template-columns: 100%;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+    #tabs{
+        .pool{
+            .lead{
+                h4{
+                    margin-top: 3px;
+                    font-size: 1rem;
+                    display: block;
+                }
+
+                .pathway .name{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+  
+    #tabs{
+        .pool{
+            .list{
+                grid-template-columns: repeat( auto-fill, 240px );
+                grid-gap: 2.5rem 0;
+            }
+            .lead{
+                .pathway .name{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    #tabs{
+        grid-template-columns: 200px calc( 100% - 200px - 3rem );
+
+        .head{
+            position: relative;
+            display: block;
+            margin-top: 0;
+
+            .main {
+                display: flex;
+                margin-bottom: 3rem;
+            }
+
+            .menu {
+                width: auto;
+                display: grid;
+                max-width: 100%;
+                overflow: hidden;
+                grid-template-columns: repeat( 2, 50% );
+            }
+
+            .tab-action {
+                margin-bottom: 2rem;
+            }
+
+            .icon {
+                padding: .2rem;
+                margin-right: 1rem;
+            }
+        }
+
+        .pool{
+            .lead{
+                margin-bottom: 2rem;
+
+                h3{
+                    font-size: 1.4rem;
+                }
+
+                h4{
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    #tabs{
+        grid-template-columns: 360px calc( 100% - 360px - 3.5rem);
+
+
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
+
+
+}

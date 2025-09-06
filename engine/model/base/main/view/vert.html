@@ -1,0 +1,23 @@
+{{- $card := "course/module/base/main/part/hori-card.html" -}}
+
+<div id="{{ .name | urlize }}" class="vert">
+     <div class="head mb-60">
+        <div class="flex center-x border-bottom">
+            <div class="icon lg pb-10">
+                {{ partial "icon/line/box.svg" }}
+            </div>
+            <h1 class="text-xl uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
+        </div>
+    </div>
+    <div class="leaf">
+        <div class="desc mb-60">
+            {{ .page.Params.description }}
+        </div>
+        <div class="list mb-60">
+            {{- range first 4 .list -}}{{- partial $card . -}}{{- end -}}
+        </div>
+        <div class="data">
+            HOI
+        </div>
+    </div>
+</div>

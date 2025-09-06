@@ -18,7 +18,7 @@
         {{- $sm := $image.Resize "340x webp q100" -}}
         <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}" />
 
-        {{- $xs := $image.Resize "420x webp q100" -}}
+        {{- $xs := $image.Resize "280x webp q100" -}}
         <img src="{{ $xs.RelPermalink }}" data="{{ $xs.RelPermalink }}" alt="{{ .Title }}" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" fetchpriority="high"/>
     </picture>
 {{- end -}}

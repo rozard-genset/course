@@ -1,0 +1,18 @@
+{{- $image := resources.GetMatch "media/course/lead-hero.png" -}}
+
+{{- if $image -}}
+    <picture>
+
+        {{- $xl := $image.Resize "320x webp q100" -}}
+        <source media="(width > 1280px)" srcset="{{ $xl.RelPermalink }}"/>
+
+        {{- $lg := $image.Resize "300x webp q100" -}}
+        <source media="(width > 1024px)" srcset="{{ $lg.RelPermalink }}"/>
+
+        {{- $md := $image.Resize "280x webp q100" -}}
+        <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}"/>
+
+        {{- $xs := $image.Resize "180x webp q100" -}}
+        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" loading="lazy"/>
+    </picture>
+{{- end -}}

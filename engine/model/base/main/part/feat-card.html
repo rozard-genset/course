@@ -1,0 +1,29 @@
+{{- $thumb := "course/module/base/main/part/hori-thumb.html" -}}
+{{- $count := "lib/course/count-material.html" -}}
+
+<article class="card-vert grid rounded-lg">
+    <a href="{{ .RelPermalink }}" class="thumb">{{- partial $thumb . -}}</a>
+    <div class="metas grid">
+        <a href="{{ .RelPermalink }}" class="">
+            <h3 class="title font-bold mt-00">{{ .Title }}</h3>
+            <div class="tutor center-x">
+                <div class="avatar rounded-full overflow-hidden">{{- partial "parted/avatar/user-28.html" . -}}</div>
+                <div class="text-xs font-bold ml-15">{{- .Page.Params.Metadata.Author -}}</div>
+            </div>
+        </a>
+        <div class="stats grid center-x text-sm capitalize mb-05">
+            <div class="level box flex center-x">
+                <div class="icon sm">
+                    {{ partial "icon/line/bar-chart-2.svg" }}
+                </div>
+                <span class="mr-05">{{- .Params.parted.stat.data.level -}}</span>
+            </div>
+            <div class="mater box flex center-x">
+                <div class="icon sm">
+                    {{ partial "icon/line/book-open.svg" }}
+                </div>
+                <span class="ml-05">{{- partial $count . }}  Session</span>
+            </div>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,37 @@
+<template id="proto-lead">
+    <div class="head">
+        {{- partial "course/module/base/main/part/lead-thumb.html" . -}}
+    </div>
+    <div class="leaf">
+        <h2 class="text-4xl mt-00 mb-60">{{ .Page.Params.Parted.Info.Lead }}</h2>
+        <div class="rows">
+            <div class="top">
+                <div class="flex center-x border-bottom mb-30">
+                    <div class="icon lg pb-10">
+                        {{ partial "icon/line/box.svg" }}
+                    </div>
+                    <h3 class="text-xl font-bold border-left pl-15 pb-10 mb-00 mt-00">{{ .Page.Params.Parted.Info.Top.Lead }}</h3>
+                </div>
+                <p class="text-lg">{{ .Page.Params.Parted.Info.Top.Desc }}</p>
+            </div>
+            <div class="mid">
+                <div class="flex center-x border-bottom mb-30">
+                    <div class="icon lg pb-10">
+                        {{ partial "icon/line/box.svg" }}
+                    </div>
+                    <h3 class="text-xl font-bold border-left pl-15 pb-10 mb-00 mt-00">{{ .Page.Params.Parted.Info.Mid.Lead }}</h3>
+                </div>
+                <p class="text-lg">{{ .Page.Params.Parted.Info.Mid.Desc }}</p>
+            </div>
+            <div class="low">
+                <div class="flex center-x border-bottom mb-30">
+                    <div class="icon lg pb-10">
+                        {{ partial "icon/line/box.svg" }}
+                    </div>
+                    <h3 class="text-xl font-bold border-left pl-15 pb-10 mb-00 mt-00">{{ .Page.Params.Parted.Info.Low.Lead }}</h3>
+                </div>
+                <p class="text-lg">{{ .Page.Params.Parted.Info.Low.Desc }}</p>
+            </div>
+        </div>
+    </div>
+</template>

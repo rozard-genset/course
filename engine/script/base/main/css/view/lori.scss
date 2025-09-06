@@ -1,0 +1,52 @@
+.lori{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+
+
+    .head{
+        .desc{
+            font-size: 1.15rem;
+            line-height: 1.5;
+        }
+    }
+
+    .leaf{
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: space-between;   
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    .lori{
+        grid-template-columns: 360px calc( 100% - 360px - 3.5rem );
+
+        .leaf{
+            grid-template-columns: repeat(auto-fill,240px);
+            grid-gap: 3rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

@@ -1,0 +1,54 @@
+{{- $page := partial "lib/queries/page-list-all-term.html" . -}}
+{{- $vert := "course/module/base/main/view/vert.html" -}}
+{{- $lori := "course/module/base/main/view/lori.html" -}}
+{{- $rori := "course/module/base/main/view/rori.html" -}}
+{{- $list := slice -}}
+{{- $stat := 1 -}}
+{{- $sums := 2 -}}
+{{- $info := 1 -}}
+
+
+{{- range $index, $value := $page -}}
+
+    <!-- skip featured offset -->
+    {{- if le $index 5 -}}{{- continue -}}{{- end -}}
+
+
+    <!-- render subject -->
+    {{- if and ( ge $sums 2 ) ( eq $info 0 )   -}}
+
+        <!-- render horizontal mode -->
+        <div id="part-{{ $stat }}" class="once grid">{{ partial $lori . }}</div>
+        <!-- end render horizontal mode -->
+
+        {{- $info = 1 -}}{{- $sums = 0 -}}{{- $stat = ( math.Sum $stat 1 ) -}}{{- continue -}}
+        
+    {{- else if and ( ge $sums 2 ) ( eq $info 1 )   -}}
+
+        <!-- render horizontal mode -->
+        <div id="part-{{ $stat }}" class="once grid">{{ partial $rori . }}</div>
+        <!-- end render horizontal mode -->
+
+        {{- $info = 0 -}}{{- $sums = 0 -}}{{- $stat = ( math.Sum $stat 1 ) -}}{{- continue -}}   
+
+    {{- else if eq $sums 0 -}}
+
+        <!-- render vertical mode -->
+        <div id="part-{{ $stat }}" class="rows grid">
+        {{- partial $vert . -}}
+       
+        {{- $sums = ( math.Sum $sums 1 ) -}}{{- $stat = ( math.Sum $stat 1 ) -}}{{- continue -}}    
+
+    {{- else if le $sums 2 -}}
+      
+        {{- partial  $vert . -}}
+        </div>
+        <!-- end render vertical mode -->
+
+        {{- $sums = ( math.Sum $sums 1 ) -}}{{- $stat = ( math.Sum $stat 1 ) -}}{{- continue -}} 
+    {{ else }} 
+
+        {{- $stat = ( math.Sum $stat 1 ) -}} 
+    {{- end -}}
+
+{{- end -}}

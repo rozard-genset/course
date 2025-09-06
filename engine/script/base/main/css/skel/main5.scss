@@ -1,4 +1,12 @@
+#main-5{
 
+    .once, .rows{
+        grid-template-columns: 100%;
+        justify-content: space-between;
+        grid-gap: 2rem 0;
+    }
+
+}
 @media only screen and (min-width: 480px) {
 
 }
@@ -16,6 +24,16 @@
 
 @media only screen and (min-width: 1280px) {
 
+    #main-5{
+
+        .once, .rows{
+            margin-bottom: 10rem;
+        }
+
+        .rows{
+            grid-template-columns: repeat( 2, calc( 50% - 4rem ));
+        }
+    }
 }
 
 

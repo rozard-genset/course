@@ -1,0 +1,51 @@
+.vert{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+    align-items: normal;
+
+
+    .leaf{
+        .desc{
+            font-size: 1.15rem;
+            line-height: 1.5;
+        }
+
+        .list{
+            display: grid;
+            grid-template-columns: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    .vert{
+        .list{
+            grid-gap: 2.8rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

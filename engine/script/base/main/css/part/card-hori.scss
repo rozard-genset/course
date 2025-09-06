@@ -1,0 +1,100 @@
+// LIST
+.card-hori {
+    grid-template-columns: calc( 100% - 120px ) 120px;
+    justify-content: space-between;
+    background-color: var(--background-02);
+    overflow: hidden;
+
+    .thumb{
+
+        img{
+            height: 120px;
+            width: 120px;
+        }
+    }
+
+    .metas{
+        padding: 1rem;
+
+        .title{
+            font-size: 1.1rem;
+            line-clamp: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;  
+        }
+
+        .tutor{
+            display: none;
+        }
+
+        .stats{
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+    .card-hori{
+        grid-template-columns: calc( 100% - 140px ) 140px;
+       
+        .thumb{
+            img{
+                height: 140px;
+                width: 140px;
+            }
+        }
+
+        .metas{
+            padding: 1rem 1.5rem;
+            align-content: space-between;
+            .title{
+                font-size: 1.2rem;
+            }
+
+            .tutor{
+                display: flex;
+            }
+
+            .stats{
+                margin-top: .85rem;
+                grid-template-columns: auto auto auto;
+                justify-content: normal;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+    
+    .card-hori{
+
+        .metas{
+            .title{
+                font-size: 1.12rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
+}

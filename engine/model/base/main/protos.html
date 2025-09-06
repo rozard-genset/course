@@ -1,0 +1,7 @@
+<!-- variable -->
+{{- $lazy := "course/module/base/main/lazy" -}}
+{{- $tuto := printf "%s/tuto.html" $lazy -}}
+{{- $lead := printf "%s/lead.html" $lazy -}}
+
+<!-- render -->
+{{- partial $tuto . -}}{{- partial $lead . -}}
