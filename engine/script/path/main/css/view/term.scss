@@ -1,0 +1,67 @@
+#term{
+
+    .leaf{
+
+        .boxs{
+            grid-template-columns: repeat( auto-fill, calc( 50% - 1rem ) );
+            grid-auto-rows: 160px;
+            justify-content: space-between;
+            grid-gap: 3rem 1.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .card{
+            align-content: space-between;
+            background-color: var(--background-02);
+        }
+
+
+        .icon{
+            color: orangered;
+            margin-right: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    #term{
+        .leaf{
+            .boxs{
+                grid-template-columns: repeat( auto-fill, calc( 30% - 1rem ) );
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    #term{
+
+        .leaf{
+
+            .boxs{
+                grid-template-columns: repeat( auto-fill, 160px );
+                grid-auto-rows: 160px;
+                grid-gap: 3rem 1.75rem;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

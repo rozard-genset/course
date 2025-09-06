@@ -1,0 +1,31 @@
+{{- $path := "course/module/path/main/part" -}}
+{{- $ctx  := . -}}{{- $site := $ -}}
+
+<template id="proto-team">
+    <div class="head ">
+        <div class="flex center-x border-bottom mb-40">
+            <div class="icon md">
+                {{ partial "icon/line/shield.svg" }}
+            </div>
+            {{- with .Parent.Page.Params.Chairman.lead -}}
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ . }}</h2>
+            {{- end -}}
+        </div>
+        {{- with .Parent.Page.Params.Chairman.desc -}}
+            <p class="text-sm mt-00">{{- . -}}</p>
+        {{- end -}}
+    </div>
+    <div class="leaf grid">
+    {{- range .Parent.Page.Params.Chairman.list -}}
+        <div class="flex center-x">
+            <div class="icon lg">
+                {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
+            </div>
+            <div class="name ml-15">
+                <h3 class="capitalize text-md font-bold mb-00">{{ .name }}</h3>
+                <p class="mt-00 text-gray-400">{{ .post }}</p>
+            </div>
+        </div>
+    {{- end -}}
+    </div>
+</template>

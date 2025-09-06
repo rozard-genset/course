@@ -1,0 +1,31 @@
+@media only screen and (min-width: 480px) {
+
+    #join{
+        .leaf{
+            grid-template-columns: repeat(2, calc( 50% - 2rem ));
+            grid-gap: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    #join{
+        .leaf{
+            grid-template-columns: 100%;
+            grid-gap: 0;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    
+}

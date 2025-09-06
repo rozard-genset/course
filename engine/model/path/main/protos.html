@@ -1,0 +1,8 @@
+<!-- variable -->
+{{- $part := "course/module//path/main/lazy" -}}
+{{- $bugs := printf "%s/bugs.html" $part -}}
+{{- $team := printf "%s/team.html" $part -}}
+{{- $join := printf "%s/join.html" $part -}}
+
+<!-- render -->
+{{- partial $bugs . -}}{{- partial $team . -}}{{- partial $join . -}}

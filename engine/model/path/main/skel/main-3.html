@@ -1,0 +1,13 @@
+<!-- variable -->
+{{- $view := "course/module/path/main/view/" -}}
+{{- $join := printf "%s/join.html" $view -}}
+{{- $team := printf "%s/team.html" $view -}}
+{{- $bugs := printf "%s/bugs.html" $view -}}
+
+<div id="main-3">
+    <div class="grid rows">
+        {{- partial $join . -}}
+        {{- partial $team . -}}
+        {{- partial $bugs . -}}
+    </div>
+</div>

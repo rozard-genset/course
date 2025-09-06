@@ -1,0 +1,33 @@
+<!-- variable -->
+{{- $part := "course/module/path/main/part/" -}}
+{{- $thum := printf "%s/hero-thumb.html" $part -}}
+{{- $card := printf "%s/hero-state.html" $part -}}
+
+
+<div id="hero" class="mb-60">
+    <div class="head">
+        {{ partial $thum .  }}
+    </div>
+    <div class="leaf">
+        <div class="lead">
+            <h1 class="text-5xl">Knowledge Discovery</h1>
+            <hr>
+            <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+        </div>
+        <div class="stat grid">
+            <div class="total-course">
+                {{ partial $card ( dict "name" "Course" "lead" "Total" "data" "340" ) }}
+            </div>
+            <div class="total-module">
+                {{ partial $card ( dict "name" "module" "lead" "Total" "data" "342" ) }}
+            </div>
+            <div class="total-tutors">
+                {{ partial $card ( dict "name" "tutors" "lead" "Total" "data" "6731" ) }}
+            </div>
+            <div class="total-subject">
+                {{ partial $card ( dict "name" "subject" "lead" "Total" "data" "8922" ) }}
+            </div>
+        </div>
+    </div>
+</div>

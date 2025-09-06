@@ -1,0 +1,10 @@
+<!-- variable -->
+{{- $view := "course/module/path/main/view/" -}}
+{{- $hero := printf "%s/hero.html" $view -}}
+
+
+<div id="main-1">
+    <div class="grid rows">
+        {{- partial $hero . -}}
+    </div>
+</div>
