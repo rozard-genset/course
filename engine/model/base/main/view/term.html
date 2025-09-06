@@ -1,12 +1,15 @@
 {{- $data := partial "lib/queries/term-link" . -}}
 {{- $card := "course/module/base/main/part/tabed-card.html" -}}
+{{- $path := "course/module/base/main/part/path-main.html" -}}
+
 <div id="term">
     <div class="head mb-60">
         <div class="flex center-x border-bottom">
             <div class="icon xl pb-10">
                 {{ partial "icon/line/box.svg" }}
             </div>
-            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00"> Top Categories </h1>
+            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">Top Categories</h1>
+            {{ partial $path . }}
         </div>
     </div>
     <div class="leaf">

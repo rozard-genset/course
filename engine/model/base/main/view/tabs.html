@@ -1,6 +1,6 @@
 {{- $page := partial "lib/queries/page-list-all-term.html" . -}}
 {{- $card := "course/module/base/main/part/vert-card.html" -}}
-
+{{- $path := "course/module/base/main/part/path-link.html" -}}
 
 <div id="tabs">
     <div class="head">
@@ -34,10 +34,7 @@
                         <h2 class="uppercase font-normal mt-00 mb-00 pb-15">{{ .name -}}</h2>
                         <h3 class="capitalize text-xl border-left mt-00 mb-00 ml-15 pl-15 pb-15">{{ .page.Params.module.qoutes }}</h3>
                     </div>
-                    <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a" title="{{ .name }} more course">
-                        <div class="name text-xs font-bold uppercase">Ekplorasi</div>
-                        <div class="icon sm ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-                    </a>
+                    {{ partial $path . }}
                 </div>
                 <div class="list">
                     {{- range first 6 .list -}}{{- partial $card . -}}{{- end -}}
