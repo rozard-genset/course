@@ -1,16 +1,18 @@
-{{- $thum := "stories/module/look/main/part/thumb-square.html" -}}
-{{- $list := partial "lib/pageds/page-section.html" . -}}
+{{- $thum := "course/module/look/main/part/thumb-square.html" -}}
+{{- $list := partial "lib/queries/pool-item-all-section" . -}}
 {{- $icon := slice "bookmark" "heart" "share-2" -}}
+
+
 
 <div id="list">
     <div class="head mb-20">
         <div class="flex center-x">
             <h1 class="text-2xl mb-30 mt-00">{{ .Section }} Timeline</h1>
-            <h1 class="text-md mb-30 mt-00 ml-a">Page {{ ( .Paginate ($list) 10 ).PageNumber }}</h1>
+            <h1 class="text-md mb-30 mt-00 ml-a">Page {{ ( .Paginate ($list) 2 ).PageNumber }}</h1>
         </div>
     </div>
     <div class="leaf">
-        {{- range  ( .Paginate ($list) 10 ).Pages  -}}
+        {{- range  ( .Paginate ($list) 2 ).Pages  -}}
         <div class="card grid rounded-lg border-all">
             <div class="action flex center-x">
                 <div class="author flex center-x">

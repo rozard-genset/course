@@ -6,7 +6,7 @@
         <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Exploration</h2>
     </div>
     <div class="leaf">
-    {{- range ( partial "lib/queries/page-term-not-in-term" . ) -}}
+    {{- range ( partial "lib/queries/path-item-not-in-term" . ) -}}
         <a href="{{ .RelPermalink }}" class="menu flex center-x mb-20">
             <div class="icon sm border-all rounded-full">
             {{ partial "icon/line/plus.svg" }}
