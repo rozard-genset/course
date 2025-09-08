@@ -1,37 +1,18 @@
-{{- $thum := "course/module/look/main/part/thumb-square.html" -}}
+{{- $card := "course/module/look/main/part/list-card.html" -}}
 {{- $list := partial "lib/queries/pool-item-all-section" . -}}
-{{- $icon := slice "bookmark" "heart" "share-2" -}}
-
 
 
 <div id="list">
     <div class="head mb-20">
         <div class="flex center-x">
-            <h1 class="text-2xl mb-30 mt-00">{{ .Section }} Timeline</h1>
+            <h1 class="text-2xl mb-30 mt-00">Available {{ .Section }}</h1>
             <h1 class="text-md mb-30 mt-00 ml-a">Page {{ ( .Paginate ($list) 2 ).PageNumber }}</h1>
         </div>
     </div>
     <div class="leaf">
         {{- range  ( .Paginate ($list) 2 ).Pages  -}}
-        <div class="card grid rounded-lg border-all">
-            <div class="action flex center-x">
-                <div class="author flex center-x">
-                    <div class="rounded-full overflow-hidden">{{- partial "parted/avatar/user-32.html" . -}}</div>
-                    <h2 class="text-sm font-bold mt-00 mb-00 ml-20 mr-20">{{- .Page.Params.Metadata.Author -}} </h2>
-                </div>
-                <div class="flex center-x ml-a">
-                    {{- range $icon -}}<div class="icon sm">{{ partial ( printf "icon/line/%s.svg" . ) }}</div>{{- end -}}
-                </div>
-            </div>
-            <div class="linker">
-                <a class="thumb" href="{{ .RelPermalink }}">{{- partial $thum . -}}</a>
-                <a href="{{ .RelPermalink }}" class="meta mb-05">
-                    <h2 class="title text-lg font-bold mb-10 mt-00">{{ .Title }}</h2>
-                    <p class="descs text-sm mb-00 mt-00">{{ .Page.Params.Description }}</p>
-                </a>
-            </div>
-        </div>
-        {{ end }}
+            {{- partial $card . -}}
+        {{- end -}}
     </div>
     <div class="paginate">
         {{- partial "pagination.html" . -}}

@@ -10,16 +10,21 @@
 
 {{- if $image -}}
     <picture>
-        {{- $lg := $image.Resize "480x360 webp q100" -}}
+
+        {{- $lg := $image.Resize "272x" -}}
+        {{- $lg = $lg.Fill "100x100 webp q100" -}}
         <source media="(width > 1024px)" srcset="{{ $lg.RelPermalink }}"/>
 
-        {{- $md := $image.Resize "420x315 webp q100" -}}
+        {{- $md := $image.Resize "360x webp q100" -}}
         <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}"/>
 
-        {{- $sm := $image.Resize "272x webp q100" -}}
+        {{- $sm := $image.Resize "272x" -}}
+        {{- $sm = $sm.Fill "100x100 webp q100" -}}
         <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}"/>
               
-        {{- $xs := $image.Resize "420x315 webp q100" -}}
-        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" class="feature-image" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }} feature image" fetchpriority="high"/>
+        {{- $xs := $image.Resize "320x webp q100" -}}
+        <source media="(width > 100px)" srcset="{{ $xs.RelPermalink }}"/>
+
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}" class="feature-image" width="{{ $image.Width }}" height="{{ $image.Height }}" title="{{ .Title }} feature image" fetchpriority="high"/>
     </picture>
 {{- end -}}

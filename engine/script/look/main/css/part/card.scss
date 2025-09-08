@@ -1,0 +1,158 @@
+.card{
+
+    background-color: var(--background-02);
+
+    .linker{
+        padding: 2rem;
+        display: grid;
+    }
+
+    .info{
+
+        .meta{
+
+            .title{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;  
+                line-clamp: 1;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
+        }
+
+        .desc{
+            display: grid;
+            justify-content: space-between;
+        }
+
+        .thumb{
+            display: block;
+            overflow: hidden;
+            margin-bottom: 1rem;
+
+            picture, img{
+                width: 100%;
+                height: 180px;
+            }
+        }
+    }
+
+
+    .foot{
+        .stats{
+            grid-template-columns: auto auto;
+            justify-content: space-between;
+            grid-gap: 2rem;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+    .card{
+
+        .info{
+
+            .meta{
+                display: flex;
+            }
+
+            .desc{
+                grid-template-columns: calc( 100% - 100px - 1rem ) 100px ;
+            }
+
+            .thumb{
+                grid-column: 2;
+                grid-row: 1;
+
+                picture, img{
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            .text-md{
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+
+    .card{
+
+        .info{
+
+            .meta{
+                display: block;
+            }
+
+            .desc{
+                grid-template-columns: 100%;
+            }
+
+            .thumb{
+                grid-column: 1;
+                grid-row: 1;
+
+                picture, img{
+                    height: 200px;
+                    width: 100%;
+                }
+            }
+
+            .text-md{
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+    .card{
+
+        .info{
+
+            .meta{
+                display: flex;
+            }
+
+            .desc{
+                grid-template-columns: calc( 100% - 100px - 1rem ) 100px ;
+            }
+
+            .thumb{
+                grid-column: 2;
+                grid-row: 1;
+
+                picture, img{
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            .text-md{
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+   
+}
+
+
+@media only screen and (min-width: 1536px) {
+}
