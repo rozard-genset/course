@@ -1,6 +1,0 @@
-{{- $page := where .Site.Pages "Type" "course" -}}{{- $list := slice -}}
-{{- range  where .Site.Pages "Type" "course" -}}
-    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
-
-{{ return $list }}
