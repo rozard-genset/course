@@ -23,13 +23,10 @@ module:
       target: "assets/scripts/course/module"
 
     - source: "blocks/model"
-      target: "layouts/partials/course/blocks"
+      target: "layouts/partials/blocks/course"
 
     - source: "blocks/script"
-      target: "assets/scripts/course/blocks"
+      target: "assets/scripts/blocks/course"
 
-    - source: "content"
-      target: "content/course"
     - source: "assets"
       target: "assets/media/course"
-    
