@@ -1,4 +1,4 @@
-{{- $path := "stories/module/base/main/part" -}}
+{{- $path := "course/module/base/main/part" -}}
 {{- $ctx  := . -}}{{- $site := $ -}}
 
 <template id="proto-team">
@@ -18,7 +18,7 @@
     <div class="leaf grid">
     {{- range .Page.Params.Chairman.list -}}
         <div class="flex center-x">
-            <div class="icon lg">
+            <div class="avatar">
                 {{- partial ( printf "%s/thumb-team.html" $path ) (dict  "ctx" $ctx "site" $site "name" .name )  -}}
             </div>
             <div class="name ml-15">

@@ -13,8 +13,9 @@
         overflow: hidden;
         background-color: var(--background-02);
 
-        picture{
-            height: 100%;
+        picture, img{
+            height: auto;
+            width: 100%;
         }
 
         .linker{
@@ -42,6 +43,8 @@
         .descs{
             display: none;
         }
+
+
     }
 }
 

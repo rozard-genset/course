@@ -18,6 +18,7 @@
     #main-6{
         margin-top: 5rem ;
         .grid{
+            display: grid;
             grid-template-columns: repeat( 3, calc( 33.333% - 5rem ) );
             justify-content: space-between;
             align-items: flex-start;

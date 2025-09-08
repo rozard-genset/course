@@ -1,12 +1,14 @@
+{{ $page := partial "lib/queries/pool-item-all-section.html" . }}
+
 <template id="proto-feat">
     <div class="head flex center-x mb-30 border-bottom">
         <div class="icon md">
             {{- partial "icon/line/git-pull-request.svg" -}}
         </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Stories Arround</h2>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Recomended Course</h2>
     </div>
     <div class="leaf">
-        {{- range first 3 ( partial "lib/queries/pool-item-not-in-term.html" . ) -}}
+        {{- range first 3 $page -}}
         <a href="{{ .RelPermalink }}" class="article">
             <h2 class="font-bold text-md">{{ .Title }}</h2>
             <p class="text-sm"> {{ .Page.Params.Description }}</p>
