@@ -120,6 +120,8 @@ let task_asig = ()=> {
 
 
 window.addEventListener( 'load', ()=> {
+
+    console.log('load')
     init_plan();
     main_tabs();
     task_tabs();

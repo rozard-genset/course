@@ -7,11 +7,6 @@ module:
     - source: "library"
       target: "layouts/partials/lib/course"
     
-    - source: "format/model"
-      target: "layouts/partials/format/course"
-
-    - source: "format/script"
-      target: "assets/scripts/format/course"
 
     - source: "markit"
       target: "layouts/course/_markup"
@@ -23,10 +18,16 @@ module:
       target: "assets/scripts/course/module"
 
     - source: "blocks/model"
-      target: "layouts/partials/blocks/course"
+      target: "layouts/partials/course/blocks"
 
     - source: "blocks/script"
-      target: "assets/scripts/blocks/course"
+      target: "assets/scripts/course/blocks"
+
+    - source: "format/model"
+      target: "layouts/partials/course/format"
+
+    - source: "format/script"
+      target: "assets/scripts/course/format"
 
     - source: "assets"
       target: "assets/media/course"
