@@ -1,15 +1,12 @@
-{{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
-{{- $fil2 := where .Site.Pages "Type" "course" -}}{{- $page := $fil1 | intersect $fil2 -}}{{- $list := slice -}}
-{{- range $page -}}
-    {{- if ne .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
+{{- $list := partial "lib/queries/pool-item-in-term.html" . -}}
+
 
 <div id="list" class="mb-60">
 	<div class="divider">
 		{{- range ( .Paginate ($list) 2 ).Pages -}}
 		<div class="course">
             <a href="{{ .RelPermalink }}" class="card rounded-lg">
-                <div class="thumb">{{- partial "course/module/pool/main/part/thumb-list.html" . -}}</div>
+                <div class="thumb">{{- partial "course/module/node/main/part/thumb-list.html" . -}}</div>
                 <div class="metas">
                     <h2 class="text-md font-bold title mb-20">{{ .Title }}</h2>
                     <div class="meta center-x text-sm capitalize mb-05">

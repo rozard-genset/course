@@ -1,4 +1,4 @@
-{{- $data := partial "lib/queries/term-link" . -}}
+{{- $data := partial "lib/queries/pool-item-all-term" . -}}
 
 <div id="term">
     <div class="head mb-70">
@@ -12,9 +12,9 @@
     <div class="leaf">
         <div class="grid boxs">
         {{- range $data -}}
-            <a href="{{ .RelPermalink }}" class="card grid border-all rounded-md pa-15">
+            <a href="{{ .page.RelPermalink }}" class="card grid border-all rounded-md pa-15">
                 <div class="top">
-                    <h2 class="text-lg font-bold mb-00 mt-00">{{ .Title }}</h2>
+                    <h2 class="text-lg font-bold mb-00 mt-00">{{ .page.Title }}</h2>
                 </div>
                 <div class="bot flex center-x">
                     <div class="ml-a flex center-x">
