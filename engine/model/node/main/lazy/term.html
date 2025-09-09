@@ -7,11 +7,11 @@
     </div>
     <div class="leaf">
     {{- range ( partial "lib/queries/path-item-not-in-term" . ) -}}
-        <a href="{{ .RelPermalink }}" class="menu flex center-x mb-20">
+        <a href="{{ .RelPermalink }}" class="menu flex center-x mb-25">
             <div class="icon sm border-all rounded-full">
             {{ partial "icon/line/plus.svg" }}
             </div>
-            <div class="title">{{- .Title -}}</div>
+            <div class="title capitalize">{{- .Title -}}</div>
         </a>
     {{- end -}}
     </div>

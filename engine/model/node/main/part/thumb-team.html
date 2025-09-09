@@ -6,7 +6,7 @@
 {{- $link  := ""    -}}
 
 {{- with $name -}}
-    {{- $path := printf "/%s/%s" "profile/person" . -}}
+    {{- $path := printf "/%s/%s" "profile" . -}}
     {{- with $site.Site.GetPage $path -}}
         {{ $link = .Page.Resources.GetMatch .Page.Params.Thumb }}
         {{ $link = $link.Fill "63x63 webp q100" }}

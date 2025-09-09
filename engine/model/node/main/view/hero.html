@@ -1,8 +1,10 @@
 <div id="hero" class="mb-60">
     <div class="grid center-x" >
         <div class="head">
+             {{- partial "course/module/node/main/part/hero-thumb.html" . -}}
+        </div>
+        <div class="info">
             <h2 class="text-4xl mt-00 mb-10">{{- .Page.Params.Module.Qoutes -}}</h2>
-            <h2 class="lead mt-10"> Explore {{ .Title }} Course </h2>
         </div>
     </div>
 </div>

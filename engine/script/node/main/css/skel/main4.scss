@@ -1,0 +1,29 @@
+#main-4{
+    display: grid;
+}
+@media only screen and (min-width: 480px) {
+
+
+}
+
+
+@media only screen and (min-width: 768px) {
+}
+
+
+@media only screen and (min-width: 1024px) {
+    
+    
+}
+
+
+@media only screen and (min-width: 1280px) {
+    #main-4{
+        grid-template-columns: 45% 45%;
+        justify-content: space-between;
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+}

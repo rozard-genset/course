@@ -2,6 +2,12 @@
 
 
 <div id="list" class="mb-60">
+    <div class="head">
+        <div class="flex">
+            <h2 class="lead text-lg mt-10"> Explore {{ .Title }} Course </h2>
+            <h2 class="lead text-lg mt-10 ml-a"> Current page {{ ( .Paginate ($list) 2 ).PageNumber }}</h2>
+        </div>
+    </div>
 	<div class="divider">
 		{{- range ( .Paginate ($list) 2 ).Pages -}}
 		<div class="course">

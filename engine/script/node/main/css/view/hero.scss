@@ -1,19 +1,16 @@
 #hero {
+
+    .grid{
+        justify-content: space-between;
+    }
     
-    margin-bottom: 5rem;
-
-    .taxpic{
-        width: 36px;
-        height: 36px;
-        padding: 8px;
-        padding-right: 0;
-        padding-top: 0;
-    }
-
     .head{
-        margin-bottom: 2rem;
+        img{
+            display: none;
+            height: auto;
+            margin: auto;
+        }
     }
-
 }
 
 
@@ -23,20 +20,27 @@
 
 
 @media only screen and (min-width: 768px) {
-    
+    #hero{
+
+        .grid{
+            grid-template-columns: 220px calc( 100% - 220px - 2rem );
+        }
+
+        .head{
+            img{
+                display: block;
+                width: 220px;
+            }
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1024px) {
     #hero {
 
-        .head{
-            margin-bottom: 0rem;
-        }
-
         .grid{
-            grid-template-columns: calc( 100% - 380px - 5rem ) 380px;
-            grid-gap: 5rem;
+            grid-template-columns: 280px calc( 100% - 280px - 2rem );
         }
     }
 }
@@ -47,4 +51,16 @@
 
 
 @media only screen and (min-width: 1536px) {
+    #hero{
+
+        .grid{
+            grid-template-columns: 320px calc( 100% - 320px - 2rem );
+        }
+
+        .head{
+            img{
+                width: 320px;
+            }
+        }
+    }
 }
