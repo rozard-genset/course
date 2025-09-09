@@ -1,0 +1,135 @@
+.carbox{
+    justify-content: space-between;
+    background-color: var(--background-02);
+    overflow: hidden;
+
+    .thumb{
+        img{
+            height: 120px;
+            width: 120px;
+        }
+    }
+
+    .metas{
+        padding: 1rem 2.25rem 1rem 1.5rem;
+        align-content: space-between;
+    }
+
+    .title{
+        font-size: 1.02rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;  
+    }
+
+    .tutor{
+        display: none;
+    }
+
+    .stats{
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+}
+
+
+@media only screen and (min-width: 480px) {
+
+    .carbox{
+
+        grid-template-columns: 125px calc( 100% - 125px );
+        grid-template-rows: 125px ;
+
+        .thumb{
+            img{
+                height: 125px;
+                width: 125px;
+            }
+        }
+
+        .metas{
+            padding: 1rem 2rem;
+
+            .title{
+                font-size: 1.05rem;
+            }
+
+            .tutor{
+                margin: .25rem 0 .25rem 0;
+                display: flex;
+            }
+
+            .stats{
+                margin-top: 1rem;
+                grid-template-columns: auto auto;
+                justify-content: normal;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .carbox{
+        grid-template-columns: 100%;
+        grid-template-rows: 160px;
+
+        .thumb{
+            img{
+                width: 225px;
+                height: 160px;
+            }
+        }
+
+        .metas{
+            padding: 1.5rem 1rem;
+
+            .tutor{
+                margin: 1rem 0;
+                display: flex;
+            }
+
+
+            .stats{
+                margin-top: 1.5rem;
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+            }
+        }
+    }   
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    .carbox{
+        grid-template-rows: 180px;
+        .thumb{
+            img{
+                width: 235px;
+                height: 180px;
+            }
+        }
+
+        .metas{
+            .title{
+                font-size: 1.06rem;
+            }
+
+            .stats{
+                margin-top: 0rem;
+            }
+        }
+    }  
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

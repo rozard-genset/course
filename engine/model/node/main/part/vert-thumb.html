@@ -1,0 +1,32 @@
+{{- $image := "" -}}
+
+{{- if .Page.Params.Metadata.thumb  -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Metadata.thumb -}}
+{{- end -}}
+
+{{- if .Page.Params.Module.Cover.Image -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover.Image -}}
+{{- end -}}
+
+{{- if $image -}}
+    <picture>
+
+        {{- $xl := $image.Resize "420x" -}}
+        {{- $xl = $xl.Fill "235x180 webp q100" -}}
+        <source media="(width > 1024px)" srcset="{{ $xl.RelPermalink }}" />
+
+        {{- $md := $image.Resize "380x" -}}
+        {{- $md = $md.Fill "225x160 webp q100" -}}
+        <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}" />
+        
+        {{- $sm := $image.Resize "280x" -}}
+        {{- $sm = $sm.Fill "125x125 webp q100" -}}
+        <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}" />
+
+        {{- $xs := $image.Resize "280x" -}}
+        {{- $xs = $image.Fill "120x120 webp q100" -}}
+        <source media="(width > 100px)" srcset="{{ $xs.RelPermalink }}" />
+
+        <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .Title }}" title="{{ .Title }}" loading="lazy" />
+    </picture>    
+ {{- end -}}

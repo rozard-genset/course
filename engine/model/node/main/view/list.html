@@ -1,31 +1,20 @@
-{{- $list := partial "lib/queries/pool-item-in-term.html" . -}}
-
+{{- $page := partial "lib/queries/pool-item-in-term.html" . -}}
+{{- $card := "course/module/node/main//part/vert-card.html" -}}
+{{- $list := .Paginate ($page) 12 -}}
 
 <div id="list" class="mb-60">
-    <div class="head">
-        <div class="flex">
-            <h2 class="lead text-lg mt-10"> Explore {{ .Title }} Course </h2>
-            <h2 class="lead text-lg mt-10 ml-a"> Current page {{ ( .Paginate ($list) 2 ).PageNumber }}</h2>
+    <div class="head mb-60">
+        <div class="flex border-bottom">
+            <div class="flex center-x">
+                <div class="icon md pt-10">{{- partial "icon/line/layers.svg" -}}</div>
+                <h2 class="lead text-lg mt-10 border-left mb-00 pb-10 pl-10"> Explore {{ .Title }} Course </h2>
+            </div>
+            <h2 class="lead text-md mt-10 ml-a"> Current page {{ ( .Paginate ($list) 2 ).PageNumber }}</h2>
         </div>
     </div>
-	<div class="divider">
-		{{- range ( .Paginate ($list) 2 ).Pages -}}
-		<div class="course">
-            <a href="{{ .RelPermalink }}" class="card rounded-lg">
-                <div class="thumb">{{- partial "course/module/node/main/part/thumb-list.html" . -}}</div>
-                <div class="metas">
-                    <h2 class="text-md font-bold title mb-20">{{ .Title }}</h2>
-                    <div class="meta center-x text-sm capitalize mb-05">
-                        <div class="box level">
-                            {{- .Page.Params.Module.Plan.Level -}}
-                        </div>
-                        <div class="box session">
-                            {{- partial "lib/course/count-material.html" . -}} <span class="ml-05">Session</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+	<div class="leaf">
+		{{- range  $list.Pages -}}
+            {{ partial $card . }}
 		{{- end -}}
 	</div>
 	<div class="paginate">{{- partial "pagination.html" . -}}</div>
