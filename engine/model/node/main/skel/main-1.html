@@ -1,0 +1,8 @@
+{{- $view := "course/module/node/main/view/" -}}
+{{- $hero := printf "%s/hero.html" $view -}}
+{{- $list := printf "%s/list.html" $view -}}
+
+
+<div id="main-1">
+    {{- partial $hero . -}}{{- partial $list . -}}
+</div>
