@@ -1,34 +1,34 @@
 #hero{
+	padding: 5rem 0;
 
-	margin-bottom: 3rem;
-
-	.card{
-		grid-template-columns: repeat(2, calc( 50% - 1rem ) );
-		grid-gap: 1rem;
+	.rows{
+		grid-gap: 3rem;
 	}
-
-	.title {
-		h1{
-			width: 100%;
-			margin-bottom: 1.5rem;
-		}
-		.img{
-			background-color: var(--background-02);
-		}
-
-		img{
-			min-width: 32px;
-			height: auto;
-		}
-	}
-
 
 	.thumb{
-		margin-bottom: 2.5rem;
+		img{
+			width: 100%;
+		}
 	}
 
-	.sharing svg{
-		margin-right: 0;
+	.infos {
+		
+		h1{
+			margin-bottom: 1.5rem;
+		}
+
+		.count{
+			display: grid;
+			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
+			justify-content: space-between;
+			grid-gap: 1rem;
+		}
+	}
+
+	.offer{
+		.sharing svg{
+			margin-right: 0;
+		}
 	}
 }
 
@@ -37,14 +37,9 @@
 
 	 #hero{
 
-		.inform{
-			.title{
-				display: flex;
-				flex-direction: row-reverse;
-			}
-			.card {
+		.infos{
+			.count {
 				grid-template-columns: repeat(4, calc( 25% - 1rem ) );
-				grid-gap: 1rem;
 			}
 		}
 	}
@@ -52,12 +47,21 @@
 
 @media only screen and (min-width: 768px) {
 
+	#hero{
+
+		.infos{
+			.title{
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: flex-end;
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 1024px) {
  
     #hero{
-		margin-bottom: 4rem;
 
 		.rows{
 			grid-template-columns: calc( 60% - 2rem ) calc( 40% - 2rem ) ;
@@ -68,14 +72,14 @@
 			margin-bottom: 0rem;
 		}
 
-		.inform{
+		.infos{
+
 			.title{
 				display: block;
-				margin-bottom: 0rem;
 			}
-			.card {
+
+			.count {
 				grid-template-columns: repeat(2, calc( 50% - 1rem ) );
-				grid-gap: 1rem;
 			}
 		}
 	}	
@@ -84,15 +88,9 @@
 
 @media only screen and (min-width: 1280px) {
     
-    #hero{
-		display: grid;
-		align-items: center;
-		min-height: 86vh;
-		margin-bottom: 0rem;
-	}
 }
 
 
 @media only screen and (min-width: 1536px) {
-
+	
 }

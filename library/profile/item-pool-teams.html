@@ -1,0 +1,15 @@
+{{- $lead := .Page.Params.Metadata.Author -}}
+{{- $site := .Site -}}
+{{- $team := slice -}}
+
+{{ range .Pages }}
+    {{ if ne .Page.Params.Metadata.Author $lead }}
+        {{- $name := ( .Page.Params.Metadata.Author | urlize  ) -}}
+        {{- with and ( $name ) ( $site.GetPage ( printf "/%s/%s" "profile" $name )  ) -}}
+            {{- $team = $team | append . -}}
+        {{- end -}}
+     {{ end }}
+{{ end }}
+
+
+{{ return $team }}

@@ -1,0 +1,11 @@
+{{ $lead := partial "lib/course/profile/item-pool-leads.html" . }}
+
+{{ range $lead }}
+<div class="lead flex center-x mb-15">
+    <div class="img rounded-full">{{- partial "parted/avatar/user-32.html" . -}}</div>
+    <div class="bio ml-20">
+        <h2 class="text-md font-bold mb-00 mt-00">{{ .Title }}</h2>
+        <h3 class="text-sm mb-00 mt-00">Contributor</h3>
+    </div>
+</div>
+ {{ end }}

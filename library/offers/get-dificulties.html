@@ -1,0 +1,7 @@
+{{- $data := .Params.offers.level -}}
+
+{{- if and ( eq $data "" ) ( ne $data true ) -}}
+    {{- $data = "beginer" -}}
+{{- end -}}
+
+{{- return $data -}}

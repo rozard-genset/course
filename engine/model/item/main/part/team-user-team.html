@@ -1,0 +1,10 @@
+{{ $team := partial "lib/course/profile/item-pool-teams.html" . }}
+
+<div class="team">
+    <h2 class="text-md font-bold mb-00 mt-00">Contributor</h2>
+    <div class="figure">
+    {{ range $team }}
+        <div class="img rounded-full">{{- partial "parted/avatar/user-32.html" . -}}</div>
+    {{ end }}
+    </div>
+</div>

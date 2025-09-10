@@ -1,0 +1,9 @@
+{{- $data := .Params.offers.Certs -}}
+
+{{- if and ( eq $data "" ) ( ne $data true ) -}}
+    {{- $data = "none" -}}
+{{- else -}}
+    {{ $data = "available" }}
+{{- end -}}
+
+{{- return $data -}}

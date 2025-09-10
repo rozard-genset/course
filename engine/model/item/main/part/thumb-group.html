@@ -3,7 +3,7 @@
 {{- $page  := .ctx  -}}
 {{- $name  := .name | urlize -}}
 
-{{- with $name -}}{{- $path := printf "/%s/%s" "profile/groups" $name -}}
+{{- with $name -}}{{- $path := printf "/%s/%s" "groups" $name -}}
     {{- with $site.Site.GetPage $path -}}
         {{- $link := .Page.Resources.GetMatch .Page.Params.Thumb -}}
         {{- $link = $link.Resize "32x32 webp q100" -}}

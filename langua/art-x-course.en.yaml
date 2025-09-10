@@ -1,3 +1,13 @@
+module_stat_lead: learning
+module_stat_desc: material
+assign_stat_lead: active
+assign_stat_desc: assignment
+sesion_stat_lead: total
+sesion_stat_desc: session
+proyek_stat_lead: project
+proyek_stat_desc: sandbox
+
+
 level: level
 certificate: certificate
 session: session 
@@ -7,14 +17,7 @@ get_more: tampilkan lainya
 register: register
 
 
-module_sum_top: learning
-module_sum_bot: material
-assign_sum_top: active
-assign_sum_bot: assignment
-sesion_sum_top: total
-sesion_sum_bot: session
-proyek_sum_top: project
-proyek_sum_bot: sandbox
+
 
 
 main_tabs_lead_desc: description

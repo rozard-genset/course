@@ -1,67 +1,32 @@
-{{- $ctx  := . -}}{{- $site := $ -}}
+{{- $part := "course/module/item/main/part/" -}}
+{{- $feat := printf "%s/hero-thumbnail.html" $part  -}}
+{{- $team := printf "%s/hero-team-card.html" $part  -}}
+{{- $stat := printf "%s/hero-stat-card.html" $part  -}}
+{{- $open := printf "%s/price-open-card.html" $part -}}
+{{- $paid := printf "%s/price-paid-card.html" $part -}}
+
 <div id="hero">
     <div class="rows grid">
-        <div class="thumb">
-            {{- partial "course/module/item/main/part/thumb-feature.html" . }}
-        </div>
+        <div class="thumb">{{- partial $feat . -}}</div>
         <div class="metas grid center-x">
-            <div class="inform">
-                <div class="title mb-20">
+            <div class="infos">
+                <div class="title mb-40">
                     <h1 class="text-4xl mt-00 mb-00">{{ .Title }}</h1>
-                    <div class="info mr-30">
-                        <div class="flex center-x mb-05 mb-40">
-                            <div class="img border-all rounded-lg flex center-x mr-20 pa-05">{{- partial "course/module/item/main/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}</div>
-                            <div class="text">
-                                <p class="capitalize mb-05 mt-00">{{ T "parted_hero_prov" }}</p>
-                                <p class="font-bold uppercase mb-00 mt-00">{{- .Page.Params.Parted.Team.Name -}}</p>
-                            </div>
-                        </div>
-                    </div>
+                    {{- partial $team . -}}
                 </div>
-                <div class="card grid">
-                    <div class="flex center-x mb-20">
-                        <div class="count font-md text-3xl mr-20">
-                            {{- partial "lib/course/count-material.html"  . -}}
-                        </div>
-                        <div class="text">
-                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "module_sum_top" }}</div>
-                            <div class="capitalize text-md">{{ T "module_sum_bot" }}</div> 
-                        </div>
-                    </div>
-                    <div class="flex center-x mb-20">
-                        <div class="count font-md text-3xl mr-20">
-                            {{- partial "lib/course/count-assigment.html" . -}}
-                        </div>
-                        <div class="text">
-                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "assign_sum_top" }}</div>
-                            <div class="capitalize text-md">{{ T "assign_sum_bot" }}</div> 
-                        </div>
-                    </div>
-                    <div class="flex center-x mb-20">
-                        <div class="count font-md text-3xl mr-20">
-                            {{- partial "lib/course/count-periodic.html"  . -}}
-                        </div>
-                        <div class="text">
-                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "sesion_sum_top" }}</div>
-                            <div class="capitalize text-md">{{ T "sesion_sum_bot" }}</div> 
-                        </div>
-                    </div>
-                    <div class="flex center-x mb-20">
-                        <div class="count font-md text-3xl mr-20">
-                            {{- partial "lib/course/count-projects.html"  . -}}
-                        </div>
-                        <div class="text">
-                            <div class="uppercase font-bold text-xs text-gray-500">{{ T "proyek_sum_top" }}</div>
-                            <div class="capitalize text-md">{{ T "proyek_sum_bot" }}</div> 
-                        </div>
-                    </div>
+                <div class="count">
+                    {{- $module := ( dict "name" ( T "module_stat_lead" ) "desc" ( T "module_stat_desc" ) "sums" ( partial "lib/course/count-material.html"  . ) ) -}}
+                    {{- $asigne := ( dict "name" ( T "assign_stat_lead" ) "desc" ( T "assign_stat_desc" ) "sums" ( partial "lib/course/count-assigment.html" . ) ) -}}
+                    {{- $sesion := ( dict "name" ( T "sesion_stat_lead" ) "desc" ( T "sesion_stat_desc" ) "sums" ( partial "lib/course/count-periodic.html"  . ) ) -}}
+                    {{- $proyek := ( dict "name" ( T "proyek_stat_lead" ) "desc" ( T "proyek_stat_desc" ) "sums" ( partial "lib/course/count-projects.html"  . ) ) -}}
+                    {{- range ( slice $module $asigne $sesion $proyek) -}}
+                        {{- partial $stat . -}}
+                    {{- end -}}
                 </div>
             </div>
-            {{- if .Page.Params.Parted.Paid.Data.Price -}}
-                {{- partial "course/module/item/main/view/paid.html" . -}}
-            {{- else -}}
-                {{- partial "course/module/item/main/view/open.html" . -}}
-            {{- end -}}
+            <div class="offer">
+                {{- cond ( eq .Params.offers.price "" ) ( partial $open . ) ( partial $paid . ) -}}
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,11 @@
+{{- $site := .Site -}}
+{{- $data := slice -}}
+
+{{ range .Page.Params.Group }}
+    {{- $name := ( . | urlize  ) -}}
+    {{- with and ( $name ) ( $site.GetPage ( printf "/group/%s" $name )  ) -}}
+        {{- $data = $data | append . -}}
+    {{- end -}}
+{{ end }}
+
+{{ return $data }}

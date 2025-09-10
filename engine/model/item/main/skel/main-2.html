@@ -1,0 +1,16 @@
+{{- $path := "course/module/item/main/view" -}}
+{{- $stat := printf "%s/stat.html" $path -}}
+{{- $team := printf "%s/team.html" $path -}}
+{{- $need := printf "%s/need.html" $path -}}
+{{- $tabs := printf "%s/tabs.html" $path -}}
+
+<div id="main-2">
+    <div class="wrap grid">
+        <div class="main">
+            {{- partial $tabs . -}}
+        </div>
+        <div class="side">
+            {{- partial $stat . -}}{{- partial $team . -}}{{- partial $need . -}}
+        </div>
+    </div>
+</div>

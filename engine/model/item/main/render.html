@@ -1,19 +1,8 @@
-{{- $path := "course/module/item/main/view" -}}
-{{- $hero := printf "%s/hero.html" $path -}}
-{{- $stat := printf "%s/stat.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $need := printf "%s/need.html" $path -}}
-{{- $tabs := printf "%s/tabs.html" $path -}}
-
+{{- $skels := "course/module/item/main/skel" -}}
+{{- $main1 := printf "%s/main-1.html" $skels -}}
+{{- $main2 := printf "%s/main-2.html" $skels -}}
 
 <main id="main">
-    <article class="wrap">
-        {{- partial $hero . -}}
-        <div id="slot" class="grid">
-            <div id="div1">{{- partial $tabs . -}}</div>
-            <div id="div2">
-                {{- partial $stat . -}}{{- partial $team . -}}{{- partial $need . -}}
-            </div>
-        </div>
-    </article>
+    {{- partial $main1 . -}}
+    {{- partial $main2 . -}}
 </main>
