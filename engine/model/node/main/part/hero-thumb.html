@@ -8,7 +8,11 @@
 
         {{- $md := $image.Resize "220x webp q100" -}}
         <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}" />
+
+        {{- $xs := $image.Resize "220x webp q100" -}}
+        {{- $xs = $image.Fill "120x120 webp q100" -}}
+        <source media="(width > 100px)" srcset="{{ $xs.RelPermalink }}" />
         
-        <img src="{{ $image.RelPermalink }}" data="{{ $image.RelPermalink }}" alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" title="{{ .Title }}" fetchpriority="high"/>
+        <img src="{{ $image.RelPermalink }}" data="{{ $image.RelPermalink }}" alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" title="{{ .Title }}" loading="lazy"/>
     </picture>
 {{- end -}}

@@ -13,7 +13,8 @@
 
     #join{
         .leaf{
-            grid-template-columns: repeat(3, calc( 33.333% - 2rem ));
+            grid-template-columns: 100%;
+            grid-gap: 0;
         }
     }
 }

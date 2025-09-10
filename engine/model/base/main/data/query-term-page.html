@@ -1,6 +1,0 @@
-{{- $fil1 := where .Site.Pages ".Params.terms" "intersect" ( slice  ( .Title | urlize ) ) -}}
-{{- $fil2 := where .Site.Pages "Type" "course" -}}{{- $page := $fil1 | intersect $fil2 -}}{{- $list := slice -}}
-{{- range  where .Site.Pages "Type" "course" -}}
-    {{- if eq .Page.Params.Module.Layout "term" -}}{{- $list = $list | append . -}}{{- end -}}
-{{- end -}}
-{{ return $list }}
