@@ -1,0 +1,9 @@
+{{- $data := slice -}}
+
+{{- range .RegularPagesRecursive -}}
+    {{- if strings.Contains .RelPermalink "/test/" -}} 
+        {{- $data = $data | append . -}}
+    {{- end -}}
+{{- end -}}
+
+{{- return ( $data | len ) -}}

@@ -1,6 +1,6 @@
 #node{
 
-    .divs{
+    .timer{
         display: grid;
     }
 
@@ -13,7 +13,7 @@
         grid-gap: 3rem;
     }
 
-    .enrol, .learn{
+    .enroll, .session{
         .li-leaf{
             border-top: 1px solid var(--line-02);
         }
@@ -37,7 +37,7 @@
 
 @media only screen and (min-width: 768px) {
     #node{
-        .divs{
+        .timer{
             grid-template-columns: calc( 50% - 2rem ) calc( 50% - 2rem );
             grid-gap: 2rem 4rem;
         }

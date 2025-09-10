@@ -1,0 +1,9 @@
+{{- $data := slice -}}
+{{- range .RegularPagesRecursive -}}
+    {{- if and ( .Page.Params.Module.Period ) ( strings.Contains .RelPermalink "/repo/" ) -}}
+        {{- $data = $data | append .Page.Params.Module.Period -}}
+    {{- end -}}
+{{- end -}}
+
+
+{{- return ( $data | uniq | len ) -}}

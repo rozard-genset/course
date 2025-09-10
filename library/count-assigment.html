@@ -1,7 +1,0 @@
-{{- $counter := slice -}}
-{{- range .Pages -}}
-    {{- if eq .Page.Params.Module.Strain "assignment" -}}
-        {{ $counter = $counter | append .Title }}
-    {{- end -}}
-{{- end -}}
-{{- $counter | len -}}

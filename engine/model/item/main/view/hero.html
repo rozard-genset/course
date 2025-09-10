@@ -15,10 +15,10 @@
                     {{- partial $team . -}}
                 </div>
                 <div class="count">
-                    {{- $module := ( dict "name" ( T "module_stat_lead" ) "desc" ( T "module_stat_desc" ) "sums" ( partial "lib/course/count-material.html"  . ) ) -}}
-                    {{- $asigne := ( dict "name" ( T "assign_stat_lead" ) "desc" ( T "assign_stat_desc" ) "sums" ( partial "lib/course/count-assigment.html" . ) ) -}}
-                    {{- $sesion := ( dict "name" ( T "sesion_stat_lead" ) "desc" ( T "sesion_stat_desc" ) "sums" ( partial "lib/course/count-periodic.html"  . ) ) -}}
-                    {{- $proyek := ( dict "name" ( T "proyek_stat_lead" ) "desc" ( T "proyek_stat_desc" ) "sums" ( partial "lib/course/count-projects.html"  . ) ) -}}
+                    {{- $module := ( dict "name" ( T "module_stat_lead" ) "desc" ( T "module_stat_desc" ) "sums" ( partial "lib/course/count/material.html"  . ) ) -}}
+                    {{- $asigne := ( dict "name" ( T "assign_stat_lead" ) "desc" ( T "assign_stat_desc" ) "sums" ( partial "lib/course/count/assigned.html" . ) ) -}}
+                    {{- $sesion := ( dict "name" ( T "sesion_stat_lead" ) "desc" ( T "sesion_stat_desc" ) "sums" ( partial "lib/course/count/periodic.html"  . ) ) -}}
+                    {{- $proyek := ( dict "name" ( T "proyek_stat_lead" ) "desc" ( T "proyek_stat_desc" ) "sums" ( partial "lib/course/count/projects.html"  . ) ) -}}
                     {{- range ( slice $module $asigne $sesion $proyek) -}}
                         {{- partial $stat . -}}
                     {{- end -}}

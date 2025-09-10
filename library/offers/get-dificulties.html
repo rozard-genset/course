@@ -1,7 +1,7 @@
-{{- $data := .Params.offers.level -}}
+{{- $level := .Params.offers.level -}}
 
-{{- if and ( eq $data "" ) ( ne $data true ) -}}
-    {{- $data = "beginer" -}}
+{{- if eq $level "" -}}
+    {{- $level = "beginer" -}}
 {{- end -}}
 
-{{- return $data -}}
+{{- return $level -}}
