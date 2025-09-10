@@ -2,8 +2,11 @@
 {{- with .Page.Params.Parted.Join.desc -}}{{- $leads = . -}}{{- end -}}
 
 <div id="join" class="mb-60">
-     <div class="head">
-        <h2 class="text-md uppercase font-bold mt-00 mb-10">Registration</h2><hr class="mb-10">
+    <div class="head flex center-x mb-30 border-bottom">
+        <div class="icon md">
+            {{- partial "icon/line/user-plus.svg" -}}
+        </div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Registration</h2>
     </div>
     <div class="leaf grid">
         {{- range $index, $value := .Parent.Parent.Page.Params.Parted.Join.Data -}}

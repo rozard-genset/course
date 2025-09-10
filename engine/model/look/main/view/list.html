@@ -1,16 +1,16 @@
 {{- $card := "course/module/look/main/part/list-card.html" -}}
-{{- $list := partial "lib/queries/pool-item-all-section" . -}}
-
+{{- $data := partial "lib/queries/pool-item-all-section" . -}}
+{{- $list := .Paginate ($data) 5 -}}
 
 <div id="list">
     <div class="head mb-20">
         <div class="flex center-x">
             <h1 class="text-2xl mb-30 mt-00">Available {{ .Section }}</h1>
-            <h1 class="text-md mb-30 mt-00 ml-a">Page {{ ( .Paginate ($list) 2 ).PageNumber }}</h1>
+            <h1 class="text-md mb-30 mt-00 ml-a">Page {{ $list.PageNumber }}</h1>
         </div>
     </div>
     <div class="leaf">
-        {{- range  ( .Paginate ($list) 2 ).Pages  -}}
+        {{- range  $list.Pages  -}}
             {{- partial $card . -}}
         {{- end -}}
     </div>
