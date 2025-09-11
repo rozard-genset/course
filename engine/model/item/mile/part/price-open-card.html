@@ -1,10 +1,9 @@
+{{- $start := partial "lib/course/query/pool-course-repo.html" . -}}
+
 <div id="take">
     <div class="flex center-x">
-        <h2 class="text-xl uppercase font-bold mt-00 mb-00 flex center-x mr-a">
-           {{ T "parted_take_pric" }}
-        </h2>
         <div class="checkout ml-40">
-            {{- range first 1 .Pages -}}
+            {{- range first 1 $start -}}
             <a href="{{ .RelPermalink }}" class="button outline flex center-x">
                 <div class="icon sm">{{- partial "icon/line/bookmark.svg" -}}</div>
                 <div class="capitalize text-sm font-bold">{{ T "parted_take_free" }}</div>

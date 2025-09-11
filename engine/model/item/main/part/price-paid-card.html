@@ -1,15 +1,14 @@
+{{- $label := partial "lib/pricing/get-currency-label.html" . -}}
+{{- $start := partial "lib/course/query/pool-course-repo.html" . -}}
+
 <div class="take">
     <hr class="mb-20">
     <div class="flex center-x">
         <h2 class="text-4xl uppercase font-bold mt-00 mb-00 flex center-x">
-            {{- if eq .Site.Language.Lang "id" -}}
-                {{- .Page.Params.Parted.Paid.Data.Price -}}<span class="text-xl font-light ml-10">IDR</span> 
-            {{- else -}}
-                {{- .Page.Params.Parted.Paid.Data.Price -}}<span class="text-xl font-light ml-10">USD</span> 
-            {{- end -}}
+           {{- .Params.offers.price | lang.FormatCurrency 1 $label -}}<span class="text-xl uppercase font-light ml-10">{{ $label }}</span> 
         </h2>
         <div class="checkout ml-a">
-            {{- range first 1 .Pages -}}
+            {{- range first 1 $start -}}
             <a href="{{ .RelPermalink }}" class="button outline flex center-x">
                 <div class="icon sm">{{ partial "icon/line/shopping-bag.svg" }}</div>
                 <div class="capitalize text-sm font-bold">{{ T "parted_take_paid" }}</div>

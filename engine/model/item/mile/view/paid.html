@@ -1,11 +1,9 @@
- <div id="take">
+{{ $label := "lib/pricing/get-currentcy-label.html" . }}
+
+<div id="take">
     <div class="flex center-x">
         <h2 class="text-4xl uppercase font-bold mt-00 mb-00 flex center-x">
-            {{- if eq .Site.Language.Lang "id" -}}
-                {{- .Page.Params.Parted.Paid.Data.Price -}}<span class="text-xl font-light ml-10">IDR</span> 
-            {{- else -}}
-                {{- .Page.Params.Parted.Paid.Data.Price -}}<span class="text-xl font-light ml-10">USD</span> 
-            {{- end -}}
+            {{- .Params.offers.price -}}<span class="text-xl uppercase font-light ml-10">{{ $label }}</span> 
         </h2>
         <div class="checkout ml-40">
             {{- range first 1 .Pages -}}

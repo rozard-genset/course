@@ -1,21 +1,26 @@
-{{- $part := "course/module/item/main/part/" -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
 {{- $time := printf "%s/part-time-card.html" $part -}}
 {{- $page := partial "lib/course/query/pool-item-all-kind.html" . -}}
 
 <div id="part" class="mt-60 grid">
-    {{- range $index, $value := $page.repo -}}{{ $session := math.Sum $index 1 }}
+    {{- range $index, $value := $page.repo -}}
     <div class="period">
         <div class="head mb-40">
             <div class="flex">
-                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "session" }} {{ $session }} </div>
+                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "session" }} {{ .session }} </div>
                 <h3 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .page.Title }}</h3>
-                <div class="icon md border-left border-top border-right ml-a dropdown" data-target="part-{{ $session }}">
+                <div class="icon md border-left border-top border-right ml-a dropdown" data-target="part-{{ .session }}">
                     {{ partial "icon/line/plus.svg" }}
                 </div>
             </div><hr class="mt-00 mb-15">
             <div class="desc text-md mb-40">{{ .page.Params.parted.desc }}</div>
         </div>
-        <div id="part-{{ $session }}" class="leaf dropboxs">
+        <div id="part-{{ .session }}" class="leaf dropboxs">
             {{- range .list -}}{{- partial $time . -}}{{- end -}}
         </div>
     </div>

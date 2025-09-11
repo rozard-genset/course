@@ -1,9 +1,13 @@
-{{- $path := "course/module/item/main/view" -}}
-{{- $part := printf "%s/part.html" $path -}}
-{{- $task := printf "%s/task.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $desc := printf "%s/desc.html" $path -}}
-{{- $node := printf "%s/node.html" $path -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $part := printf "%s/part.html" $view -}}
+{{- $task := printf "%s/task.html" $view -}}
+{{- $team := printf "%s/team.html" $view -}}
+{{- $desc := printf "%s/desc.html" $view -}}
+{{- $node := printf "%s/node.html" $view -}}
 
 <div id="tabs">
     <div class="head grid mb-10 mt-00">

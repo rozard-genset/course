@@ -1,9 +1,17 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $lead := printf "%s/team-user-lead.html" $part -}}
+{{- $team := printf "%s/team-user-team.html" $part -}}
+
 <div id="team" class="mb-60">
     <div class="head mb-15 mb-60">
         <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_team_lead" }}</h2>
     </div>
     <div class="leaf">
-        {{ partial "course/module/item/main/part/team-user-lead.html" . }}
-        {{ partial "course/module/item/main/part/team-user-team.html" . }}
+        {{- partial $lead . -}}
+        {{- partial $team . -}}
     </div>
 </div>

@@ -1,11 +1,11 @@
 {{- $page := partial "lib/course/query/pool-item-all-kind.html" . -}}
 
-{{- $view := "course/module/item/mile/view/" -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
 {{- $repo := printf "%s/repo.html" $view -}}
 {{- $task := printf "%s/task.html" $view -}}
 
 
-{{- $part := "course/module/item/mile/part/" -}}
+{{- $part :=  partial "lib/pather/module-part.html" . -}}
 {{- $repo := printf "%s/plan-repo-card.html" $part -}}
 {{- $task := printf "%s/plan-task-card.html" $part -}}
 {{- $test := printf "%s/plan-test-card.html" $part -}}

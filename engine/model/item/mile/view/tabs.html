@@ -1,3 +1,8 @@
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $desc := printf "%s/desc.html" $view -}}
+{{- $node := printf "%s/node.html" $view -}}
+{{- $plan := printf "%s/plan.html" $view -}}
+
 <div id="tabs" class="mb-20">
     <div class="head border-bottom flex center-x mb-20">
         <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/tablet.svg" -}}</div>
@@ -12,12 +17,12 @@
         </div>
     </div>
     <div class="leaf tab-content">
-        <div id="info-tabs" class="base-item tabs-item">
-            {{- partial "course/module/item/mile/view/desc.html" . -}}
-            {{- partial "course/module/item/mile/view/node.html" . -}}
+        <div id="info-tabs" class="base-item tabs-item open">
+            {{- partial $desc . -}}
+            {{- partial $node . -}}
         </div>
-        <div id="plan-tabs" class="base-item tabs-item open">
-            {{- partial "course/module/item/mile/view/plan.html" . -}}
+        <div id="plan-tabs" class="base-item tabs-item">
+            {{- partial $plan . -}}
         </div>
     </div>
 </div>

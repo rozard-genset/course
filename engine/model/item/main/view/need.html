@@ -10,9 +10,7 @@
         {{- range .Params.require.data -}}
         <div class="flex mb-30">
             <div class="icon sm mr-15">
-                {{ $icon :=  printf "icon/line/check-circle.svg" }}
-                {{ with .icon }} {{ $icon = . }}{{ end }}
-                {{- partial $icon -}}
+                {{- partial "icon/line/check-circle.svg" -}}
             </div>
             <div class="text border-left">
                 <h3 class="uppercase text-sm font-bold mb-05 mt-00 pl-20">{{ .name }}</h3>
