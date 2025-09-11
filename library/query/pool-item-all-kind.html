@@ -48,7 +48,7 @@
     {{- $repo = $repo | append ( dict "session" $uniq "page" . "list" $repo_list ) -}}
     {{- $task = $task | append ( dict "session" $uniq "page" . "list" $task_list ) -}}
     {{- $test = $test | append ( dict "session" $uniq "page" . "list" $test_list ) -}}
-    {{- $time = $time | append ( dict "session" $uniq "page" . "task" $task_list  "test" $test_list ) -}}
+    {{- $time = $time | append ( dict "session" $uniq "page" . "repo" $repo_list "task" $task_list "test" $test_list ) -}}
 
 {{- end -}}
 

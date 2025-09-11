@@ -4,8 +4,8 @@
     {{- $image = .Page.Resources.GetMatch .Page.Params.Metadata.thumb -}}
 {{- end -}}
 
-{{- if .Page.Params.Module.Cover.Image -}}
-    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover.Image -}}
+{{- if .Page.Params.Module.Cover -}}
+    {{- $image = .Page.Resources.GetMatch .Page.Params.Module.Cover -}}
 {{- end -}}
 
 

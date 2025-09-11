@@ -1,34 +1,61 @@
-{{- $ctx  := . -}}{{ $sum := 1 }}
+{{- $page := partial "lib/course/query/pool-item-all-kind.html" . -}}
+
+{{- $view := "course/module/item/mile/view/" -}}
+{{- $repo := printf "%s/repo.html" $view -}}
+{{- $task := printf "%s/task.html" $view -}}
+
+
+{{- $part := "course/module/item/mile/part/" -}}
+{{- $repo := printf "%s/plan-repo-card.html" $part -}}
+{{- $task := printf "%s/plan-task-card.html" $part -}}
+{{- $test := printf "%s/plan-test-card.html" $part -}}
 
 <div id="plan" class="mt-40">
-    {{- range .Page.Params.Parted.Plan.Data -}}
-    {{- hugo.Store.Set "session" $sum -}}
+    {{ range $page.time }}
     <div class="period mb-30">
         <div class="head flex center-x">
             <div class="text">
-                <div class="flex center-x">
-                    <div class="text-sm font-bold uppercase  mb-00 mt-00 pb-10 pr-15">{{ T "session" }} {{ $sum }}</div>
-                    <h2 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .lead.part }}</h2>
+                <div class="flex-inline center-x">
+                    <div class="text-sm font-bold uppercase  mb-00 mt-00 pb-10 pr-15">{{ T "session" }} {{ .session }}</div>
+                    <h2 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .page.Title }}</h2>
                 </div>
+                <hr class="mt-00 mb-20">
             </div>
             <div class="menu flex center-x ml-a">
-                <div id="part-action-{{ $sum }}" data-target="part-tabs-{{ $sum }}" class="tab-action flex center-x">
-                    <div class="icon xs rounded-full border-all mr-10">{{- partial "icon/line/book.svg" -}}</div>
+                <div id="part-action-{{ .session }}" data-target="part-tabs-{{ .session }}" class="tab-action flex center-x">
+                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "icon/line/book.svg" -}}</div>
                 </div>
-                <div id="taks-action-{{ $sum }}" data-target="taks-tabs-{{ $sum }}" class="tab-action flex center-x">
-                    <div class="icon xs rounded-full border-all mr-10">{{- partial "icon/line/edit.svg" -}}</div>
+                <div id="taks-action-{{ .session }}" data-target="taks-tabs-{{ .session }}" class="tab-action flex center-x">
+                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "icon/line/edit.svg" -}}</div>
                 </div>
             </div>
         </div>
         <div class="leaf">
-            <div id="part-tabs-{{ $sum }}" class="tabs-item open">
-               {{- partial "course/module/item/mile/view/part.html" . -}}
+            <div id="part-tabs-{{ .session }}" class="tabs-item">
+                <div class="repo mb-20">
+                    <div class="head flex mb-40">
+                        <div class="icon sm droppart" data-target="droppart-{{ .session}}">{{ partial "icon/line/plus.svg" }}</div>
+                        <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.parted.desc }}</div>
+                    </div>
+                    <div id="droppart-{{ .session }}" class="leaf grid parttabs">
+                        {{ cond ( .repo ) ( partial $repo . ) "" }}
+                    </div>
+                </div>
             </div>
-            <div id="taks-tabs-{{ $sum }}" class="tabs-item">
-               {{- partial "course/module/item/mile/view/task.html" . -}}
+            <div id="taks-tabs-{{ .session }}" class="tabs-item open">
+               <div class="task mb-20">
+                    <div class="head flex mb-40">
+                        <div class="icon sm droptask" data-target="droptask-{{ .session }}">{{ partial "icon/line/plus.svg" }}</div>
+                        <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.tasker.desc }}</div>
+                    </div>
+                    <div id="droptask-{{ .session }}" class="leaf grid takstabs">
+                        {{ cond ( .task ) ( partial $task . ) "" }}
+                        {{ cond ( .test ) ( partial $test . ) "" }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    {{ $sum = math.Sum $sum 1 }}
-    {{- end -}}
+    {{ end }}
 </div>
+

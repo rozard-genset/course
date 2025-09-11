@@ -1,3 +1,9 @@
+{{- $part :=  partial "lib/pather/module-part.html" . -}}
+{{- $stat := printf "%s/stat-stat-card.html" $part  -}}
+
+{{ $cert := partial "lib/course/offers/get-certificate.html" . }}
+{{ $leve := partial "lib/course/offers/get-dificulties.html" . }}
+
 <div id="stat" class="mb-60">
     <div class="head mb-40">
         {{- if .Page.Params.Parted.Info.Lead -}}
@@ -13,7 +19,7 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "level" }}</div>
-                <div class="capitalize text-sm text-white font-bold"> {{ .Page.Params.Parted.Stat.Data.Level }} </div>
+                <div class="capitalize text-sm text-white font-bold">{{- $leve -}}</div>
             </div>
         </div>
         <div class="flex center-x pa-05">
@@ -22,46 +28,17 @@
             </div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "certificate" }}</div>
-                <div class="capitalize text-sm text-white font-bold">{{- if .Page.Params.Parted.Stat.Data.Certs -}} {{- .Page.Params.Parted.Stat.Data.Certs -}} {{- else -}} None {{- end -}} </div>
+                <div class="capitalize text-sm text-white font-bold">{{- $cert -}}</div>
             </div>
         </div>
     </div>
     <div class="info grid">
-        <div class="flex center-x mb-20">
-            <div class="count font-md text-3xl mr-20">
-                {{- partial "lib/course/count/material.html"  . -}}
-            </div>
-            <div class="text">
-                <div class="uppercase font-bold text-xs text-gray-500">{{ T "module_sum_top" }}</div>
-                <div class="capitalize text-md">{{ T "module_sum_bot" }}</div> 
-            </div>
-        </div>
-        <div class="flex center-x mb-20">
-            <div class="count font-md text-3xl mr-20">
-                {{- partial "lib/course/count/assigned.html" . -}}
-            </div>
-            <div class="text">
-                <div class="uppercase font-bold text-xs text-gray-500">{{ T "assign_sum_top" }}</div>
-                <div class="capitalize text-md">{{ T "assign_sum_bot" }}</div> 
-            </div>
-        </div>
-        <div class="flex center-x mb-20">
-            <div class="count font-md text-3xl mr-20">
-                {{- partial "lib/course/count/periodic.html"  . -}}
-            </div>
-            <div class="text">
-                <div class="uppercase font-bold text-xs text-gray-500">{{ T "sesion_sum_top" }}</div>
-                <div class="capitalize text-md">{{ T "sesion_sum_bot" }}</div> 
-            </div>
-        </div>
-        <div class="flex center-x mb-20">
-            <div class="count font-md text-3xl mr-20">
-                {{- partial "lib/course/count/projects.html"  . -}}
-            </div>
-            <div class="text">
-                <div class="uppercase font-bold text-xs text-gray-500">{{ T "proyek_sum_top" }}</div>
-                <div class="capitalize text-md">{{ T "proyek_sum_bot" }}</div> 
-            </div>
-        </div>
+        {{- $module := ( dict "name" ( T "module_stat_lead" ) "desc" ( T "module_stat_desc" ) "sums" ( partial "lib/course/count/material.html"  . ) ) -}}
+        {{- $asigne := ( dict "name" ( T "assign_stat_lead" ) "desc" ( T "assign_stat_desc" ) "sums" ( partial "lib/course/count/assigned.html" . ) ) -}}
+        {{- $sesion := ( dict "name" ( T "sesion_stat_lead" ) "desc" ( T "sesion_stat_desc" ) "sums" ( partial "lib/course/count/periodic.html"  . ) ) -}}
+        {{- $proyek := ( dict "name" ( T "proyek_stat_lead" ) "desc" ( T "proyek_stat_desc" ) "sums" ( partial "lib/course/count/projects.html"  . ) ) -}}
+        {{- range ( slice $module $asigne $sesion $proyek) -}}
+            {{- partial $stat . -}}
+        {{- end -}}
     </div>
 </div>

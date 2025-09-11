@@ -1,0 +1,8 @@
+{{- $path :=  partial "lib/pather/module-view.html" . -}}
+{{- $hero := printf "%s/hero.html" $path -}}
+{{- $tabs := printf "%s/tabs.html" $path -}}
+
+<div id="main-1">
+    {{- partial $hero . -}}{{- partial $tabs . -}}
+</div>
+

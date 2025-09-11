@@ -1,70 +1,43 @@
-{{- $ctx  := . -}}{{- $site := $ -}}{{- $index := 1 -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $time := printf "%s/node-time-card.html" $part -}}
+{{- $user := printf "%s/node-team-card.html" $part -}}
+{{- $page := partial "lib/course/query/pool-item-all-kind.html" . -}}
+
+
 <div id="node">
-    <div class="head border-bottom flex center-x mb-20">
+    <div class="subhead border-bottom flex center-x mb-20">
         <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/layers.svg" -}}</div>
         <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">{{ T "parted_node_lead" }}</h2>
         <div class="boxtab flex center-x ml-a">
-            {{- range .Page.Params.Parted.Node -}}
-            <div id="info-{{ .class | urlize }}-action" data-target="tabs-page-group-{{ .class | urlize }}" class="node-action tab-action flex center-x ml-15">
-                <p class="text-sm font-bold uppercase"><span class="tablet">{{ T "parted_node_clas" }}</span> {{ .class }}</p>
+            {{ range $page.node }}{{ $uniq := ( .Title | urlize )  }}
+            <div id="info-{{ $uniq }}-action" data-target="tabs-page-group-{{ $uniq }}" class="node-action tab-action flex center-x open ml-15">
+                <p class="text-sm font-bold uppercase"><span class="tablet">{{ .Title }}</p>
             </div>
-            {{- end -}}
+            {{ end }}
         </div>
     </div>
-    <div class="leaf">
-        {{- range .Page.Params.Parted.Node -}}
-            <div id="tabs-page-group-{{ .class | urlize }}" class="node-item tabs-item {{ with $index }}open{{ end }}">
-                <div class="quota mb-20 mt-30 flex center-x">
-                    <div class="li-head">
-                        <h3 class="text-md font-bold uppercase mt-00 mb-00">{{ T "parted_node_clas" }} {{ .class }}</h3>
-                    </div>
-                    <div class="flex center-x ml-a">
-                        <h3 class="text-sm uppercase mt-00 mb-00">{{ T "parted_node_caps" }}</h3>
-                        <h3 class="text-sm uppercase font-bold mt-00 mb-00 ml-20">{{ .quota }} {{ T "parted_node_seat" }}</h3>
-                    </div> 
+    <div class="subleaf">
+        {{- range $index, $value := $page.node -}}{{- $uniq := ( .Title | urlize ) -}}
+        <div id="tabs-page-group-{{ $uniq }}" class="node-item tabs-item {{ with eq $index 0 }}open{{ end }}">
+            <div class="quota mb-20 mt-30 flex center-x">
+                <div class="li-head">
+                    <h3 class="text-md font-bold uppercase mt-00 mb-00">{{ .Title  }}</h3>
                 </div>
-                <div class="divs">
-                    <div class="enrol mb-40">
-                        <div class="li-head mb-10">
-                            <h3 class="text-sm font-bold uppercase mb-00">{{ T "parted_node_regs" }}</h3>
-                        </div>
-                        <div class="li-leaf grid">
-                            <div class="box-left subli">
-                                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_open" }}</div>
-                                <h4 class="text-md mt-05 mb-00">{{ .start.register }}</h4>
-                            </div>
-                            <div class="box-right subli">
-                                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_clos" }}</div>
-                                <h4 class="text-md mt-05 mb-00">{{ .close.register }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="learn mb-40">
-                        <div class="li-head mb-10">
-                        <h3 class="text-sm font-bold uppercase mb-00">{{ T "parted_node_prog" }}</h3>
-                        </div>
-                        <div class="li-leaf grid">
-                            <div class="box-left subli">
-                                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_init" }}</div>
-                                <h4 class="text-md mt-05 mb-00">{{ .start.learning }}</h4>
-                            </div>
-                            <div class="box-right subli">
-                                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_ends" }}</div>
-                                <h4 class="text-md mt-05 mb-00">{{ .close.learning }}</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tutor flex center-x">
-                    <div class="li-head mb-10">
-                        <div class="img rounded-full">{{- partial "course/module/item/mile/part/thumb-tutor.html" (dict  "ctx" $ctx "site" $site "name" .tutor ) -}}</div> 
-                    </div>
-                    <div class="li-leaf ml-15">
-                        <div class="text-xs font-bold uppercase mb-00 pt-00">tutor</div>
-                        <h4 class="text-md mt-00 mb-00">{{ .tutor }}</h4>
-                    </div>
-                </div>
-            </div>{{- $index = "" -}}
+                <div class="flex center-x ml-a">
+                    <h3 class="text-sm uppercase mt-00 mb-00">{{ T "parted_node_caps" }}</h3>
+                    <h3 class="text-sm uppercase font-bold mt-00 mb-00 ml-20">{{ .Params.quota }} {{ T "parted_node_seat" }}</h3>
+                </div> 
+            </div>
+            <div class="timer">
+                {{- $enroll := ( dict "name" "enroll" "start"  .Params.enroll.start  "close" .Params.enroll.close  ) -}}
+                {{- $sessio := ( dict "name" "session" "start" .Params.session.start "close" .Params.session.close ) -}}
+                {{- partial $time $enroll -}}
+                {{- partial $time $sessio -}}
+            </div>
+            <div class="tutor">
+                {{- partial $user . -}}
+            </div>
+        </div>
         {{- end -}}
     </div>
 </div>

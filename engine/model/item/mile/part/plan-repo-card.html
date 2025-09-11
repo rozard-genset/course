@@ -1,0 +1,11 @@
+{{- range .repo -}}
+<div class="flex mb-10">
+    <div class="icon lg">
+        {{ partial "icon/line/book.svg" }}
+    </div>
+    <div class="desc border-left">
+        <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .Title }}</h2>
+        <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .Params.description }}</p>
+    </div>
+</div>
+{{- end -}}
