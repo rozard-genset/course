@@ -1,28 +1,26 @@
-{{- $ctx  := . -}}{{- $site := $ -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $paid := printf "%s/price-paid-card.html" $part  -}}
+{{- $open := printf "%s/price-open-card.html" $part  -}}
+{{- $feat := printf "%s/hero-thumbnails.html" $part  -}}
+{{- $data := partial "lib/course/group/item-pool-team.html" . -}}
+
 
 <div id="hero" class="mb-60">
-    <div class="head">
-        {{- partial "course/module/item/mile/part/thumb-feature.html" . }}
-    </div>
+    <div class="head">{{- partial $feat . }}</div>
     <div class="leaf">
-        <div class="mb-20">
-            {{- partial "lib/course/hero-group.html" . -}}
-        </div>
-        <div class="mt-10 mb-20">
+         <div class="mt-30 mb-30">
             <div class="thumb border-all rounded-lg mr-20 pa-05">
-                {{- partial "course/module/item/mile/part/thumb-group.html" (dict  "ctx" $ctx "site" $site "name" .Page.Params.Parted.Team.Name ) -}}
+               {{- range first 1 $data -}}{{- partial "parted/avatar/group-48.html" . -}}{{- end -}}
             </div>
             <div class="texts">
                 <div class="named flex center-x">
                     <span class="capitalize text-lg text-sm">{{ T "parted_hero_prov" }}</span>
-                    <h2 class="uppercase font-bold text-md ml-10 mt-00 mb-00">{{- .Page.Params.Parted.Team.Name -}}</h2>
+                    {{- range first 1 $data -}}
+                        <h2 class="uppercase font-bold text-md ml-10 mt-00 mb-00">{{- .Title -}}</h2>
+                    {{- end -}}
                 </div>
                 <div class="action flex center-x">
-                    {{- if .Page.Params.Parted.Paid.Data.Price -}}
-                    {{- partial "course/module/item/mile/view/paid.html" . -}}
-                {{- else -}}
-                    {{- partial "course/module/item/mile/view/open.html" . -}}
-                {{- end -}}
+                   {{- cond ( eq .Params.offers.price "" ) ( partial $open . ) ( partial $paid . ) -}}
                 </div>
             </div>
         </div>
