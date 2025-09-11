@@ -1,0 +1,12 @@
+{{ $team := partial "lib/course/profile/item-pool-teams.html" . }}
+
+{{ range $team }}
+    <a href="{{ .RelPermalink }}" class="card flex center-x mb-15" aria-label="Visit {{ .Title }} profile page">
+        <div class="avabox rounded-full">{{- partial "parted/avatar/user-42.html" . -}}</div>
+        <div class="bio ml-20">
+            <h2 class="text-md font-bold mb-00 mt-00">{{- .Title -}}</h2>
+            <h3 class="text-sm mb-00 mt-00">Contributor</h3>
+        </div>
+    </a>
+{{ end }}
+

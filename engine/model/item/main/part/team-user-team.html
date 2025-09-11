@@ -5,7 +5,9 @@
     <hr class="mb-15">
     <div class="grid">
         {{ range $team }}
-            <a href="{{ .RelPermalink }}" class="profile rounded-full" aria-label="Visit {{ .Title}} profile page">{{- partial "parted/avatar/user-42.html" . -}}</a>
+            <a href="{{ .RelPermalink }}" class="profile rounded-full" aria-label="Visit {{ .Title}} profile page">
+                {{- partial "parted/avatar/user-42.html" . -}}
+            </a>
         {{ end }}
     </div>
 </div>

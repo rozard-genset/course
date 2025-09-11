@@ -11,7 +11,7 @@
         <div class="flex mb-30">
             <div class="icon sm mr-15">
                 {{ $icon :=  printf "icon/line/check-circle.svg" }}
-                {{ with .icon }} {{ $icon = . }}{{ end }}
+                    {{ with .icon }} {{ $icon = . }}{{ end }}
                 {{- partial $icon -}}
             </div>
             <div class="text border-left">
