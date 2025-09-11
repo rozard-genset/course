@@ -2,12 +2,14 @@
 	padding: 5rem 0;
 
 	.rows{
+		grid-template-columns: 100%;
 		grid-gap: 3rem;
 	}
 
 	.thumb{
 		img{
 			width: 100%;
+			height: auto;
 		}
 	}
 
@@ -39,7 +41,7 @@
 
 		.infos{
 			.count {
-				grid-template-columns: repeat(4, calc( 25% - 1rem ) );
+				grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 			}
 		}
 	}

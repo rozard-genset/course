@@ -1,10 +1,11 @@
 {{ $team := partial "lib/course/profile/item-pool-teams.html" . }}
 
 <div class="team">
-    <h2 class="text-md font-bold mb-00 mt-00">Contributor</h2>
-    <div class="figure">
-    {{ range $team }}
-        <div class="img rounded-full">{{- partial "parted/avatar/user-32.html" . -}}</div>
-    {{ end }}
+    <h2 class="text-md mb-10">Contributor</h2>
+    <hr class="mb-15">
+    <div class="grid">
+        {{ range $team }}
+            <a href="{{ .RelPermalink }}" class="profile rounded-full" aria-label="Visit {{ .Title}} profile page">{{- partial "parted/avatar/user-42.html" . -}}</a>
+        {{ end }}
     </div>
 </div>
