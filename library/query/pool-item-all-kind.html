@@ -1,0 +1,57 @@
+{{- $alls := .RegularPagesRecursive -}}
+{{- $info := slice -}}
+{{- $node := slice -}}
+{{- $repo := slice -}}
+{{- $task := slice -}}
+{{- $test := slice -}}
+{{- $time := slice -}}
+
+{{- range .RegularPagesRecursive -}}
+    {{- if strings.Contains .RelPermalink "/info/" -}} 
+        {{- $info = $info | append . -}}
+    {{- end -}}
+{{- end -}}
+
+
+{{- range .RegularPagesRecursive -}}
+    {{- if strings.Contains .RelPermalink "/node/" -}} 
+        {{- $node = $node | append . -}}
+    {{- end -}}
+{{- end -}}
+
+
+{{- range $index, $value:= $info -}}
+    
+    {{- $uniq := math.Sum $index 1 -}}
+    {{- $repo_list := slice -}}
+    {{- $task_list := slice -}}
+    {{- $test_list := slice -}}
+
+    {{- range $alls -}}
+        {{- if and ( strings.Contains .RelPermalink "/repo/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+            {{- $repo_list = $repo_list | append . -}}    
+        {{- end -}}
+    {{- end -}}
+
+    {{- range $alls -}}
+        {{- if and ( strings.Contains .RelPermalink "/task/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+            {{- $task_list = $task_list | append . -}}    
+        {{- end -}}
+    {{- end -}}
+
+    {{- range $alls -}}
+        {{- if and ( strings.Contains .RelPermalink "/test/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+            {{- $test_list = $test_list | append . -}}    
+        {{- end -}}
+    {{- end -}}
+
+    {{- $repo = $repo | append ( dict "session" $uniq "page" . "list" $repo_list ) -}}
+    {{- $task = $task | append ( dict "session" $uniq "page" . "list" $task_list ) -}}
+    {{- $test = $test | append ( dict "session" $uniq "page" . "list" $test_list ) -}}
+    {{- $time = $time | append ( dict "session" $uniq "page" . "task" $task_list  "test" $test_list ) -}}
+
+{{- end -}}
+
+
+{{- $data := ( dict "node" $node "info" $info "repo" $repo "task" $task "test" $test "time" $time ) -}}
+{{- return $data -}}

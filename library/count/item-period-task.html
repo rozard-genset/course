@@ -1,0 +1,10 @@
+{{- $test := partial "lib/course/query/pool-course-task.html" .ctx -}}
+{{- $uniq := .id -}}
+{{- $sums := 0   -}}
+
+
+{{- range $test -}}{{- if strings.Contains .Params.module.period $uniq -}}
+    {{- $sums = math.Sum $sums  1 -}}
+{{- end -}}{{- end -}}
+
+{{- return $sums -}}

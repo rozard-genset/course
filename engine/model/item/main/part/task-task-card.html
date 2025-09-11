@@ -1,0 +1,15 @@
+<div class="item border-left">
+    <div class="head">
+        <div class="flex center-x">
+            <div class="icon xs">
+                {{ partial "icon/line/edit.svg" }}
+            </div>
+            <h2 class="capitalize text-md font-bold mb-00 mt-00">Latihan</h2>
+            <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ len .task }}</h2> {{ T "parted_task_name" }}
+        </div>
+        <hr class="mt-00">
+    </div>
+    <div class="desc">
+        <p class="text-sm mb-00 mt-00 pl-15 pt-10 pb-10">{{ .page.Params.tasker.goal }}</p>
+    </div>
+</div>
