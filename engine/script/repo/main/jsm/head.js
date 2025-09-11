@@ -1,0 +1,1 @@
+console.log('critical course page javascript module loaded');

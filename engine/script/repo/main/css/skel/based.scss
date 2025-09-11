@@ -1,0 +1,45 @@
+main {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    main {
+        grid-template-columns: calc( 360px - 12.5& ) ( calc( 100% - 360px ) );
+
+        #main-1 {
+            grid-column: 2;
+            grid-row: 1;
+            padding-right: 17.5%;
+        }
+
+        #main-2{
+            grid-column: 1;
+            grid-row: 1;
+            padding-left: 17.5%;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

@@ -7,7 +7,6 @@ module:
     - source: "library"
       target: "layouts/partials/lib/course"
     
-
     - source: "markit"
       target: "layouts/course/_markup"
     

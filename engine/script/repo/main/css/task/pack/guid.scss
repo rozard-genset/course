@@ -1,0 +1,56 @@
+#guid{
+    display: grid;
+    .main, .box{
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+    #guid{
+
+        .side{
+            display: grid;
+            grid-template-columns: repeat(2, 50%) ;
+            grid-gap: 2rem;
+        }
+
+        .box{
+            margin-bottom: inherit;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #guid{
+        .side{
+            grid-template-columns: repeat(3, 33.333%) ;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+
+}
+
+@media only screen and (min-width: 1280px) {
+ 
+    #guid{
+        grid-template-columns: calc( 65% - 7rem) calc( 100% - 65% ) ;
+        grid-gap: 7rem;
+
+        .side{
+            grid-template-columns: 100% ;
+            grid-gap: 0rem;
+        }
+
+        .box{
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

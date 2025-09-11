@@ -1,0 +1,33 @@
+#remd{
+    .head, .box{
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #remd{
+
+        .leaf{
+            display: grid;
+            grid-template-columns: repeat( 2, 50% ) ;
+            grid-gap: 5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+   
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

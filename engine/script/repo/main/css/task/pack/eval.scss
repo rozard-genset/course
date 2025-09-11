@@ -1,0 +1,48 @@
+#eval{
+    display: grid;
+    
+    .head, .card{
+        margin-bottom: 3rem;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #eval{
+        .leaf{
+            display: grid;
+            grid-template-columns: repeat( 2, 50% );
+            grid-gap: 3rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #eval{
+        .leaf{
+            grid-template-columns: repeat( 3, 33.333% );
+        }
+    }
+   
+}
+
+@media only screen and (min-width: 1024px) {
+      #eval{
+        grid-template-columns: calc( 30% - 3rem ) calc( 100% - 30% );
+        grid-gap: 3rem;
+
+        .leaf{
+            grid-template-columns: repeat( 2, 50% );
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

@@ -1,0 +1,58 @@
+  
+.tab-action{
+    margin-right: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.tab-action.open{
+    color: var(--color-01);
+    font-weight: bold;
+}
+
+.tab-action:hover,
+.tab-action.open {
+    border-color: var(--button-02);
+    .icon{
+        background-color: var(--button-02);
+    }
+    .capitalize{
+        color: var(--button-02);
+    }
+}
+
+.bugs.tab-action.open div,
+.bugs.tab-action:hover div{
+    background-color: transparent;
+    color: red;
+    transition: 200ms;
+}    
+
+
+
+
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+    .actions{
+        margin-bottom: 0rem;
+    }
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

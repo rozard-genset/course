@@ -1,0 +1,8 @@
+{{- $skels := partial "lib/pather/module-skel.html" . -}}
+{{- $main1 := printf "%s/main-1.html" $skels -}}
+{{- $main2 := printf "%s/main-2.html" $skels -}}
+
+<main id="repo">
+    {{- partial $main1 . -}}
+    {{- partial $main2 . -}}
+</main>
