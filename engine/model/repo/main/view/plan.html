@@ -1,44 +1,39 @@
-{{- $period := partial "course/module/page/main/data/take-period.html" . -}}
+{{- $period := partial "lib/course/query/pool-repo-all-item.html" . -}}
 {{- $unique := .Page.Params.Title | urlize -}}
 {{- $curent := .Page.Params.Module.Period -}}
 {{- $alpage := .Parent.Pages -}}
 {{- $active := "" -}}
 {{- $sesion := "" -}}
-<div id="plan">
-    <asside>
+
+<asside id="plan">
+    <div class="overlay">
         <div class="head">
             <h2 class="font-light text-lg font-bold mr-10 mt-00 mb-05 uppercase">Session Navigation</h2>
             <h2 class="font-light text-md upper mt-00 mb-20">Current Period | <span class="font-bold">Session {{ .Page.Params.Module.Period }}</span></h2><hr>
         </div>
         <div class="leaf">
-            {{- range $period -}}{{ $sesion = . -}}
+            {{- range $period -}}{{ $status := .status }}
             <div class="session">
-                <div class="opening flex center-x" data-open="session-module-{{ $sesion }}">
-                    <h2 class="text-md uppercase font-bold text-gray-400">Session {{ $sesion }}</h2>
+                <div class="opening flex center-x" data-open="session-module-{{ .session }}">
+                    <h2 class="text-md uppercase font-bold text-gray-400">Session {{ .session }}</h2>
                     <div class="icon md ml-a">{{ partial "icon/line/plus.svg" }}</div>
                 </div>
-                <div id="session-module-{{ $sesion }}" class="parted close">
-                    {{- $populate := slice -}}
-                    {{- range $alpage -}}
-                        {{- if and ( eq .Page.Params.Module.Period $sesion  ) ( .IsPage ) ( eq .Page.Params.Module.Strain "material" ) -}}
-                            {{- if . -}}{{- $populate = $populate | append . -}}{{- end -}}
-                        {{- end -}}
-                    {{- end -}}
-                    {{- range sort $populate ".Params.Module.Parted" -}}
-                        {{- if eq ( .Page.Params.Title | urlize ) $unique -}}{{- $active = "active" -}}{{- end -}}
-                        <a href="{{ .RelPermalink }}" class="card-plan flex center-x mb-10 info {{ $active }}" data-open="session-module-{{ $sesion }}">
-                            <div class="info">
-                                <div class="name flex center-x">
-                                    <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                                    <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
-                                </div>
-                                <p class="mt-00 text-sm">{{ .Page.Params.Description }}</p>
+                
+                <div id="session-module-{{ .session }}" class="parted {{ with ne $status true -}} close {{- end -}}">
+                    {{- range .list -}}
+                    <a href="{{ .RelPermalink }}" class="card-plan flex center-x mb-10 info {{- with eq $status true -}} active {{- end -}}" data-open="session-module-{{ $sesion }}">
+                        <div class="info">
+                            <div class="name flex center-x">
+                                <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
+                                <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
                             </div>
-                        </a>
+                            <p class="mt-00 text-sm">{{ .Page.Params.Description }}</p>
+                        </div>
+                    </a>
                     {{- end -}}
-                </div><hr>
-            </div>   
+                </div>
+            </div><hr>   
             {{- end -}}
         </div>
-    </asside>
-</div>
+    </div>
+</asside>

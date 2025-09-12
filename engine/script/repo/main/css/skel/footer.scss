@@ -1,10 +1,31 @@
 footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	margin-top: 5rem;
-	background-color: var(--background-02);
 
+	display: flex;
+	align-items: center;
+    
+    &, .boxed{
+        width: 100%;
+        background-color: var(--background-02);
+    }
+
+    .boxed{
+        margin: auto;
+		
+        button{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: var(--color-02);
+        }
+
+        .tabbed.open, button[data-repo="open"]{
+            color: var(--link-02-based);
+        }
+
+        .icon{
+            margin: 10px auto;
+        }
+    }
 	.wrap{
 		height: 50px;
 	}
@@ -23,19 +44,28 @@ footer {
 
 
 @media only screen and (min-width: 1024px) {
-
+    footer {
+        right: 2rem;
+        width: 40px;
+        bottom: 50%;
+        display: block;
+        position: fixed;
+		border-radius: 50px;
+      
+        .boxed{
+            width: 42px;
+			border-radius: 50px;
+            border: 1px solid var(--link-01-based);
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1280px) {
-	footer {
-		position: relative;
-	}
+	
 }
 
 
 @media only screen and (min-width: 1536px) {
 
 }
-
-

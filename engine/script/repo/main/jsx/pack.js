@@ -3,27 +3,31 @@ console.log('Module : page : deffers page course javascript engine loaded');
 
 let init_plan = ()=> {
 
-    if ( ! document.getElementById('repo') ){
-        return;
-    }
+    ( screen.width > 1024 ) ? document.getElementById('course').setAttribute( 'data-repo', 'open' ) : "";
+    ( screen.width > 1024 ) ? document.querySelector('#snip .toggle').setAttribute( 'data-repo', 'open' ) : "";
 
     let element = document.querySelector( '#plan .leaf' );
     let activet = Array.prototype.slice.call(element.querySelectorAll('.opening'));
     let partion = Array.prototype.slice.call(element.querySelectorAll('.parted'));
 
     activet.forEach( button => {
-        button.addEventListener('click', ()=> {
- 
-            let targets = button.getAttribute('data-open');
- 
-            partion.forEach( active => {
-                if ( ! active.classList.contains('.close')) {
-                    active.classList.add('close');
-                }
-            })
 
-            element.querySelector("#"+targets).classList.remove('close');
-            element.querySelector("#"+targets).parentNode.scrollIntoView(); 
+        button.addEventListener('click', ()=> {
+
+            let targets = button.getAttribute('data-open');
+            targets = element.querySelector("#"+targets);
+
+            if ( targets.classList.contains( 'close' ) ) {
+
+                partion.forEach( active => {
+                    ( ! active.classList.contains('.close')) ? active.classList.add('close') : '';
+                })
+                targets.classList.remove('close');
+                targets.parentNode.scrollIntoView(); 
+            }
+            else {
+                targets.classList.add('close');
+            }
         });
     });
 }
@@ -47,22 +51,24 @@ let init_snip = () => {
     tabbed.forEach(( item )=> {
         item.addEventListener('click', ()=> {
             let target = item.getAttribute('data-action');
+
             tabbed.forEach(( elem ) => {
                 elem.classList.remove('open');
             })
+
             item.classList.add('open')
             snip_tabs( target );
-            snip_exit( parent );
+            ( screen.width < 1024  ) ? snip_exit( parent ) : "";
         })
     })
 }
 
 
 let snip_menu = ( parent ) => {
-    let target = document.getElementById('relay');
-    let status = target.getAttribute('data-menu');
-    ( status == 'open' ) ? target.setAttribute( 'data-menu', 'close' ) : target.setAttribute( 'data-menu', 'open' );
-    ( status == 'open' ) ? parent.setAttribute( 'data-menu', 'close' ) : parent.setAttribute( 'data-menu', 'open' );
+    let target = document.getElementById('course');
+    let status = target.getAttribute('data-repo');
+    ( status == 'open' ) ? target.setAttribute( 'data-repo', 'close' ) : target.setAttribute( 'data-repo', 'open' );
+    ( status == 'open' ) ? parent.setAttribute( 'data-repo', 'close' ) : parent.setAttribute( 'data-repo', 'open' );
 }   
 
 
@@ -70,8 +76,8 @@ let snip_exit = ( parent ) => {
 
     let toggle = Array.prototype.slice.call( parent.querySelectorAll('.toggle') );
     toggle.forEach(( item )=> {
-        item.setAttribute( 'data-menu', 'close' );
-        document.getElementById('relay').setAttribute( 'data-menu', 'close' );
+        item.setAttribute( 'data-repo', 'close' );
+        document.getElementById('course').setAttribute( 'data-repo', 'close' );
     })
 }
 
