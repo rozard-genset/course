@@ -1,0 +1,33 @@
+{{- $data := slice  -}}
+{{- $list := slice  -}}
+{{- $page := .Title -}}
+{{- $type := .Parent.RegularPagesRecursive.ByWeight -}}
+
+
+{{- range $index, $value := $type -}}
+    {{ if and ( strings.Contains .RelPermalink "/test/" ) ( eq ( in $list .Weight ) false ) }}
+        {{- $list = $list | append .Weight  -}}
+    {{ end }}
+{{- end -}}
+
+
+{{- range $list -}}
+
+    {{- $uniq := . -}}
+    {{- $nows := "" -}}
+    {{- $test := slice -}}
+
+    {{- range $index, $value := $type -}}
+        {{- if and ( strings.Contains .RelPermalink "/test/" ) ( eq $uniq .Weight ) -}}
+            {{- $test = $test | append . -}}
+            {{- if and ( eq .Title $page ) ( eq $nows "" )  }}
+                {{  $nows = true  -}}
+            {{ end }}
+        {{- end -}}
+    {{ end }}
+
+    {{- $data = $data | append ( dict "session" $uniq "status" $nows "list" $test ) -}}
+    {{- $nows = "" -}}
+{{- end -}}
+
+{{- return $data -}}

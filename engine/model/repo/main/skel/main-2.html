@@ -4,13 +4,13 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 {{- $page := printf "%s/page.html" $view -}}
-{{- $task := printf "%s/task.html" $view -}}
+{{- $work := printf "%s/work.html" $view -}}
 {{- $navs := printf "%s/navs.html" $view -}}
 
 <div id="main-2">
     <div class="boxes">
         {{- partial $page . -}}
-        {{- partial $task . -}}
+        {{- partial $work . -}}
         {{- partial $navs . -}}
     </div>
 </div>
