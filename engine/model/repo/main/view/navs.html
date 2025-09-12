@@ -1,4 +1,5 @@
-{{ $populate := partial "course/module/page/main/data/take-paged.html" . }}
+{{ $populate := partial "lib/course/query/pool-repo-all-page.html" . }}
+
 
 {{- if or ( $populate.Next . ) ( $populate.Prev . ) -}}
 <div id="navs">

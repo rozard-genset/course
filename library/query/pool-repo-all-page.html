@@ -1,0 +1,9 @@
+{{- $data := slice -}}
+
+{{- range .Parent.RegularPagesRecursive.ByWeight -}}
+    {{- if strings.Contains .RelPermalink "/repo/" -}} 
+        {{- $data = $data | append . -}}
+    {{- end -}}
+{{- end -}}
+
+{{- return $data -}}

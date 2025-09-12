@@ -3,9 +3,6 @@ console.log('Module : page : deffers page course javascript engine loaded');
 
 let init_plan = ()=> {
 
-    ( screen.width > 1024 ) ? document.getElementById('course').setAttribute( 'data-repo', 'open' ) : "";
-    ( screen.width > 1024 ) ? document.querySelector('#snip .toggle').setAttribute( 'data-repo', 'open' ) : "";
-
     let element = document.querySelector( '#plan .leaf' );
     let activet = Array.prototype.slice.call(element.querySelectorAll('.opening'));
     let partion = Array.prototype.slice.call(element.querySelectorAll('.parted'));
