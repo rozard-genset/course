@@ -1,0 +1,5 @@
+{{ $sets := partial "lib/course/query/pool-repo-all-task.html" . }}
+{{ .Params.module.parted }}
+{{ range ( index $sets 0 ) }}
+    {{ . }}
+{{ end }}
