@@ -1,0 +1,26 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $card := printf "%s/guid-card.html" $part -}}
+
+<div id="guid" class="tabs-item open">
+     <div class="main">
+        <div class="head flex center-x mb-40">
+            <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/table.svg" -}}</div>
+            <h2 class="font-bold uppercase text-lg mb-00 mt-00">Instruction</h2>
+        </div>
+        <div class="leaf">{{ .Content }}</div>
+    </div>
+    <div class="side">
+
+        {{ $advices  := ( dict "uniq" "advice"   "icon" "zap.svg"             "lead" "Sugestion"   "desc" "You can use this sugestion for help your assigment"         "data" .Params.sugest )   -}}
+        {{ $warning  := ( dict "uniq" "warning"  "icon" "alert-triangle.svg"  "lead" "Warning"     "desc" "Please consider a few point above before do the task."      "data" .Params.warning )  -}}
+        {{ $prohibit := ( dict "uniq" "prohibit" "icon" "slash.svg"           "lead" "Prohbited"   "desc" "Act a point below is prohbited due the task accomplished."  "data" .Params.prohibit ) -}}
+
+        {{- range ( slice $advices $warning $prohibit ) -}}
+            {{ partial $card . }}
+        {{- end -}}
+    </div>
+</div>

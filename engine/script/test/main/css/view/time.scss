@@ -1,0 +1,88 @@
+#time{
+
+    .head, .box{
+        margin-bottom: 3rem;
+    }
+
+    .leaf, .time, .close, .start, .date, .time, .data{
+        display: grid;
+    }
+
+    .time{
+        width: 100%;
+
+        .flex{
+            flex-wrap: nowrap;
+        }
+
+        .item{
+            text-wrap: nowrap;
+        }
+
+        .close, .start, .date, .time, .data{
+            font-size: .95rem;
+        }
+
+        .close, .start{
+            grid-template-columns: 60px 200px;
+            margin-bottom: 10px;
+        }
+
+        .data{
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+        }
+
+        .time, .date{
+            grid-template-columns: auto auto auto;
+        }
+
+        .utc{
+            margin-left: 10px;
+        }
+    }
+}
+
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    #time{
+        .box{
+            margin-bottom: inherit;
+        }
+
+        .leaf{
+            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
+            grid-gap: 3rem 5rem;
+        } 
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    #time{
+
+        margin-bottom: 5rem;
+
+        .head{
+            margin-bottom: 4rem;
+        }
+
+        .leaf{
+            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
+            grid-gap: 3rem 5rem;
+        }       
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

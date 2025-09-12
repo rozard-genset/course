@@ -1,0 +1,14 @@
+{{- $skels := partial "lib/pather/module-skel.html" . -}}
+{{- $main1 := printf "%s/main-1.html" $skels -}}
+{{- $main2 := printf "%s/main-2.html" $skels -}}
+{{- $main3 := printf "%s/main-3.html" $skels -}}
+
+<main id="test">
+    <div id="info" class="wrap">
+        {{- partial $main1 . -}}
+        {{- partial $main2 . -}}
+    </div>
+    <div id="load" class="wrap hide">
+        {{- partial $main3 . -}}
+    </div>
+</main>

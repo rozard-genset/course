@@ -1,0 +1,67 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $feat := printf "%s/task-thumb.html" $part -}}
+{{- $node := partial "lib/course/query/pool-task-all-node.html" . -}}
+
+
+<div id="hero">
+    <div class="slot grid">
+        <div class="thumb">{{ partial $feat . }}</div>
+        <div class="rows">
+            <div class="meta">
+                <h1 class="text-4xl mt-00 mb-60">{{ .Title }}</h1>
+                <hr>
+                <div class="desc flex">
+                    <div class="title font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-30">Description</div>
+                    <div class="border-left pb-10 pt-30 pl-30">
+                        {{ .Page.Params.Description }}
+                    </div>
+                </div>
+                <div class="desc flex">
+                    <div class="title font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-20">Qualification</div>
+                    <div class="border-left pb-10 pt-20 pl-30 ">
+                        <span class="font-bold mb-00 mt-00">{{ .Params.scores.pass }}</span> minimum passing grade 
+                    </div>
+                </div>
+                <div class="desc flex">
+                    <div class="title font-bold uppercase text-sm mb-00 mt-00 mr-20 pt-20">Spesification</div>
+                    <div class="border-left pb-10 pt-20 pl-30 mr-20">
+                        {{ if eq .Params.scores.team 0  }}
+                            <p class="font-bold mb-00 mt-00">Personal Assigment</p>
+                        {{ else }}
+                            <p class="font-bold mb-00 mt-00">Workgroup Assignment</p>
+                            <p class="mt-00 mb-00">Maximum <span class="font-bold">{{ .Params.guides.team.member }}</span> Member Per Group</p>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+            <div class="acts">
+                <div class="opening disable flex center-x">
+                    <div class="icon xl">
+                        {{- partial "icon/line/alert-circle.svg" -}}
+                    </div>
+                    <p class="text-lg mb-00 mt-00">No Assigment Activity For This Time.</p>
+                </div><hr>
+                <div class="opening enabled flex center-x open mt-20">
+                    <div class="option flex center-x">
+                        <label for="group-option" class="font-bold uppercase text-sm">Select Group</label>
+                        <select id="group-option" name="selectedgroup" class="ml-20">
+                        {{- range $node -}}
+                            <option value="{{ .Title | urlize }}">Group {{ .Title }}</option>
+                        {{- end -}}
+                        </select>
+                    </div>
+                    <div class="staring flex center-x ml-a">
+                        <button id="start-task" class="button outline flex center-x">
+                            <div class="icon sm mr-00">{{- partial "icon/line/edit.svg" -}}</div>
+                            <div class="text-sm font-bold mr-10">Take Assignment</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

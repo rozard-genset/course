@@ -1,0 +1,13 @@
+{{- $period := slice  -}}{{- range .Parent.Pages.ByWeight -}}{{- $period = $period | append .Page.Params.Weight -}}{{- end -}}
+{{- $unique := .Page.Params.Title | urlize -}}{{- $curent := .Page.Params.Weight -}}
+{{- $active := "" -}}{{- $sesion := "" -}}
+{{- $populate := slice -}}
+
+{{- $allpage := .Parent.Pages -}}{{- $period := sort ( $period | uniq ) -}}
+{{- range $period -}}{{ $sesion = . -}}{{- range $allpage -}}
+        {{- if  and ( eq .Page.Params.Weight $sesion ) ( eq .Page.Params.Module.Strain "material" ) -}}
+            {{- $populate = $populate | append . -}}
+        {{- end -}}
+{{- end -}}{{- end -}}
+
+{{- return $populate -}}

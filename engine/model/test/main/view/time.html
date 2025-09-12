@@ -1,0 +1,33 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $card := printf "%s/time-card.html" $part -}}
+{{- $node := partial "lib/course/query/pool-task-all-node.html" . -}}
+
+
+<div id="time" class="tabs-item">
+    <div class="head flex center-x mb-40">
+        <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/clock.svg" -}}</div>
+        <h2 class="font-bold uppercase text-lg mb-00 mt-00">Task Schedule</h2>
+    </div>
+    <div class="leaf">
+        {{- range $node -}}
+        <div class="box">
+            <div class="flex center-x border-left border-bottom">
+                <div class="text-sm uppercase font-bold  mt-00 mb-00 pb-10 pl-20">{{ .Title }}</div>
+                {{- with .Params.metadata.author -}}<div class="mt-00 mb-00 pb-10 pl-20 ml-a"> Assesor | {{ . }}</div>{{- end -}}
+            </div>
+            <div class="time border-left pl-20 pt-10">
+                {{- $opens := ( dict "name" "Open"  "days" .Params.opened.days "month" .Params.opened.month "year" .Params.opened.year "hours" .Params.opened.hours  "mins" .Params.opened.minute ) -}}
+                {{- $close := ( dict "name" "Close" "days" .Params.closed.days "month" .Params.closed.month "year" .Params.closed.year "hours" .Params.closed.hours  "mins" .Params.opened.minute ) -}}
+                
+                {{- range ( slice $opens $close ) -}}
+                    {{- partial $card . -}}
+                {{- end -}}
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>

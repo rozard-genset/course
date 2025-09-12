@@ -1,0 +1,15 @@
+<div class="{{ .name | urlize }} flex center-x">
+    <div class="font-bold">{{ .name }}</div>
+    <div class="data flex center-x">
+        <div class="flex center-x">
+            <div class="item day">{{ .days }} - </div>
+            <div class="item mon">{{ .month }} - </div>
+            <div class="item yer">{{ .year }}</div>
+        </div>
+        <div class="flex center-x">
+            <div class="item hor">{{ .hours }} </div>
+            <div class="item min">{{ .minute }}</div>
+            <div class="item utc">UTC </div>
+        </div>
+    </div>
+</div>
