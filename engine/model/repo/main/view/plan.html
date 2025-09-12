@@ -1,9 +1,4 @@
-{{- $period := partial "lib/course/query/pool-repo-all-item.html" . -}}
-{{- $unique := .Page.Params.Title | urlize -}}
-{{- $curent := .Page.Params.Module.Period -}}
-{{- $alpage := .Parent.Pages -}}
-{{- $active := "" -}}
-{{- $sesion := "" -}}
+{{- $data := partial "lib/course/query/pool-repo-all-item.html" . -}}
 
 <asside id="plan">
     <div class="overlay">
@@ -12,23 +7,20 @@
             <h2 class="font-light text-md upper mt-00 mb-20">Current Period | <span class="font-bold">Session {{ .Page.Params.Module.Period }}</span></h2><hr>
         </div>
         <div class="leaf">
-            {{- range $period -}}{{ $status := .status }}
+            {{- range $data -}}{{ $status := .status }}{{ $session := .session }}
             <div class="session">
                 <div class="opening flex center-x" data-open="session-module-{{ .session }}">
                     <h2 class="text-md uppercase font-bold text-gray-400">Session {{ .session }}</h2>
                     <div class="icon md ml-a">{{ partial "icon/line/plus.svg" }}</div>
                 </div>
-                
                 <div id="session-module-{{ .session }}" class="parted {{ with ne $status true -}} close {{- end -}}">
                     {{- range .list -}}
-                    <a href="{{ .RelPermalink }}" class="card-plan flex center-x mb-10 info {{- with eq $status true -}} active {{- end -}}" data-open="session-module-{{ $sesion }}">
-                        <div class="info">
-                            <div class="name flex center-x">
-                                <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
-                                <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
-                            </div>
-                            <p class="mt-00 text-sm">{{ .Page.Params.Description }}</p>
+                    <a href="{{ .RelPermalink }}" class="card-plan mb-10 {{ with eq $status true -}} active {{- end -}}">
+                        <div class="name flex center-x">
+                            <div class="icon lg">{{ partial "icon/line/folder.svg" }}</div>
+                            <h3 class="capitalize text-md font-bold mb-15">{{ .LinkTitle }}</h3>
                         </div>
+                        <p class="mt-00 text-sm">{{ .Page.Params.Description }}</p>
                     </a>
                     {{- end -}}
                 </div>
