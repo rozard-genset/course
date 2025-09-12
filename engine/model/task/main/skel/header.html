@@ -1,24 +1,14 @@
 <header class="flex center-x border-bottom">
-    <nav class="flex center-x mb-00">
+    <nav class="wrap flex center-x mb-00">
         <div class="title">
-            {{- if eq .Page.Params.Module.Strain "material" -}}
-                <div class="text-md font-bold uppercase desktop">
-                    <span class="mr-10">{{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}} </span> | <span class="ml-10">Module</span>
-                </div>
-                <div class="text-md font-bold uppercase mobile">Classroom</div>
-            {{ else }}
-                <div class="text-md font-bold uppercase desktop">
-                    <span class="mr-10">{{- if .IsPage -}}{{- .Parent.Title -}}{{- else -}}{{- .Title -}}{{- end -}}</span> | <span class="ml-10">Assignment</span> 
-                </div>
-                <div class="text-md font-bold uppercase mobile">Assignment</div>
-            {{ end }}
-        </div>
+            <span class="mr-10 text-md font-bold uppercase">Sandbox</span>
+            <span class="desktop"> | </span> 
+            <span class="desktop text-md uppercase ml-10">Session {{ .Params.weight }} </span>
+            <span class="desktop ml-10"> - </span> 
+            <span class="desktop text-md uppercase ml-10">Part {{ .Params.module.parted }} </span> 
+         </div>
         <div class="action">
-            {{- if eq .Page.Params.Module.Strain "material" -}}
-                <a href="{{ .Parent.RelPermalink }}" role="button" class="button outline float-right">End Course</a>
-            {{ else }}
-                <button onclick="history.back()" class="button outline cancel">End Assignment</button>
-            {{ end }}
+            <button onclick="history.back()" class="button outline cancel">End Task</button>
         </div>
     </nav>
 </header>

@@ -1,9 +1,23 @@
-<div class="item flex">
-    <div class="icon sm rounded-full">
-        {{ partial "icon/line/book.svg" }}
+
+{{- if eq .Parent.Params.offers.price "" -}}
+
+    <a href="{{ .RelPermalink }}" class="item flex">
+        <div class="icon sm rounded-full">
+            {{ partial "icon/line/book.svg" }}
+        </div>
+        <div class="desc border-left">
+            <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .Title }}</h2>
+            <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .Params.description }}</p>
+        </div>
+    </a>
+{{- else -}}
+    <div class="item flex">
+        <div class="icon sm rounded-full">
+            {{ partial "icon/line/book.svg" }}
+        </div>
+        <div class="desc border-left">
+            <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .Title }}</h2>
+            <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .Params.description }}</p>
+        </div>
     </div>
-    <div class="desc border-left">
-        <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .Title }}</h2>
-        <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .Params.description }}</p>
-    </div>
-</div>
+{{- end -}}
