@@ -1,0 +1,22 @@
+<div id="bugs">
+    <div class="main">
+        <h2 class="mb-30 text-lg font-bold uppercase">Report Trouble</h2>
+        <div id="bugs-report" class="issue">
+            {{- partial "parted/report/main/render.html" . -}}
+        </div>
+    </div>
+    <div class="info">
+        <div class="rule mb-60">
+            <h3 class="mb-20 text-md font-bold uppercase">Guides</h3>
+            <p class="mb-30 text-sm">{{- .Parent.Page.Params.Module.Report.Lead -}}</p>
+            <div class="rule">
+            {{- range .Parent.Page.Params.Report.Rules -}}
+                <div class="flex mb-20">
+                    <div class="icon sm mr-10">{{- partial "icon/line/check-circle.svg" -}}</div>
+                    <p class="text-sm mb-00 mt-00">{{ . }}</p>
+                </div>
+            {{- end -}}
+            </div>
+        </div>
+    </div>
+</div>

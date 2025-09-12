@@ -3,14 +3,17 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
+{{- $talk := printf "%s/talk.html" $view -}}
+{{- $bugs := printf "%s/bugs.html" $view -}}
+
 <div id="page">
     <div id="tabs-repo" class="tab-content page-tab open">
         {{- partial "lib/format.html" . -}}
     </div>
     <div id="tabs-talk" class="tab-content page-tab">
-        Comment
+        {{- partial $talk . -}}
     </div>
     <div id="tabs-help" class="tab-content page-tab">
-        Help
+        {{- partial $bugs . -}}
     </div>
 </div>

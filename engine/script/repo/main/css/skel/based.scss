@@ -80,7 +80,6 @@ footer{
 
 
 @media only screen and (min-width: 768px) {
-
     main{
         #main-2{
             .boxes{
@@ -114,11 +113,34 @@ footer{
             }
         }
     }
+
+    main{
+        #main-2{
+            .boxes{
+                max-width: 780px;
+            }
+        }
+    }
 }
 
 
 @media only screen and (min-width: 1280px) {
 
+    #course[data-repo="open"]{
+        #main-2{
+            .boxes{
+                max-width: 740px;
+            }
+        }
+    }
+
+    main{
+        #main-2{
+            .boxes{
+                max-width: 780px;
+            }
+        }
+    }
 
 }
 
@@ -134,6 +156,18 @@ footer{
         #main-2{
             margin-left: 400px;
             width: calc( 100% - 400px );
+            .boxes{
+                max-width: 960px;
+            }
+        }
+    }
+
+    main{
+
+        #main-2{
+            .boxes{
+                max-width: 980px;
+            }
         }
     }
 }

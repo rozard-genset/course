@@ -1,0 +1,27 @@
+#bugs{
+    display: grid;
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+ 
+    #bugs{
+        grid-template-columns: calc( 61% - 3rem ) 39%;
+        grid-gap: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}
