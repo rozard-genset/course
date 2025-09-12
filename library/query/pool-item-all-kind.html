@@ -28,19 +28,19 @@
     {{- $test_list := slice -}}
 
     {{- range $alls -}}
-        {{- if and ( strings.Contains .RelPermalink "/repo/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+        {{- if and ( strings.Contains .RelPermalink "/repo/" ) ( strings.Contains .Params.weight $uniq ) -}} 
             {{- $repo_list = $repo_list | append . -}}    
         {{- end -}}
     {{- end -}}
 
     {{- range $alls -}}
-        {{- if and ( strings.Contains .RelPermalink "/task/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+        {{- if and ( strings.Contains .RelPermalink "/task/" ) ( strings.Contains .Params.weight $uniq ) -}} 
             {{- $task_list = $task_list | append . -}}    
         {{- end -}}
     {{- end -}}
 
     {{- range $alls -}}
-        {{- if and ( strings.Contains .RelPermalink "/test/" ) ( strings.Contains .Params.module.period $uniq ) -}} 
+        {{- if and ( strings.Contains .RelPermalink "/test/" ) ( strings.Contains .Params.weight $uniq ) -}} 
             {{- $test_list = $test_list | append . -}}    
         {{- end -}}
     {{- end -}}

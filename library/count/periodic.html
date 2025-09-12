@@ -1,7 +1,7 @@
 {{- $data := slice -}}
 {{- range .RegularPagesRecursive -}}
     {{- if  strings.Contains .RelPermalink "/repo/"  -}}
-        {{- $data = $data | append .Page.Params.Module.Period -}}
+        {{- $data = $data | append .Page.Params.weight -}}
     {{- end -}}
 {{- end -}}
 
