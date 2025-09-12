@@ -1,8 +1,11 @@
 {{- $skels := partial "lib/pather/module-skel.html" . -}}
 {{- $main1 := printf "%s/main-1.html" $skels -}}
 {{- $main2 := printf "%s/main-2.html" $skels -}}
+{{- $snips := printf "%s/action.html" $skels -}}
 
 <main id="repo">
-    {{- partial $main1 . -}}
-    {{- partial $main2 . -}}
+    <div id="relay" class="wrap grid" data-menu="close">
+        {{- partial $main1 . -}}
+        {{- partial $main2 . -}}
+    </div>
 </main>

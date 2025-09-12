@@ -3,6 +3,8 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
+{{- $main := printf "%s/page.html" $view -}}
+
 <div id="main-1">
-    PAID PAGE
+    {{- partial $main . -}}
 </div>

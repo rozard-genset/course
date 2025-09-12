@@ -1,0 +1,62 @@
+#snip{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .boxed{
+        margin: auto;
+        border-radius: 50px;
+        background-color: var(--background-02);
+
+        button{
+            background-color: transparent;
+            outline: none;
+            border: none;
+            color: var(--color-02);
+        }
+
+        .tabbed.open,
+        button[data-menu="open"]{
+            color: var(--link-02-based);
+        }
+
+        .icon{
+            margin: 10px auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+}
+
+
+@media only screen and (min-width: 1280px) {
+    #snip{
+        display: block;
+        position: fixed;
+		width: auto;
+		bottom: 50%;
+		right: 1.5rem;
+
+        .boxed{
+            width: 40px;
+            border: 1px solid var(--link-01-based);
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {
+
+}

@@ -1,0 +1,16 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+<div id="page">
+    <div id="tabs-repo" class="tab-content page-tab open">
+        Repo
+    </div>
+    <div id="tabs-talk" class="tab-content page-tab">
+        Comment
+    </div>
+    <div id="tabs-help" class="tab-content page-tab">
+        Help
+    </div>
+</div>

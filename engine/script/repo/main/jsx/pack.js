@@ -3,39 +3,25 @@ console.log('Module : page : deffers page course javascript engine loaded');
 
 let init_plan = ()=> {
 
-    if ( ! document.getElementById('main') ){
+    if ( ! document.getElementById('repo') ){
         return;
     }
 
-    if ( window.innerWidth > 1024 ) {
-        let element = document.querySelector( '#plan .list' );
-        let activet = element.querySelector('a.active');
-        let targets = activet.getAttribute('data-open');
-        element.querySelector("#"+targets).classList.remove('close'); 
-    }
-
-    open_plan();
-}
-
-
-let exit_plan = ()=> {
-    let element = document.querySelector( '#plan .list' );
-    let activet = Array.prototype.slice.call(element.querySelectorAll('.parted'));
-    activet.forEach( active => {
-        if ( ! active.classList.contains('.close')) {
-            active.classList.add('close');
-        }
-    })
-}
-
-
-let open_plan = ()=> {
-    let element = document.querySelector( '#plan .list' );
+    let element = document.querySelector( '#plan .leaf' );
     let activet = Array.prototype.slice.call(element.querySelectorAll('.opening'));
+    let partion = Array.prototype.slice.call(element.querySelectorAll('.parted'));
+
     activet.forEach( button => {
         button.addEventListener('click', ()=> {
-            exit_plan();
+ 
             let targets = button.getAttribute('data-open');
+ 
+            partion.forEach( active => {
+                if ( ! active.classList.contains('.close')) {
+                    active.classList.add('close');
+                }
+            })
+
             element.querySelector("#"+targets).classList.remove('close');
             element.querySelector("#"+targets).parentNode.scrollIntoView(); 
         });
@@ -43,87 +29,66 @@ let open_plan = ()=> {
 }
 
 
-let main_tabs = ()=> {
+let init_snip = () => {
 
-    if ( ! document.getElementById('main') ){
-        return;
-    }
+    let parent = document.getElementById('snip');
+    let toggle = Array.prototype.slice.call( parent.querySelectorAll('.toggle') );
+    let tabbed = Array.prototype.slice.call( parent.querySelectorAll('.tabbed') );
 
+    toggle.forEach(( item )=> {
+        item.addEventListener('click', ()=> {
+            let target = item.getAttribute('data-action');
+            if ( target == 'open-plan' ) {
+                snip_menu( item );
+            }
+        })
+    })
 
-    let action_open = document.querySelectorAll(".tab-action");
-    let action_aray = Array.prototype.slice.call(action_open);
-    let mantab_open = document.querySelectorAll(".tabs-item");
-    let mantab_aray = Array.prototype.slice.call(mantab_open);
-
-    action_aray.forEach( (event) => {
-        event.addEventListener('click', ()=> {
-            let target = event.getAttribute('data-target');
-            action_aray.forEach( (event)=> {
-                event.classList.remove('open');
-            });
-            mantab_aray.forEach( (event)=> {
-                event.classList.remove('open');
-            });
-            event.classList.add('open');
-            document.getElementById(target).classList.add('open');        
-        }) 
-    });
+    tabbed.forEach(( item )=> {
+        item.addEventListener('click', ()=> {
+            let target = item.getAttribute('data-action');
+            tabbed.forEach(( elem ) => {
+                elem.classList.remove('open');
+            })
+            item.classList.add('open')
+            snip_tabs( target );
+            snip_exit( parent );
+        })
+    })
 }
 
 
-let task_tabs = ()=> {
+let snip_menu = ( parent ) => {
+    let target = document.getElementById('relay');
+    let status = target.getAttribute('data-menu');
+    ( status == 'open' ) ? target.setAttribute( 'data-menu', 'close' ) : target.setAttribute( 'data-menu', 'open' );
+    ( status == 'open' ) ? parent.setAttribute( 'data-menu', 'close' ) : parent.setAttribute( 'data-menu', 'open' );
+}   
 
-    if ( ! document.getElementById('task') ){
-        return;
-    }
 
-    let tabscourses = document.getElementById('task');
-    let action_open = tabscourses.querySelectorAll(".tab-action");
-    let action_aray = Array.prototype.slice.call(action_open);
-    let mantab_open = tabscourses.querySelectorAll(".tabs-item");
-    let mantab_aray = Array.prototype.slice.call(mantab_open);
+let snip_exit = ( parent ) => {
 
-    action_aray.forEach( (event) => {
-
-        event.addEventListener('click', ()=> {
-
-            let target = event.getAttribute('data-target');
-
-            action_aray.forEach( (event)=> {
-                event.classList.remove('open');
-            });
-
-            mantab_aray.forEach( (event)=> {
-                event.classList.remove('open');
-            });
-
-            event.classList.add('open');
-            document.getElementById(target).classList.add('open');        
-        }) 
-    });
+    let toggle = Array.prototype.slice.call( parent.querySelectorAll('.toggle') );
+    toggle.forEach(( item )=> {
+        item.setAttribute( 'data-menu', 'close' );
+        document.getElementById('relay').setAttribute( 'data-menu', 'close' );
+    })
 }
 
 
-let task_asig = ()=> {
-
-    if ( ! document.getElementById('task')) {
-        return;
-    }
-
-    document.getElementById( 'start-task' ).addEventListener('click', ()=> {
-        let task = document.getElementById('task');
-        let load = document.getElementById('load');
-        task.classList.add('hide');
-        load.classList.remove('hide');
-    }, false );
-} 
+let snip_tabs = ( parent ) => {
+  
+    let content = Array.prototype.slice.call( document.querySelectorAll( '.page-tab' ) );
+    let targets = document.getElementById( parent )
+    
+    content.forEach(( item )=> {
+        item.classList.remove('open');
+        targets.classList.add('open')
+    })
+}
 
 
 window.addEventListener( 'load', ()=> {
-
-    console.log('load')
+    init_snip();
     init_plan();
-    main_tabs();
-    task_tabs();
-    task_asig();
 });

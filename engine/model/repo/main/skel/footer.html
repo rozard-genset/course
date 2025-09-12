@@ -1,8 +1,37 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
 <footer class="mt-60 border-top">
-    <div class="wrap flex center-x">
-        <p class="text-md mb-15 desktop">Copyright@{{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
-        <div class="ml-a">
-            {{ partial "widget/share/main/render.html" . }}
+    <div class="wrap">
+        <div class="flex center-x">
+            <p class="text-md mb-15 desktop">Copyright@{{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+            <div id="snip">
+                <div class="boxed">
+                    <button class="toggle" data-action="open-plan" data-menu="close">
+                        <div class="icon md">
+                            {{ partial "icon/line/calendar.svgs" }}
+                        </div>
+                    </button>
+                    <button class="tabbed open" data-action="tabs-repo">
+                        <div class="icon md">
+                            {{ partial "icon/line/book.svgs" }}
+                        </div>
+                    </button>
+                    <button class="tabbed" data-action="tabs-talk">
+                        <div class="icon md">
+                            {{ partial "icon/line/message-circle.svgs" }}
+                        </div>
+                    </button>
+                    <button class="tabbed" data-action="tabs-help">
+                        <div class="icon md">
+                            {{ partial "icon/line/flag.svgs" }}
+                        </div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </footer>

@@ -1,0 +1,58 @@
+#plan{
+
+    .leaf{
+
+        .close{
+            height: 0;
+            z-index: -1;
+            opacity: 0;
+            overflow: hidden;
+            position: fixed;
+            transition: 200ms;
+        }
+
+        .parted{
+            transition: 200ms;
+        }
+    }
+
+    .card-plan{
+
+        color: var(--color-02);
+
+        h3{
+            color: var(--color-01);
+        }
+
+        p{
+            border-left: 1px solid var(--link-02-based);
+            padding-left: 2rem;
+            margin-left: 1rem;
+        }
+
+        .icon{ 
+            color: var(--link-02-based);
+        }
+    }  
+}
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}
