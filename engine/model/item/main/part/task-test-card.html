@@ -1,16 +1,26 @@
-<div class="item border-left">
-    <div class="head">
-        <div class="flex center-x">
-            <div class="icon xs">
+<div class="item">
+    <div class="head mb-20">
+        <div class="flex center-x border-bottom mb-10">
+            <div class="icon md">
                 {{ partial "icon/line/edit.svg" }}
             </div>
-            <h2 class="capitalize text-md font-bold mb-00 mt-00">Penilaian</h2>
+            <h2 class="capitalize text-md font-bold mb-00 mt-00 border-left pl-20">Penilaian</h2>
             <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ len .test }}</h2> {{ T "parted_task_name" }}
         </div>
-        <hr class="mt-00">
+        <p class="text-md mb-00 mt-00 pt-10 pb-10">{{ .page.Params.assign.goal }}</p>
     </div>
     <div class="desc">
-        <p class="text-sm mb-00 mt-00 pl-15 pt-10 pb-10">{{ .page.Params.assign.goal }}</p>
+        {{ range $index , $value := .test }}
+        <a href="{{ .RelPermalink }}" class="flex mb-30">
+            <div class="text-xs font-bold number border-all rounded-lg grid center-x center-y">
+                {{ math.Sum $index 1 }}
+            </div>
+            <div class="info ml-20">
+                <h3 class="text-md font-bold mb-00 mt-00 mb-10">{{ .Title }}</h3>
+                <p class="text-sm mb-00 mt-00">{{ .Params.description }}</h3>
+            </div>
+        </a>
+        {{ end }}
     </div>
 </div>
 

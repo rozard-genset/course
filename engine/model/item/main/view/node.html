@@ -13,16 +13,16 @@
         <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/layers.svg" -}}</div>
         <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">{{ T "parted_node_lead" }}</h2>
         <div class="boxtab flex center-x ml-a">
-            {{ range $page.node }}{{ $uniq := ( .Title | urlize )  }}
-            <div id="info-{{ $uniq }}-action" data-target="tabs-page-group-{{ $uniq }}" class="node-action tab-action flex center-x open ml-15">
-                <p class="text-sm font-bold uppercase"><span class="tablet">{{ .Title }}</p>
+            {{ range $index, $value := $page.node }}{{ $uniq := ( .Title | urlize )  }}
+            <div id="info-{{ $uniq }}-action" data-target="tabs-page-group-{{ $uniq }}" class="node-action tab-action flex center-x ml-15 {{ if eq $index 0 }}open{{ end }}">
+                <p class="text-sm font-bold uppercase">{{ .Title }}</p>
             </div>
             {{ end }}
         </div>
     </div>
     <div class="subleaf">
         {{- range $index, $value := $page.node -}}{{- $uniq := ( .Title | urlize ) -}}
-        <div id="tabs-page-group-{{ $uniq }}" class="node-item tabs-item {{ with eq $index 0 }}open{{ end }}">
+        <div id="tabs-page-group-{{ $uniq }}" class="node-item tabs-item {{ if eq $index 0 }}open{{ end }}">
             <div class="quota mb-20 mt-30 flex center-x">
                 <div class="li-head">
                     <h3 class="text-md font-bold uppercase mt-00 mb-00">{{ .Title  }}</h3>

@@ -1,18 +1,11 @@
 #remd{
     .head, .box{
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 }
 
 @media only screen and (min-width: 480px) {
-    #remd{
-
-        .leaf{
-            display: grid;
-            grid-template-columns: repeat( 2, 50% ) ;
-            grid-gap: 5rem;
-        }
-    }
+    
 }
 
 @media only screen and (min-width: 768px) {
@@ -25,7 +18,19 @@
 
 @media only screen and (min-width: 1280px) {
     
-   
+     #remd{
+
+        .leaf{
+            display: grid;
+            grid-template-columns: repeat( 2, 50% ) ;
+            grid-gap: 5rem;
+
+            .box .leaf{
+                grid-template-columns: 100%;
+                grid-gap: 1rem;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 1536px) {

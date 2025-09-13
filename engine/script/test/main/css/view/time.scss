@@ -4,8 +4,12 @@
         margin-bottom: 3rem;
     }
 
-    .leaf, .time, .close, .start, .date, .time, .data{
+    .leaf, .time, .close, .open, .date, .time, .data{
         display: grid;
+    }
+
+    .thumb{
+        overflow: hidden;
     }
 
     .time{
@@ -19,11 +23,11 @@
             text-wrap: nowrap;
         }
 
-        .close, .start, .date, .time, .data{
+        .close, .open, .date, .time, .data{
             font-size: .95rem;
         }
 
-        .close, .start{
+        .close, .open{
             grid-template-columns: 60px 200px;
             margin-bottom: 10px;
         }
@@ -58,7 +62,7 @@
 
         .leaf{
             grid-template-columns: repeat( 2, calc( 50% - 5rem ));
-            grid-gap: 3rem 5rem;
+            grid-gap: 5rem;
         } 
     }
 }
@@ -78,7 +82,7 @@
 
         .leaf{
             grid-template-columns: repeat( 2, calc( 50% - 5rem ));
-            grid-gap: 3rem 5rem;
+            grid-gap: 5rem;
         }       
     }
 }

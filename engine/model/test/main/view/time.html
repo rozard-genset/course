@@ -9,23 +9,34 @@
 
 <div id="time" class="tabs-item">
     <div class="head flex center-x mb-40">
-        <div class="icon lg rounded-lg mr-10 border-all">{{- partial "icon/line/clock.svg" -}}</div>
-        <h2 class="font-bold uppercase text-lg mb-00 mt-00">Task Schedule</h2>
+        <div class="icon md rounded-lg mr-10 border-all">{{- partial "icon/line/clock.svg" -}}</div>
+        <h2 class="font-bold uppercase text-md mb-00 mt-00">Task Schedule</h2>
     </div>
     <div class="leaf">
         {{- range $node -}}
         <div class="box">
             <div class="flex center-x border-left border-bottom">
                 <div class="text-sm uppercase font-bold  mt-00 mb-00 pb-10 pl-20">{{ .Title }}</div>
-                {{- with .Params.metadata.author -}}<div class="mt-00 mb-00 pb-10 pl-20 ml-a"> Assesor | {{ . }}</div>{{- end -}}
             </div>
-            <div class="time border-left pl-20 pt-10">
+            <div class="time border-left pl-20 pt-20 mb-30">
                 {{- $opens := ( dict "name" "Open"  "days" .Params.opened.days "month" .Params.opened.month "year" .Params.opened.year "hours" .Params.opened.hours  "mins" .Params.opened.minute ) -}}
                 {{- $close := ( dict "name" "Close" "days" .Params.closed.days "month" .Params.closed.month "year" .Params.closed.year "hours" .Params.closed.hours  "mins" .Params.opened.minute ) -}}
                 
                 {{- range ( slice $opens $close ) -}}
                     {{- partial $card . -}}
                 {{- end -}}
+            </div>
+            <div class="author flex center-x">
+                <div class="thumb rounded-full">
+                    {{ partial "parted/avatar/user-32.html" .  }}
+                </div>
+                <div class="info ml-10">
+                    {{- with .Params.metadata.author -}}
+                        <div class="text-md font-bold mt-00 mb-00"> {{ . }}</div>
+                        <div class="text-sm">Assesor</div>
+                    {{- end -}}
+                </div>
+                
             </div>
         </div>
         {{- end -}}
