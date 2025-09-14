@@ -1,6 +1,7 @@
 #eval{
     display: grid;
-    
+    justify-content: space-between;
+
     .head, .card{
         margin-bottom: 3rem;
     }
@@ -10,8 +11,8 @@
     #eval{
         .leaf{
             display: grid;
-            grid-template-columns: repeat( 2, 50% );
-            grid-gap: 3rem;
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
+            justify-content: space-between;
         }
     }
 }
@@ -20,19 +21,18 @@
     
     #eval{
         .leaf{
-            grid-template-columns: repeat( 3, 33.333% );
+            grid-template-columns: repeat( 3, calc( 33.333% - 1rem ) );
         }
     }
    
 }
 
 @media only screen and (min-width: 1024px) {
-      #eval{
-        grid-template-columns: calc( 30% - 3rem ) calc( 100% - 30% );
-        grid-gap: 3rem;
+    #eval{
+        grid-template-columns: calc( 35% - 3rem ) calc( 100% - 35% );
 
         .leaf{
-            grid-template-columns: repeat( 2, 50% );
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ) );
         }
     }
 }

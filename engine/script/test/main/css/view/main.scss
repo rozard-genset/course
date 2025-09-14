@@ -1,30 +1,33 @@
-#guid{
+#main{
     display: grid;
-    .main, .box{
+    justify-content: space-between;
+
+    .main {
         margin-bottom: 3rem;
+    }
+
+    .side{
+        display: grid;
+        grid-gap: 3rem;
     }
 }
 
 @media only screen and (min-width: 480px) {
 
-    #guid{
-
+    #main{
         .side{
-            display: grid;
             grid-template-columns: repeat(2, 50%) ;
-            grid-gap: 2rem;
-        }
-
-        .box{
-            margin-bottom: inherit;
         }
     }
 }
 
 @media only screen and (min-width: 768px) {
-    #guid{
+    #main{
+        grid-template-columns: calc( 65% - 5rem) calc( 100% - 65% ) ;
+   
         .side{
-            grid-template-columns: repeat(3, 33.333%) ;
+            grid-template-columns: 100% ;
+            grid-gap: 0rem;
         }
     }
 }
@@ -36,17 +39,13 @@
 
 @media only screen and (min-width: 1280px) {
  
-    #guid{
+    #main{
         grid-template-columns: calc( 65% - 7rem) calc( 100% - 65% ) ;
         grid-gap: 7rem;
 
         .side{
             grid-template-columns: 100% ;
             grid-gap: 0rem;
-        }
-
-        .box{
-            margin-bottom: 3rem;
         }
     }
 }

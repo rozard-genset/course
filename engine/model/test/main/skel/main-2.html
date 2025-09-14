@@ -3,18 +3,6 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{- $menu := printf "%s/menu.html" $view -}}
-{{- $eval := printf "%s/eval.html" $view -}}
-{{- $guid := printf "%s/guid.html" $view -}}
-{{- $remd := printf "%s/remd.html" $view -}}
-{{- $time := printf "%s/time.html" $view -}}
-
-
 <div id="main-2">
-    <div class="side">
-        {{- partial $menu . -}}
-    </div>
-    <div class="page">
-        {{- partial $time . -}}{{- partial $eval . -}}{{- partial $guid . -}}{{- partial $remd . -}}
-    </div>
+
 </div>

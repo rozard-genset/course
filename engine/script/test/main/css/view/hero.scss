@@ -1,102 +1,36 @@
 #hero{
-    .meta,
-    .thumb{
-        margin-bottom: 3rem;
-    }
-
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+   
     img{
         width: 100%;
         height: auto;
     }
 
     h1{
-       font-size: 1.65rem
-    }
-
-    .title{
-        min-width: 100px;
-        width: 100px;
-    }
-
-    label{
-        display: block;
-        width: 100%;
-        text-wrap: nowrap;
-        margin-bottom: 1rem;
-    }
-
-    select, .button{
-        width: 20ch;
-        min-width: 10ch;
-        max-width: 25ch;
-        padding: 0.675em 0.75em;
-    }
-
-    select {
-        width: 100%;
-        min-width: 10ch;
-        max-width: 25ch;
-        border: 1px solid var(--link-02-based);
-        border-radius: 0.4em;
-        padding: 0.675em 0.75em;
-        font-size: .925rem;
-        font-weight: bold;
-        cursor: pointer;
-        line-height: 1.1;
-        background-color: var(--background-02);
-        color: var(--link-02-based);
-        margin-left: 0;
-    }
-
-    .option{
-        display: block;
-        margin-bottom: 2rem;
-    }
-
-    .disable, .enabled{
-        display: none;
-    }
-
-    .enabled.open{
-        display: block;
-    }
-
-    .disable.open{
-        display: block;
+       font-size: 1.4rem
     }
 }
 
 @media only screen and (min-width: 480px) {
 
-     #hero{
-        .enabled.open, .disable.open, .option{
-            display: flex
-        }
+    #hero{
+        margin-bottom: 2rem;
+        grid-template-columns: 45% calc( 100% - 45% - 2rem );
 
-        select, .button {
-            width: 100%;
-        }
-
-        .option, label{
-            margin-bottom: 0;
-        }
-
-        select{
-            margin-left: 2.5rem;
+        h1{
+            font-size: 1.4rem
         }
     }
 }
 
 @media only screen and (min-width: 768px) {
     #hero{
+        grid-template-columns: 45% calc( 100% - 45% - 2rem );
 
-        display: grid;
-        align-items: center;
-        margin-bottom: 5rem;
-
-        .slot{
-            grid-template-columns: auto auto;
-            grid-gap: 60px;
+        h1{
+            font-size: 1.6rem
         }
     }
 }
@@ -106,39 +40,7 @@
      #hero{
 
         h1{
-            font-size: 2.25rem;
-        }
-
-        .slot{
-            grid-template-columns: calc( 520px - 30px ) calc( 100% - 520px );
-             grid-gap: 30px;
-        }
-
-        .rows{
-            display: grid;
-            align-content: space-between;
-        }
-
-        .meta,
-        .thumb{
-            margin-bottom: 0rem;
-        }
-
-        .title{
-            width: 100px;
-        }
-
-        hr{
-            margin-bottom: 0;
-        }
-
-        select {
-            min-width: 15ch;
-            max-width: 30ch;
-        }
-
-        .disable.open, .enabled.open{
-            display: flex;
+            font-size: 1.7rem;
         }
     }
 }
@@ -146,13 +48,9 @@
 @media only screen and (min-width: 1280px) {
     
    #hero{
-        min-height: 70vh;
-        .slot{
-            grid-template-columns: calc( 680px - 60px ) calc( 100% - 680px );
-            grid-gap: 60px;
-        }
+        margin-bottom: 0rem;
+        grid-template-columns: 100%;
    }
-
 }
 
 @media only screen and (min-width: 1536px) {
