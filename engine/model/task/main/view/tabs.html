@@ -1,0 +1,45 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $case := printf "%s/case.html" $view -}}
+{{- $tuto := printf "%s/tuto.html" $view -}}
+{{- $time := printf "%s/time.html" $view -}}
+
+{{- $node := partial "lib/course/query/pool-task-all-node.html" . -}}
+
+<div id="tabs">
+    <div class="head">
+        <div class="flex center-x">
+        {{- range $index, $value := $node -}}
+        <div id="part-action" data-target="part-tabs-{{ .Title | urlize }}" class="base-actions tab-action flex center-x mr-20 {{- with eq $index 0 }} open{{- end -}}">
+            <h2 class="text-sm font-bold uppercase">{{ .Title }}</h2>
+        </div>
+        {{- end -}}
+        </div>
+    </div><hr>
+    <div class="leaf">
+        {{- range $index, $value := $node -}}
+        <div id="part-tabs-{{ .Title | urlize }}" class="tabs-item base-content {{- with eq $index 0 }} open{{- end -}}">
+            <h2 class="text-lg flex-inline pb-10 mb-60 uppercase">Practical Learning  <span class="border-left ml-20 pl-20 font-bold">{{ .Title }}</span></h2>
+            <div class="switch">
+                <div class="swithead flex center-x mb-60 pb-20">
+                    <div class="case actions flex center-x open" data-target="case-{{ .Title | urlize }}">
+                        <div class="icon md rounded-md border-all">{{ partial "icon/line/layout.svg" }}</div>
+                        <h2 class="text-sm uppercase font-bold pl-10 mt-00 mb-00">Challange</h2>
+                    </div>
+                    <div class="tuto actions flex center-x ml-60" data-target="tuto-{{ .Title | urlize }}">
+                        <div class="icon md rounded-md border-all">{{ partial "icon/line/package.svg" }}</div>
+                        <h2 class="text-sm uppercase font-bold pl-10 mt-00 mb-00">Walkthrough</h2>
+                    </div>
+                </div>
+                <div class="switchbox">
+                    <div id="case-{{ .Title | urlize }}" class="tabs-item content case open">{{- partial $case . -}}</div>
+                    <div id="tuto-{{ .Title | urlize }}" class="tabs-item content tuto"> {{ .Content }}</div>
+                </div>
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>

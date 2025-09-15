@@ -1,0 +1,16 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $feat := printf "%s/hero-thumb.html" $part -}}
+
+<div id="hero">
+    <div class="thumb">
+        {{- partial $feat . -}}
+    </div>
+    <div class="metas">
+        <h1 class="mt-00">{{ .Title }}</h1>
+        <p class="mt-00">{{ .Params.description }}</p>
+    </div>
+</div>

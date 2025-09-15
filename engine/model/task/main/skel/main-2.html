@@ -3,8 +3,12 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{- $hero := printf "%s/hero.html" $view -}}
+{{- $goal := printf "%s/goal.html" $view -}}
+{{- $info := printf "%s/info.html" $view -}}
+{{- $reqs := printf "%s/reqs.html" $view -}}
 
 <div id="main-2">
-    
+    {{- partial $info . -}}
+    {{- partial $reqs . -}}
+    {{- partial $goal . -}}
 </div>

@@ -1,0 +1,8 @@
+{{- $path := substr ( .RelPermalink ) 1 -}}
+{{- $data := slice  -}}
+
+{{- range where .Site.RegularPages "File.Dir" $path -}}
+    {{- $data = $data | append . -}}
+{{- end -}}
+
+{{- return $data -}} 

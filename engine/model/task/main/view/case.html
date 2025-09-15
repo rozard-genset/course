@@ -1,0 +1,20 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $card := printf "%s/case-card-prev.html" $part -}}
+{{- $page := .Page -}}
+
+<div id="case">
+    {{- range $index, $value := .Params.cases -}}
+    <div class="item flex mb-40">
+        <div class="struct text-md font-bold border-all rounded-full">{{- math.Sum $index 1 -}}</div>
+        <div class="desc ml-20">
+            <h2 class="title text-xl font-bold nowrap border-bottom flex-inline mt-00 mb-00 pb-10">{{ .lead }}</h2>
+            <p class="text-smd">{{ .desc }}</p>
+            {{- partial $card ( dict "page" $page "data" .prev ) -}}
+        </div>
+    </div>
+    {{- end -}}
+</div>

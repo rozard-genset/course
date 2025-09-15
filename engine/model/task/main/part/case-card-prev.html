@@ -1,0 +1,54 @@
+{{- if .data.link -}}
+    
+    <a href="{{ .data.link }}" class="flex center-x"  target="_blank" aria-label="{{ .Title }} instruction link">
+        <p class="title">Open Resources</p>
+        <div class="icon md">
+            {{ partial "icon/line/arrow-up-right.html" }}
+        </div>
+    </a>
+
+{{- else if .data.embed -}}
+
+    {{- $link := .data.embed -}}
+    <iframe src="{{ $link.RelPermalink }}" width="640" aria-label="{{ .Title }} instruction link"></iframe>
+
+{{- else -}}
+
+    {{- $paths := split .page.RelPermalink  "/" -}}
+    {{- $paged := delimit ( first (sub (len $paths ) 2) $paths ) "/" -}}
+    {{- $image := .data.image -}}
+    {{- $video := .data.video -}}
+    {{- $audio := .data.audio -}}
+    {{- $filer := .data.file -}}
+
+    {{- with .page.GetPage $paged -}}
+    
+        {{- with .Resources.Get $image -}} 
+            <picture>
+                {{- $xl := .Resize "600x webp q100" -}}
+                <source media="(width > 768px)" srcset="{{ $xl.RelPermalink }}" />
+
+                {{- $md := .Resize "480x webp q100" -}}
+                <source media="(width > 480px)" srcset="{{ $md.RelPermalink }}" />
+
+                {{- $xs := .Resize "420x webp q100" -}}
+                <source media="(width > 100px)" srcset="{{ $xs.RelPermalink }}" />
+
+                <img src="{{ $xl.RelPermalink }}" alt="{{ .Title }}" width="{{ $xl.Width }}" height="{{ $xl.Height }}" title="{{ .Title }}" loading="lazy"/>
+            </picture>
+        {{- end -}}
+
+        {{- with .Resources.Get $video -}} 
+            <video src="{{ .RelPermalink }}" width="600" aria-label="{{ .Title }} video player" controls></video>
+        {{- end -}}
+
+        {{- with .Resources.Get $audio -}} 
+            <audio src="{{ .RelPermalink }}" aria-label="{{ .Title }} audio player" controls></audio>
+        {{- end -}}
+
+        {{- with .Resources.Get $filer -}} 
+            <iframe src="{{ .RelPermalink }}" width="600" aria-label="{{ .Title }} file embed"></iframe>
+        {{- end -}}
+
+    {{- end -}}
+{{- end -}}

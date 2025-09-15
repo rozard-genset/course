@@ -1,0 +1,52 @@
+#tabs{
+    .tab-action.open h2, .swithead .actions.open, .swithead .actions.open h2  {
+        color: var(--link-02-based);
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    .struct {
+        width: 1.75rem;
+        height: 1.75rem;
+        min-width: 1.75rem;
+    }
+
+
+}
+
+@media only screen and (min-width: 480px) {
+
+    #tabs{
+        .struct {
+            width: 2rem;
+            height: 2rem;
+            min-width: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    
+     #tabs{
+        .struct {
+            width: 2.25rem;
+            height: 2.25rem;
+            min-width: 2.25rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

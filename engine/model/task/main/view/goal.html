@@ -1,0 +1,25 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
+<div id="goal">
+    <div class="head flex mb-60 border-bottom">
+        <div class="icon md flex center-x">
+            {{- partial "icon/line/award.svg" -}}
+        </div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 mb-00 mt-00 pb-10 pt-10">Purpose</h2>
+    </div>
+    <div class="leaf">
+    {{- range  $index, $value := .Params.reached -}}
+    <div class="item flex">
+        <div class="number text-sm border-all rounded-sm">{{- math.Sum $index 1 -}}</div>
+        <div class="desc ml-20">
+            <h3 class="text-md font-bold mt-00 mb-10">{{ .lead }}</h3>
+            <p class="text-sm mt-00">{{ .desc }}</p>
+        </div>
+    </div>
+    {{- end -}}
+    </div>
+</div>
