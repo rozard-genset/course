@@ -8,14 +8,17 @@
 
 
 <div id="team">
-    <div class="head mb-60">
-        <h2>Section Management</h2>
+    <div class="head mb-40 flex border-bottom">
+        <div class="icon md border-right mr-10 pr-10 pb-05">
+            {{ partial "icon/line/user.svg" }}
+        </div>
+        <h2 class="text-xl mb-00 mt-00">Section Management</h2>
     </div>
     <div class="leaf">
-        <div class="lead">
+        <div class="lead mb-50">
             {{ partial $lead . }}
         </div>
-        <div class="team border-top pt-30 mt-30">
+        <div class="team grider">
             {{ partial $team . }}
         </div>
     </div>

@@ -1,0 +1,6 @@
+{{- if .name -}}
+    {{- $path := printf "/%s/%s" "profile" ( .name | urlize ) -}}
+    {{- with .site.GetPage $path -}}
+        {{ .RelPermalink }}
+    {{- end -}}
+{{- end -}}

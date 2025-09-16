@@ -1,0 +1,25 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
+{{- $card := printf "%s/talk-card" $part -}}
+
+<div id="talk">
+    <div class="head mb-40 flex border-bottom">
+        <div class="icon md border-right mr-10 pr-10 pb-05">
+            {{ partial "icon/line/smartphone.svg" }}
+        </div>
+        <h2 class="text-xl mb-00 mt-00">Support</h2>
+    </div>
+    <div class="leaf">
+        {{ $addr := ( dict "name" "addr"  "icon"  "home.svg"   "name" .Params.contact.office.name  "link" .Params.contact.office.link ) }}
+        {{ $ghad := ( dict "ghad" "addr"  "icon"  "github.svg" "name" .Params.contact.github.name  "link" .Params.contact.github.link ) }}
+        {{ $glad := ( dict "glad" "addr"  "icon"  "gitlab.svg" "name" .Params.contact.github.name  "link" .Params.contact.gitlab.link ) }}
+        {{ $mail := ( dict "mail" "addr"  "icon"  "mail.svg"   "name" .Params.contact.emails.name  "link" .Params.contact.emails.link ) }}
+        {{ range ( slice $addr $ghad $glad $mail ) }}
+            {{ partial $card . }}
+        {{ end  }}
+    </div>
+</div>

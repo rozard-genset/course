@@ -4,12 +4,9 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 {{- $hero := printf "%s/hero.html" $view -}}
-{{- $lead := printf "%s/lead.html" $view -}}
-{{- $silo := printf "%s/silo.html" $view -}}
+
 
 
 <div id="main-1">
     {{- partial $hero . -}}
-    {{- partial $silo . -}}
-    {{- partial $lead . -}}
 </div>

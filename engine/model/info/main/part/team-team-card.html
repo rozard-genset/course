@@ -5,15 +5,13 @@
 
 {{- $site := .Site -}}
 {{- $thum := printf "%s/team-team-avat.html" $part -}}
+{{- $link := printf "%s/team-take-link.html" $part -}}
 
-{{ range .Params.manage.team }}
-    <div class="box mb-30 flex center-x">
+{{- range .Params.manage.team -}}
+    {{- $path := partial $link ( dict "site" $site  "name" .name ) -}}
+    <a href="{{ $path }}" class="box mb-20 flex center-x">
         <div class="thumb rounded-full">
             {{ partial $thum ( dict "site" $site "name" .name ) }}
         </div>
-        <div class="metas ml-15">
-            <h3 class="text-lg mb-00 mt-00">{{ .name }}</h3>
-            <p class="text-md mb-00 mt-00">{{ .post }}</p>
-        </div>
-    </div>
-{{ end }}
+    </a>
+{{- end -}}

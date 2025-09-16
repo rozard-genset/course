@@ -1,0 +1,8 @@
+<a href="{{ .link }}" class="{{ .name | urlize }} flex mb-30" target="_blank" aria-label="{{ .name }} external link">
+    <div class="icon md">
+        {{- partial ( printf "icon/line/%s" .icon ) -}}
+    </div>
+    <div class="desc ml-10">
+        {{- .name -}}
+    </div>
+</a>

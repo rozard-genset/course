@@ -3,6 +3,8 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-<div id="hero">
-    
+{{- $feat := printf "%s/hero-thumb.html" $part -}}
+
+<div id="hero" class="mb-60">
+    <h2 class="text-4xl mt-00 mb-10">{{ .Title }}</h2>
 </div>

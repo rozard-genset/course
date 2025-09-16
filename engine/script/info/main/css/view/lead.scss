@@ -1,13 +1,14 @@
 #lead{
 
     .head{
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
 
     .leaf{
         display: grid;
         grid-template-columns: 100%;
         justify-content: space-between;
+        grid-gap: 1rem
     }
 
     .card{
@@ -15,6 +16,7 @@
         img{
             width: 100%;
             height: auto;
+            display: none;
         }
 
         .number{
@@ -29,11 +31,26 @@
 
 @media only screen and (min-width: 480px) {
 
+    #lead{
+
+    }
 }
 
 
 @media only screen and (min-width: 768px) {
 
+    #lead{
+        .leaf{
+            grid-template-columns: repeat( 2, 47.5% );
+            grid-gap: 5%;
+        }
+
+         .card{
+            img{
+                display: block;
+            }
+         }
+    }
 }
 
 
@@ -45,9 +62,9 @@
 @media only screen and (min-width: 1280px) {
 
     #lead{
-
         .leaf{
-            grid-template-columns: repeat( 3, 30% );
+            grid-template-columns: repeat( 2, 47.5% );
+            grid-gap: 5%;
         }
     }
 }

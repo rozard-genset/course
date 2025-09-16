@@ -1,7 +1,14 @@
 #team{
 
-    .thumb{
-        overflow: hidden;
+    
+
+    .leaf{
+        .grider{
+            grid-template-columns: repeat( auto-fill, calc( 60px - 10px )  );
+        }
+        .thumb{
+            overflow: hidden;
+        }
     }
 }
 
@@ -22,6 +29,7 @@
 
 
 @media only screen and (min-width: 1280px) {
+
 
 }
 

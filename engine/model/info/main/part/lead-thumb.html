@@ -23,7 +23,7 @@
         {{- $xs := $image.Resize "280x webp q100" -}}
         <source media="(width > 100px)" srcset="{{ $sm.RelPermalink }}"/>
 
-        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" fetchpriority="high"/>
+        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" loading="lazy"/>
 
     </picture>
 {{- end -}}

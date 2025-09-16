@@ -1,5 +1,26 @@
-#info{
+#info
+{
+    .grider{
+        grid-gap: 5rem;
+    }
 
+    #hero{
+        margin: 5rem 0 4rem 0;
+    }
+
+    #talk{
+        margin-bottom: 5rem;
+    }
+
+    #silo{
+        margin-bottom: 3rem;
+    }
+
+    #team{
+        .grider{
+            grid-gap:  1rem;
+        }
+    }
 }
 
 
@@ -15,16 +36,37 @@
 
 @media only screen and (min-width: 1024px) {
 
-    #info{
-        .grider{
-            grid-template-columns: calc( 100% - 300px - 5rem ) 300px;
-        }
-    }
+
 }
 
 
 @media only screen and (min-width: 1280px) {
+    #info{
+        margin-bottom: 7rem;
 
+        .grider{
+            grid-template-columns: 340px calc( 100% - 340px - 7rem );
+        }
+
+        #main-2{
+            .main{
+                grid-column: 2;
+                grid-row: 1;
+            }
+            .side{
+                grid-column: 1;
+                grid-row: 1;
+            }
+        }
+
+        #hero{
+            margin: 5rem 0 7rem 0;
+        }
+
+        #talk{
+            margin-bottom: 5rem;
+        }
+    }
 }
 
 
