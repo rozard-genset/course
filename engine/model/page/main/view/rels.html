@@ -1,0 +1,28 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $list := partial "lib/queries/pool-info-in-term.html" . -}}
+
+
+<div id="rels">
+    <div class="head mb-40">
+        <div class="flex border-bottom">
+            <div class="icon md border-right mr-10 pr-10 pt-10">
+                {{- partial "icon/line/columns.svg" -}}
+            </div>
+            <h2 class="text-md font-bold uppercase mt-00 mb-00 pb-10 pt-10">Further reading</h2>
+        </div>
+    </div>
+    <div class="leaf">
+        {{- range $index, $value := $list -}}
+            <a href="{{ .RelPermalink }}" class="card flex mb-30">
+                <div class="number text-lg border-all rounded-md flex center-x center-y">
+                    {{- math.Sum $index 1 -}}
+                </div>
+                <h2 class="text-lg mb-00 mt-00 ml-20">{{ .Title }} </h2>
+            </a>
+        {{- end -}}
+    </div>
+</div>

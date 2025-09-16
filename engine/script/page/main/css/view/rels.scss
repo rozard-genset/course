@@ -1,23 +1,38 @@
-#asig{
-    margin-top: 4rem;
+#rels{
+
 }
+
+
 @media only screen and (min-width: 480px) {
 
 }
 
+
 @media only screen and (min-width: 768px) {
-    
+
 }
+
 
 @media only screen and (min-width: 1024px) {
-    
+
 }
 
+
 @media only screen and (min-width: 1280px) {
-    #asig{
-        margin-top: 5rem;
+
+    #rels{
+
+        .leaf{
+            .number{
+                min-width: 1.75rem;
+                height: 1.75rem;
+                width: 1.75rem;
+                background-color: var(--background-02);
+            }
+        }
     }
 }
+
 
 @media only screen and (min-width: 1536px) {
 

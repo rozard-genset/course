@@ -12,5 +12,8 @@
 @import "../../../../../css/part/tabs.scss";
 
 
-@import "page/pack/bugs.scss";
+@import "skel/based.scss";
 
+@import "view/main.scss";
+@import "view/tocs.scss";
+@import "view/rels.scss";

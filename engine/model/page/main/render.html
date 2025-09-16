@@ -1,10 +1,18 @@
-<main class="info">
-    <div class="wrap">
-        <div class="heading">
-            {{ .Title }}
-        </div>
-        <div class="content">
-            {{ .Content }}
-        </div>
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $skel := partial "lib/pather/module-skel.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $main1 := printf "%s/main-1.html" $skel -}}
+{{- $main2 := printf "%s/main-2.html" $skel -}}
+{{- $main3 := printf "%s/main-3.html" $skel -}}
+
+
+<main id="page">
+    <div class="wrap grider">
+        {{- partial $main1 . -}}
+        {{- partial $main2 . -}}
+        {{- partial $main3 . -}}
     </div>
 </main>

@@ -1,0 +1,19 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
+<div id="tocs">
+    <div class="head mb-40">
+        <div class="flex border-bottom">
+            <div class="icon md border-right mr-10 pr-10 pt-10">
+                {{ partial "icon/line/columns.svg" }}
+            </div>
+            <h2 class="text-md font-bold uppercase mt-00 mb-00 pb-10 pt-10"> In this Article </h2>
+        </div>
+    </div>
+    <div class="leaf">
+        {{ .TableOfContents }}
+    </div>
+</div>
