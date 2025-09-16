@@ -10,6 +10,12 @@
 
 @media only screen and (min-width: 768px) {
 
+    #rels{
+        max-width: 680px;
+        width: 680px;
+        margin: auto;
+        margin-bottom: 3rem;
+    }
 }
 
 
@@ -21,6 +27,7 @@
 @media only screen and (min-width: 1280px) {
 
     #rels{
+        width: 100%;
 
         .leaf{
             .number{

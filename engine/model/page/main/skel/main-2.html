@@ -3,8 +3,8 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{ $tocs := printf "%s/tocs.html" $view }}
 
+{{ $main := printf "%s/main.html" $view }}
 <div id="main-2">
-    {{- partial $tocs . -}}
+    {{ partial $main . }}
 </div>

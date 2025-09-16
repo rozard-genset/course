@@ -4,7 +4,8 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 
-{{ $main := printf "%s/main.html" $view }}
+{{ $tocs := printf "%s/tocs.html" $view }}
+
 <div id="main-1">
-    {{ partial $main . }}
+    {{- partial $tocs . -}}
 </div>

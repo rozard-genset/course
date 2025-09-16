@@ -24,17 +24,17 @@
 
         .grider{
             grid-template-columns: 330px ( calc( 100% - 330px ) ) ;
-             grid-gap: 5rem 0;
+            grid-gap: 5rem 0;
         }
 
         #main-1{
-            grid-column: 2;
-            grid-row: 1 / span 3;
+            grid-column: 1;
+            grid-row: 1;
         }
 
         #main-2{
-            grid-column: 1;
-            grid-row: 1;
+            grid-column: 2;
+            grid-row: 1 / span 3;
            
         }
 

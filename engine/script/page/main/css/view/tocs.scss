@@ -1,5 +1,12 @@
 #tocs{
 
+    margin-bottom: 5rem;
+
+    li{
+        margin-bottom: .5rem;
+        font-size: 1.1rem;
+    }
+
 }
 
 @media only screen and (min-width: 480px) {
@@ -9,6 +16,12 @@
 
 @media only screen and (min-width: 768px) {
 
+    #tocs{
+        max-width: 680px;
+        width: 680px;
+        margin: auto;
+        margin-bottom: 5rem;
+    }
 }
 
 
@@ -20,11 +33,7 @@
 @media only screen and (min-width: 1280px) {
 
     #tocs{
-
-        li{
-            margin-bottom: .5rem;
-            font-size: 1.1rem;
-        }
+        width: 100%;
     }
 }
 
