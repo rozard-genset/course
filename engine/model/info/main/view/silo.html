@@ -6,24 +6,29 @@
 {{- $page := partial "lib/queries/pool-info-all-term.html" . -}}
 
 <div id="silo">
-    {{- range $page -}}
-    <div id="{{ .name | urlize }}">
-        <div class="head">
-            <h2>{{ .name }}</h2>
-        </div>
-        <div class="leaf">
-            {{- range .list -}}
-            <a href="{{ .RelPermalink }}" class="flex mb-20" aria-label="{{ .Title }}">
-                <div class="icon md">
-                    {{ partial "icon/line/file.svg" }}
-                </div>
-                <div class="meta">
-                    {{- .Title -}}
-                    {{ .Params.description }}
-                </div>
-            </a>
-            {{- end -}}
-        </div>
+    <div class="head">
+        <h2 class="text-3xl">Knowledge Base</h2>
     </div>
+    <div class="leaf">
+    {{- range $page -}}
+        <div id="{{ .name | urlize }}">
+            <div class="subhead">
+                <h3>{{ .name }}</h3>
+            </div>
+            <div class="subleaf">
+                {{- range .list -}}
+                <a href="{{ .RelPermalink }}" class="flex mb-20" aria-label="{{ .Title }}">
+                    <div class="icon md">
+                        {{ partial "icon/line/file.svg" }}
+                    </div>
+                    <div class="meta">
+                        {{- .Title -}}
+                        {{ .Params.description }}
+                    </div>
+                </a>
+                {{- end -}}
+            </div>
+        </div>
     {{- end -}}
+    </div>
 </div>

@@ -1,0 +1,29 @@
+{{- $image := resources.GetMatch "media/course/path-hero.png" -}}
+
+{{- if .data -}}
+    {{- $image = .page.Page.Resources.GetMatch .data -}}
+{{- end -}}
+
+
+{{- if $image -}}
+    <picture>
+
+        {{- $xl := $image.Resize "480x webp q100" -}}
+        <source media="(width > 1280px)" srcset="{{ $xl.RelPermalink }}"/>
+
+        {{- $lg := $image.Resize "420x webp q100" -}}
+        <source media="(width > 1080px)" srcset="{{ $lg.RelPermalink }}"/>
+
+        {{- $md := $image.Resize "480x webp q100" -}}
+        <source media="(width > 768px)" srcset="{{ $md.RelPermalink }}"/>
+
+        {{- $sm := $image.Resize "380x webp q100" -}}
+        <source media="(width > 480px)" srcset="{{ $sm.RelPermalink }}"/>
+              
+        {{- $xs := $image.Resize "280x webp q100" -}}
+        <source media="(width > 100px)" srcset="{{ $sm.RelPermalink }}"/>
+
+        <img src="{{ $xs.RelPermalink }}" alt="{{ .Title }}" width="{{ $xs.Width }}" height="{{ $xs.Height }}" title="{{ .Title }}" fetchpriority="high"/>
+
+    </picture>
+{{- end -}}

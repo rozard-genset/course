@@ -3,6 +3,26 @@
 {{- $data := partial "lib/pather/module-data.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
+{{- $page := . -}}
+{{- $card := printf "%s/lead-thumb" $part -}}
+
 <div id="lead">
-    
+    <div class="head">
+        <h2 class="text-3xl">{{ .Params.mission.lead }}</h2>
+        <p>{{ .Params.mission.desc }}</p>
+    </div>
+    <div class="leaf">
+    {{ range $index, $value := .Params.mission.data }}
+        <div class="card">
+            <div class="thumb">
+                {{ partial $card (dict "page" $page "data" .thum ) }}
+            </div>
+            <div class="text flex mt-30 mb-30">
+                <div class="number border-all rounded-md flex center-x center-y">{{ math.Sum $index 1 }}</div>
+                <h3 class="text-lg font-bold ml-15 mt-00 mb-00">{{ .name }}</h3> 
+            </div>
+            <p>{{ .desc }} </p>
+        </div>
+    {{ end }}
+    </div>
 </div>

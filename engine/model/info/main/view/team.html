@@ -1,0 +1,22 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $lead := printf "%s/team-lead-card" $part -}}
+{{- $team := printf "%s/team-team-card" $part -}}
+
+
+<div id="team">
+    <div class="head mb-60">
+        <h2>Section Management</h2>
+    </div>
+    <div class="leaf">
+        <div class="lead">
+            {{ partial $lead . }}
+        </div>
+        <div class="team border-top pt-30 mt-30">
+            {{ partial $team . }}
+        </div>
+    </div>
+</div>

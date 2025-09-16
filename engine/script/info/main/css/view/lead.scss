@@ -1,12 +1,31 @@
+#lead{
 
-#silo{
+    .head{
+        margin-bottom: 3rem;
+    }
 
     .leaf{
         display: grid;
         grid-template-columns: 100%;
         justify-content: space-between;
     }
+
+    .card{
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+
+        .number{
+            width: 1.75rem;
+            height: 1.75rem;
+            min-width: 1.75rem;
+            background-color: var(--background-02);
+        }
+    }
 }
+
 
 @media only screen and (min-width: 480px) {
 
@@ -25,9 +44,10 @@
 
 @media only screen and (min-width: 1280px) {
 
-    #silo{
+    #lead{
+
         .leaf{
-            grid-template-columns: repeat(3, 32% );
+            grid-template-columns: repeat( 3, 30% );
         }
     }
 }

@@ -1,0 +1,22 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $thum := printf "%s/team-lead-avat.html" $part -}}
+{{- $desc := printf "%s/team-lead-desc.html" $part -}}
+
+<div class="box">
+    <div class="subhead flex center-x mb-30">
+        <div class="thumb rounded-full">
+            {{ partial $thum ( dict "site" .Site  "name" .Params.manage.lead.name ) }}
+        </div>
+        <div class="metas ml-15">
+            <h3 class="text-lg mt-00 mb-00">{{ .Params.manage.lead.name }}</h3>
+            <h4 class="text-md mt-00 mb-00">{{ .Params.manage.lead.post }}</h4>
+        </div>
+    </div>
+    <div class="subleaf">
+        {{ partial $desc ( dict "site" .Site  "name" .Params.manage.lead.name ) }}
+    </div>
+</div>
