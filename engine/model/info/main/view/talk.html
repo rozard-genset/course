@@ -4,7 +4,7 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 
-{{- $card := printf "%s/talk-card" $part -}}
+{{- $card := printf "%s/talk-item-card" $part -}}
 
 <div id="talk">
     <div class="head mb-40 flex border-bottom">
@@ -14,7 +14,7 @@
         <h2 class="text-xl mb-00 mt-00">Support</h2>
     </div>
     <div class="leaf">
-        {{ $addr := ( dict "name" "addr"  "icon"  "home.svg"   "name" .Params.contact.office.name  "link" .Params.contact.office.link ) }}
+        {{ $addr := ( dict "name" "addr"  "icon"  "map-pin.svg"   "name" .Params.contact.office.name  "link" .Params.contact.office.link ) }}
         {{ $ghad := ( dict "ghad" "addr"  "icon"  "github.svg" "name" .Params.contact.github.name  "link" .Params.contact.github.link ) }}
         {{ $glad := ( dict "glad" "addr"  "icon"  "gitlab.svg" "name" .Params.contact.github.name  "link" .Params.contact.gitlab.link ) }}
         {{ $mail := ( dict "mail" "addr"  "icon"  "mail.svg"   "name" .Params.contact.emails.name  "link" .Params.contact.emails.link ) }}

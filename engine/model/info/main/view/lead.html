@@ -4,13 +4,13 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 {{- $page := . -}}
-{{- $card := printf "%s/lead-thumb" $part -}}
+{{- $card := printf "%s/lead-item-feat.html" $part -}}
 
 <div id="lead">
     <div class="head mb-60">
         <div class="flex-inline mb-10">
             <div class="icon md border-right mr-10 pr-10 pb-05">
-                {{ partial "icon/line/archive.svg" }}
+                {{ partial "icon/line/paperclip.svg" }}
             </div>
             <h2 class="text-2xl mb-00 mt-00">{{ .Params.mission.lead }}</h2>
         </div>
