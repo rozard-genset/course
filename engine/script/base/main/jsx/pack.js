@@ -1,8 +1,3 @@
-console.log('deffers home course javascript engine loaded');
-
-
-console.log('deffers paid course javascript engine loaded');
-
 let tabs_action = ()=> {
 
     if ( ! document.getElementById('tabs') ){

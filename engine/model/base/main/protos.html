@@ -1,5 +1,5 @@
 <!-- variable -->
-{{- $lazy := "course/module/base/main/lazy" -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 {{- $tuto := printf "%s/tuto.html" $lazy -}}
 {{- $lead := printf "%s/lead.html" $lazy -}}
 {{- $bugs := printf "%s/bugs.html" $lazy -}}

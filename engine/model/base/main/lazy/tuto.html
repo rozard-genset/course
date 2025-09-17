@@ -3,21 +3,14 @@
 <template id="proto-tuto">
     <div class="head mb-60">
         <div class="flex center-x border-bottom">
-            <div class="icon xl pb-10">
-                {{ partial "icon/line/user-plus.svg" }}
-            </div>
-            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">
-                {{ .Params.parted.tuto.lead }}
-            </h1>
+            <div class="icon xl pb-10">{{- partial "lib/icon" "user-plus" -}}</div>
+            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{ T "header_subs_tuto" }}</h1>
         </div>
+        {{- with .Params.parted.tuto.desc -}}<p class="desc">{{- . -}}</p>{{- end -}}
     </div>
     <div class="leaf">
-        {{- with .Params.parted.tuto.desc -}}<p class="desc">{{- . -}}</p>{{- end -}}
-        <div class="boxs grid">
-            {{- range $index, $value := .Params.parted.tuto.data -}}
-                <div class="item-{{ math.Sum $index 1 }}">{{- partial $card . -}}</div>
-            {{- end -}}
-            </div>
-        </div>
+        {{- range $index, $value := .Params.parted.tuto.data -}}
+            <div class="item-{{ math.Sum $index 1 }}">{{- partial $card . -}}</div>
+        {{- end -}}
     </div>
 </template>

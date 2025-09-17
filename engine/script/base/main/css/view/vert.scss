@@ -1,20 +1,12 @@
 .vert{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-between;
     align-items: normal;
 
     .leaf{
+        grid-gap: 2rem 0;
+
         .desc{
             font-size: 1.05rem;
             line-height: 1.5;
-        }
-
-        .list{
-            display: grid;
-            grid-template-columns: 100%;
-            justify-content: space-between;
-            grid-gap: 2rem 0;
         }
     }    
 }
@@ -23,9 +15,7 @@
 
     .vert{
         .leaf{
-            .list{
-                grid-gap: 2.5rem 0;
-            }
+            grid-gap: 2.5rem 0;
         }
     }
 }
@@ -35,10 +25,8 @@
 
     .vert{
         .leaf{
-            .list{
-                grid-template-columns: repeat(auto-fill, 225px );
-                grid-gap: 3rem 0;
-            }
+            grid-template-columns: repeat(auto-fill, 225px );
+            grid-gap: 3rem 0;
         }
     }
 }
@@ -54,10 +42,8 @@
     
     .vert{
         .leaf{
-            .list{
-                grid-template-columns: 100%;
-                grid-gap: 2.8rem;
-            }
+            grid-template-columns: 100%;
+            grid-gap: 2.8rem;
 
             .metas{
                 grid-column: 2;

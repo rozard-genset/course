@@ -1,17 +1,14 @@
 {{- $card := "course/module/base/main/part/vert-card.html" -}}
-{{- $path := "course/module/base/main/part/path-link.html" -}}
+{{- $path := "course/module/base/main/part/path-page.html" -}}
 
-<div id="{{ .name | urlize }}" class="rori">
+<div id="{{ .name | urlize }}" class="rori grid">
     <div class="head">
         <div class="flex center-x border-bottom mb-40">
-            <div class="icon lg pb-10">
-                {{ partial "icon/line/box.svg" }}
-            </div>
-            <h1 class="text-lg font-normal uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>{{ partial $path . }}
+            <div class="icon lg pb-10">{{- partial "lib/icon" "box" -}}</div>
+            <h1 class="text-lg font-normal uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
+            {{ partial $path . }}
         </div>
-        <div class="desc mb-60">
-            {{- .page.Params.description -}}
-        </div>
+        <div class="desc mb-60">{{- .page.Params.description -}}</div>
     </div>
     <div class="leaf">
         {{- range first 6 .list -}}{{- partial  $card . -}}{{- end -}}

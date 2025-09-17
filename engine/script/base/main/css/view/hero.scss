@@ -5,13 +5,6 @@
     align-content: center;
     justify-content: center;
 
-    .rows{
-        grid-template-columns: 100%;
-        justify-content: space-between;
-        align-content: center;
-        margin-bottom: 2rem;
-    }
-
     .thumb{
         img{
             width: 300px;
@@ -54,12 +47,10 @@
 @media only screen and (min-width: 768px) {
     
     #hero{
-
         min-height: 86vh;
         grid-template-columns: calc( 100% - 440px - 2rem ) 440px;
         align-items: center;
         margin-bottom: 0rem;
-
 
         .leads{
             grid-column: 1;

@@ -4,30 +4,28 @@
 <!-- part -->
 {{- $part := partial "lib/pather/module-part.html" . -}}
 {{- $card := printf "%s/vert-card.html" $part -}}
-{{- $path := printf "%s/path-link.html" $part -}}
+{{- $path := printf "%s/path-page.html" $part -}}
 
 
 <div id="tabs">
     <div class="head">
         <div id="head-action" class="main center-x border-bottom">
-            <div class="icon lg pb-05">
-                {{ partial "icon/line/box.svg" }}
-            </div>
-            <h2 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">Featured</h2>
+            <div class="icon lg pb-05">{{ partial "lib/icon" "box" }}</div>
+            <h2 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{ T "header_subs_feat" }}</h2>
         </div>
         <div id="prev-action" class="prev flex center-x mobile">
-            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "icon/line/arrow-left.svg" -}}</div>
+            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "lib/icon" "arrow-left" -}}</div>
         </div>
         <div id="tabs-action" class="menu">
             {{- range $index, $value := first 5 $data -}}
             <div id="action-{{- $index  -}}" data-target="course-tabs-{{- $index  -}}" class="tab-action flex center-x">
-                <div class="icon sm rounded-full border-all ml-10 mr-10 desktop">{{- partial "icon/line/plus.svg" -}}</div>
+                <div class="icon sm rounded-full border-all ml-10 mr-10 desktop">{{- partial "lib/icon" "plus" -}}</div>
                 <h2>{{- .name  -}}</h2>
             </div>
             {{- end -}}
         </div>
         <div id="next-action" class="next flex center-x mobile">
-            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "icon/line/arrow-right.svg" -}}</div>
+            <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "lib/icon" "arrow-right" -}}</div>
         </div>
     </div>
     <div class="leaf">
@@ -39,9 +37,9 @@
                         <h2 class="uppercase font-normal mt-00 mb-00 pb-15">{{ .name -}}</h2>
                         <h3 class="capitalize text-xl border-left mt-00 mb-00 ml-15 pl-15 pb-15">{{ .page.Params.module.qoutes }}</h3>
                     </div>
-                    {{ partial $path . }}
+                    {{- partial $path . -}}
                 </div>
-                <div class="list">
+                <div class="list grid">
                     {{- range first 6 .list -}}{{- partial $card . -}}{{- end -}}
                 </div>
             </div>

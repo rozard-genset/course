@@ -7,9 +7,7 @@
             <div class="icon md">
                 {{ partial "icon/line/shield.svg" }}
             </div>
-            {{- with .Page.Params.chairman.lead -}}
-            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ . }}</h2>
-            {{- end -}}
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "leader_head_lead" }}</h2>
         </div>
         {{- with .Page.Params.chairman.desc -}}
             <p class="text-sm mt-00">{{- . -}}</p>

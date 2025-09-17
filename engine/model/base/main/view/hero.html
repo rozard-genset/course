@@ -1,9 +1,9 @@
+<!-- part -->
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $time := printf "%s/hero-thumb.html" $part -}}
-
+{{- $feat := printf "%s/hero-thumb.html" $part -}}
 
 <div id="hero">
-    <div class="thumb" >{{- partial $time . -}}</div>
+    <div class="thumb" >{{- partial $feat . -}}</div>
     <div class="leads">
         {{- with .Page.Params.Parted.Hero.Lead -}}<h1>{{- . -}}</h1>{{- end -}}
     </div>

@@ -1,8 +1,4 @@
 .lori{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-between;
-
 
     .head{
         .desc{
@@ -12,9 +8,6 @@
     }
 
     .leaf{
-        display: grid;
-        grid-template-columns: 100%;
-        justify-content: space-between;
         grid-gap: 2rem 0;
     }
 }

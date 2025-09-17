@@ -1,12 +1,11 @@
 {{- $title := T "bug" -}}
-{{- with .Page.Params.Reported.Github.Lead -}}{{- $title = . -}}{{- end -}}
 
 <template id="proto-bugs">
     <div class="head flex center-x border-bottom mb-40">
         <div class="icon md">
             {{ partial "icon/line/flag.svg" }}
         </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ $title }}</h2>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "report_head_lead" }}</h2>
     </div>
     <div class="leaf">
         {{- partial "parted/report/main/render.html" . -}}

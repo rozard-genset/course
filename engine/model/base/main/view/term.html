@@ -4,30 +4,27 @@
 <!-- part -->
 {{- $path := "course/module/base/main/part/path-main.html" -}}
 
+
 <div id="term">
     <div class="head mb-60">
         <div class="flex center-x border-bottom">
-            <div class="icon xl pb-10">
-                {{ partial "icon/line/box.svg" }}
-            </div>
-            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">Top Categories</h1>
-            {{ partial $path . }}
+            <div class="icon xl pb-10">{{- partial "lib/icon" "box" -}}</div>
+            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{- T "header_subs_tcat" -}}</h1>
+            {{- partial $path . -}}
         </div>
     </div>
     <div class="leaf">
-        <div class="grid boxs">
+       
         {{- range first 8 $data -}}
             <a href="{{ .page.RelPermalink }}" class="card grid border-all rounded-md pa-15">
                 <div class="top">
-                    <h2 class="text-lg font-bold mb-00 mt-00">{{ .page.Title }}</h2>
+                    <h2 class="text-lg font-bold mb-00 mt-00">{{- .page.Title -}}</h2>
                 </div>
                 <div class="bot flex">
-                    <div class="icon sm border-all rounded-full ml-a">
-                        {{ partial "icon/line/arrow-right.svg" }}
-                    </div>
+                    <div class="icon sm border-all rounded-full ml-a">{{- partial "lib/icon" "arrow-right" -}}</div>
                 </div>
             </a>
         {{- end -}}
-        </div>
+        
     </div>
 </div>

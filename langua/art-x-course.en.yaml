@@ -7,6 +7,15 @@ sesion_stat_desc: session
 proyek_stat_lead: project
 proyek_stat_desc: sandbox
 
+report_head_lead: report
+leader_head_lead: management
+regist_head_lead: register
+
+
+header_subs_more: exploration
+header_subs_feat: featured
+header_subs_tuto: tutor bootcamp
+header_subs_tcat: top categories
 
 level: level
 certificate: certificate

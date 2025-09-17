@@ -7,6 +7,15 @@ sesion_stat_desc: pertemuan
 proyek_stat_lead: aktivitas
 proyek_stat_desc: proyek
 
+report_head_lead: pengaduan
+leader_head_lead: pengurus
+regist_head_lead: pendaftaran
+
+
+header_subs_more: eksplorasi
+header_subs_feat: unggulan
+header_subs_tuto: kelas tutor
+header_subs_tcat: kategori unggulan
 
 
 level: tingkat
