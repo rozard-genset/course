@@ -1,5 +1,7 @@
-{{- $path := "course/module/item/main/view" -}}
-{{- $hero := printf "%s/hero.html" $path -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+
+{{- $hero := printf "%s/hero.html" $view -}}
+
 
 <div id="main-1">
     <div class="wrap">

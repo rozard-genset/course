@@ -1,28 +1,22 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{- $page := partial "lib/course/query/info-item-each-term.html" . -}}
+{{- $data := partial "lib/course/query/info-item-each-term.html" . -}}
 
 <div id="silo">
     <div class="grid">
-    {{- range $page -}}
+    {{- range $data -}}
         <div id="{{ .name | urlize }}">
             <div class="subhead flex border-bottom mb-40">
-                <div class="icon md border-right mr-10 pr-10 pb-05">
-                    {{ partial "icon/line/folder.svg" }}
-                </div>
+                <div class="icon md border-right mr-10 pr-10 pb-05">{{- partial "lib/icon" "folder" -}}</div>
                 <h3 class="text-xl mb-00 mt-00">{{ .name }}</h3>
             </div>
             <div class="subleaf">
                 {{- range .list -}}
                 <a href="{{ .RelPermalink }}" class="flex mb-20" aria-label="{{ .Title }}">
-                    <div class="icon md">
-                        {{ partial "icon/line/file.svg" }}
-                    </div>
+                    <div class="icon md">{{- partial "lib/icon" "file" -}}</div>
                     <div class="meta">
-                        {{- .Title -}}
-                        {{ .Params.description }}
+                        <h2 class="text-md font-bold mt-00">{{- .Title -}}</h2>
+                        <p class="text-md mt-00">{{ .Params.description }}</p>
                     </div>
                 </a>
                 {{- end -}}

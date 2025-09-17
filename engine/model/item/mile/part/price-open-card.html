@@ -5,13 +5,13 @@
         <div class="checkout ml-40">
             {{- range first 1 $start -}}
             <a href="{{ .RelPermalink }}" class="button outline flex center-x">
-                <div class="icon sm">{{- partial "icon/line/bookmark.svg" -}}</div>
+                <div class="icon sm">{{- partial "lib/icon" "bookmark" -}}</div>
                 <div class="capitalize text-sm font-bold">{{ T "parted_take_free" }}</div>
             </a>
             {{- end -}}
         </div>
         <div class="sharing flex center-x ml-20">
-            <div class="button outline icon sm">{{- partial "icon/line/share-2.svg" -}}</div>
+            <div class="button outline icon sm">{{- partial "lib/icon" "share-2" -}}</div>
         </div>
     </div>
 </div>

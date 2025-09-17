@@ -1,7 +1,6 @@
 
 #silo{
-
-    .grider{
+    .grid{
         grid-gap: 3rem;
     }
 }
@@ -14,9 +13,8 @@
 @media only screen and (min-width: 768px) {
 
     #silo{
-        .grider{
+        .grid{
             grid-template-columns: repeat(2, 47.5% );
-           
         }
     }
 }

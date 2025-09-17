@@ -8,14 +8,22 @@ proyek_stat_lead: aktivitas
 proyek_stat_desc: proyek
 
 report_head_lead: pengaduan
-leader_head_lead: pengurus
+leader_head_lead: manajemen
 regist_head_lead: pendaftaran
-
+suport_head_lead: dukungan
+trains_head_lead: latihan
+scored_head_lead: penugasan
+tutors_tops_lead: top tutor
 
 header_subs_more: eksplorasi
 header_subs_feat: unggulan
 header_subs_tuto: kelas tutor
 header_subs_tcat: kategori unggulan
+header_subs_reco: rekomendasi kelas
+
+
+course_creator: Penyusun 
+course_contrib: kontributor 
 
 
 level: tingkat

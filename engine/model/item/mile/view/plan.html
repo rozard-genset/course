@@ -1,4 +1,4 @@
-{{- $page := partial "lib/course/query/item-page-each-kind.html" . -}}
+{{- $data := partial "lib/course/query/item-page-each-kind.html" . -}}
 
 {{- $view := partial "lib/pather/module-view.html" . -}}
 {{- $repo := printf "%s/repo.html" $view -}}
@@ -10,8 +10,9 @@
 {{- $task := printf "%s/plan-task-card.html" $part -}}
 {{- $test := printf "%s/plan-test-card.html" $part -}}
 
+
 <div id="plan" class="mt-40">
-    {{ range $page.time }}
+    {{ range $data.time }}
     <div class="period mb-30">
         <div class="head flex center-x">
             <div class="text">
@@ -23,10 +24,10 @@
             </div>
             <div class="menu flex center-x ml-a">
                 <div id="part-action-{{ .session }}" data-target="part-tabs-{{ .session }}" class="tab-action flex center-x">
-                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "icon/line/book.svg" -}}</div>
+                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "lib/icon" "book" -}}</div>
                 </div>
                 <div id="taks-action-{{ .session }}" data-target="taks-tabs-{{ .session }}" class="tab-action flex center-x">
-                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "icon/line/edit.svg" -}}</div>
+                    <div class="icon sm rounded-lg border-all mr-10">{{- partial "lib/icon" "edit" -}}</div>
                 </div>
             </div>
         </div>
@@ -34,7 +35,7 @@
             <div id="part-tabs-{{ .session }}" class="tabs-item">
                 <div class="repo mb-20">
                     <div class="head flex mb-40">
-                        <div class="icon sm droppart" data-target="droppart-{{ .session}}">{{ partial "icon/line/plus.svg" }}</div>
+                        <div class="icon sm droppart" data-target="droppart-{{ .session}}">{{ partial "lib/icon" "plus" }}</div>
                         <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.parted.desc }}</div>
                     </div>
                     <div id="droppart-{{ .session }}" class="leaf grid parttabs">
@@ -45,7 +46,7 @@
             <div id="taks-tabs-{{ .session }}" class="tabs-item open">
                <div class="task mb-20">
                     <div class="head flex mb-40">
-                        <div class="icon sm droptask" data-target="droptask-{{ .session }}">{{ partial "icon/line/plus.svg" }}</div>
+                        <div class="icon sm droptask" data-target="droptask-{{ .session }}">{{ partial "lib/icon" "plus" }}</div>
                         <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.tasker.desc }}</div>
                     </div>
                     <div id="droptask-{{ .session }}" class="leaf grid takstabs">

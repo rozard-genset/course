@@ -1,16 +1,14 @@
 <div class="item">
     <div class="head mb-20">
         <div class="flex center-x border-bottom mb-10">
-            <div class="icon md">
-                {{ partial "icon/line/database.svg" }}
-            </div>
+            <div class="icon md">{{- partial "lib/icon" "database" -}}</div>
             <h2 class="capitalize text-md font-bold mb-00 mt-00 border-left pl-20">Latihan</h2>
             <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ len .task }}</h2> {{ T "parted_task_name" }}
         </div>
         <p class="text-md mb-00 mt-00 pt-10 pb-10">{{ .page.Params.tasker.goal }}</p>
     </div>
     <div class="desc">
-        {{ range $index , $value := .task }}
+        {{ range $index, $value := .task }}
         <a href="{{ .RelPermalink }}" class="flex mb-30">
             <div class="text-xs font-bold number border-all rounded-lg grid center-x center-y">
                 {{ math.Sum $index 1 }}

@@ -1,7 +1,7 @@
 {{ $team := partial "lib/course/datum/item-user-teams.html" . }}
 
 <div class="team">
-    <h2 class="text-md mb-10">Contributor</h2>
+    <h2 class="text-md mb-10">{{ T "course_contrib" }}</h2>
     <hr class="mb-15">
     <div class="grid">
         {{ range $team }}

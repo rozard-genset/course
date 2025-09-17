@@ -8,32 +8,32 @@
         <a href="{{ .RelPermalink }}" class="info mb-30">
             <div class="meta mb-20">
                 <div class="snip mr-20 mb-20">
-                <h2 class="text-sm font-bold button outline rounded-full mt-00 mb-00 ">{{- index .Page.Params.Terms 0 -}} </h2>
+                <h2 class="text-sm font-bold button outline rounded-full mt-00 mb-00 ">{{- index .Params.terms 0 -}} </h2>
                 </div>
                 <h2 class="title text-md font-bold mb-10 mt-00">{{ .Title }}</h2>
             </div>
             <div class="desc flex center-x">
                 <div class="thumb rounded-lg" href="{{ .RelPermalink }}">{{- partial $thum . -}}</div>
-                <p class="text-md mb-00 mt-00">{{ .Page.Params.Description }}</p>
+                <p class="text-md mb-00 mt-00">{{ .Params.description }}</p>
             </div>
         </a>
          <div class="foot flex center-x">
             <div class="stats grid center-x text-sm capitalize mb-05">
                 <div class="level box flex center-x">
                     <div class="icon sm">
-                        {{ partial "icon/line/bar-chart-2.svg" }}
+                        {{ partial "lib/icon" "bar-chart-2" }}
                     </div>
                     <span class="mr-05">{{- .Params.parted.stat.data.level -}}</span>
                 </div>
                 <div class="mater box flex center-x">
                     <div class="icon sm">
-                        {{ partial "icon/line/book-open.svg" }}
+                        {{ partial "lib/icon" "book-open" }}
                     </div>
                     <span class="ml-05">{{- partial $sums . }}  Session</span>
                 </div>
             </div>
             <div class="flex center-x ml-a">
-                <div class="icon sm">{{ partial "icon/line/share-2.svg"  }}</div>
+                <div class="icon sm">{{ partial "lib/icon" "share-2"  }}</div>
             </div>
         </div>
     </div>

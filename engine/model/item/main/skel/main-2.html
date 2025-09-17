@@ -1,8 +1,9 @@
-{{- $path := "course/module/item/main/view" -}}
-{{- $stat := printf "%s/stat.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $need := printf "%s/need.html" $path -}}
-{{- $tabs := printf "%s/tabs.html" $path -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+
+{{- $stat := printf "%s/stat.html" $view -}}
+{{- $team := printf "%s/team.html" $view -}}
+{{- $need := printf "%s/need.html" $view -}}
+{{- $tabs := printf "%s/tabs.html" $view -}}
 
 <div id="main-2">
     <div class="wrap grid">

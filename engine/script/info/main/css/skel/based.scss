@@ -1,6 +1,5 @@
-#info
-{
-    .grider{
+#info {
+    .grid{
         grid-gap: 5rem;
     }
 
@@ -44,7 +43,7 @@
     #info{
         margin-bottom: 7rem;
 
-        .grider{
+        .grid{
             grid-template-columns: 340px calc( 100% - 340px - 7rem );
         }
 

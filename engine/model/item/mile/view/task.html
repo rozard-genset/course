@@ -5,7 +5,7 @@
 <div class="task mb-20">
     <hr class="mt-00 mb-15">
     <div class="head flex mb-40">
-        <div class="icon sm droptask" data-target="droptask-{{ .session }}">{{ partial "icon/line/plus.svg" }}</div>
+        <div class="icon sm droptask" data-target="droptask-{{ .session }}">{{ partial "lib/icon" "plus" }}</div>
         <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.tasker.desc }}</div>
     </div>
     <div id="droptask-{{ .session }}" class="leaf grid takstabs">

@@ -1,14 +1,14 @@
 <div class="repo mb-20">
     <hr class="mt-00 mb-20">
     <div class="head flex mb-40">
-        <div class="icon sm droppart" data-target="droppart-{{ .session}}">{{ partial "icon/line/plus.svg" }}</div>
+        <div class="icon sm droppart" data-target="droppart-{{ .session}}">{{ partial "lib/icon" "plus" }}</div>
         <div class="desc text-md mb-00 mt-00 border-left pl-15">{{ .page.Params.parted.desc }}</div>
     </div>
     <div id="droppart-{{ .session }}" class="leaf grid parttabs">
     {{- range .repo -}}
         <div class="flex mb-10">
             <div class="icon sm rounded-full">
-                {{ partial "icon/line/book.svg" }}
+                {{ partial "lib/icon" "book" }}
             </div>
             <div class="desc border-left">
                 <h2 class="text-md font-bold border-bottom mt-00 mb-00 pl-20 pb-05">{{ .Title }}</h2>

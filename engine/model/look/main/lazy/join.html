@@ -1,9 +1,9 @@
 <template id="proto-join">
     <div class="head flex center-x mb-30 border-bottom">
         <div class="icon md">
-            {{- partial "icon/line/user-plus.svg" -}}
+            {{- partial "lib/icon" "user-plus" -}}
         </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Registration</h2>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "regist_head_lead" }}</h2>
     </div>
     <div class="leaf grid">
         {{- range $index, $value := .Parent.Page.Params.Parted.Join.Data -}}
@@ -13,7 +13,7 @@
                     <a href="{{ .link }}" class="mb-10 flex center-x  ml-a">
                         <div class="text-sm">Register</div>
                         <div class="action">
-                            <div class="icon md">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                            <div class="icon md">{{- partial "lib/icon" "arrow-right" -}}</div>
                         </div>
                     </a>
                 </div>

@@ -1,11 +1,9 @@
-{{- $part := partial "lib/pather/module-part.html" . -}}
+<!-- variable -->
 {{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-
+<!-- module -->
 {{- $lead := printf "%s/lead.html" $view -}}
 {{- $silo := printf "%s/silo.html" $view -}}
-
 {{- $team := printf "%s/team.html" $view -}}
 {{- $talk := printf "%s/talk.html" $view -}}
 

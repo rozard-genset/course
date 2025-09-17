@@ -1,10 +1,6 @@
-{{- $skel := partial "lib/pather/module-skel.html" . -}}
-{{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
-
-{{- $main1 := printf "%s/main-1.html" $skel -}}
-{{- $main2 := printf "%s/main-2.html" $skel -}}
+{{- $skels := partial "lib/pather/module-skel.html" . -}}
+{{- $main1 := printf "%s/main-1.html" $skels -}}
+{{- $main2 := printf "%s/main-2.html" $skels -}}
 
 <main id="info">
     <div class="wrap">

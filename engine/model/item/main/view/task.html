@@ -1,21 +1,19 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 {{- $task := printf "%s/task-task-card.html" $part -}}
 {{- $test := printf "%s/task-test-card.html" $part -}}
-{{- $page := partial "lib/course/query/item-page-each-kind.html" . -}}
 
+{{- $data := partial "lib/course/query/item-page-each-kind.html" . -}}
 
 <div id="task" class="mt-60 grid">
-    {{- range $index, $value := $page.time -}}{{ $session := math.Sum $index 1 }}
+    {{- range $index, $value := $data.time -}}{{ $session := math.Sum $index 1 }}
     <div class="period">
         <div class="head mb-40">
             <div class="flex">
-                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "parted_task_lead" }}  {{ $session }} </div>
+                <div class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pr-15"> {{ T "parted_task_lead" }} {{ $session }}</div>
                 <h3 class="text-sm uppercase font-bold mb-00 mt-00 pb-10 pl-15 border-left">{{ .page.Title }}</h3>
                 <div class="icon md border-left border-top border-right ml-a dropdown" data-target="droptask-{{ $session }}">
-                    {{ partial "icon/line/plus.svg" }}
+                    {{ partial "lib/icon" "plus" }}
                 </div>
             </div><hr class="mt-00 mb-15">
             <div class="desc text-md mb-40">{{ .page.Params.tasker.desc }}</div>

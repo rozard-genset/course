@@ -7,18 +7,14 @@
     </div>
     <div class="leaf grid border-all rounded-lg mb-30">
         <div class="flex center-x pa-05">
-            <div class="icon md text-white">
-                {{ partial "icon/line/bar-chart-2.svg" }}
-            </div>
+            <div class="icon md text-white">{{- partial "lib/icon" "bar-chart-2" -}}</div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "level" }}</div>
                 <div class="capitalize text-sm text-white font-bold">{{ $leve }}</div>
             </div>
         </div>
         <div class="flex center-x border-left pa-05">
-            <div class="icon md text-white">
-                {{ partial "icon/line/award.svg" }}
-            </div>
+            <div class="icon md text-white">{{- partial "lib/icon" "award" -}}</div>
             <div class="meta">
                 <div class="capitalize text-sm mb-00">{{ T "certificate" }}</div>
                 <div class="capitalize text-sm text-white font-bold">{{ $cert }}</div>

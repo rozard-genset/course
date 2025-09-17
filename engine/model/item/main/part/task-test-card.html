@@ -1,9 +1,7 @@
 <div class="item">
     <div class="head mb-20">
         <div class="flex center-x border-bottom mb-10">
-            <div class="icon md">
-                {{ partial "icon/line/edit.svg" }}
-            </div>
+            <div class="icon md">{{- partial "lib/icon" "edit" -}}</div>
             <h2 class="capitalize text-md font-bold mb-00 mt-00 border-left pl-20">Penilaian</h2>
             <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ len .test }}</h2> {{ T "parted_task_name" }}
         </div>

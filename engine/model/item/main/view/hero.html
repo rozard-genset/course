@@ -1,11 +1,8 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-
-{{- $feat := printf "%s/hero-thumbnail.html" $part  -}}
-{{- $team := printf "%s/hero-team-card.html" $part  -}}
-{{- $stat := printf "%s/hero-stat-card.html" $part  -}}
+{{- $feat := printf "%s/hero-thumbnail.html"  $part -}}
+{{- $team := printf "%s/hero-team-card.html"  $part -}}
+{{- $stat := printf "%s/hero-stat-card.html"  $part -}}
 {{- $open := printf "%s/price-open-card.html" $part -}}
 {{- $paid := printf "%s/price-paid-card.html" $part -}}
 

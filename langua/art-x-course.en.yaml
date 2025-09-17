@@ -10,12 +10,19 @@ proyek_stat_desc: sandbox
 report_head_lead: report
 leader_head_lead: management
 regist_head_lead: register
-
+suport_head_lead: suport
+trains_head_lead: practice
+scored_head_lead: assignment
+tutors_tops_lead: top tutor
 
 header_subs_more: exploration
 header_subs_feat: featured
 header_subs_tuto: tutor bootcamp
 header_subs_tcat: top categories
+header_subs_reco: recomended course
+
+course_creator: creator
+course_contrib: contributor
 
 level: level
 certificate: certificate

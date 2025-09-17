@@ -1,16 +1,13 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $card := printf "%s/lead-item-feat.html" $part -}}
 
 {{- $page := . -}}
-{{- $card := printf "%s/lead-item-feat.html" $part -}}
 
 <div id="lead">
     <div class="head mb-60">
         <div class="flex-inline mb-10">
-            <div class="icon lg border-right mr-10 pr-10">
-                {{ partial "icon/line/bookmark.svg" }}
-            </div>
+            <div class="icon lg border-right mr-10 pr-10">{{- partial "lib/icon" "bookmark" -}}</div>
             <h2 class="text-2xl mb-00 mt-00">{{ .Params.mission.lead }}</h2>
         </div>
         <p>{{ .Params.mission.desc }}</p>
