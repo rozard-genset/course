@@ -20,7 +20,7 @@
                     {{- end -}}
                 </div>
                 <div class="action flex center-x">
-                   {{- cond ( eq .Params.offers.price "" ) ( partial $open . ) ( partial $paid . ) -}}
+                   {{- cond ( eq .Params.billing.price "" ) ( partial $open . ) ( partial $paid . ) -}}
                 </div>
             </div>
         </div>

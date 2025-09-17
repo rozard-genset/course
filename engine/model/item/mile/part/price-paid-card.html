@@ -4,7 +4,7 @@
 <div id="take">
     <div class="flex center-x">
         <h2 class="text-4xl font-bold mt-00 mb-00 flex center-x">
-            {{- .Params.offers.price | lang.FormatCurrency 1 $label -}}<span class="text-xl uppercase font-light ml-10 mt-10">{{ $label }}</span> 
+            {{- .Params.billing.price | lang.FormatCurrency 1 $label -}}<span class="text-xl uppercase font-light ml-10 mt-10">{{ $label }}</span> 
         </h2>
         <div class="checkout ml-40">
             {{- range first 1 $start -}}

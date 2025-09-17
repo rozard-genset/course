@@ -1,7 +1,7 @@
 {{- $site := .Site -}}
 {{- $data := slice -}}
 
-{{ range .Params.offers.groups }}
+{{ range .Params.metadata.group }}
     {{- $name := ( . | urlize  ) -}}
     {{- with and ( $name ) ( $site.GetPage ( printf "/group/%s" $name )  ) -}}
         {{- $data = $data | append . -}}

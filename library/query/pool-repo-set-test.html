@@ -1,10 +1,10 @@
 {{- $sets := partial "lib/course/query/pool-repo-all-test.html" . -}}
-{{- $part := .Params.module.parted -}}
+{{- $part := .Params.lister -}}
 {{- $sess := .Params.weight -}}
 {{- $data := slice -}}
 
 {{- range ( index $sets 0 ).list -}}
-    {{- if and ( eq $part .Params.module.parted ) ( eq $sess .Params.weight ) -}}
+    {{- if and ( eq $part .Params.lister ) ( eq $sess .Params.weight ) -}}
         {{- $data = $data | append  . -}}
     {{- end -}}
 {{- end -}}
