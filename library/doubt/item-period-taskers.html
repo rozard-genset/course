@@ -2,7 +2,6 @@
 {{- $uniq := .id -}}
 {{- $sums := 0   -}}
 
-
 {{- range $test -}}{{- if strings.Contains .Params.weight $uniq -}}
     {{- $sums = math.Sum $sums  1 -}}
 {{- end -}}{{- end -}}

@@ -1,13 +1,14 @@
+{{- $data := partial "lib/course/datum/item-need-pool.html" . -}}
+
+
+{{ if gt ( len $data ) 0 }}
+
 <div id="need" class="mb-60">
     <div class="head mb-15 mb-40">
-        {{- if .Params.require.lead -}}
-            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ .Page.Params.Parted.Need.Lead }}</h2>
-        {{- else -}}
-            <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_need_lead" }}</h2>
-        {{- end -}}
+        <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_need_lead" }}</h2>
     </div>
     <div class="leaf grid">
-        {{- range .Params.require.data -}}
+        {{- range $data -}}
         <div class="flex mb-30">
             <div class="icon sm mr-15">
                 {{ $icon :=  printf "icon/line/check-circle.svg" }}
@@ -23,3 +24,4 @@
         {{- end -}}
     </div>
 </div>
+{{ end }}

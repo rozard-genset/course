@@ -1,4 +1,4 @@
-{{ $lead := partial "lib/course/profile/item-pool-leads.html" . }}
+{{ $lead := partial "lib/course/datum/item-user-leads.html" . }}
 
 {{ range $lead }}
 <a href="{{ .RelPermalink }}" class="lead flex center-x" aria-label="Visit {{ .Title}} profile page">

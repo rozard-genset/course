@@ -1,4 +1,4 @@
-{{ $team := partial "lib/course/profile/item-pool-teams.html" . }}
+{{ $team := partial "lib/course/datum/item-user-teams.html" . }}
 
 {{ range $team }}
     <a href="{{ .RelPermalink }}" class="card flex center-x mb-15" aria-label="Visit {{ .Title }} profile page">

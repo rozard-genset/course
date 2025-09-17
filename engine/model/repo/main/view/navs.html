@@ -1,4 +1,4 @@
-{{ $populate := partial "lib/course/query/pool-repo-all-page.html" . }}
+{{ $populate := partial "lib/course/query/repo-navs-pool.html" . }}
 
 
 {{- if or ( $populate.Next . ) ( $populate.Prev . ) -}}

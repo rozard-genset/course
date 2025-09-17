@@ -11,7 +11,7 @@
   	{{- end -}}
 
   	{{- range .Params.metadata.author -}}
-   		{{- if in $pool . -}}{{- continue -}}{{- end -}}
+   		{{- if or ( in $pool . ) ( in $lead . ) -}}{{- continue -}}{{- end -}}
 		{{- $pool = $pool | append . -}}
         {{- $name := ( . | urlize  ) -}}
         {{- with and ( $name ) ( $site.GetPage ( printf "/%s/%s" "profile" $name ) ) -}}

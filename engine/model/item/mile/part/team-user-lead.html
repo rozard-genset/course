@@ -1,4 +1,5 @@
-{{ $lead := partial "lib/course/profile/item-pool-leads.html" . }}
+{{ $lead := partial "lib/course/datum/item-user-leads.html" . }}
+
 {{ range $lead }}
 <a href="{{ .RelPermalink }}" class="card flex center-x mb-15" aria-label="Visit {{ .Title }} profile page">
     <div class="avabox rounded-full">{{- partial "parted/avatar/user-42.html" . -}}</div>
