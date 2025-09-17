@@ -1,0 +1,15 @@
+<!-- populate term -->
+{{- $data_page := slice -}}
+{{- $page_term := .Params.terms -}} 
+{{- $page_info := .Site.GetPage ( printf "%s/info" .Section ) -}}
+
+
+<!-- populate page -->
+{{- range $page_info.Pages  -}}
+    {{- if collections.Intersect $page_term .Params.terms -}}
+        {{- $data_page = $data_page | append . -}}
+    {{- end -}}
+{{- end -}}
+
+
+{{- return $data_page -}}

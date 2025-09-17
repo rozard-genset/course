@@ -1,0 +1,36 @@
+<!-- populate term -->
+{{- $all_term := slice -}}
+{{- $all_page := slice -}} 
+{{- $set_term := .Site.GetPage ( printf "%s/path" .Section ) -}}
+
+{{- range $set_term.Pages -}}
+    {{ if gt ( len .Title ) 0 }}
+        {{ $all_term = $all_term | append . }}
+    {{ end }}
+{{- end -}}
+
+
+{{- range $all_term -}}
+    {{- $page_now := .Title -}}
+    {{- $term_now := slice ( .Title | urlize ) -}}
+    {{- $page_map := slice   -}}
+    {{- range where .Site.Pages "Type" .Section -}}
+
+        {{- $terms := slice -}}
+
+        {{- range .Page.Params.terms -}}
+            {{- $terms = $terms | append ( . | urlize ) -}}
+        {{- end -}}
+
+        {{- if collections.Intersect $term_now $terms -}}
+            {{- $page_map = $page_map | append . -}}
+        {{- end -}}
+
+    {{- end -}}
+    
+    {{- if gt ( len $page_map ) 0 -}}
+        {{- $all_page = $all_page | append ( dict "name" $page_now  "page" . "list" $page_map ) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- return $all_page -}}

@@ -1,5 +1,5 @@
 {{- $card := "course/module/look/main/part/list-card.html" -}}
-{{- $data := partial "lib/queries/pool-item-all-section" . -}}
+{{- $data := partial "lib/course/query/look-item-each-sect" . -}}
 {{- $list := .Paginate ($data) 5 -}}
 
 <div id="list">

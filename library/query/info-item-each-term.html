@@ -1,0 +1,32 @@
+<!-- populate term -->
+{{- $all_term := slice -}}
+{{- $all_page := slice -}} 
+{{- $set_data := .Site.GetPage ( printf "%s/info" .Section ) -}}
+
+
+{{- range $set_data.Pages -}}
+    {{ range .Params.terms }}
+        {{ if eq ( in $all_term . ) false }}
+            {{ $all_term = $all_term | append ( . | urlize ) }}
+        {{ end }}
+    {{ end }}
+{{- end -}}
+
+
+{{- range $all_term -}}
+
+    {{- $term_now := (  . | urlize ) -}}
+    {{- $page_map := slice   -}}
+
+    {{- range $set_data.Pages -}}
+        {{- if in .Page.Params.terms $term_now -}}
+            {{- $page_map = $page_map | append . -}}
+        {{- end -}}
+    {{- end -}}
+    
+    {{- if gt ( len $page_map ) 0 -}}
+        {{- $all_page = $all_page | append ( dict "name" $term_now  "list" $page_map ) -}}
+    {{- end -}}
+{{- end -}}
+
+{{- return $all_page -}}
