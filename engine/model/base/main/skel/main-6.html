@@ -1,4 +1,4 @@
-{{- $view := "course/module/base/main/view/" -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
 {{- $bugs := printf "%s/bugs.html" $view -}}
 {{- $team := printf "%s/team.html" $view -}}
 {{- $join := printf "%s/join.html" $view -}}

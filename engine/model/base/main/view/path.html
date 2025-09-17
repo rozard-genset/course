@@ -1,14 +1,21 @@
-{{- $page := partial "lib/course/query/base-item-each-term.html"  . -}}
-{{- $vert := "course/module/base/main/view/vert.html" -}}
-{{- $lori := "course/module/base/main/view/lori.html" -}}
-{{- $rori := "course/module/base/main/view/rori.html" -}}
-{{- $list := slice -}}
+<!-- data -->
+{{- $data := partial "lib/course/query/base-each-term-pool.html"  . -}}
+
+
+<!-- view -->
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $vert := printf "%s/vert.html" $view -}}
+{{- $lori := printf "%s/lori.html" $view -}}
+{{- $rori := printf "%s/rori.html" $view -}}
+
+
+<!-- page -->
 {{- $stat := 1 -}}
 {{- $sums := 2 -}}
 {{- $info := 1 -}}
 
 
-{{- range $index, $value := $page -}}
+{{- range $index, $value := $data -}}
 
     <!-- skip featured offset -->
     {{- if le $index 5 -}}{{- continue -}}{{- end -}}

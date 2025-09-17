@@ -1,5 +1,6 @@
 {{- $thumb := "course/module/base/main/part/vert-thumb.html" -}}
 {{- $count := "lib/course/datum/item-sums-repo.html" -}}
+{{- $users := "parted/profile/user-meta-lite.html" -}}
 
 <article class="carbox vertbox grid rounded-lg">
     <a href="{{ .RelPermalink }}" class="thumb">{{- partial $thumb . -}}</a>
@@ -8,21 +9,14 @@
             <h1 class="title font-normal mt-00">{{ .Title }}</h1>
         </a>
         <div class="info">
-            <div class="tutor center-x">
-                <div class="avatar rounded-full overflow-hidden">{{- partial "parted/avatar/user-28.html" . -}}</div>
-                <div class="text-xs font-bold ml-15">{{- .Page.Params.Metadata.Author -}}</div>
-            </div>
+            {{- partial $users . -}}
             <div class="stats grid center-x text-sm capitalize mb-05">
                 <div class="level box flex center-x">
-                    <div class="icon sm">
-                        {{ partial "icon/line/bar-chart-2.svg" }}
-                    </div>
-                    <span class="mr-05">{{- .Params.parted.stat.data.level -}}</span>
+                    <div class="icon sm">{{- partial "lib/icon" "bar-chart-2" -}}</div>
+                    <span class="mr-05">{{- .Params.offers.level -}}</span>
                 </div>
                 <div class="mater box flex center-x">
-                    <div class="icon sm">
-                        {{ partial "icon/line/book-open.svg" }}
-                    </div>
+                    <div class="icon sm">{{- partial "lib/icon" "book-open" -}}</div>
                     <span class="ml-05">{{- partial $count . }}  Session</span>
                 </div>
             </div>

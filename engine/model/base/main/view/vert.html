@@ -1,4 +1,5 @@
 {{- $card := "course/module/base/main/part/hori-card.html" -}}
+{{- $path := "course/module/base/main/part/path-link.html" -}}
 
 <div id="{{ .name | urlize }}" class="vert">
      <div class="head mb-60">
@@ -7,10 +8,7 @@
                 {{ partial "icon/line/box.svg" }}
             </div>
             <h1 class="text-lg uppercase font-normal border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
-            <a href="{{ .page.RelPermalink }}" class="pathway center-x ml-a">
-                <div class="name text-xs font-bold uppercase">Ekplorasi</div>
-                <div class="icon sm ml-15">{{- partial "icon/line/arrow-right.svg" -}}</div>
-            </a>
+            {{- partial $path . -}}
         </div>
     </div>
     <div class="leaf">

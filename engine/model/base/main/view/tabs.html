@@ -1,6 +1,11 @@
-{{- $page := partial "lib/course/query/base-item-each-term.html"  . -}}
-{{- $card := "course/module/base/main/part/vert-card.html" -}}
-{{- $path := "course/module/base/main/part/path-link.html" -}}
+<!-- data -->
+{{- $data := partial "lib/course/query/base-each-term-pool.html" . -}}
+
+<!-- part -->
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $card := printf "%s/vert-card.html" $part -}}
+{{- $path := printf "%s/path-link.html" $part -}}
+
 
 <div id="tabs">
     <div class="head">
@@ -14,7 +19,7 @@
             <div class="icon sm rounded-full border-all mr-00 pa-05">{{- partial "icon/line/arrow-left.svg" -}}</div>
         </div>
         <div id="tabs-action" class="menu">
-            {{- range $index, $value := first 5 $page -}}
+            {{- range $index, $value := first 5 $data -}}
             <div id="action-{{- $index  -}}" data-target="course-tabs-{{- $index  -}}" class="tab-action flex center-x">
                 <div class="icon sm rounded-full border-all ml-10 mr-10 desktop">{{- partial "icon/line/plus.svg" -}}</div>
                 <h2>{{- .name  -}}</h2>
@@ -27,7 +32,7 @@
     </div>
     <div class="leaf">
         <div id="tabs-content" class="content">
-            {{- range $index, $value := first 5 $page -}}
+            {{- range $index, $value := first 5 $data -}}
             <div id="course-tabs-{{- $index -}}" class="tabs-item pool{{ with eq $index 0 }} open {{- end }}">
                 <div class="lead flex center-x mb-60">
                     <div class="border-bottom flex center-x">
