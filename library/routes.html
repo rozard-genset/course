@@ -1,0 +1,30 @@
+{{- $path := "page" -}}
+{{- $link := .Page.RelPermalink -}}
+{{- $path := split $link "/" -}}
+
+{{- if and ( .IsSection ) ( eq .Parent.Kind "home" ) -}}
+    {{- $path = "base" -}}
+{{- else if and ( .IsSection ) ( eq $link ( printf "/%s/path/" .Section ) ) -}}
+    {{- $path = "path" -}}
+{{- else if and ( .IsSection ) ( eq $link ( printf "/%s/pool/" .Section ) ) -}}
+    {{- $path = "path" -}}
+{{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/path" .Section ) ) -}}
+    {{- $path = "node" -}}
+{{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/look" .Section ) ) -}}
+    {{- $path = "look" -}}
+{{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/info" .Section ) ) -}}
+    {{- $path = "info" -}}
+{{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/tool" .Section ) ) -}}
+    {{- $path = "tool" -}}
+{{- else if and ( .Section ) ( .IsPage ) ( strings.Contains $link "/task/" ) -}}
+    {{- $path = "task" -}}
+{{- else if and ( .Section ) ( .IsPage ) ( strings.Contains $link "/repo/" ) -}}
+    {{- $path = "repo" -}}
+{{- else if and ( .Section ) ( .IsPage ) ( strings.Contains $link "/test/" ) -}}
+    {{- $path = "test" -}}
+{{- else if and ( .Section ) ( .IsPage ) ( .Parent.Page.Params.offers.price ) -}}
+    {{- $path = "paid" -}}
+{{ end }}
+
+
+{{- return $path -}}
