@@ -1,5 +1,14 @@
 #rels{
 
+    .leaf{
+        .number{
+            min-width: 1.75rem;
+            height: 1.75rem;
+            width: 1.75rem;
+            background-color: var(--background-02);
+        }
+    }
+
 }
 
 
@@ -28,15 +37,6 @@
 
     #rels{
         width: 100%;
-
-        .leaf{
-            .number{
-                min-width: 1.75rem;
-                height: 1.75rem;
-                width: 1.75rem;
-                background-color: var(--background-02);
-            }
-        }
     }
 }
 
