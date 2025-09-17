@@ -1,7 +1,13 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $data := partial "lib/pather/module-data.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $time := printf "%s/hero-thumb.html" $part -}}
+
+
 <div id="hero">
-    <div class="thumb" >
-        {{- partial "course/module/base/main/part/hero-thumb.html" . -}}
-    </div>
+    <div class="thumb" >{{- partial $time . -}}</div>
     <div class="leads">
         {{- with .Page.Params.Parted.Hero.Lead -}}<h1>{{- . -}}</h1>{{- end -}}
     </div>
