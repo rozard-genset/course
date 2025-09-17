@@ -3,20 +3,22 @@
 {{- $team := slice -}}
 {{- $pool := slice -}}
 
-{{ range .Pages }}
-    {{ if ne .Page.Params.Metadata.Author $lead }}
 
-        {{- if in $pool .Page.Params.Metadata.Author -}}
-            {{- continue -}}
-        {{- end -}}
-        
-        {{- $pool = $pool | append .Page.Params.Metadata.Author -}}
-        {{- $name := ( .Page.Params.Metadata.Author | urlize  ) -}}
-        {{- with and ( $name ) ( $site.GetPage ( printf "/%s/%s" "profile" $name )  ) -}}
+{{- range .Pages -}}
+
+  	{{- if eq ( len .Params.metadata.author ) 0 -}}
+     	{{- continue -}}
+  	{{- end -}}
+
+  	{{- range .Params.metadata.author -}}
+   		{{- if in $pool . -}}{{- continue -}}{{- end -}}
+		{{- $pool = $pool | append . -}}
+        {{- $name := ( . | urlize  ) -}}
+        {{- with and ( $name ) ( $site.GetPage ( printf "/%s/%s" "profile" $name ) ) -}}
             {{- $team = $team | append . -}}
         {{- end -}}
-     {{ end }}
-{{ end }}
+  	{{- end -}}
 
+{{- end -}}
 
 {{- return $team -}}
