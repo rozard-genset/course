@@ -1,0 +1,23 @@
+{{- $user := slice -}}
+{{- $page := slice -}}
+{{- range where site.RegularPages "Type" .Section -}}
+    {{- if eq .Params.metadata.author slice  -}}
+        {{ continue }}
+    {{- end -}}
+
+    {{ $nows := . }}
+    {{ range .Params.metadata.author }}
+
+        {{ if eq  ( in $user . ) true  }}
+            {{ continue }}
+        {{ end }}    
+
+        {{- $user = $user | append . -}}
+        {{- $page = $page | append $nows -}}   
+
+    {{ end }}
+    
+        
+{{- end -}}
+
+{{ return $page }}
