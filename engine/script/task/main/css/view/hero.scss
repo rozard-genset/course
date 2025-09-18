@@ -1,8 +1,9 @@
 #hero{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-between;
-    margin-bottom: 3rem;
+
+    .rows{
+        margin-bottom: 3rem;
+    }
+   
  
     .thumb{
         margin-bottom: 2rem;
@@ -21,13 +22,15 @@
 @media only screen and (min-width: 768px) {
     
      #hero{
-        grid-template-columns: repeat( 2, calc( 50% - 1rem ));
-        margin-bottom: 4rem;
 
+        .rows{
+            grid-template-columns: repeat( 2, calc( 50% - 1rem ));
+            margin-bottom: 4rem;
+        }
+        
         .thumb{
             margin-bottom: 0rem;
         }
-        
     }
 }
 

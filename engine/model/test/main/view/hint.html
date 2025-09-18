@@ -1,0 +1,21 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+
+{{- $desc := printf "%s/desc.html" $view -}}
+{{- $take := printf "%s/take.html" $view -}}
+
+{{- $card := printf "%s/info-card.html" $part -}}
+
+
+<div id="hint">
+    <div class="rows">
+        {{ $advices  := ( dict "uniq" "advice"   "icon" "package.svg"   "lead" "Requirement"   "desc" "You can use this sugestion for help your assigment"         "data" .Params.sugest )   -}}
+        {{ $warning  := ( dict "uniq" "warning"  "icon" "layers.svg"    "lead" "Criteria"     "desc" "Please consider a few point above before do the task."      "data" .Params.warning )  -}}
+        {{ $prohibit := ( dict "uniq" "prohibit" "icon" "slash.svg"     "lead" "Prohbited"   "desc" "Act a point below is prohbited due the task accomplished."  "data" .Params.prohibit ) -}}
+        {{- range ( slice $advices $warning $prohibit ) -}}
+            {{ partial $card . }}
+        {{- end -}}
+    </div>
+</div>

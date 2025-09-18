@@ -1,14 +1,11 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
 
 
 <div id="goal">
     <div class="head flex mb-60 border-bottom">
-        <div class="icon md flex center-x">
-            {{- partial "icon/line/award.svg" -}}
-        </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 mb-00 mt-00 pb-10 pt-10">Purpose</h2>
+        <div class="icon md flex center-x">{{- partial "lib/icon" "award" -}}</div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 mb-00 mt-00 pb-10 pt-10">{{ T "reachs_head_rule" }}</h2>
     </div>
     <div class="leaf">
     {{- range  $index, $value := .Params.reached -}}

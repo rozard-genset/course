@@ -1,9 +1,9 @@
-#menu{
+#tabs{
 
     margin-bottom: 3rem;
 
     .box{
-         display: flex;
+        display: flex;
     }
 
     .tab-action{
@@ -12,10 +12,6 @@
 
     .tab-action.open .icon, .tab-action.open h2 {
         color: var(--link-02-based);
-    }
-
-    .icon{
-        display: none;
     }
 }
 
@@ -34,24 +30,12 @@
 
 @media only screen and (min-width: 1280px) {
     
-    #menu{
-
-        .box{
-             display: block;
-        }
-       
-        .tab-action{
-            width: auto;
-        }
-        
-        .icon{
-            display: flex;
-        }
-
-        .tab-action{
-            margin-bottom: 1.25rem;
+    #tabs{
+        .rows{
+            grid-template-columns: repeat( 2, 45% );
         }
     }
+
 }
 
 @media only screen and (min-width: 1536px) {

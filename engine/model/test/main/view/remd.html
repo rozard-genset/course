@@ -1,0 +1,46 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $card := printf "%s/time-card.html" $part -}}
+
+<div id="remd">
+    <div class="head flex center-x border-bottom mb-20">
+        <div class="icon md">{{- partial "lib/icon" "repeat" -}}</div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Remedial</h2>
+    </div>
+    <div class="leaf">
+        <div class="cals mb-20">
+            {{- if eq .Params.inform.retry true -}}
+                <p class="mb-60"> Berikut waktu pembukaan dan penutupan pelaksanaan aktivitas </p>  
+                {{- $opens := ( dict "name" "Open"  "date" .Params.remeds.opened.days "month" .Params.remeds.opened.month "year" .Params.remeds.opened.year "hours" .Params.remeds.opened.hours  "mins" .Params.remeds.opened.minute ) -}}
+                {{- $close := ( dict "name" "Close" "date" .Params.remeds.closed.days "month" .Params.remeds.closed.month "year" .Params.remeds.closed.year "hours" .Params.remeds.closed.hours  "mins" .Params.remeds.closed.minute ) -}}
+                <div class="clock grid">
+                {{- range ( slice $opens $close ) -}}
+                    {{- partial $card  . -}}
+                {{- end -}}
+                </div>
+            {{- else -}}
+                <div class="action noact border-all rounded-md pa-20 open mt-40">
+                    <div class="icon xl mb-30">{{- partial "lib/icon" "alert-triangle" -}}</div>
+                    <p class="mb-00 mt-00 text-md">Tidak ada aktivitas perbaikan nilai untuk sesi aktivitas penilaian ini. Silahkan mengambil penugasan saaat anda benar benar telah siap. </p>
+                </div>
+            {{- end -}}
+        </div>
+        <div class="take">
+            {{ if eq .Params.inform.retry true }}
+                <div class="action noact border-all rounded-md center-x pa-05 open">
+                    <div class="icon lg">{{- partial "lib/icon" "alert-circle" -}}</div>
+                    <p class="text-md mb-00 mt-00">Remedial progress not started yet.</p>
+                </div>
+                <div class="action center-x">
+                    <button id="start-remd" class="button outline flex center-x">
+                        <div class="icon md mr-00">{{- partial "lib/icon" "edit" -}}</div>
+                        <div class="text-sm font-bold mr-10">Start Assignment</div>
+                    </button>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</div>

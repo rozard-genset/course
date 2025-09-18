@@ -1,15 +1,68 @@
 #remd{
-    .head, .box{
-        margin-bottom: 2rem;
+
+    .cals{
+        width: 100%;
+
+        .clock{
+            grid-template-columns: repeat( 2, 47.5% );
+        }
+
+        .open{
+            border-right: 1px solid var(--line-01 );
+        }
+
+        .item{
+            text-wrap: nowrap;
+        }
+
+        .date, .time, .data{
+            display: grid;
+            font-size: .95rem;
+        }
+
+        .data{
+            grid-template-columns: auto auto;
+            grid-gap: 10px;
+        }
+
+        .utc{
+            margin-left: 10px;
+        }
+    }
+
+    .noact{
+        background-color: var(--background-02);
+        font-size: .95rem;
+    }
+
+    .take{
+
+        .action{
+            display: none;
+        }
+
+        .action.open{ 
+            display: flex;
+        }
+
+        
     }
 }
 
+
+
+
 @media only screen and (min-width: 480px) {
-    
+
 }
 
 @media only screen and (min-width: 768px) {
-    
+    #remd{
+        .leaf{
+            grid-template-columns: 100%;
+            grid-gap: 3rem;
+        } 
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -17,19 +70,8 @@
 }
 
 @media only screen and (min-width: 1280px) {
-    
-     #remd{
+    #remd{
 
-        .leaf{
-            display: grid;
-            grid-template-columns: repeat( 2, 50% ) ;
-            grid-gap: 5rem;
-
-            .box .leaf{
-                grid-template-columns: 100%;
-                grid-gap: 1rem;
-            }
-        }
     }
 }
 

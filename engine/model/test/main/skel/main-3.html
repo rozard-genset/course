@@ -2,13 +2,13 @@
 {{- $view := partial "lib/pather/module-view.html" . -}}
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{- $hint := printf "%s/hint.html" $view -}}
+{{- $desc := printf "%s/desc.html" $view -}}
 {{- $para := printf "%s/para.html" $view -}}
 {{- $main := printf "%s/main.html" $view -}}
 {{- $time := printf "%s/time.html" $view -}}
 {{- $hero := printf "%s/hero.html" $view -}}
 {{- $take := printf "%s/take.html" $view -}}
 
-<div id="main-2">
-    {{- partial $hint . -}}
+<div id="main-3">
+    {{- partial $desc . -}}
 </div>

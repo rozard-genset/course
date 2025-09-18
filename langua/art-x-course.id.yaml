@@ -27,6 +27,11 @@ talked_head_lead: mulai diskusi
 talked_head_rule: peraturan
 tasked_head_rule: latihan
 tested_head_rule: penugasan
+reachs_head_rule: capaian
+inform_head_rule: informasi
+goaler_head_rule: kasus
+walker_head_rule: panduan
+tabers_subs_lead: praktek belajar
 
 
 header_subs_more: eksplorasi
@@ -35,19 +40,38 @@ header_subs_tuto: kelas tutor
 header_subs_tcat: kategori unggulan
 header_subs_reco: rekomendasi kelas
 
+
 visits_take_acts: kunjungi
 preves_repo_acts: kembali
 nextos_repo_acts: lanjutkan
 
-
 header_repo_lead: kelas
 header_repo_ends: tutup modul 
+header_task_lead: praktek 
+header_task_ends: akhiri latihan 
+header_test_lead: penugasan 
+header_test_ends: akhiri aktivitas
+
 
 session_take_word: pertemuan
 activit_take_word: aktivitas
 
+
 tasked_decs_note: berikut ini adalah aktivitas latihan untuk modul
 tested_decs_note: aktivitas penugasan dan penilaian untuk modul
+
+
+assign_pass_lead: nilai minimum
+assign_type_lead: pengerjaan
+assign_rems_lead: perbaikan
+
+
+assign_type_true: pribadi
+assign_type_fals: kelompok
+
+
+assign_rems_true: tersedia
+assign_rems_fals: tidak tersedia
 
 
 course_creator: Penyusun 
@@ -61,8 +85,6 @@ featured: unggulan
 visit: informasi kelas
 get_more: tampilkan lainya
 register: daftar
-
-
 
 
 main_tabs_lead_info: info

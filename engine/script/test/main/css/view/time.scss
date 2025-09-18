@@ -1,35 +1,24 @@
 #time{
 
-    .head, .box{
-        margin-bottom: 3rem;
-    }
 
-    .leaf, .time, .close, .open, .date, .time, .data{
-        display: grid;
-    }
-
-    .thumb{
-        overflow: hidden;
-    }
-
-    .time{
+    .cals{
         width: 100%;
 
-        .flex{
-            flex-wrap: nowrap;
+        .clock{
+            grid-template-columns: repeat( 2, 47.5% );
+        }
+
+        .open{
+            border-right: 1px solid var(--line-01 );
         }
 
         .item{
             text-wrap: nowrap;
         }
 
-        .close, .open, .date, .time, .data{
+        .date, .time, .data{
+            display: grid;
             font-size: .95rem;
-        }
-
-        .close, .open{
-            grid-template-columns: 60px 200px;
-            margin-bottom: 10px;
         }
 
         .data{
@@ -37,12 +26,24 @@
             grid-gap: 10px;
         }
 
-        .time, .date{
-            grid-template-columns: auto auto auto;
-        }
-
         .utc{
             margin-left: 10px;
+        }
+    }
+
+    .take{
+
+        .action{
+            display: none;
+        }
+
+        .action.open{ 
+            display: flex;
+        }
+
+        .noact{
+            background-color: var(--background-02);
+            font-size: .95rem;
         }
     }
 }
@@ -56,13 +57,9 @@
 
 @media only screen and (min-width: 768px) {
     #time{
-        .box{
-            margin-bottom: inherit;
-        }
-
         .leaf{
-            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
-            grid-gap: 5rem;
+            grid-template-columns: 100%;
+            grid-gap: 3rem;
         } 
     }
 }
@@ -74,16 +71,6 @@
 @media only screen and (min-width: 1280px) {
     #time{
 
-        margin-bottom: 5rem;
-
-        .head{
-            margin-bottom: 4rem;
-        }
-
-        .leaf{
-            grid-template-columns: repeat( 2, calc( 50% - 5rem ));
-            grid-gap: 5rem;
-        }       
     }
 }
 

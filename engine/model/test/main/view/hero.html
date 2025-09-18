@@ -1,12 +1,35 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
-
 {{- $feat := printf "%s/task-thumb.html" $part -}}
-{{- $node := partial "lib/course/query/test-page-each-page.html" . -}}
-
 
 <div id="hero">
-    <div class="thumb mb-20">{{ partial $feat . }}</div>
-    <h1 class="text-3xl mt-00 mb-60">{{ .Title }}</h1>
+    <div class="rows">
+        <div class="thumb mb-20">{{ partial $feat . }}</div>
+        <div class="grid">
+            <div class="head flex center-x mb-40">
+                <div class="icon md rounded-lg mr-10 border-all">{{- partial "lib/icon" "edit" -}}</div>
+                <h2 class="font-bold uppercase text-md mb-00 mt-00">{{ .Title }}</h2>
+            </div>
+            <div class="leaf mb-60">
+                <div class="desc mb-40">{{ .Params.description }}</div>
+                <div class="meta grid border-top">
+                    <div class="box border-right">
+                        <div class="title uppercase text-xs mb-00 mt-00 mr-20 pt-10">{{ T "assign_pass_lead" }}</div>
+                        <p class="capitalize font-bold text-md mb-00 mt-00">{{- .Params.inform.grade -}} </p> 
+                    </div>
+                    <div class="box border-right">
+                        <div class="title uppercase text-xs mb-00 mt-00 mr-20 pt-10">{{ T "assign_type_lead" }}</div>
+                        <p class="capitalize font-bold mb-00 mt-00">
+                            {{- cond ( eq .Params.inform.teams 0 ) ( T "assign_type_true" ) ( T "assign_type_false" ) -}}
+                        </p>
+                    </div>
+                    <div class="box">
+                        <div class="title uppercase text-xs mb-00 mt-00 mr-20 pt-10">{{ T "assign_rems_lead" }}</div>
+                        <p class="capitalize font-bold mb-00 mt-00">
+                            {{- cond ( eq .Params.inform.retry true ) ( T "assign_rems_true" ) ( T "assign_rems_fals" ) -}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

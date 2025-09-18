@@ -2,13 +2,17 @@
 {{- $main1 := printf "%s/main-1.html" $skels -}}
 {{- $main2 := printf "%s/main-2.html" $skels -}}
 {{- $main3 := printf "%s/main-3.html" $skels -}}
+{{- $main4 := printf "%s/main-4.html" $skels -}}
 
 <main id="test">
     <div id="info" class="wrap">
-        {{- partial $main1 . -}}
-        
+        <div class="rows">
+            {{- partial $main1 . -}}
+            {{- partial $main2 . -}}
+            {{- partial $main3 . -}}
+        </div>
     </div>
-    <div id="load" class="wrap hide">
-        {{- partial $main2 . -}}
+    <div id="load">
+        {{- partial $main4 . -}}
     </div>
 </main>

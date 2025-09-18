@@ -3,17 +3,11 @@
 {{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
 {{- $menu := printf "%s/menu.html" $view -}}
-{{- $para := printf "%s/para.html" $view -}}
-{{- $main := printf "%s/main.html" $view -}}
-{{- $time := printf "%s/time.html" $view -}}
 {{- $hero := printf "%s/hero.html" $view -}}
-{{- $take := printf "%s/take.html" $view -}}
+{{- $tabs := printf "%s/tabs.html" $view -}}
+
 
 <div id="main-1">
-    <div class="side">
-        {{- partial $hero . -}}{{- partial $menu . -}}
-    </div>
-    <div class="page">
-        {{- partial $main . -}}{{- partial $time . -}}{{- partial $para . -}}
-    </div>
+    {{- partial $hero . -}}
+    {{- partial $tabs . -}}
 </div>

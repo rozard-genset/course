@@ -1,0 +1,39 @@
+#hint{
+
+}
+
+@media only screen and (min-width: 480px) {
+
+    #hint{
+        .rows{
+            grid-template-columns: repeat(2, 45%) ;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #hint{
+        .rows{
+            grid-template-columns: repeat(3, 30%) ;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+
+}
+
+@media only screen and (min-width: 1280px) {
+ 
+    #hint{
+        .rows{
+            grid-template-columns: 100%;
+            grid-gap: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+}

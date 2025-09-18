@@ -1,14 +1,14 @@
 <header class="flex center-x border-bottom">
     <nav class="wrap flex center-x mb-00">
         <div class="title">
-            <span class="mr-10 text-md font-bold uppercase">Sandbox</span>
+            <span class="mr-10 text-md font-bold uppercase">{{ T "header_task_lead" }}</span>
             <span class="desktop"> | </span> 
-            <span class="desktop text-md uppercase ml-10">Session {{ .Params.weight }} </span>
+            <span class="desktop text-md uppercase ml-10">{{ T "session_take_word" }} {{ .Params.weight }} </span>
             <span class="desktop ml-10"> - </span> 
-            <span class="desktop text-md uppercase ml-10">Part {{ .Params.module.parted }} </span> 
+            <span class="desktop text-md uppercase ml-10">{{ T "assign_stat_lead" }} {{ .Params.lister }} </span> 
          </div>
         <div class="action">
-            <button onclick="history.back()" class="button outline cancel">End Task</button>
+            <button onclick="history.back()" class="capitalize button outline cancel">{{ T "header_task_ends" }}</button>
         </div>
     </nav>
 </header>

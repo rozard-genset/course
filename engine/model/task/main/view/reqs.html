@@ -1,21 +1,16 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
-
 
 <div id="reqs">
     <div class="head flex center-x border-bottom  mb-60">
-         <div class="icon md flex center-x">
-            {{ partial "icon/line/check-circle.svg" }}
-        </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 mb-00 mt-00 pb-10 pt-10">Requirement</h2>
+         <div class="icon md flex center-x">{{- partial "lib/icon" "package" -}}</div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 mb-00 mt-00 pb-10 pt-10">{{ T "parted_need_lead" }}</h2>
     </div>
     <div class="leaf">
         {{- range  $index, $value := .Params.require -}}
         <div class="item flex">
             <div class="number text-sm border-all rounded-sm">{{- math.Sum $index 1 -}}</div>
             <div class="desc ml-20">
-                <h3 class="text-md font-bold mt-00 mb-10">{{ .lead }}</h3>
+                <h3 class="text-md font-bold mt-00 mb-10">{{ .name }}</h3>
                 <p class="text-sm mt-00">{{ .desc }}</p>
             </div>
         </div>

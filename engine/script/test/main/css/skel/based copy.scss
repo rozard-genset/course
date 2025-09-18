@@ -1,7 +1,12 @@
-#info{
+#test{
 
     margin-top: 5rem;
 
+    #main-1{
+        display: grid;
+        grid-template-columns: 100%;
+        justify-content: space-between;
+    }
 }
 
 .hide{
@@ -23,11 +28,11 @@
 
 @media only screen and (min-width: 1280px) {
 
-    #info{
+    #test{
         margin-bottom: 10rem;
 
-        .rows{
-            grid-template-columns: calc( 100% - 320px - 5rem ) 320px ;
+        #main-1{
+           grid-template-columns: 320px calc( 100% - 320px - 5rem );
         }
     }
 }

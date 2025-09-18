@@ -1,7 +1,5 @@
 #hero{
-    display: grid;
-    grid-template-columns: 100%;
-    justify-content: space-between;
+
    
     img{
         width: 100%;
@@ -17,7 +15,11 @@
 
     #hero{
         margin-bottom: 2rem;
-        grid-template-columns: 45% calc( 100% - 45% - 2rem );
+        
+        .rows{
+            grid-template-columns: 45% calc( 100% - 45% - 2rem );
+        }
+        
 
         h1{
             font-size: 1.4rem
@@ -27,7 +29,11 @@
 
 @media only screen and (min-width: 768px) {
     #hero{
-        grid-template-columns: 45% calc( 100% - 45% - 2rem );
+
+        .rows{
+            grid-template-columns: 45% calc( 100% - 45% - 2rem );
+        }
+        
 
         h1{
             font-size: 1.6rem
@@ -48,8 +54,19 @@
 @media only screen and (min-width: 1280px) {
     
    #hero{
-        margin-bottom: 0rem;
-        grid-template-columns: 100%;
+
+        .rows{
+            grid-template-columns: 300px calc( 100% - 300px - 2rem );
+        }
+
+        .leaf{
+            align-content: space-between;
+        }
+
+        .meta{
+            grid-template-columns: repeat(3, calc( 30% ));
+            justify-content: space-between;
+        }
    }
 }
 

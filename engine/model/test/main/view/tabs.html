@@ -1,0 +1,31 @@
+
+{{- $view := partial "lib/pather/module-view.html" . -}}
+
+{{- $remd := printf "%s/remd.html" $view -}}
+{{- $time := printf "%s/time.html" $view -}}
+
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $card := printf "%s/time-card.html" $part -}}
+
+
+{{- $node := partial "lib/course/query/test-page-each-page.html" . -}}
+
+<div id="tabs">
+    <div class="box mb-60">
+    {{- range $index, $value := $node -}}
+        <div class="tab-action flex center-x {{ with eq $index 0 -}} open {{- end -}}" data-target="tabs-content-{{ .Title | urlize }}">
+            <h2 class="text-sm uppercase font-bold ml-10">{{ .Title }} </h2>
+        </div>
+    {{- end -}}
+    </div>
+    <div id="tabs">
+        {{- range $index, $value := $node -}}
+        <div id="tabs-content-{{ .Title | urlize }}" class="tabs-item {{ with eq $index 0 -}} open {{- end -}}">
+            <div class="rows">
+                {{ partial $time . }}
+                {{ partial $remd . }}
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>
