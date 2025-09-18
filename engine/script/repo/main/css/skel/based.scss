@@ -11,8 +11,6 @@
     }
 }
 
-
-
 main {
 
     #main-1, #main-2 {
@@ -34,7 +32,7 @@ main {
         .boxes{
             width: 85%;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 4rem 0;
         }
     }
 
@@ -71,7 +69,7 @@ main {
         #main-2{
             .boxes{
                 max-width: 680px;
-                margin: auto;
+                padding: 5rem auto 3rem auto;
             }
         }
     }
@@ -127,10 +125,10 @@ main {
         #main-2{
             .boxes{
                 max-width: 780px;
+                padding: 6rem auto 3rem auto;
             }
         }
     }
-
 }
 
 
