@@ -1,20 +1,18 @@
 {{- $index := 1 -}}
 <template id="proto-join">
     <div class="head flex center-x border-bottom mb-40">
-        <div class="icon md">
-            {{ partial "icon/line/user-plus.svg" }}
-        </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ .Parent.Page.Params.Register.Lead }}</h2>
+        <div class="icon md">{{- partial "lib/icon" "user-plus" -}}</div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "regist_head_lead" }}</h2>
     </div>
     <div class="leaf grid">
-        {{- range .Parent.Page.Params.Register.Data -}}
+        {{- range .Parent.Page.Params.register.data -}}
             <div class="item-{{ $index }} mb-20">
                 <div class="register flex center-x">
                     <h2 class="text-lg mb-10 mt-00">{{ .name }}</h2>
                     <a href="{{ .link }}" class="mb-10 flex center-x  ml-a">
                         <div class="capitalize text-sm">{{ T "register" }}</div>
                         <div class="action">
-                            <div class="icon md">{{- partial "icon/line/arrow-right.svg" -}}</div>
+                            <div class="icon md">{{- partial "lib/icon" "arrow-right" -}}</div>
                         </div>
                     </a>
                 </div>

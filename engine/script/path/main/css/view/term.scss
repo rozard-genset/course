@@ -1,15 +1,12 @@
 #term{
 
     .leaf{
-
-        .boxs{
-            grid-template-columns: repeat( auto-fill, calc( 50% - 1rem ) );
-            grid-auto-rows: 160px;
-            justify-content: space-between;
-            grid-gap: 3rem 1.75rem;
-            margin-bottom: 3rem;
-        }
-
+ 
+        grid-template-columns: repeat( auto-fill, calc( 50% - 1rem ) );
+        grid-auto-rows: 160px;
+        grid-gap: 3rem 1.75rem;
+        margin-bottom: 3rem;
+ 
         .card{
             align-content: space-between;
             background-color: var(--background-02);
@@ -32,9 +29,7 @@
 
     #term{
         .leaf{
-            .boxs{
-                grid-template-columns: repeat( auto-fill, calc( 30% - 1rem ) );
-            }
+            grid-template-columns: repeat( auto-fill, calc( 30% - 1rem ) );
         }
     }
 }
@@ -50,13 +45,7 @@
     #term{
 
         .leaf{
-
-            .boxs{
-                grid-template-columns: repeat( auto-fill, 160px );
-                grid-auto-rows: 160px;
-                grid-gap: 3rem 1.75rem;
-                margin-bottom: 3rem;
-            }
+            grid-template-columns: repeat( auto-fill, 160px );
         }
     }
 }

@@ -3,14 +3,12 @@
 <div id="term">
     <div class="head mb-70">
         <div class="flex center-x border-bottom">
-            <div class="icon xl pb-10">
-                {{ partial "icon/line/box.svg" }}
-            </div>
-            <h1 class="text-2xl border-left pl-15 pb-10 mb-00 mt-00">Explore Subjects</h1>
+            <div class="icon md border-right mr-10 pr-10">{{- partial "lib/icon" "box" -}}</div>
+            <h2 class="text-md font-bold uppercase mt-00 mb-00 pb-10">{{ T "subjec_head_lead" }}</h2>
         </div>
     </div>
     <div class="leaf">
-        <div class="grid boxs">
+        
         {{- range $data -}}
             <a href="{{ .page.RelPermalink }}" class="card grid border-all rounded-md pa-15">
                 <div class="top">
@@ -18,7 +16,7 @@
                 </div>
                 <div class="bot flex center-x">
                     <div class="ml-a flex center-x">
-                        <div class="text-md capitalize">visit</div>
+                        <div class="text-md capitalize">{{ T "visits_take_acts" }}</div>
                         <div class="icon sm border-all rounded-full ml-10">
                             {{ partial "icon/line/arrow-right.svg" }}
                         </div>
@@ -26,6 +24,6 @@
                 </div>
             </a>
         {{- end -}}
-        </div>
+        
     </div>
 </div>

@@ -1,19 +1,16 @@
 <!-- variable -->
-{{- $part := "course/module/path/main/part/"   -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
 {{- $thum := printf "%s/hero-thumb.html" $part -}}
 {{- $card := printf "%s/hero-state.html" $part -}}
 
 
 <div id="hero" class="mb-60">
-    <div class="head">
-        {{- partial $thum . -}}
-    </div>
+    <div class="head">{{- partial $thum . -}}</div>
     <div class="leaf">
         <div class="lead">
-            <h1 class="text-5xl">Learning Discovery</h1>
+            <h1 class="text-5xl">{{ .Title }}</h1>
             <hr>
-            <p class="text-md">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
+            <p class="text-md">{{ .Params.description }}</p>
         </div>
         <div class="stat grid">
             <div class="total-course">

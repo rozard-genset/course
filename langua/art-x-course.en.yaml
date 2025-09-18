@@ -19,6 +19,8 @@ pageds_head_lead: page
 taging_head_lead: categories
 tablec_head_lead: in this article
 furthr_head_lead: further reading
+subjec_head_lead: explore subjects
+
 
 header_subs_more: exploration
 header_subs_feat: featured
@@ -26,6 +28,8 @@ header_subs_tuto: tutor bootcamp
 header_subs_tcat: top categories
 header_subs_reco: explore course
 
+
+visits_take_acts: visit 
 
 course_creator: creator
 course_contrib: contributor

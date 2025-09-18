@@ -3,17 +3,15 @@
 <template id="proto-team">
     <div class="head">
         <div class="flex center-x border-bottom mb-30">
-            <div class="icon md">{{ partial "icon/line/shield.svg" }}</div>
-            {{- with .Parent.Page.Params.chairman.lead -}}
-            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ . }}</h2>
-            {{- end -}}
+            <div class="icon md">{{ partial "lib/icon" "shield" }}</div>
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "leader_head_lead" }}</h2>
         </div>
         {{- with .Parent.Page.Params.chairman.desc -}}
             <p class="text-sm mt-00">{{- . -}}</p>
         {{- end -}}
     </div>
     <div class="leaf grid">
-    {{- range .Parent.Page.Params.Chairman.list -}}
+    {{- range .Parent.Page.Params.chairman.list -}}
         <div class="flex center-x">
             <div class="avatar">
                 {{- with .name -}}{{- with $site.Site.GetPage ( printf "/%s/%s" "profile" . ) -}}

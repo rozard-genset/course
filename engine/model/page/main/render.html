@@ -1,11 +1,8 @@
-{{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $skel := partial "lib/pather/module-skel.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+{{- $skels := partial "lib/pather/module-skel.html" . -}}
 
-{{- $main1 := printf "%s/main-1.html" $skel -}}
-{{- $main2 := printf "%s/main-2.html" $skel -}}
-{{- $main3 := printf "%s/main-3.html" $skel -}}
+{{- $main1 := printf "%s/main-1.html" $skels -}}
+{{- $main2 := printf "%s/main-2.html" $skels -}}
+{{- $main3 := printf "%s/main-3.html" $skels -}}
 
 
 <main id="page">
