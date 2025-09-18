@@ -8,20 +8,18 @@
         </div>
     </div>
     <div class="leaf">
-        
-        {{- range $data -}}
-            <a href="{{ .page.RelPermalink }}" class="card grid border-all rounded-md pa-15">
-                <div class="top">
-                    <h2 class="text-lg font-bold mb-00 mt-00">{{ .page.Title }}</h2>
+    {{- range $data -}}
+        <a href="{{ .page.RelPermalink }}" class="card grid border-all rounded-md pa-15">
+            <div class="top">
+                <h2 class="text-lg font-bold mb-00 mt-00">{{ .page.Title }}</h2>
+            </div>
+            <div class="bot flex center-x">
+                <div class="ml-a flex center-x">
+                    <div class="text-md capitalize">{{ T "visits_take_acts" }}</div>
+                    <div class="icon sm border-all rounded-full ml-10">{{- partial "lib/icon" "arrow-right" -}}</div>
                 </div>
-                <div class="bot flex center-x">
-                    <div class="ml-a flex center-x">
-                        <div class="text-md capitalize">{{ T "visits_take_acts" }}</div>
-                        <div class="icon sm border-all rounded-full ml-10">{{- partial "lib/icon" "arrow-right" -}}</div>
-                    </div>
-                </div>
-            </a>
-        {{- end -}}
-        
+            </div>
+        </a>
+    {{- end -}}
     </div>
 </div>
