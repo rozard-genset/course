@@ -109,7 +109,7 @@ main{
     main{
 
         .wrap{
-            grid-template-columns: 30% calc( 100% - 30% - 3rem );
+            grid-template-columns: 340px calc( 100% - 340px - 6% );
         }
 
         #main-1{

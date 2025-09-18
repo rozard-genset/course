@@ -1,28 +1,29 @@
 #hero{
-
-   
+  
     img{
         width: 100%;
         height: auto;
+        margin-bottom: 3rem;
     }
 
     h1{
        font-size: 1.4rem
+    }
+
+    .meta{
+        grid-template-columns: repeat(2, calc( 45% ));
+        justify-content: space-between;
     }
 }
 
 @media only screen and (min-width: 480px) {
 
     #hero{
-        margin-bottom: 2rem;
-        
-        .rows{
-            grid-template-columns: 45% calc( 100% - 45% - 2rem );
-        }
-        
+        margin-bottom: 0rem;
+
 
         h1{
-            font-size: 1.4rem
+            font-size: 1.15rem
         }
     }
 }
@@ -31,12 +32,11 @@
     #hero{
 
         .rows{
-            grid-template-columns: 45% calc( 100% - 45% - 2rem );
+            grid-template-columns: 320px calc( 100% - 320px - 2rem );
         }
-        
 
         h1{
-            font-size: 1.6rem
+            font-size: 1.2rem
         }
     }
 }
@@ -44,9 +44,8 @@
 @media only screen and (min-width: 1024px) {
  
      #hero{
-
         h1{
-            font-size: 1.7rem;
+            font-size: 1.3rem;
         }
     }
 }
@@ -54,20 +53,16 @@
 @media only screen and (min-width: 1280px) {
     
    #hero{
+        margin-bottom: 1rem;
 
         .rows{
-            grid-template-columns: 300px calc( 100% - 300px - 2rem );
+            grid-template-columns: 380px calc( 100% - 380px - 3rem );
         }
 
         .leaf{
             align-content: space-between;
-        }
-
-        .meta{
-            grid-template-columns: repeat(3, calc( 30% ));
-            justify-content: space-between;
-        }
-   }
+        }       
+    }
 }
 
 @media only screen and (min-width: 1536px) {

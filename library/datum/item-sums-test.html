@@ -1,7 +1,7 @@
 {{- $data := slice -}}
 
-{{- range .RegularPagesRecursive -}}
-    {{- if strings.Contains .RelPermalink "/test/" -}} 
+{{- range .RegularPagesRecursive.ByWeight -}}
+    {{- if and ( strings.Contains .RelPermalink "/test/" ) ( .Params.Weight ) -}}
         {{- $data = $data | append . -}}
     {{- end -}}
 {{- end -}}

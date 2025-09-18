@@ -8,7 +8,7 @@
     <div class="item flex mb-40">
         <div class="struct text-md font-bold border-all rounded-full">{{- math.Sum $index 1 -}}</div>
         <div class="desc ml-20">
-            <h2 class="title text-xl font-bold nowrap border-bottom flex-inline mt-00 mb-00 pb-10">{{ .lead }}</h2>
+            <h2 class="title text-lg font-bold nowrap border-bottom flex-inline mt-00 mb-00 pb-10">{{ .lead }}</h2>
             <p class="text-smd">{{ .desc }}</p>
             {{- partial $card ( dict "page" $page "data" .prev ) -}}
         </div>

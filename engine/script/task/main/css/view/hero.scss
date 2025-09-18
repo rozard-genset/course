@@ -5,6 +5,10 @@
     }
    
  
+    h1{
+       font-size: 1.4rem
+    }
+
     .thumb{
         margin-bottom: 2rem;
 
@@ -17,15 +21,25 @@
 
 @media only screen and (min-width: 480px) {
 
+    #hero{
+
+        h1{
+            font-size: 1.15rem
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
     
-     #hero{
+    #hero{
 
         .rows{
             grid-template-columns: repeat( 2, calc( 50% - 1rem ));
             margin-bottom: 4rem;
+        }
+
+        h1{
+            font-size: 1.2rem
         }
         
         .thumb{
@@ -36,10 +50,19 @@
 
 @media only screen and (min-width: 1024px) {
     
+    #hero{
+
+        h1{
+            font-size: 1.3rem
+        }
+    }
 }
 
 @media only screen and (min-width: 1280px) {
 
+    #hero{
+        
+    }
 }
 
 @media only screen and (min-width: 1536px) {

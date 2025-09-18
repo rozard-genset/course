@@ -23,11 +23,11 @@
 
         .data{
             grid-template-columns: auto auto;
-            grid-gap: 10px;
+            grid-gap: 7px;
         }
 
         .utc{
-            margin-left: 10px;
+            margin-left: 5px;
         }
     }
 
@@ -59,7 +59,7 @@
     #time{
         .leaf{
             grid-template-columns: 100%;
-            grid-gap: 3rem;
+            grid-gap: 1rem;
         } 
     }
 }
@@ -69,9 +69,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-    #time{
 
-    }
 }
 
 @media only screen and (min-width: 1536px) {

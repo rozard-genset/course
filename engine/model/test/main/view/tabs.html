@@ -12,7 +12,7 @@
     <div class="box mb-60">
     {{- range $index, $value := $node -}}
         <div class="tab-action flex center-x {{ with eq $index 0 -}} open {{- end -}}" data-target="tabs-content-{{ .Title | urlize }}">
-            <h2 class="text-sm uppercase font-bold ml-10">{{ .Title }} </h2>
+            <h2 class="text-sm uppercase font-bold">{{ .Title }} </h2>
         </div>
     {{- end -}}
     </div>

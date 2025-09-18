@@ -14,7 +14,11 @@
         min-width: 1.75rem;
     }
 
-
+    .swithead{
+        .class{
+            display: none;
+        }
+    }
 }
 
 @media only screen and (min-width: 480px) {
@@ -31,10 +35,18 @@
 @media only screen and (min-width: 768px) {
     
      #tabs{
+
+
         .struct {
             width: 2.25rem;
             height: 2.25rem;
             min-width: 2.25rem;
+        }
+
+        .swithead{
+            .class{
+                display: flex;
+            }
         }
     }
 }

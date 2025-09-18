@@ -1,0 +1,14 @@
+{{- $view := partial "lib/pather/module-view.html" . -}}
+
+<header class="flex center-x border-bottom">
+    <nav class="flex center-x mb-00">
+        <div class="title">
+            <span class="font-bold text-md uppercase mr-10">{{ T "header_main_lead" }}</span>
+            <span class="desktop"> | </span> 
+            <span class="desktop text-md uppercase ml-10">{{ .Title }} </span>
+        </div>
+        <div class="action">
+            <a href="/{{ .Section | urlize }}" role="button" class="capitalize cancel button outline float-right">{{  T "header_main_ends" }}</a>
+        </div>
+    </nav>
+</header>

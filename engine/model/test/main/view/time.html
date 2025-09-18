@@ -6,13 +6,13 @@
         <div class="icon md">
             {{ partial "lib/icon" "clock" }}
         </div>
-        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">Schedule</h2>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "assign_head_lead" }}</h2>
     </div>
     <div class="leaf">
-        <div class="cals mb-20">
+        <div class="cals mb-60">
             <p class="mb-60"> Berikut waktu pembukaan dan penutupan pelaksanaan aktivitas </p>  
-            {{- $opens := ( dict "name" "Open"  "date" .Params.opened.days "month" .Params.opened.month "year" .Params.opened.year "hours" .Params.opened.hours  "mins" .Params.opened.minute ) -}}
-            {{- $close := ( dict "name" "Close" "date" .Params.closed.days "month" .Params.closed.month "year" .Params.closed.year "hours" .Params.closed.hours  "mins" .Params.closed.minute ) -}}
+            {{- $opens := ( dict "name" ( T "openeds_take_word" ) "date" .Params.opened.days "month" .Params.opened.month "year" .Params.opened.year "hours" .Params.opened.hours  "mins" .Params.opened.minute ) -}}
+            {{- $close := ( dict "name" ( T "closeds_take_word" ) "date" .Params.closed.days "month" .Params.closed.month "year" .Params.closed.year "hours" .Params.closed.hours  "mins" .Params.closed.minute ) -}}
             <div class="clock grid">
             {{- range ( slice $opens $close ) -}}
                 {{- partial $card  . -}}
@@ -22,12 +22,12 @@
         <div class="take">
             <div class="action noact border-all rounded-md center-x pa-05 open">
                 <div class="icon lg">{{- partial "lib/icon" "alert-circle" -}}</div>
-                <p class="text-md mb-00 mt-00">No Assignment Activity For This Time.</p>
+                <p class="capitalize text-md mb-00 mt-00">{{ T "assign_desc_note" }}</p>
             </div>
-            <div class="action center-x ">
+            <div class="action center-x">
                 <button id="start-task" class="button outline flex center-x">
                     <div class="icon md mr-00">{{- partial "lib/icon" "edit" -}}</div>
-                    <div class="text-sm font-bold mr-10">Start Assignment</div>
+                    <div class="capitalize text-sm font-bold mr-10">{{ T "tested_init_acts" }}</div>
                 </button>
             </div>
         </div>

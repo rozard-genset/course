@@ -20,9 +20,8 @@
     <div class="leaf">
         {{- range $index, $value := $data -}}
         <div id="part-tabs-{{ .Title | urlize }}" class="tabs-item base-content {{- with eq $index 0 }} open{{- end -}}">
-            <h2 class="text-lg flex-inline pb-10 mb-60 uppercase">{{  T "tabers_subs_lead" }}  <span class="border-left ml-20 pl-20 font-bold">{{ .Title }}</span></h2>
             <div class="switch">
-                <div class="swithead flex center-x mb-60 pb-20">
+                <div class="swithead flex center-x mb-60 mt-30">
                     <div class="case actions flex center-x open" data-target="case-{{ .Title | urlize }}">
                         <div class="icon md rounded-md border-all">{{ partial "lib/icon" "layout" }}</div>
                         <h2 class="text-sm uppercase font-bold pl-10 mt-00 mb-00">{{ T "goaler_head_rule" }}</h2>
@@ -31,6 +30,7 @@
                         <div class="icon md rounded-md border-all">{{ partial "lib/icon" "compass" }}</div>
                         <h2 class="text-sm uppercase font-bold pl-10 mt-00 mb-00">{{ T "walker_head_rule" }}</h2>
                     </div>
+                    <h2 class="class uppercase text-md flex-inline mt-00 mb-00 ml-a">{{  T "tabers_subs_lead" }}  <span class="border-left ml-20 pl-20 font-bold">{{ .Title }}</span></h2>
                 </div>
                 <div class="switchbox">
                     <div id="case-{{ .Title | urlize }}" class="tabs-item content case open">{{- partial $case . -}}</div>

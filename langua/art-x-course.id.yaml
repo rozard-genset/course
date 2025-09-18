@@ -5,7 +5,7 @@ assign_stat_desc: penilaian
 sesion_stat_lead: total
 sesion_stat_desc: pertemuan
 proyek_stat_lead: aktivitas
-proyek_stat_desc: proyek
+proyek_stat_desc: praktek
 
 report_head_lead: pengaduan
 leader_head_lead: manajemen
@@ -31,7 +31,12 @@ reachs_head_rule: capaian
 inform_head_rule: informasi
 goaler_head_rule: kasus
 walker_head_rule: panduan
-tabers_subs_lead: praktek belajar
+tabers_subs_lead: materi praktek
+requir_head_lead: persyaratan
+criter_head_lead: kriteria
+prohib_head_lead: larangan
+assign_head_lead: pelaksanaan
+rememd_head_lead: perbaikan
 
 
 header_subs_more: eksplorasi
@@ -44,8 +49,12 @@ header_subs_reco: rekomendasi kelas
 visits_take_acts: kunjungi
 preves_repo_acts: kembali
 nextos_repo_acts: lanjutkan
+remeds_init_acts: ambil perbaikan
+tested_init_acts: mulai penugasan
 
-header_repo_lead: kelas
+header_main_lead: kelas
+header_main_ends: akhiri kelas 
+header_repo_lead: modul
 header_repo_ends: tutup modul 
 header_task_lead: praktek 
 header_task_ends: akhiri latihan 
@@ -55,15 +64,22 @@ header_test_ends: akhiri aktivitas
 
 session_take_word: pertemuan
 activit_take_word: aktivitas
+openeds_take_word: dibuka
+closeds_take_word: ditutup
 
 
 tasked_decs_note: berikut ini adalah aktivitas latihan untuk modul
 tested_decs_note: aktivitas penugasan dan penilaian untuk modul
+requir_desc_lead: berikut adalah prasyarat yang dibutuhkan oleh mengikuti aktivitas
+criter_desc_lead: berikut adalah kriteria acuan dan instrument penilaian dari aktivitas
+prohib_desc_lead: berikut ini adalah aktivitas yang dilarang dalam proses pengerjaan
+remeds_desc_note: aktivitas remedial tidak tersedia sekarang
+remeds_desc_none: tidak ada aktivitas perbaikan nilai untuk sesi aktivitas penilaian ini. silahkan mengambil penugasan saat anda benar benar telah siap
+assign_desc_note: aktivitas penugasan tidak tersedia sekarang
 
 
 assign_pass_lead: nilai minimum
 assign_type_lead: pengerjaan
-assign_rems_lead: perbaikan
 
 
 assign_type_true: pribadi

@@ -4,11 +4,13 @@
     <nav class="flex center-x mb-00">
         <div class="title">
             <span class="font-bold text-md uppercase mr-10">{{ T "header_repo_lead" }}</span>
-            <span class="desktop">|</span>
-            <span class="ml-10 text-lg desktop">{{ .Title }}</span>
+            <span class="desktop"> | </span> 
+            <span class="desktop text-md uppercase ml-10">{{ T "session_take_word" }} {{ .Params.weight }} </span>
+            <span class="desktop ml-10"> - </span> 
+            <span class="desktop text-md uppercase ml-10">{{ T "assign_stat_lead" }} {{ .Params.lister }} </span> 
         </div>
         <div class="action">
-            <a href="{{ .Parent.RelPermalink }}" role="button" class="capitalize button outline float-right">{{  T "header_repo_ends" }}</a>
+            <a href="{{ .Parent.RelPermalink }}" role="button" class="capitalize cancel button outline float-right">{{  T "header_repo_ends" }}</a>
         </div>
     </nav>
 </header>

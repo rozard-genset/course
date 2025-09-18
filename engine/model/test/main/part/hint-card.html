@@ -1,0 +1,20 @@
+<div class="box {{ .uniq }}">
+    <div class="head mb-30">
+        <div class="flex center-x border-bottom mb-30">
+            <div class="icon md mr-00">{{ partial "lib/icon.html" .icon }}</div>
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ .lead }}</h2>
+        </div>
+        <p class="text-md capitalize">{{ .desc }}</p>
+    </div>
+    <div class="leaf">
+        {{- range .data -}}
+        <div class="flex mb-10">
+            <div class="icon md">{{- partial "lib/icon.html" .icon -}}</div>
+            <div class="meta">
+                {{- with .name }}<h3 class="text-md font-bold mb-10 mt-00">{{ . }}</h3>{{ end -}}
+                <p class="mb-00 mt-00 ml-15">{{ .desc }}</p>
+            </div>
+        </div>
+        {{- end -}}
+    </div>
+</div>

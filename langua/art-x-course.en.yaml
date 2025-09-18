@@ -32,7 +32,11 @@ inform_head_rule: information
 goaler_head_rule: challange
 walker_head_rule: walkthrough
 tabers_subs_lead: practical learning
-
+requir_head_lead: requirement
+criter_head_lead: criteria
+prohib_head_lead: prohibited
+assign_head_lead: schedule
+rememd_head_lead: remedial
 
 header_subs_more: exploration
 header_subs_feat: featured
@@ -44,9 +48,13 @@ header_subs_reco: explore course
 visits_take_acts: visit 
 preves_repo_acts: Previous Module
 nextos_repo_acts: Next Module 
+remeds_init_acts: take remedial
+tested_init_acts: start assignment
 
 
-header_repo_lead: classroom 
+header_main_lead: classroom
+header_main_ends: end class 
+header_repo_lead: module 
 header_repo_ends: close module 
 header_task_lead: pratical 
 header_task_ends: end task 
@@ -55,9 +63,17 @@ header_test_ends: end task
 
 session_take_word: session
 activit_take_word: activity
+openeds_take_word: open
+closeds_take_word: close
 
 tasked_decs_note: this is practise activity for module
 tested_decs_note: task bellow is a assigment activity for module
+requir_desc_lead: the following are the prerequisites required to participate in this activity
+criter_desc_lead: the following are the reference criteria and assessment instruments for the activity
+prohib_desc_lead: the following are activities that are prohibited during the work process
+remeds_desc_note: remedial progress not started yet
+remeds_desc_none: there are no grade correction activities for this assessment session. please take the assignment when you are truly ready.
+assign_desc_note: no assignment activity for this time
 
 
 assign_pass_lead: passing grade

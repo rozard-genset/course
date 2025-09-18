@@ -44,8 +44,6 @@
         .action.open{ 
             display: flex;
         }
-
-        
     }
 }
 
@@ -60,7 +58,7 @@
     #remd{
         .leaf{
             grid-template-columns: 100%;
-            grid-gap: 3rem;
+            grid-gap: 1rem;
         } 
     }
 }

@@ -8,7 +8,9 @@
             {{- partial $feat . -}}
         </div>
         <div class="metas">
-            <h1 class="mt-00">{{ .Title }}</h1>
+            <div class="head flex center-x mb-40">
+                <h1 class="font-bold uppercase text-md mb-00 mt-00">{{ .Title }}</h1>
+            </div>
             <p class="mt-00">{{ .Params.description }}</p>
         </div>
     </div>
