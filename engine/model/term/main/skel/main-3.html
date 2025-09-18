@@ -1,0 +1,9 @@
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $tags := printf "%s/tags.html" $view -}}
+
+
+<div id="main-3">
+    <div class="rows">
+        {{- partial $tags . -}}
+    </div>
+</div>

@@ -1,12 +1,15 @@
-{{- $card := "course/module/look/main/part/list-card.html" -}}
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $card := printf "%s/list-card.html" $part -}}
+
+
 {{- $data := partial "lib/course/query/look-item-each-sect" . -}}
-{{- $list := .Paginate ($data) 5 -}}
+{{- $list := .Paginate ($data) .Site.Params.course.pagenav    -}}
 
 <div id="list">
     <div class="head mb-20">
         <div class="flex center-x">
-            <h1 class="text-2xl mb-30 mt-00">Available {{ .Section }}</h1>
-            <h1 class="text-md mb-30 mt-00 ml-a">Page {{ $list.PageNumber }}</h1>
+            <h1 class="text-2xl mb-30 mt-00">{{- T "looker_head_lead" -}}</h1>
+            <h1 class="text-md mb-30 mt-00 ml-a">{{- T "pageds_head_lead" }} {{ $list.PageNumber }}</h1>
         </div>
     </div>
     <div class="leaf">

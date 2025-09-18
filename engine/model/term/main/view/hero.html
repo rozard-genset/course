@@ -1,0 +1,12 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $feat := printf "%s/hero-thumb.html"  $part -}}
+
+
+<div id="hero" class="mb-60">
+    <div class="grid center-x" >
+        <div class="head">{{- partial $feat . -}}</div>
+        <div class="info">
+            <h2 class="text-4xl mt-00 mb-10">{{- .Params.module.qoutes -}}</h2>
+        </div>
+    </div>
+</div>

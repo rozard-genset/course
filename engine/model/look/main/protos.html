@@ -1,9 +1,12 @@
 <!-- variable -->
-{{- $part := "course/module/look/main/lazy" -}}
-{{- $term := printf "%s/term.html" $part -}}
-{{- $feat := printf "%s/feat.html" $part -}}
-{{- $team := printf "%s/team.html" $part -}}
-{{- $join := printf "%s/join.html" $part -}}
+{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
+{{- $term := printf "%s/term.html" $lazy -}}
+{{- $feat := printf "%s/feat.html" $lazy -}}
+{{- $team := printf "%s/team.html" $lazy -}}
+{{- $join := printf "%s/join.html" $lazy -}}
 
 <!-- render -->
-{{- partial $term . -}}{{- partial $feat . -}}{{- partial $team . -}}{{- partial $join . -}}
+{{- partial $term . -}}
+{{- partial $feat . -}}
+{{- partial $team . -}}
+{{- partial $join . -}}

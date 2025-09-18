@@ -1,7 +1,8 @@
 {{- $view := partial "lib/pather/module-view.html" . -}}
 {{- $list := printf "%s/list.html" $view -}}
 
-
-<div id="main-1">
-    {{- partial $list . -}}
+<div id="main-2">
+    <div class="rows">
+        {{- partial $list . -}}
+    </div>
 </div>

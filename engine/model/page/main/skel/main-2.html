@@ -1,9 +1,7 @@
-{{- $part := partial "lib/pather/module-part.html" . -}}
 {{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
-
 
 {{ $main := printf "%s/main.html" $view }}
+
 <div id="main-2">
     {{ partial $main . }}
 </div>

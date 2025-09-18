@@ -1,9 +1,11 @@
-{{- $part := "course/module/look/main/view/" -}}
-{{- $hero := printf "%s/hero.html" $part -}}
-{{- $term := printf "%s/term.html" $part -}}
-{{- $feat := printf "%s/feat.html" $part -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $hero := printf "%s/hero.html" $view -}}
+{{- $term := printf "%s/term.html" $view -}}
+{{- $feat := printf "%s/feat.html" $view -}}
 
 
 <div id="main-2">
-    {{- partial $hero . -}}{{- partial $term . -}}{{- partial $feat . -}}
+    {{- partial $hero . -}}
+    {{- partial $term . -}}
+    {{- partial $feat . -}}
 </div>

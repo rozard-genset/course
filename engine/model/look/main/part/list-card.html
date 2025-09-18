@@ -1,9 +1,7 @@
 {{- $thum := "course/module/look/main/part/thumb-square.html" -}}
-{{- $icon := slice "bookmark" "heart" "share-2" -}}
-{{- $sums := "lib/course/datum/item-sums-repo.html" -}}
+{{- $sums := "lib/course/datum/item-sums-meet.html" -}}
 
-
-<div class="card list rounded-lg border-all">
+ <div class="card list rounded-lg border-all">
     <div class="linker">
         <a href="{{ .RelPermalink }}" class="info mb-30">
             <div class="meta mb-20">
@@ -20,20 +18,16 @@
          <div class="foot flex center-x">
             <div class="stats grid center-x text-sm capitalize mb-05">
                 <div class="level box flex center-x">
-                    <div class="icon sm">
-                        {{ partial "lib/icon" "bar-chart-2" }}
-                    </div>
+                    <div class="icon sm">{{- partial "lib/icon" "bar-chart-2" -}}</div>
                     <span class="mr-05">{{- .Params.parted.stat.data.level -}}</span>
                 </div>
                 <div class="mater box flex center-x">
-                    <div class="icon sm">
-                        {{ partial "lib/icon" "book-open" }}
-                    </div>
-                    <span class="ml-05">{{- partial $sums . }}  Session</span>
+                    <div class="icon sm">{{- partial "lib/icon" "book-open" -}}</div>
+                    <span class="ml-05">{{- partial $sums . }}  {{ T "course_session" -}}</span>
                 </div>
             </div>
             <div class="flex center-x ml-a">
-                <div class="icon sm">{{ partial "lib/icon" "share-2"  }}</div>
+                <div class="icon sm">{{- partial "lib/icon" "share-2" -}}</div>
             </div>
         </div>
     </div>

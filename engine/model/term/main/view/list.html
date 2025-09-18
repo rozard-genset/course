@@ -1,0 +1,23 @@
+{{- $part := partial "lib/pather/module-part.html" . -}}
+{{- $card := printf "%s/vert-card.html"  $part -}}
+
+{{- $data := partial "lib/course/query/node-item-with-term.html" . -}}
+{{- $list := .Paginate ($data) .Site.Params.course.pagenav -}}
+
+<div id="list" class="mb-60">
+    <div class="head mb-60">
+        <div class="flex border-bottom">
+            <div class="flex center-x">
+                <div class="icon md pt-10">{{- partial "lib/icon" "layers" -}}</div>
+                <h2 class="lead text-md font-bold uppercase mt-10 border-left mb-00 pb-10 pl-10">{{- T "looker_head_lead" -}}</h2>
+            </div>
+            <h2 class="lead text-md mt-10 ml-a">{{- T "pageds_head_lead" }} {{ ( .Paginate ($list) 2 ).PageNumber }}</h2>
+        </div>
+    </div>
+	<div class="leaf">
+		{{- range  $list.Pages -}}
+            {{ partial $card . }}
+		{{- end -}}
+	</div>
+	<div class="paginate">{{- partial "pagination.html" . -}}</div>
+</div> 

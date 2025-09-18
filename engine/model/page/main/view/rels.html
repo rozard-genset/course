@@ -1,8 +1,6 @@
 {{- $part := partial "lib/pather/module-part.html" . -}}
-{{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
 
-{{- $list := partial "lib/course/query/page-item-with-term.html" . -}}
+{{- $data := partial "lib/course/query/page-item-with-term.html" . -}}
 
 
 <div id="rels">
@@ -11,11 +9,11 @@
             <div class="icon md border-right mr-10 pr-10 pt-10">
                 {{- partial "icon/line/columns.svg" -}}
             </div>
-            <h2 class="text-md font-bold uppercase mt-00 mb-00 pb-10 pt-10">Further reading</h2>
+            <h2 class="text-md font-bold uppercase mt-00 mb-00 pb-10 pt-10">{{ T "furthr_head_lead" }}</h2>
         </div>
     </div>
     <div class="leaf">
-        {{- range $index, $value := $list -}}
+        {{- range $index, $value := $data -}}
             <a href="{{ .RelPermalink }}" class="card flex mb-30">
                 <div class="number text-lg border-all rounded-md flex center-x center-y">
                     {{- math.Sum $index 1 -}}

@@ -1,0 +1,49 @@
+main{
+    margin-top: 3rem;
+}
+
+
+@media only screen and (min-width: 480px) {
+}
+
+
+@media only screen and (min-width: 768px) {
+    main{
+        #main-1{
+            .rows{
+                grid-template-columns: calc( 70% - 5%) 30%;
+            }
+        }
+
+        #main-4{
+            .rows{
+                grid-template-columns: repeat( 2, 45%);
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 920px) {
+}
+
+
+@media only screen and (min-width: 1024px) {
+}
+
+
+@media only screen and (min-width: 1280px) {
+    main{
+        margin-top: 5rem;
+
+        #main-1{
+            .rows{
+                grid-template-columns: calc( 70% - 8%) 30%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 1536px) {  
+}

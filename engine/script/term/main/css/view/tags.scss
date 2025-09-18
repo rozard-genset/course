@@ -1,6 +1,11 @@
-#hero{
-    display: none;
+#tags{
+    margin-bottom: 6rem;
+
+    .leaf{
+        grid-template-columns: repeat( auto-fill, 200px );
+    }
 }
+
 
 
 @media only screen and (min-width: 480px) {
@@ -15,7 +20,11 @@
 
 @media only screen and (min-width: 1024px) {
 
-
+    #tags{
+        .leaf{
+            grid-template-columns: repeat( auto-fill, 200px );
+        }
+    }
 }
 
 

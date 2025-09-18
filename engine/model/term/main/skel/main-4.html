@@ -1,0 +1,10 @@
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $join := printf "%s/join.html" $view -}}
+{{- $team := printf "%s/team.html" $view -}}
+
+<div id="main-4">
+    <div class="rows">
+        {{- partial $join . -}}
+        {{- partial $team . -}}
+    </div>
+</div>

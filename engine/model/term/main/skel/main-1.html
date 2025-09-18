@@ -1,0 +1,10 @@
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $hero := printf "%s/hero.html" $view -}}
+{{- $lead := printf "%s/lead.html" $view -}}
+
+<div id="main-1">
+    <div class="rows">
+        {{- partial $hero . -}}
+        {{- partial $lead . -}}
+    </div>
+</div>

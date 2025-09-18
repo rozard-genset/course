@@ -1,14 +1,27 @@
+#list{
 
-#list {
     .leaf{
-        grid-gap: 2rem;
+        grid-gap: 2rem 0;
+    }
+
+    .pagination{
+        margin-top: 4rem;
     }
 }
 
 
 @media only screen and (min-width: 480px) {
 
+    #list{
+        .pagination{
+            margin: 7rem auto 0rem auto;
+        }
+    }
+}
 
+
+@media only screen and (min-width: 620px) {
+    
 }
 
 
@@ -16,29 +29,22 @@
 
     #list{
         .leaf{
-            grid-template-columns: repeat(2, calc( 50% - 1rem ));
+            grid-template-columns: repeat(auto-fill, 220px);
         }
     }
 }
 
 
 @media only screen and (min-width: 1024px) {
-
-    #list{
-        width: 100%;
-        margin: auto;
-        .leaf{
-            grid-template-columns: 100%;
-        }
-    }    
+   
 }
 
 
 @media only screen and (min-width: 1280px) {
-
-
+     
 }
 
 
 @media only screen and (min-width: 1536px) {
+
 }

@@ -2,16 +2,14 @@
 
 <template id="proto-feat">
     <div class="head flex center-x mb-30 border-bottom">
-        <div class="icon md">
-            {{- partial "icon/line/git-pull-request.svg" -}}
-        </div>
+        <div class="icon md">{{- partial "lib/icon" "git-pull-request" -}}</div>
         <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "header_subs_reco" }}</h2>
     </div>
     <div class="leaf">
         {{- range first 3 $data -}}
         <a href="{{ .RelPermalink }}" class="article">
             <h2 class="font-bold text-md">{{ .Title }}</h2>
-            <p class="text-sm"> {{ .Page.Params.Description }}</p>
+            <p class="text-sm"> {{ .Params.description }}</p>
         </a><hr>
         {{- end -}}
     </div>

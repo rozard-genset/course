@@ -9,7 +9,7 @@
 {{- else if and ( .IsSection ) ( eq $link ( printf "/%s/pool/" .Section ) ) -}}
     {{- $path = "path" -}}
 {{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/path" .Section ) ) -}}
-    {{- $path = "node" -}}
+    {{- $path = "term" -}}
 {{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/look" .Section ) ) -}}
     {{- $path = "look" -}}
 {{- else if  and ( .IsSection ) ( strings.Contains $link ( printf "%s/info" .Section ) ) -}}

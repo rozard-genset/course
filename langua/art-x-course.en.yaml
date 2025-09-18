@@ -13,16 +13,25 @@ regist_head_lead: register
 suport_head_lead: suport
 trains_head_lead: practice
 scored_head_lead: assignment
-tutors_tops_lead: top tutor
+tutors_head_lead: top tutor
+looker_head_lead: available course
+pageds_head_lead: page
+taging_head_lead: categories
+tablec_head_lead: in this article
+furthr_head_lead: further reading
 
 header_subs_more: exploration
 header_subs_feat: featured
 header_subs_tuto: tutor bootcamp
 header_subs_tcat: top categories
-header_subs_reco: recomended course
+header_subs_reco: explore course
+
 
 course_creator: creator
 course_contrib: contributor
+course_session: session
+
+
 
 level: level
 certificate: certificate

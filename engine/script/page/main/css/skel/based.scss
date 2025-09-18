@@ -22,7 +22,7 @@
     #page{
         margin: 5rem 0 7rem 0;
 
-        .grider{
+        .grid{
             grid-template-columns: 330px ( calc( 100% - 330px ) ) ;
             grid-gap: 5rem 0;
         }

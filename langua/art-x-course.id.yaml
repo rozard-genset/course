@@ -13,7 +13,12 @@ regist_head_lead: pendaftaran
 suport_head_lead: dukungan
 trains_head_lead: latihan
 scored_head_lead: penugasan
-tutors_tops_lead: top tutor
+tutors_head_lead: top tutor
+looker_head_lead: kelas tersedia
+pageds_head_lead: halaman
+taging_head_lead: kategori
+tablec_head_lead: daftar isi
+furthr_head_lead: bacaan terkait
 
 header_subs_more: eksplorasi
 header_subs_feat: unggulan
@@ -22,9 +27,11 @@ header_subs_tcat: kategori unggulan
 header_subs_reco: rekomendasi kelas
 
 
+
+
 course_creator: Penyusun 
 course_contrib: kontributor 
-
+course_session: pertemuan
 
 level: tingkat
 certificate: sertifikat

@@ -1,13 +1,15 @@
-<!-- variable -->
 {{- $skels := partial "lib/pather/module-skel.html" . -}}
 {{- $main1 := printf "%s/main-1.html" $skels -}}
 {{- $main2 := printf "%s/main-2.html" $skels -}}
 {{- $main3 := printf "%s/main-3.html" $skels -}}
+{{- $main4 := printf "%s/main-4.html" $skels -}}
 
-<main id="tape" class="main">
-    <div class="rows wrap">
+
+<main id="term" class="main">
+    <div class="wrap grid">
         {{- partial $main1 . -}}
         {{- partial $main2 . -}}
         {{- partial $main3 . -}}
+        {{- partial $main4 . -}}
     </div>
-</main> 
+</main>

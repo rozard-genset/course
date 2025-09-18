@@ -1,7 +1,8 @@
-{{- $part := "course/module/look/main/view/" -}}
-{{- $team := printf "%s/team.html" $part -}}
-{{- $join := printf "%s/join.html" $part -}}
+{{- $view := partial "lib/pather/module-view.html" . -}}
+{{- $team := printf "%s/team.html" $view -}}
+{{- $join := printf "%s/join.html" $view -}}
 
 <div id="main-3">
-    {{- partial $team . -}}{{- partial $join . -}}
+    {{- partial $team . -}}
+    {{- partial $join . -}}
 </div>
