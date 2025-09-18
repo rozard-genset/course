@@ -1,15 +1,16 @@
-{{- $card := "course/module/base/main/part/tuto-card.html" -}}
+{{- $part := "course/module/base/main/part" -}}
+{{- $card := printf "%s/tuto-card.html" $part -}}
 
 <template id="proto-tuto">
     <div class="head mb-60">
-        <div class="flex center-x border-bottom">
+        <div class="flex center-x border-bottom mb-50">
             <div class="icon xl pb-10">{{- partial "lib/icon" "user-plus" -}}</div>
             <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{ T "header_subs_tuto" }}</h1>
         </div>
-        {{- with .Params.parted.tuto.desc -}}<p class="desc">{{- . -}}</p>{{- end -}}
+        {{- with .Params.tutors.desc -}}<p class="desc">{{- . -}}</p>{{- end -}}
     </div>
     <div class="leaf">
-        {{- range $index, $value := .Params.parted.tuto.data -}}
+        {{- range $index, $value := .Params.tutors.data -}}
             <div class="item-{{ math.Sum $index 1 }}">{{- partial $card . -}}</div>
         {{- end -}}
     </div>

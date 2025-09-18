@@ -6,6 +6,11 @@
 		grid-gap: 3rem;
 	}
 
+	.metas {
+		display: grid;
+		align-items: space-between;
+	}
+
 	.thumb{
 		img{
 			width: 100%;
@@ -14,11 +19,14 @@
 	}
 
 	.infos {
-		
-		h1{
-			margin-bottom: 1.5rem;
-		}
+		display: grid;
+		align-items: space-between;
+		grid-gap: 3rem 0;
 
+		h1{
+			font-size: 1.5em;
+		}
+		
 		.count{
 			display: grid;
 			grid-template-columns: repeat(2, calc( 50% - 1rem ) );
@@ -40,6 +48,11 @@
 	 #hero{
 
 		.infos{
+
+			h1{
+				font-size: 1.6em;
+			}
+
 			.count {
 				grid-template-columns: repeat(2, calc( 50% - 1rem ) );
 			}
@@ -52,10 +65,8 @@
 	#hero{
 
 		.infos{
-			.title{
-				display: flex;
-				flex-direction: row-reverse;
-				justify-content: flex-end;
+			h1{
+				font-size: 1.8em;
 			}
 		}
 	}
@@ -75,6 +86,10 @@
 		}
 
 		.infos{
+
+			h1{
+				font-size: 2em;
+			}
 
 			.title{
 				display: block;

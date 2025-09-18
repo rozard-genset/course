@@ -1,1 +1,0 @@
-console.log('deffers paid course javascript module loaded');

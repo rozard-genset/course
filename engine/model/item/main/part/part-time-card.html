@@ -1,7 +1,7 @@
 
 {{- if eq .page.Params.billing.price "" -}}
 
-    <a href="{{ .RelPermalink }}" class="item flex">
+    <a href="{{ .data.RelPermalink }}" class="item flex">
         <div class="icon md rounded-full">
             {{ partial "lib/icon" "book" }}
         </div>

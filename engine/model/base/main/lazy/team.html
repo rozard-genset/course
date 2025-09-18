@@ -1,5 +1,5 @@
-{{- $path := "course/module/base/main/part" -}}
-{{- $site := $ -}}
+{{- $part := "course/module/base/main/part" -}}
+{{- $site := .Site -}}
 
 <template id="proto-team">
     <div class="head ">
@@ -7,16 +7,14 @@
             <div class="icon md">{{ partial "lib/icon" "shield" }}</div>
             <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "leader_head_lead" }}</h2>
         </div>
-        {{- with .Page.Params.chairman.desc -}}
-            <p class="text-sm mt-00">{{- . -}}</p>
-        {{- end -}}
+        {{- with .Page.Params.chairman.desc -}}<p class="text-sm mt-00">{{- . -}}</p>{{- end -}}
     </div>
     <div class="leaf grid">
     {{- range .Page.Params.Chairman.list -}}
         <div class="flex center-x">
             <div class="avatar">
-                {{- with .name -}}{{- with $site.Site.GetPage ( printf "/%s/%s" "profile" . ) -}}
-                    {{ $link := (.Page.Resources.GetMatch .Page.Params.Thumb).Fill "48x48 webp q100" }}
+                {{- with .name -}}{{- with $site.GetPage ( printf "/%s/%s" "profile" . ) -}}
+                    {{ $link := (.Page.Resources.GetMatch .Params.thumb).Fill "48x48 webp q100" }}
                     <img src="{{ $link.RelPermalink }}" class="rounded-full" width="{{ $link.Width }}" height="{{ $link.Height }}" alt="{{ . }} administrator image" fetchpriority="high">
                 {{- end -}}{{- end -}}
             </div>

@@ -5,6 +5,6 @@
 <div id="hero">
     <div class="thumb" >{{- partial $feat . -}}</div>
     <div class="leads">
-        {{- with .Page.Params.Parted.Hero.Lead -}}<h1>{{- . -}}</h1>{{- end -}}
+        {{- with .Params.heading.Lead -}}<h1>{{- . -}}</h1>{{- end -}}
     </div>
 </div>

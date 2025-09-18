@@ -10,12 +10,12 @@
 <div id="hero">
     <div class="rows grid">
         <div class="thumb">{{- partial $feat . -}}</div>
-        <div class="metas grid center-x">
+        <div class="metas grid">
             <div class="infos">
-                <div class="title mb-40">
-                    <h1 class="text-4xl mt-00 mb-00">{{ .Title }}</h1>
-                    {{- partial $team . -}}
+                <div class="title">
+                    <h1 class="mt-00 mb-00">{{ .Title }}</h1>
                 </div>
+                 {{- partial $team . -}}
                 <div class="count">
                     {{- $module := ( dict "name" ( T "module_stat_lead" ) "desc" ( T "module_stat_desc" ) "sums" ( partial "lib/course/datum/item-sums-repo.html"  . ) ) -}}
                     {{- $asigne := ( dict "name" ( T "assign_stat_lead" ) "desc" ( T "assign_stat_desc" ) "sums" ( partial "lib/course/datum/item-sums-test.html" . ) ) -}}
@@ -26,9 +26,7 @@
                     {{- end -}}
                 </div>
             </div>
-            <div class="offer">
-                {{- cond ( ne .Params.billing.price "" ) ( partial $paid . ) "" -}}
-            </div>
+            {{- cond ( ne .Params.billing.price "" ) ( partial $paid . ) "" -}}
         </div>
     </div>
 </div>

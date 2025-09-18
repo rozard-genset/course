@@ -1,7 +1,8 @@
 #tabs{
 	margin-bottom: 0rem;
 	.head{
-		grid-template-columns: repeat(3, calc( 33.333% ) );
+		grid-template-columns: repeat(3, auto );
+		justify-content: space-between;
 		.icon{
 			padding: 2px;
 		}
@@ -9,13 +10,16 @@
 
 	.node-action.open, .tab-action.open .icon, .tab-action.open h2 {
         color: var(--link-02-based);
-    }
-
-	
+    }	
 }
 
 @media only screen and (min-width: 480px) {
 
+	 #tabs{
+		.head{
+			grid-template-columns: repeat(3, 30% );
+		}	
+	}
 }
 
 @media only screen and (min-width: 768px) {

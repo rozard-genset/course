@@ -1,7 +1,7 @@
 {{ $data := partial "lib/course/query/look-item-neer-term" . }}
 
 <template id="proto-term">
-    <div class="head flex center-x border-bottom mb-30">
+    <div class="head flex center-x border-bottom mb-40">
         <div class="icon md">{{- partial "lib/icon" "arrow-right" -}}</div>
         <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "taging_head_lead" }}</h2>
     </div>
@@ -9,7 +9,7 @@
     {{- range $data -}}
         <a href="{{ .RelPermalink }}" class="menu flex center-x mb-20">
             <div class="icon sm border-all rounded-full">{{- partial "lib/icon" "plus" -}}</div>
-            <div class="title">{{- .Title -}}</div>
+            <div class="title text-md">{{- .Title -}}</div>
         </a>
     {{- end -}}
     </div>

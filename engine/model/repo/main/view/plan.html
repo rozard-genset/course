@@ -15,6 +15,7 @@
                 </div>
                 <div id="session-module-{{ .session }}" class="parted {{ with ne $status true -}} close {{- end -}}">
                     {{- range .list -}}
+                    
                     <a href="{{ .RelPermalink }}" class="card-plan mb-10 {{ with eq $status true -}} active {{- end -}}">
                         <div class="name flex center-x">
                             <div class="icon lg">{{ partial "lib/icon" "folder" }}</div>

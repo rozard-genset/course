@@ -10,7 +10,7 @@
                 <h3 class="top uppercase flex center-x float-right font-bold text-sm mt-00 mb-00">
                     <div class="icon xs ml-10">{{- partial "lib/icon" "arrow-left" -}}</div>{{ T "preves_repo_acts" }}
                 </h3>
-                <div class="mid desktop text-sm uppercase font-bold mb-05 clear-both block">Session {{ .Params.weight }}</div><div class="low desktop block">{{ .Title }}</div>
+                <div class="mid desktop text-sm uppercase font-bold mb-05 clear-both block">{{ T "session_take_word" }} {{ .Params.weight }}</div><div class="low desktop block">{{ .Title }}</div>
             </a>{{- end -}}
         </div>
         <div class="prev-post text-left border-left">
@@ -19,7 +19,7 @@
                 <h3 class="top uppercase flex center-x font-bold text-sm mt-00 mb-00">
                     {{ T "nextos_repo_acts" }}<div class="icon xs ml-10">{{- partial "lib/icon" "arrow-right" -}}</div>
                 </h3>
-                <div class="mid desktop text-sm uppercase font-bold mb-05 block">Session {{ .Params.weight }}</div><div class="low desktop block">{{ .Title }}</div>
+                <div class="mid desktop text-sm uppercase font-bold mb-05 block">{{ T "session_take_word" }} {{ .Params.weight }}</div><div class="low desktop block">{{ .Title }}</div>
             </a>{{- end -}}
         </div>
     </div>

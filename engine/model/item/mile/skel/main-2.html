@@ -1,9 +1,0 @@
-{{- $path := partial "lib/pather/module-view.html" . -}}
-{{- $plan := printf "%s/plan.html" $path -}}
-{{- $stat := printf "%s/stat.html" $path -}}
-{{- $team := printf "%s/team.html" $path -}}
-{{- $need := printf "%s/need.html" $path -}}
-
-<div id="main-2">
-    {{- partial $stat . -}}{{- partial $need . -}}{{- partial $team . -}}
-</div>

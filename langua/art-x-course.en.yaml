@@ -14,7 +14,7 @@ suport_head_lead: suport
 trains_head_lead: practice
 scored_head_lead: assignment
 tutors_head_lead: top tutor
-looker_head_lead: available course
+looker_head_lead: explore course
 pageds_head_lead: page
 taging_head_lead: categories
 tablec_head_lead: in this article
@@ -42,15 +42,15 @@ header_subs_more: exploration
 header_subs_feat: featured
 header_subs_tuto: tutor bootcamp
 header_subs_tcat: top categories
-header_subs_reco: explore course
-
+header_subs_reco: recomendation
+header_subs_regs: registration
+header_subs_bugs: reporting
 
 visits_take_acts: visit 
 preves_repo_acts: Previous Module
 nextos_repo_acts: Next Module 
 remeds_init_acts: take remedial
 tested_init_acts: start assignment
-
 
 header_main_lead: classroom
 header_main_ends: end class 
@@ -65,6 +65,14 @@ session_take_word: session
 activit_take_word: activity
 openeds_take_word: open
 closeds_take_word: close
+regists_take_word: register
+tutorer_take_word: tutor
+decribe_take_word: description
+moduler_take_word: module
+takerer_take_word: activity
+informa_take_word: info
+leveler_take_word: level
+certifi_take_word: certificate
 
 tasked_decs_note: this is practise activity for module
 tested_decs_note: task bellow is a assigment activity for module
@@ -79,47 +87,21 @@ assign_desc_note: no assignment activity for this time
 assign_pass_lead: passing grade
 assign_type_lead: fullfilment
 assign_rems_lead: remedial
-
 assign_type_true: personal
 assign_type_fals: workgroup
-
 assign_rems_true: available
 assign_rems_fals: not available
-
 
 course_creator: creator
 course_contrib: contributor
 course_session: session
 
-
-
-level: level
-certificate: certificate
-session: session 
-featured: featured 
-visit: class information
-get_more: tampilkan lainya
-register: register
-
-
-
-
-
-main_tabs_lead_desc: description
-main_tabs_lead_plan: module
-main_tabs_lead_task: task
-main_tabs_lead_info: info
-
-
 parted_hero_prov: provide by
-
 parted_need_lead: requirement
 parted_stat_lead: overview
-
 parted_take_free: take class
 parted_take_paid: checkout
 parted_take_pric: free
-
 parted_node_lead: classroom
 parted_node_clas: class
 parted_node_caps: capacity
@@ -130,18 +112,6 @@ parted_node_open: open
 parted_node_clos: close
 parted_node_init: start
 parted_node_ends: end
-
 parted_team_lead: stakeholder
-
 parted_task_name: task
-
 parted_task_lead: assignment
-
-
-home_class_tutor: learnhub
-home_class_tutor_long: tutor classroom
-home_term: exploration
-home_term_long: explore subjects
-homer_term_link: all categories
-home_find_course: explore course
-home_all_course: general

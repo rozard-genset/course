@@ -14,7 +14,7 @@ suport_head_lead: dukungan
 trains_head_lead: latihan
 scored_head_lead: penugasan
 tutors_head_lead: top tutor
-looker_head_lead: kelas tersedia
+looker_head_lead: jelajahi kelas
 pageds_head_lead: halaman
 taging_head_lead: kategori
 tablec_head_lead: daftar isi
@@ -43,8 +43,9 @@ header_subs_more: eksplorasi
 header_subs_feat: unggulan
 header_subs_tuto: kelas tutor
 header_subs_tcat: kategori unggulan
-header_subs_reco: rekomendasi kelas
-
+header_subs_reco: kelas rekomendasi 
+header_subs_regs: registrasi
+header_subs_bugs: pegaduan
 
 visits_take_acts: kunjungi
 preves_repo_acts: kembali
@@ -66,7 +67,14 @@ session_take_word: pertemuan
 activit_take_word: aktivitas
 openeds_take_word: dibuka
 closeds_take_word: ditutup
-
+regists_take_word: daftar
+tutorer_take_word: pengajar
+decribe_take_word: deskripsi
+moduler_take_word: modul
+takerer_take_word: aktivitas
+informa_take_word: info
+leveler_take_word: tingkat
+certifi_take_word: sertifikat
 
 tasked_decs_note: berikut ini adalah aktivitas latihan untuk modul
 tested_decs_note: aktivitas penugasan dan penilaian untuk modul
@@ -94,31 +102,13 @@ course_creator: Penyusun
 course_contrib: kontributor 
 course_session: pertemuan
 
-level: tingkat
-certificate: sertifikat
-session: pertemuan 
-featured: unggulan
-visit: informasi kelas
-get_more: tampilkan lainya
-register: daftar
-
-
-main_tabs_lead_info: info
-main_tabs_lead_plan: modul
-main_tabs_lead_task: tugas
-main_tabs_lead_desc: deskripsi
-
 
 parted_hero_prov: publikator
-
 parted_need_lead: prasyarat
-
 parted_stat_lead: pratinjau
-
 parted_take_free: take class
 parted_take_paid: checkout
 parted_take_pric: tersedia
-
 parted_node_lead: ruang kelas
 parted_node_clas: kelas
 parted_node_caps: kapasitas
@@ -129,16 +119,6 @@ parted_node_open: mulai
 parted_node_clos: selesai
 parted_node_init: mulai
 parted_node_ends: selesai
-
 parted_team_lead: penyusun
-
 parted_task_name: tugas
 parted_task_lead: penugasan
-
-home_class_tutor: kelas tutor
-home_class_tutor_long: kelas tutor
-home_term: eksplorasi
-home_term_long: jelajahi subjek
-home_term_link: semua kategori
-home_find_course: temukan kelas
-home_all_course: semua
