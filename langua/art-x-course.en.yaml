@@ -20,6 +20,13 @@ taging_head_lead: categories
 tablec_head_lead: in this article
 furthr_head_lead: further reading
 subjec_head_lead: explore subjects
+guides_head_lead: guides
+sesion_navs_lead: session navigation
+sesion_navs_subs: current
+talked_head_lead: start disccusion
+talked_head_rule: rules
+tasked_head_rule: practice
+tested_head_rule: assignment
 
 
 header_subs_more: exploration
@@ -30,6 +37,20 @@ header_subs_reco: explore course
 
 
 visits_take_acts: visit 
+preves_repo_acts: Previous Module
+nextos_repo_acts: Next Module 
+
+
+header_repo_lead: classroom 
+header_repo_ends: close module 
+
+
+session_take_word: session
+activit_take_word: activity
+
+tasked_decs_note: this is practise activity for module
+tested_decs_note: task bellow is a assigment activity for module
+
 
 course_creator: creator
 course_contrib: contributor

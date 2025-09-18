@@ -5,6 +5,7 @@
 
 {{- $data := partial "lib/course/query/item-page-each-kind.html" . -}}
 
+
 <div id="task" class="mt-60 grid">
     {{- range $index, $value := $data.time -}}{{ $session := math.Sum $index 1 }}
     <div class="period">

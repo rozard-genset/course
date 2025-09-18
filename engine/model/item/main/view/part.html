@@ -2,8 +2,9 @@
 {{- $view := partial "lib/pather/module-view.html" . -}}
 
 {{- $time := printf "%s/part-time-card.html" $part -}}
-
 {{- $data := partial "lib/course/query/item-page-each-kind.html" . -}}
+
+{{- $page := . -}}
 
 <div id="part" class="mt-60 grid">
     {{- range $index, $value := $data.repo -}}
@@ -19,7 +20,7 @@
             <div class="desc text-md mb-40">{{ .page.Params.parted.desc }}</div>
         </div>
         <div id="part-{{ .session }}" class="leaf dropboxs">
-            {{- range .list -}}{{- partial $time . -}}{{- end -}}
+            {{- range .list -}}{{- partial $time ( dict "page" $page "data" . ) . -}}{{- end -}}
         </div>
     </div>
     {{- end -}}

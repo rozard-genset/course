@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="offer">
-                {{- cond ( eq .Params.billing.price "" ) ( partial $open . ) ( partial $paid . ) -}}
+                {{- cond ( ne .Params.billing.price "" ) ( partial $paid . ) "" -}}
             </div>
         </div>
     </div>

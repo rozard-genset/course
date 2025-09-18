@@ -6,8 +6,8 @@ header{
     background-color: var(--background-02);
 
     nav{
-        height: 50px;
         width: 100%;
+        height: 50px;
         padding: 0 2rem;
     }
 
@@ -24,8 +24,8 @@ header{
     }
 
     .button.outline.cancel:hover{
-        background-color: red;
         color: #fff;
+        background-color: red;
         border: 1px solid red;
         transition: 200ms;
     }

@@ -1,29 +1,26 @@
-{{- $part := partial "lib/pather/module-part.html" . -}}
 {{- $view := partial "lib/pather/module-view.html" . -}}
-{{- $lazy := partial "lib/pather/module-lazy.html" . -}}
-
 
 <footer id="snip">
     <div class="wrap">
         <div class="boxed">
             <button class="toggle" data-action="open-plan" aria-label="open learning plan">
                 <div class="icon md">
-                    {{ partial "icon/line/layers.svgs" }}
+                    {{ partial "lib/icon" "layers" }}
                 </div>
             </button>
             <button class="tabbed open" data-action="tabs-repo" aria-label="open current module">
                 <div class="icon md">
-                    {{ partial "icon/line/book.svgs" }}
+                    {{ partial "lib/icon" "book" }}
                 </div>
             </button>
             <button class="tabbed" data-action="tabs-talk" aria-label="open current comment">
                 <div class="icon md">
-                    {{ partial "icon/line/message-circle.svgs" }}
+                    {{ partial "lib/icon" "message-circle" }}
                 </div>
             </button>
             <button class="tabbed" data-action="tabs-help" aria-label="report current module">
                 <div class="icon md">
-                    {{ partial "icon/line/flag.svgs" }}
+                    {{ partial "lib/icon" "flag" }}
                 </div>
             </button>
         </div>

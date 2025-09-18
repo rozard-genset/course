@@ -1,7 +1,7 @@
 <a href="{{ .RelPermalink }}" class="mb-10 pl-00">
     <div class="info flex card">
-        <div class="icon md border-all rounded-lg">{{- partial "icon/line/edit.svg" -}}</div>
+        <div class="icon md border-all rounded-lg">{{- partial "lib/icon" "edit" -}}</div>
         <h3 class="capitalize text-lg pl-10 font-bold mb-15 mt-00">{{ .Title }}</h3>
     </div>
-    <p class="border-left ml-20 pl-20 pt-10 mt-00 mb-00"> {{ .Page.Params.Description }}</p>                
+    <p class="border-left ml-20 pl-20 pt-10 mt-00 mb-00"> {{ .Params.description }}</p>                
 </a>

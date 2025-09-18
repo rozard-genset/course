@@ -14,10 +14,10 @@ footer {
         margin: auto;
 		
         button{
-            background-color: transparent;
-            outline: none;
             border: none;
+            outline: none;
             color: var(--color-02);
+            background-color: transparent;
         }
 
         .tabbed.open, button[data-repo="open"]{

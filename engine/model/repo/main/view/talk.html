@@ -1,16 +1,16 @@
 <div id="talk">
     <div class="main">
-        <h2 class="mb-30 text-lg font-bold uppercase">Start Disccusion</h2>
+        <h2 class="mb-30 text-lg font-bold uppercase">{{ T "talked_head_lead" }}</h2>
         {{ partial "parted/forum/tele/render.html" . }}
     </div>
     <div class="info">
         <div class="rule mb-60">
-            <h3 class="mb-20 text-md font-bold uppercase">Rules</h3>
-            <p class="mb-30 text-sm">{{ .Parent.Parent.Page.Params.Module.Forums.Lead }}</p>
+            <h3 class="mb-20 text-md font-bold uppercase">{{ T "talked_head_rule" }}</h3>
+            <p class="mb-30 text-sm">{{ .Parent.Parent.Page.Params.forums.lead }}</p>
             <div class="rule">
             {{- range .Parent.Page.Params.Forums.Rules -}}
                 <div class="flex mb-20">
-                    <div class="icon sm mr-10">{{- partial "icon/line/check-circle.svg" -}}</div>
+                    <div class="icon sm mr-10">{{- partial "lib/icon" "check-circle" -}}</div>
                     <p class="text-sm mb-00 mt-00">{{ . }}</p>
                 </div>
             {{- end -}}

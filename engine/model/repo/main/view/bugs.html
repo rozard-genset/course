@@ -1,18 +1,18 @@
 <div id="bugs">
     <div class="main">
-        <h2 class="mb-30 text-lg font-bold uppercase">Report Trouble</h2>
+        <h2 class="mb-30 text-lg font-bold uppercase">{{ T "report_head_lead" }}</h2>
         <div id="bugs-report" class="issue">
             {{- partial "parted/report/main/render.html" . -}}
         </div>
     </div>
     <div class="info">
         <div class="rule mb-60">
-            <h3 class="mb-20 text-md font-bold uppercase">Guides</h3>
-            <p class="mb-30 text-sm">{{- .Parent.Page.Params.Module.Report.Lead -}}</p>
+            <h3 class="mb-20 text-md font-bold uppercase">{{ T "guides_head_lead" }}</h3>
+            <p class="mb-30 text-sm">{{- .Parent.Page.Params.report.lead -}}</p>
             <div class="rule">
-            {{- range .Parent.Page.Params.Report.Rules -}}
+            {{- range .Parent.Page.Params.report.rules -}}
                 <div class="flex mb-20">
-                    <div class="icon sm mr-10">{{- partial "icon/line/check-circle.svg" -}}</div>
+                    <div class="icon sm mr-10">{{- partial "lib/icon" "check-circle" -}}</div>
                     <p class="text-sm mb-00 mt-00">{{ . }}</p>
                 </div>
             {{- end -}}

@@ -2,13 +2,13 @@
     <div class="head mb-20">
         <div class="flex center-x border-bottom mb-10">
             <div class="icon md">{{- partial "lib/icon" "edit" -}}</div>
-            <h2 class="capitalize text-md font-bold mb-00 mt-00 border-left pl-20">Penilaian</h2>
-            <h2 class="text-md font-bold mb-00 mt-00 ml-a pr-10 pt-05 pb-05">{{ len .test }}</h2> {{ T "parted_task_name" }}
+            <h2 class="uppercase text-sm font-bold mb-00 mt-00 border-left pl-20 pb-10">{{ T "tested_head_rule" }}</h2>
+            <h2 class="text-md mb-00 mt-00 ml-a pr-10 pb-10"><span class="font-bold mr-10">{{ len .test }}</span>{{- T "activit_take_word" -}}</h2> 
         </div>
-        <p class="text-md mb-00 mt-00 pt-10 pb-10">{{ .page.Params.assign.goal }}</p>
+        <p class="text-md mb-00 mt-00 pt-10 pb-10">{{- .page.Params.assign.goal -}}</p>
     </div>
     <div class="desc">
-        {{ range $index , $value := .test }}
+        {{- range $index , $value := .test -}}
         <a href="{{ .RelPermalink }}" class="flex mb-30">
             <div class="text-xs font-bold number border-all rounded-lg grid center-x center-y">
                 {{ math.Sum $index 1 }}

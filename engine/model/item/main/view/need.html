@@ -4,8 +4,11 @@
 
 
 <div id="need" class="mb-60">
-    <div class="head mb-15 mb-40">
-        <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_need_lead" }}</h2>
+    <div class="head flex center-x border-bottom mb-40">
+        <div class="icon md">
+            {{ partial "icon/line/package.svg" }}
+        </div>
+        <h2 class="text-md uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "parted_need_lead" }}</h2>
     </div>
     <div class="leaf grid">
         {{- range $data -}}

@@ -4,8 +4,9 @@
 {{- $team := printf "%s/team-user-team.html" $part -}}
 
 <div id="team" class="mb-60">
-    <div class="head mb-15 mb-60">
-        <h2 class="text-md uppercase font-bold mt-00 mb-00">{{ T "parted_team_lead" }}</h2>
+    <div class="head flex center-x border-bottom mb-40">
+        <div class="icon md">{{- partial "lib/icon" "user" -}}</div>
+        <h2 class="text-md uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "parted_team_lead" }}</h2>
     </div>
     <div class="leaf">
         {{- partial $lead . -}}

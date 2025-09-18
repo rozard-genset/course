@@ -19,7 +19,15 @@ pageds_head_lead: halaman
 taging_head_lead: kategori
 tablec_head_lead: daftar isi
 furthr_head_lead: bacaan terkait
-subjec_head_lead: jelajahi subjek
+subjec_head_lead: jelajahi 
+guides_head_lead: panduan
+sesion_navs_lead: navigasi pertemuan
+sesion_navs_subs: berlangsung
+talked_head_lead: mulai diskusi
+talked_head_rule: peraturan
+tasked_head_rule: latihan
+tested_head_rule: penugasan
+
 
 header_subs_more: eksplorasi
 header_subs_feat: unggulan
@@ -28,7 +36,18 @@ header_subs_tcat: kategori unggulan
 header_subs_reco: rekomendasi kelas
 
 visits_take_acts: kunjungi
+preves_repo_acts: kembali
+nextos_repo_acts: lanjutkan
 
+
+header_repo_lead: kelas
+header_repo_ends: tutup modul 
+
+session_take_word: pertemuan
+activit_take_word: aktivitas
+
+tasked_decs_note: berikut ini adalah aktivitas latihan untuk modul
+tested_decs_note: aktivitas penugasan dan penilaian untuk modul
 
 
 course_creator: Penyusun 

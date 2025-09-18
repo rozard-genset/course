@@ -1,15 +1,39 @@
-<div class="{{ .name }} mb-40">
-    <div class="li-head mb-10">
-        <h3 class="text-sm font-bold uppercase mb-00">{{ T "parted_node_regs" }}</h3>
-    </div>
-    <div class="li-leaf grid">
-        <div class="box-left subli">
-            <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_open" }}</div>
-            <h4 class="text-md mt-05 mb-00">{{ .start }}</h4>
+
+
+{{- if eq .Params.billing.price "" -}}
+
+    <a href="{{ .RelPermalink }}" class="{{ .name }} mb-40">
+        <div class="li-head mb-10">
+            <h3 class="text-sm font-bold uppercase mb-00">{{ T "parted_node_regs" }}</h3>
         </div>
-        <div class="box-right subli">
-            <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_clos" }}</div>
-            <h4 class="text-md mt-05 mb-00">{{ .close }}</h4>
+        <div class="li-leaf grid">
+            <div class="box-left subli">
+                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_open" }}</div>
+                <h4 class="text-md mt-05 mb-00">{{ .start }}</h4>
+            </div>
+            <div class="box-right subli">
+                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_clos" }}</div>
+                <h4 class="text-md mt-05 mb-00">{{ .close }}</h4>
+            </div>
+        </div>
+    </a>
+
+{{- else -}}
+
+    <div class="{{ .name }} mb-40">
+        <div class="li-head mb-10">
+            <h3 class="text-sm font-bold uppercase mb-00">{{ T "parted_node_regs" }}</h3>
+        </div>
+        <div class="li-leaf grid">
+            <div class="box-left subli">
+                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_open" }}</div>
+                <h4 class="text-md mt-05 mb-00">{{ .start }}</h4>
+            </div>
+            <div class="box-right subli">
+                <div class="text-sm font-bold capitalize mb-00 pt-10">{{ T "parted_node_clos" }}</div>
+                <h4 class="text-md mt-05 mb-00">{{ .close }}</h4>
+            </div>
         </div>
     </div>
-</div>
+    
+{{- end -}}
