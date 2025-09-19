@@ -1,4 +1,4 @@
-{{- $alls := .RegularPagesRecursive -}}
+{{- $alls := sort .RegularPagesRecursive.ByWeight "Params.lister" -}}
 {{- $info := slice -}}
 {{- $node := slice -}}
 {{- $repo := slice -}}
