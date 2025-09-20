@@ -6,16 +6,19 @@
 <div id="need" class="mb-60">
     <div class="head flex center-x border-bottom mb-40">
         <div class="icon md">
-            {{ partial "icon/line/package.svg" }}
+            {{ partial "lib/icon" "package" }}
         </div>
         <h2 class="text-md uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "parted_need_lead" }}</h2>
     </div>
     <div class="leaf grid">
         {{- range $data -}}
         <div class="flex mb-30">
-            <div class="icon sm mr-15">{{ partial "lib/icon.html" .icon }}</div>
+            <div class="icon sm mr-15">{{ partial "lib/icon" .icon }}</div>
             <div class="text border-left">
-                <h3 class="uppercase text-sm font-bold mb-05 mt-00 pl-20">{{ .prop }}</h3>
+                <div class="flex">
+                    <h3 class="uppercase text-sm font-bold mb-05 mt-00 pl-20">{{ .name }}</h3>
+                    <h3 class="capitalize text-xs mb-05 mt-00 pl-20 ml-a">{{ .prop }}</h3>
+                </div>
                 <hr>
                 <p class="text-sm mb-00 mt-00 pl-20">{{ .desc }}</p>
             </div>

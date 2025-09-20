@@ -1,4 +1,6 @@
 
+{{- $title := partial "lib/course/datum/item-part-lead.html" .data -}}
+
 {{- if eq .page.Params.billing.price "" -}}
 
     <a href="{{ .data.RelPermalink }}" class="item flex">
@@ -8,7 +10,7 @@
         <div class="desc border-left">
             <div class="flex border-bottom pl-20 pb-05">
                 <h2 class="text-md font-bold mt-00 mb-00 mr-15">{{ .data.Params.lister }}</span>
-                <h2 class="text-md font-bold mt-00 mb-00">{{ .data.Title }}</h2>
+                <h2 class="text-md font-bold mt-00 mb-00">{{ $title }}</h2>
             </div>
             <p class="text-sm mb-00 mt-00 pl-20 pt-05">{{ .data.Params.description }}</p>
         </div>

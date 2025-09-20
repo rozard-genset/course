@@ -8,7 +8,7 @@
 
 <div id="node">
     <div class="subhead border-bottom flex center-x mb-20">
-        <div class="icon md mr-15 border-right pa-05">{{- partial "icon/line/layers.svg" -}}</div>
+        <div class="icon md mr-15 border-right pa-05">{{- partial "lib/icon" "layers" -}}</div>
         <h2 class="text-md uppercase font-bold mt-00 mb-00 pr-20">{{ T "parted_node_lead" }}</h2>
         <div class="boxtab flex center-x ml-a">
             {{ range $index, $value := $data.node }}{{ $uniq := ( .Title | urlize )  }}
