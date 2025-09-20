@@ -1,5 +1,6 @@
-{{ $team := partial "lib/course/datum/item-user-teams.html" . }}
+{{- $team := partial "lib/course/datum/item-user-teams.html" . -}}
 
+{{- if gt ( len $team ) 0 -}}
 <div class="team">
     <h2 class="text-md font-bold">{{ T "course_contrib" }}</h2>
     <div class="grid mt-30">
@@ -10,3 +11,4 @@
         {{ end }}
     </div>
 </div>
+{{- end -}}
