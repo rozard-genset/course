@@ -44,6 +44,7 @@
     .carbox.horibox{
         grid-template-columns:  calc( 100% - 135px ) 135px;
         grid-template-rows: 135px;
+        height: 135px;
         grid-gap: 0;
 
         .thumb{
