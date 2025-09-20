@@ -1,7 +1,8 @@
 {{- $image := .Page.Resources.GetMatch .Destination -}}
 
 {{- if $image -}}
-    <picture class="rounded-2xl">
+<figure>
+    <picture class="rounded-md">
 
         {{- $xs := $image.Resize "480x webp q100" -}}
         <source media="(width < 481px)" srcset="{{ $xs.RelPermalink }}"/>
@@ -18,4 +19,6 @@
         {{- $top := $image.Resize "800x webp q100" -}}
         <img src="{{ $top.RelPermalink }}" alt="{{ .Title }}" width="{{ $top.Width }}" height="{{ $top.Height }}" title="{{ .Title }}" loading="lazy"/>
     </picture>
+    {{- with .PlainText }}<figcaption>{{ . | markdownify }}</figcaption>{{ end -}}
+</figure>
 {{- end -}}
