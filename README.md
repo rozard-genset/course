@@ -1,2 +1,2 @@
-# course
+# gravity
 webgen course generator
