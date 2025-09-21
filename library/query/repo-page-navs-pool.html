@@ -1,9 +1,21 @@
-{{- $data := slice -}}
+{{- $data := slice  -}}
+{{- $list := slice  -}}
+{{- $type := sort .Parent.RegularPagesRecursive.ByWeight "Params.lister" -}}
 
-{{- range .Parent.RegularPagesRecursive.ByWeight -}}
-    {{- if strings.Contains .RelPermalink "/repo/" -}} 
-        {{- $data = $data | append . -}}
-    {{- end -}}
+{{- range $index, $value := $type -}}
+    {{ if and ( strings.Contains .RelPermalink "/repo/" ) ( eq ( in $list .Weight ) false ) }}
+        {{- $list = $list | append .Weight  -}}
+    {{ end }}
+{{- end -}} 
+
+
+{{- range $list -}}
+    {{- $uniq := . -}}
+    {{- range $index, $value := $type -}}
+        {{- if and ( strings.Contains .RelPermalink "/repo/" ) ( eq .Params.weight ( int $uniq ) ) -}}
+            {{- $data = $data | append . -}}
+        {{- end -}}
+    {{ end }}
 {{- end -}}
 
 {{- return $data -}}
