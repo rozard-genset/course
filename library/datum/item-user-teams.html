@@ -6,9 +6,6 @@
 
 {{- range .Pages -}}
 
-  	{{- if eq ( len .Params.metadata.author ) 0 -}}
-     	{{- continue -}}
-  	{{- end -}}
 
   	{{- range .Params.metadata.author -}}
    		{{- if or ( in $pool . ) ( in $lead . ) -}}{{- continue -}}{{- end -}}
