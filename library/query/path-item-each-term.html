@@ -1,7 +1,7 @@
 <!-- populate term -->
 {{- $all_term := slice -}}
 {{- $all_page := slice -}} 
-{{- $set_term := .Site.GetPage ( printf "%s/term" .Section ) -}}
+{{- $set_term := .Site.GetPage ( printf "%s/path" .Section ) -}}
 
 {{- range $set_term.Pages -}}
     {{ if gt ( len .Title ) 0 }}
