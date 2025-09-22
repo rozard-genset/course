@@ -2,7 +2,7 @@
 
 {{- range where .Site.Pages "Type" .Section  -}}
 
-    {{- if strings.Contains .Page.RelPermalink ( printf "%s/path" .Section  ) -}}
+    {{- if strings.Contains .Page.RelPermalink ( printf "%s/term" .Section  ) -}}
 
         {{- $link := .Page.RelPermalink -}}
         {{- $path := split $link "/" -}}

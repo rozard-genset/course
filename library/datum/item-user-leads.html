@@ -1,6 +1,7 @@
 {{- $data := slice -}}
 {{- $site := .Site -}}
 
+
 {{- range .Params.metadata.author -}}
 
     {{- $name := ( . | urlize  ) -}}
