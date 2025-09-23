@@ -1,14 +1,14 @@
 {{- $data := slice -}}
 {{- $site := .Site -}}
 
-
+{{ if .Params.metadata.author }}
 {{- range .Params.metadata.author -}}
 
     {{- $name := ( . | urlize  ) -}}
     {{- with and ( $name ) ( $site.GetPage ( printf "/%s/%s" "profile" $name ) ) -}}
         {{- $data = $data | append . -}}
     {{- end -}}
-
+{{ end }}
 {{ end }}
 
 {{- return $data -}}

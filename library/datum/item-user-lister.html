@@ -1,11 +1,15 @@
 {{- $user := slice -}}
 {{- $page := slice -}}
 {{- range where site.RegularPages "Type" .Section -}}
+    {{ if .Params.metadata.author }}
+
     {{- if eq .Params.metadata.author slice  -}}
         {{ continue }}
     {{- end -}}
 
     {{ $nows := . }}
+
+   
     {{ range .Params.metadata.author }}
 
         {{ if eq  ( in $user . ) true  }}
@@ -16,7 +20,8 @@
         {{- $page = $page | append $nows -}}   
 
     {{ end }}
-    
+
+     {{ end }}
         
 {{- end -}}
 

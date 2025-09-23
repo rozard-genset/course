@@ -1,7 +1,7 @@
 {{- $data := partial "lib/course/datum/item-user-leads.html" . -}}
 
 {{- range $data -}}
-<a href="{{ .RelPermalink }}" class="lead flex center-x" aria-label="Visit {{ .Title}} profile page">
+<a href="{{ .RelPermalink }}" class="lead flex center-x" aria-label="Visit {{ .Title }} profile page">
     <div class="profile rounded-full">{{- partial "parted/avatar/user-62.html" . -}}</div>
     <div class="bio ml-20">
         <h2 class="text-md font-bold mb-00 mt-00">{{ .Title }}</h2>
