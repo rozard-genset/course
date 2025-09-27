@@ -1,2 +1,2 @@
-# gravity
-webgen course generator
+# course module
+rozard course generator
