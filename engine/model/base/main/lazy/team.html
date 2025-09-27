@@ -14,7 +14,7 @@
         <div class="flex center-x">
             <div class="avatar">
                 {{- with .name -}}{{- with $site.GetPage ( printf "/%s/%s" "profile" . ) -}}
-                    {{ $link := (.Page.Resources.GetMatch .Params.thumb).Fill "48x48 webp q100" }}
+                    {{ $link := (.Page.Resources.GetMatch .Params.thumb).Fill "36x36 webp q100" }}
                     <img src="{{ $link.RelPermalink }}" class="rounded-full" width="{{ $link.Width }}" height="{{ $link.Height }}" alt="{{ . }} administrator image" fetchpriority="high">
                 {{- end -}}{{- end -}}
             </div>
