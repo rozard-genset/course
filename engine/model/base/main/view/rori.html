@@ -4,8 +4,8 @@
 <div id="{{ .name | urlize }}" class="rori grid">
     <div class="head">
         <div class="flex center-x border-bottom mb-40">
-            <div class="icon lg pb-10">{{- partial "lib/icon" "box" -}}</div>
-            <h1 class="text-lg font-normal uppercase border-left pl-15 pb-10 mb-00 mt-00">{{ .name }}</h1>
+            <div class="icon md">{{ partial "lib/icon" "box" }}</div>
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ .name }}</h2>
             {{ partial $path . }}
         </div>
         <div class="desc mb-60">{{- .page.Params.description -}}</div>
