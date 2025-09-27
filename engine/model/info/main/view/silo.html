@@ -7,15 +7,15 @@
     {{- range $data -}}
         <div id="{{ .name | urlize }}">
             <div class="subhead flex border-bottom mb-40">
-                <div class="icon md border-right mr-10 pr-10 pb-05">{{- partial "lib/icon" "folder" -}}</div>
-                <h3 class="text-xl mb-00 mt-00">{{ .name }}</h3>
+                <div class="icon md">{{- partial "lib/icon" "folder" -}}</div>
+                <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ .name }}</h2>
             </div>
             <div class="subleaf">
                 {{- range .list -}}
                 <a href="{{ .RelPermalink }}" class="flex mb-20" aria-label="{{ .Title }}">
                     <div class="icon md">{{- partial "lib/icon" "file" -}}</div>
                     <div class="meta">
-                        <h2 class="text-md font-bold mt-00">{{- .Title -}}</h2>
+                        <h3 class="text-md font-bold mt-00">{{- .Title -}}</h3>
                         <p class="text-md mt-00">{{ .Params.description }}</p>
                     </div>
                 </a>

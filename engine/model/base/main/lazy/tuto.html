@@ -4,8 +4,8 @@
 <template id="proto-tuto">
     <div class="head mb-60">
         <div class="flex center-x border-bottom mb-50">
-            <div class="icon xl pb-10">{{- partial "lib/icon" "user-plus" -}}</div>
-            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{ T "header_subs_tuto" }}</h1>
+            <div class="icon md">{{ partial "lib/icon" "user-plus" }}</div>
+            <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "header_subs_tuto" }}</h2>
         </div>
         {{- with .Params.tutors.desc -}}<p class="desc">{{- . -}}</p>{{- end -}}
     </div>

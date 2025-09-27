@@ -7,7 +7,7 @@
     </div>
     <div class="leaf">
         <div class="box border-all rounded-lg flex center-x pa-10">
-        {{- range $user -}}
+        {{- range first 5 $user -}}
             <div class="author rounded-full overflow-hidden mr-15">
                 {{- partial "parted/avatar/user-36.html" . -}}
             </div>
