@@ -4,8 +4,8 @@
 
 <div id="talk">
     <div class="head mb-40 flex border-bottom">
-        <div class="icon md border-right mr-10 pr-10 pb-05">{{- partial "lib/icon" "smartphone" -}}</div>
-        <h2 class="text-xl mb-00 mt-00">{{ T "suport_head_lead" }}</h2>
+        <div class="icon md">{{- partial "lib/icon" "smartphone" -}}</div>
+        <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "suport_head_lead" }}</h2>
     </div>
     <div class="leaf">
         {{ $addr := ( dict "name" "addr"  "icon"  "map-pin.svg"   "name" .Params.contact.office.name  "link" .Params.contact.office.link ) }}

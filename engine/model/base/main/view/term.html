@@ -7,9 +7,11 @@
 
 <div id="term">
     <div class="head mb-60">
-        <div class="flex center-x border-bottom">
-            <div class="icon xl pb-10">{{- partial "lib/icon" "box" -}}</div>
-            <h1 class="text-xl border-left pl-15 pb-10 mb-00 mt-00">{{- T "header_subs_tcat" -}}</h1>
+        <div class="flex center-x border-bottom mb-40">
+            <div class="flex center-x">
+                <div class="icon md">{{ partial "lib/icon" "box" }}</div>
+                <h2 class="text-sm uppercase font-bold border-left pl-15 pb-10 mb-00">{{ T "header_subs_tcat" }}</h2>
+            </div>
             {{- partial $path . -}}
         </div>
     </div>
